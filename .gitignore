@@ -1,0 +1,6 @@
+*.bgz
+*.gz
+*.vcf
+*.tsv
+*.bed
+*.interval_list
