@@ -1,0 +1,97 @@
+{
+	"text": "1,000 Genomes Phase 3 SNP Annotations",
+	"id": "1kg",
+	"hail": "va.1kg",
+	"type": "snp",
+	"selectable": true,
+	"study_title": "The 1000 Genomes Project Consortium. “A Global Reference for Human Genetic Variation.” Nature 526.7571 (2015): 68–74.",
+	"study_id": "1kg_phase3",
+	"study_data": "ftp://ftp.1000genomes.ebi.ac.uk/vol1/ftp/release/20130502/ALL.wgs.phase3_shapeit2_mvncall_integrated_v5b.20130502.sites.vcf.gz",
+	"study_link": "https://www.ncbi.nlm.nih.gov/pubmed/26432245",
+	"nodes": [
+		{
+			"text": "Alt allele count",
+			"id": "ac",
+			"hail": "va.1kg.ac",
+			"type": "Int",
+			"description": "Total number of alternate alleles in called genotypes"
+		},
+		{
+			"text": "Alt allele frequency",
+			"id": "af",
+			"hail": "va.1kg.af",
+			"type": "Double",
+			"description": "Estimated allele frequency in the range (0,1)"
+		},
+		{
+			"text": "Number of samples",
+			"id": "ns",
+			"hail": "va.1kg.ns",
+			"type": "Int",
+			"description": "Number of samples with data"
+		},
+		{
+			"text": "Number of alleles",
+			"id": "an",
+			"hail": "va.1kg.an",
+			"type": "Int",
+			"description": "Total number of alleles in called genotypes"
+		},
+		{
+			"text": "EAS allele frequency",
+			"id": "eas_af",
+			"hail": "va.1kg.eas_af",
+			"type": "Double",
+			"description": "Allele frequency in the EAS populations calculated from AC and AN, in the range (0,1)"
+		},
+		{
+			"text": "EUR allele frequency",
+			"id": "eur_af",
+			"hail": "va.1kg.eur_af",
+			"type": "Double",
+			"description": "Allele frequency in the EUR populations calculated from AC and AN, in the range (0,1)"
+		},
+		{
+			"text": "AFR allele frequency",
+			"id": "afr_af",
+			"hail": "va.1kg.afr_af",
+			"type": "Double",
+			"description": "Allele frequency in the AFR populations calculated from AC and AN, in the range (0,1)"
+		},
+		{
+			"text": "AMR allele frequency",
+			"id": "amr_af",
+			"hail": "va.1kg.amr_af",
+			"type": "Double",
+			"description": "Allele frequency in the AMR populations calculated from AC and AN, in the range (0,1)"
+		},
+		{
+			"text": "SAS allele frequency",
+			"id": "sas_af",
+			"hail": "va.1kg.sas_af",
+			"type": "Double",
+			"description": "Allele frequency in the SAS populations calculated from AC and AN, in the range (0,1)"
+		},
+		{
+			"text": "Read depth",
+			"id": "dp",
+			"hail": "va.1kg.dp",
+			"type": "Int",
+			"description": "Total read depth; only low coverage data were counted towards the DP, exome data were not used"
+		},
+		{
+			"text": "Ancestral allele",
+			"id": "aa",
+			"hail": "va.1kg.aa",
+			"type": "String",
+			"description": "Ancestral allele"
+		},
+		{
+			"text": "Exon target",
+			"id": "ex_target",
+			"hail": "va.1kg.ex_target",
+			"type": "Boolean",
+			"description": "indicates whether a variant is within the exon pull down target boundaries"
+		}
+	]
+}
