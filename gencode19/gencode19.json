@@ -1,0 +1,62 @@
+{
+	"text": "GENCODE v19",
+	"id": "gencode19",
+	"hail": "va.gencode19",
+	"type": "interval",
+	"selectable": true,
+	"study_link": "",
+	"study_title": "",
+	"study_data": "",
+	"description": "These files were obtained from UCSC table browser with these settings: Assembly: Feb. 2009 (GRCh37/hg19), Group: Genes and Gene Predictions, Track: GENCODE Genes V19, Region:  genome, Output: format: BED.",
+	"nodes": [
+		{
+			"text": "3UTR",
+			"id": "3UTR",
+			"hail": "va.gencode19.3utr",
+			"type": "Boolean",
+			"description": "3' UTR Exons"
+		},
+		{
+			"text": "5UTR",
+			"id": "5UTR",
+			"hail": "va.gencode19.5utr",
+			"type": "Boolean",
+			"description": "5' UTR Exons"
+		},
+		{
+			"text": "Coding exons",
+			"id": "exonsc",
+			"hail": "va.gencode19.exonsc",
+			"type": "Boolean",
+			"description": "Coding exons"
+		},
+		{
+			"text": "Exons + 15bp",
+			"id": "coding15",
+			"hail": "va.gencode19.coding15",
+			"type": "Boolean",
+			"description": "All exons (including untranslated sequences) plus 15bp at each end"
+		},
+		{
+			"text": "Introns",
+			"id": "Introns",
+			"hail": "va.gencode19.introns",
+			"type": "Boolean",
+			"description": "Introns"
+		},
+		{
+			"text": "Exons",
+			"id": "exonsa",
+			"hail": "va.gencode19.exonsa",
+			"type": "Boolean",
+			"description": "All exons (including untranslated sequences)"
+		},
+		{
+			"text": "200bp Upstream",
+			"id": "promotersreg",
+			"hail": "va.gencode19.promotersreg",
+			"type": "Boolean",
+			"description": "200 bp upstream of the TSS, promoters-flanking regions"
+		}
+	]
+}

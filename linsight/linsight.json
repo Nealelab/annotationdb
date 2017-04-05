@@ -1,0 +1,21 @@
+{
+	"text": "LINSIGHT",
+	"id": "linsight",
+	"hail": "va.linsight",
+	"type": "interval",
+	"selectable": true,
+	"study_link": "http://www.nature.com/ng/journal/v49/n4/full/ng.3810.html",
+	"study_title": "Fast, scalable prediction of deleterious noncoding variants from functional and population genomic data” Nature Genetics. Online",
+	"study_data": "http://compgen.cshl.edu/~yihuang/tracks/LINSIGHT.bw",
+	"description": "We tranformed the .bw data into .bed format using this program: http://hgdownload.soe.ucsc.edu/admin/exe/linux.x86_64/bigWigToBedGraph",
+	"nodes": [
+		{
+		    "text": "LINSIGHT score",
+			"id": "linsight_score",
+			"hail": "va.linsight.linsight_score",
+			"type": "Double",
+			"description": "The probability of fitness consequences for mutations at each site i"
+		},	
+		
+	]
+}

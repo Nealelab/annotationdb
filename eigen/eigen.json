@@ -1,0 +1,41 @@
+{
+	"text": "EIGEN",
+	"id": "eigen",
+	"hail": "va.eigen",
+	"type": "snp",
+	"selectable": false,
+	"study_link": "https://www.ncbi.nlm.nih.gov/pubmed/26727659",
+	"study_title": "IONITA-LAZA, IULIANA et al. “A SPECTRAL APPROACH INTEGRATING FUNCTIONAL GENOMIC ANNOTATIONS FOR CODING AND NONCODING VARIANTS.” Nature genetics 48.2 (2016): 214–220.",
+	"study_data": "https://xioniti01.u.hpc.mssm.edu/v1.1/",
+	"description": "Version 1.1. In the paper Eigen PC works better than EIGEN in non-coding regions",
+	"nodes": [
+		{
+			"text": "Raw",
+			"id": "raw",
+			"hail": "va.eigen.raw",
+			"type": "Double",
+			"description": "Eigen score raw"
+		},
+		{
+			"text": "Phred",
+			"id": "phred",
+			"hail": "va.eigen.phred",
+			"type": "Double",
+			"description": "Eigen score phred transformed"
+		},
+		{
+			"text": "PC Raw",
+			"id": "PC_raw",
+			"hail": "va.eigen.PC_raw",
+			"type": "Double",
+			"description": "Eigen PC score raw"
+		},
+		{
+			"text": "PC Phred",
+			"id": "PC_phred",
+			"hail": "va.eigen.PC_phred",
+			"type": "Double",
+			"description": "Eigen PC score phred transformed"
+		}
+	]
+}

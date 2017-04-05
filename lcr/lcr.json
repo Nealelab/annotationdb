@@ -1,0 +1,20 @@
+{
+	"text": "Low complexity regions",
+	"id": "lcr",
+	"hail": "va.lcr",
+	"type": "interval",
+	"selectable": true,
+	"study_link": "https://www.ncbi.nlm.nih.gov/pubmed/?term=24974202",
+	"study_title": "Heng Li, Toward better understanding of artifacts in variant calling from high-coverage samples",
+	"study_data": "https://github.com/lh3/varcmp/blob/master/scripts/LCR-hs37d5.bed.gz",
+	"description": "Regions with repeated sequences normally excluded from WGS studies",
+	"nodes": [
+		{
+			"text": "Low-complexity regions",
+			"id": "lcr",
+			"hail": "va.lcr.lcr",
+			"type": "Boolean",
+			"description": "Low-complexity regions"
+		}
+	]
+}

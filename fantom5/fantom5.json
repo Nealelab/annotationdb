@@ -1,0 +1,27 @@
+{
+	"text": "FANTOM 5",
+	"id": "fantom5",
+	"hail": "va.fantom5",
+	"type": "interval",
+	"selectable": true,
+	"study_link": "https://www.ncbi.nlm.nih.gov/pubmed/?term=24670763",
+	"study_title": "An atlas of active enhancers across human cell types and tissues.",
+	"study_data": "http://enhancer.binf.ku.dk/presets/robust_enhancers.bed and http://enhancer.binf.ku.dk/presets/permissive_enhancers.bed",
+	"description": "FANTOM5 enhancers obtained with CAGE technique",
+	"nodes": [
+		{
+			"text": "FANTOM5 enhancers - robust",
+			"id": "robust enhancers",
+			"hail": "va.fantom5.robust",
+			"type": "Boolean",
+			"description": "FANTOM5 enhancers - robust"
+		},
+		{
+			"text": "FANTOM5 enhancers - permissive",
+			"id": "permissive enhancers",
+			"hail": "va.fantom5.permissive",
+			"type": "Boolean",
+			"description": "FANTOM5 enhancers - permissive"
+		},
+	]
+}
