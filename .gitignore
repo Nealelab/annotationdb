@@ -1,9 +1,0 @@
-annotationdb_andrea.json
-.DS_Store
-.*
-*.bgz
-*.gz
-*.vcf
-*.tsv
-*.bed
-*.interval_list
