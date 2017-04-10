@@ -2,7 +2,7 @@
 	"text": "CADD",
 	"id": "cadd",
 	"hail": "va.cadd",
-	"type": "snp",
+	"type": "variant",
 	"selectable": false,
 	"study_title": "Kircher, Martin et al. “A General Framework for Estimating the Relative Pathogenicity of Human Genetic Variants.” Nature genetics 46.3 (2014): 310–315.",
 	"study_link": "https://www.ncbi.nlm.nih.gov/pubmed/24487276",
@@ -12,6 +12,7 @@
 		{
 			"text": "Anc",
 			"id": "Anc",
+			"raw": "Anc",
 			"hail": "va.cadd.Anc",
 			"type": "String",
 			"description": "Ancestral (e.g. chimp like) base; defined using EPO 6 primate alignments (v75)"
@@ -19,6 +20,7 @@
 		{
 			"text": "Type",
 			"id": "Type",
+			"raw": "Type",
 			"hail": "va.cadd.Type",
 			"type": "String",
 			"description": "Event type (SNV, DEL, INS)"
@@ -26,6 +28,7 @@
 		{
 			"text": "Length",
 			"id": "Length",
+			"raw": "Length",
 			"hail": "va.cadd.Length",
 			"type": "Int",
 			"description": "Number of inserted/deleted bases"
@@ -33,6 +36,7 @@
 		{
 			"text": "isTv",
 			"id": "isTv",
+			"raw": "isTv",
 			"hail": "va.cadd.isTv",
 			"type": "Boolean",
 			"description": "Is transversion?"
@@ -40,6 +44,7 @@
 		{
 			"text": "isDerived",
 			"id": "isDerived",
+			"raw": "isDerived",
 			"hail": "va.cadd.isDerived",
 			"type": "Boolean",
 			"description": "Observed allele is an evolutionary derived allele"
@@ -47,6 +52,7 @@
 		{
 			"text": "AnnoType",
 			"id": "AnnoType",
+			"raw": "AnnoType",
 			"hail": "va.cadd.AnnoType",
 			"type": "String",
 			"description": "CodingTranscript, Intergenic, MotifFeature, NonCodingTranscript, RegulatoryFeature, Transcript"
@@ -54,6 +60,7 @@
 		{
 			"text": "Consequence",
 			"id": "Consequence",
+			"raw": "Consequence",
 			"hail": "va.cadd.Consequence",
 			"type": "String",
 			"description": "3PRIME_UTR, 5PRIME_UTR, DOWNSTREAM, INTERGENIC, INTRONIC, NON_SYNONYMOUS, SYNONYMOUS, REGULATORY, STOP_GAINED, STOP_LOST, SPLICE_SITE, CANONICAL_SPLICE, UPSTREAM, NONCODING_CHANGE"
@@ -61,6 +68,7 @@
 		{
 			"text": "ConsScore",
 			"id": "ConsScore",
+			"raw": "ConsScore",
 			"hail": "va.cadd.ConsScore",
 			"type": "Int",
 			"description": "Custom deleterious score assigned to Consequence"
@@ -68,6 +76,7 @@
 		{
 			"text": "ConsDetail",
 			"id": "ConsDetail",
+			"raw": "ConsDetail",
 			"hail": "va.cadd.ConsDetail",
 			"type": "String",
 			"description": "Trimmed VEP consequence prior to simplification"
@@ -75,6 +84,7 @@
 		{
 			"text": "GC",
 			"id": "GC",
+			"raw": "GC",
 			"hail": "va.cadd.GC",
 			"type": "Double",
 			"description": "Percent GC in a window of +/- 75bp"
@@ -82,6 +92,7 @@
 		{
 			"text": "CpG",
 			"id": "CpG",
+			"raw": "CpG",
 			"hail": "va.cadd.CpG",
 			"type": "Double",
 			"description": "Percent CpG in a window of +/- 75bp"
@@ -89,6 +100,7 @@
 		{
 			"text": "mapAbility20bp",
 			"id": "mapAbility20bp",
+			"raw": "mapAbility20bp",
 			"hail": "va.cadd.mapAbility20bp",
 			"type": "Double",
 			"description": "Mapability of 20bp fragments determined by Duke"
@@ -96,6 +108,7 @@
 		{
 			"text": "mapAbility35bp",
 			"id": "mapAbility35bp",
+			"raw": "mapAbility35bp",
 			"hail": "va.cadd.mapAbility35bp",
 			"type": "Double",
 			"description": "Mapability of 35bp fragments determined by Duke"
@@ -103,6 +116,7 @@
 		{
 			"text": "scoreSegDup",
 			"id": "scoreSegDup",
+			"raw": "scoreSegDup",
 			"hail": "va.cadd.scoreSegDup",
 			"type": "Double",
 			"description": "UCSC segmental duplication similarity, indicate the percent identity to the highest-similarity segmental duplication event"
@@ -110,6 +124,7 @@
 		{
 			"text": "priPhCons",
 			"id": "priPhCons",
+			"raw": "priPhCons",
 			"hail": "va.cadd.priPhCons",
 			"type": "Double",
 			"description": "Primate PhastCons conservation (excl. human)"
@@ -117,6 +132,7 @@
 		{
 			"text": "mamPhCons",
 			"id": "mamPhCons",
+			"raw": "mamPhCons",
 			"hail": "va.cadd.mamPhCons",
 			"type": "Double",
 			"description": "Mammalian PhyloP score (excl. human)"
@@ -124,6 +140,7 @@
 		{
 			"text": "verPhCons",
 			"id": "verPhCons",
+			"raw": "verPhCons",
 			"hail": "va.cadd.verPhCons",
 			"type": "Double",
 			"description": "Vertebrate PhastCons conservation score (excl. human)"
@@ -131,6 +148,7 @@
 		{
 			"text": "priPhyloP",
 			"id": "priPhyloP",
+			"raw": "priPhyloP",
 			"hail": "va.cadd.priPhyloP",
 			"type": "Double",
 			"description": "Primate PhyloP score (excl. human)"
@@ -138,6 +156,7 @@
 		{
 			"text": "mamPhyloP",
 			"id": "mamPhyloP",
+			"raw": "mamPhyloP",
 			"hail": "va.cadd.mamPhyloP",
 			"type": "Double",
 			"description": "Mammalian PhyloP score (excl. human)"
@@ -145,6 +164,7 @@
 		{
 			"text": "verPhyloP",
 			"id": "verPhyloP",
+			"raw": "verPhyloP",
 			"hail": "va.cadd.verPhyloP",
 			"type": "Double",
 			"description": "Vertebrate PhyloP (excl. human)"
@@ -152,6 +172,7 @@
 		{
 			"text": "GerpN",
 			"id": "GerpN",
+			"raw": "GerpN",
 			"hail": "va.cadd.GerpN",
 			"type" : "Double",
 			"description": "Neutral evolution score defined by GERP++"
@@ -159,6 +180,7 @@
 		{
 			"text": "GerpS",
 			"id": "GerpS",
+			"raw": "GerpS",
 			"hail": "va.cadd.GerpS",
 			"type": "Double",
 			"description": "Rejected Substitution' score defined by GERP++"
@@ -166,6 +188,7 @@
 		{
 			"text": "GerpRS",
 			"id": "GerpRS",
+			"raw": "GerpRS",
 			"hail": "va.cadd.GerpRS",
 			"type": "Double",
 			"description": "Gerp element score"
@@ -173,6 +196,7 @@
 		{
 			"text": "GerpRSpval",
 			"id": "GerpRSpval",
+			"raw": "GerpRSpval",
 			"hail": "va.cadd.GerpRSpval",
 			"type": "Double",
 			"description": "Gerp element p-Value"
@@ -180,6 +204,7 @@
 		{
 			"text": "bStatistic",
 			"id": "bStatistic",
+			"raw": "bStatistic",
 			"hail": "va.cadd.bStatistic",
 			"type": "Int",
 			"description": "Background selection score"
@@ -187,6 +212,7 @@
 		{
 			"text": "mutIndex",
 			"id": "mutIndex",
+			"raw": "mutIndex",
 			"hail": "va.cadd.mutIndex",
 			"type": "Double",
 			"description": "Mutability index from Michaelson, J.J. et al. Cell 2012"
@@ -194,6 +220,7 @@
 		{
 			"text": "dnaHelT",
 			"id": "dnaHelT",
+			"raw": "dnaHelT",
 			"hail": "va.cadd.dnaHelT",
 			"type": "Double",
 			"description": "Predicted local DNA structure effect on dnaHelT"
@@ -201,6 +228,7 @@
 		{
 			"text": "dnaMGW",
 			"id": "dnaMGW",
+			"raw": "dnaMGW",
 			"hail": "va.cadd.dnaMGW",
 			"type": "Double",
 			"description": "Predicted local DNA structure effect on dnaMGW"
@@ -208,6 +236,7 @@
 		{
 			"text": "dnaProT",
 			"id": "dnaProT",
+			"raw": "dnaProT",
 			"hail": "va.cadd.danProT",
 			"type": "Double",
 			"description": "Predicted local DNA structure effect on dnaProT"
@@ -215,6 +244,7 @@
 		{
 			"text": "dnaRoll",
 			"id": "dnaRoll",
+			"raw": "dnaRoll",
 			"hail": "va.cadd.dnaRoll",
 			"type": "Double",
 			"description": "Predicted local DNA structure effect on dnaRoll"
@@ -222,6 +252,7 @@
 		{
 			"text": "mirSVR-Score",
 			"id": "mirSVR_Score",
+			"raw": "`mirSVR-Score`",
 			"hail": "va.cadd.mirSVR_Score",
 			"type": "Double",
 			"description": "mirSVR-Score"
@@ -229,6 +260,7 @@
 		{
 			"text": "mirSVR-E",
 			"id": "mirSVR_E",
+			"raw": "`mirSVR-E`",
 			"hail": "va.cadd.mirSVR_E",
 			"type": "Double",
 			"description": "mirSVR-E"
@@ -236,6 +268,7 @@
 		{
 			"text": "mirSVR-Aln",
 			"id": "mirSVR_Aln",
+			"raw": "`mirSVR-Aln`",
 			"hail": "mirSVR_Aln",
 			"type": "Int",
 			"description": "mirSVR-Aln"
@@ -243,6 +276,7 @@
 		{
 			"text": "targetScan",
 			"id": "targetScan",
+			"raw": "targetScan",
 			"hail": "va.cadd.targetScan",
 			"type": "Double",
 			"description": "targetScan"
@@ -250,6 +284,7 @@
 		{
 			"text": "fitCons",
 			"id": "fitCons",
+			"raw": "fitCons",
 			"hail": "va.cadd.fitCons",
 			"type": "Double",
 			"description": "fitCons"
@@ -257,6 +292,7 @@
 		{
 			"text": "cHmmTssA",
 			"id": "cHmmTssA",
+			"raw": "cHmmTssA",
 			"hail": "va.cadd.cHmmTssA",
 			"type": "Double",
 			"description": "Proportion of 127 cell types in cHmmTssA state"
@@ -264,6 +300,7 @@
 		{
 			"text": "cHmmTssAFlnk",
 			"id": "cHmmTssAFlnk",
+			"raw": "cHmmTssAFlnk",
 			"hail": "va.cadd.cHmmTssAFlnk",
 			"type": "Double",
 			"description": "Proportion of 127 cell types in cHmmTssAFlnk state"
@@ -271,6 +308,7 @@
 		{
 			"text": "cHmmTxFlnk",
 			"id": "cHmmTxFlnk",
+			"raw": "cHmmTxFlnk",
 			"hail": "va.cadd.cHmmTxFlnk",
 			"type": "Double",
 			"description": "Proportion of 127 cell types in cHmmTxFlnk state"
@@ -278,6 +316,7 @@
 		{
 			"text": "cHmmTx",
 			"id": "cHmmTx",
+			"raw": "cHmmTx",
 			"hail": "va.cadd.cHmmTx",
 			"type": "Double",
 			"description": "Proportion of 127 cell types in cHmmTx state"
@@ -285,6 +324,7 @@
 		{
 			"text": "cHmmTxWk",
 			"id": "cHmmTxWk",
+			"raw": "cHmmTxWk",
 			"hail": "va.cadd.cHmmTxWk",
 			"type": "Double",
 			"description": "Proportion of 127 cell types in cHmmTxWk state"
@@ -292,6 +332,7 @@
 		{
 			"text": "cHmmEnhG",
 			"id": "cHmmEnhG",
+			"raw": "cHmmEnhG",
 			"hail": "va.cadd.cHmmEnhG",
 			"type": "Double",
 			"description": "Proportion of 127 cell types in cHmmEnhG state"
@@ -299,6 +340,7 @@
 		{
 			"text": "cHmmEnh",
 			"id": "cHmmEnh",
+			"raw": "cHmmEnh",
 			"hail": "va.cadd.cHmmEnh",
 			"type": "Double",
 			"description": "Proportion of 127 cell types in cHmmEnh state"
@@ -306,6 +348,7 @@
 		{
 			"text": "cHmmZnfRpts",
 			"id": "cHmmZnfRpts",
+			"raw": "cHmmZnfRpts",
 			"hail": "va.cadd.cHmmZnfRpts",
 			"type": "Double",
 			"description": "Proportion of 127 cell types in cHmmZnfRpts state"
@@ -313,6 +356,7 @@
 		{
 			"text": "cHmmHet",
 			"id": "cHmmHet",
+			"raw": "cHmmHet",
 			"hail": "va.cadd.cHmmHet",
 			"type": "Double",
 			"description": "Proportion of 127 cell types in cHmmHet state"
@@ -320,6 +364,7 @@
 		{
 			"text": "cHmmTssBiv",
 			"id": "cHmmTssBiv",
+			"raw": "cHmmTssBiv",
 			"hail": "va.cadd.cHmmTssBiv",
 			"type": "Double",
 			"description": "Proportion of 127 cell types in cHmmTssBiv state"
@@ -327,6 +372,7 @@
 		{
 			"text": "cHmmBivFlnk",
 			"id": "cHmmBivFlnk",
+			"raw": "cHmmBivFlnk",
 			"hail": "va.cadd.cHmmBivFlnk",
 			"type": "Double",
 			"description": "Proportion of 127 cell types in cHmmBivFlnk state"
@@ -334,6 +380,7 @@
 		{
 			"text": "cHmmEnhBiv",
 			"id": "cHmmEnhBiv",
+			"raw": "cHmmEnhBiv",
 			"hail": "va.cadd.cHmmEnhBiv",
 			"type": "Double",
 			"description": "Proportion of 127 cell types in cHmmEnhBiv state"
@@ -341,6 +388,7 @@
 		{
 			"text": "cHmmReprPC",
 			"id": "cHmmReprPC",
+			"raw": "cHmmReprPC",
 			"hail": "va.cadd.cHmmReprPC",
 			"type": "Double",
 			"description": "Proportion of 127 cell types in cHmmReprPC state"
@@ -348,6 +396,7 @@
 		{
 			"text": "cHmmReprPCWk",
 			"id": "cHmmReprPCWk",
+			"raw": "cHmmReprPCWk",
 			"hail": "va.cadd.cHmmReprPCWk",
 			"type": "Double",
 			"description": "Proportion of 127 cell types in cHmmReprPCWk"
@@ -355,6 +404,7 @@
 		{
 			"text": "cHmmQuies",
 			"id": "cHmmQuies",
+			"raw": "cHmmQuies",
 			"hail": "va.cadd.cHmmQuies",
 			"type": "Double",
 			"description": "Proportion of 127 cell types in cHmmQuies"
@@ -362,6 +412,7 @@
 		{
 			"text": "EncExp",
 			"id": "EncExp",
+			"raw": "EncExp",
 			"hail": "va.cadd.EncExp",
 			"type": "Double",
 			"description": "Maximum ENCODE expression value"
@@ -369,6 +420,7 @@
 		{
 			"text": "EncH3K27Ac",
 			"id": "EncH3K27Ac",
+			"raw": "EncH3K27Ac",
 			"hail": "va.cadd.EncH3K27Ac",
 			"type": "Double",
 			"description": "Maximum ENCODE H3K27 acetylation level"
@@ -376,6 +428,7 @@
 		{
 			"text": "EncH3K4Me1",
 			"id": "EncH3K4Me1",
+			"raw": "EncH3K4Me1",
 			"hail": "va.cadd.EncH3K4Me1",
 			"type": "Double",
 			"description": "Maximum ENCODE H3K4 methylation level"
@@ -383,6 +436,7 @@
 		{
 			"text": "EncH3K4Me3",
 			"id": "EncH3K4Me3",
+			"raw": "EncH3K4Me3",
 			"hail": "va.cadd.EncH3K4Me3",
 			"type": "Double",
 			"description": "Maximum ENCODE H3K4 trimethylation level"
@@ -390,6 +444,7 @@
 		{
 			"text": "EncNucleo",
 			"id": "EncNucleo",
+			"raw": "EncNucleo",
 			"hail": "va.cadd.EncNucleo",
 			"type": "Double",
 			"description": "Maximum of ENCODE Nucleosome position track score"
@@ -397,6 +452,7 @@
 		{
 			"text": "EncOCC",
 			"id": "EncOCC",
+			"raw": "EncOCC",
 			"hail": "va.cadd.EncOCC",
 			"type": "Int",
 			"description": "ENCODE open chromatin code"
@@ -404,6 +460,7 @@
 		{
 			"text": "EncOCCombPVal",
 			"id": "EncOCCombPVal",
+			"raw": "EncOCCombPVal",
 			"hail": "va.cadd.EncOCCombPVal",
 			"type": "Double",
 			"description": "ENCODE combined p-Value (PHRED-scale) of Faire, Dnase, polII, CTCF, Myc evidence for open chromatin"
@@ -411,6 +468,7 @@
 		{
 			"text": "EncOCDNasePVal",
 			"id": "EncOCDNasePVal",
+			"raw": "EncOCDNasePVal",
 			"hail": "va.cadd.EncOCDNasePVal",
 			"type": "Double",
 			"description": "p-Value (PHRED-scale) of Dnase evidence for open chromatin"
@@ -418,6 +476,7 @@
 		{
 			"text": "EncOCFairePVal",
 			"id": "EncOCFairePVal",
+			"raw": "EncOCFairePVal",
 			"hail": "va.cadd.EncOCFairePVal",
 			"type": "Double",
 			"description": "p-Value (PHRED-scale) of Faire evidence for open chromatin"
@@ -425,6 +484,7 @@
 		{
 			"text": "EncOCpolIIPVal",
 			"id": "EncOCpolIIPVal",
+			"raw": "EncOCpolIIPVal",
 			"hail": "va.cadd.EncOCpolIIPVal",
 			"type": "Double",
 			"description": "p-Value (PHRED-scale) of polII evidence for open chromatin"
@@ -432,6 +492,7 @@
 		{
 			"text": "EncOCctcfPVal",
 			"id": "EncOCctcfPVal",
+			"raw": "EncOCctcfPVal",
 			"hail": "va.cadd.EncOCctcfPVal",
 			"type": "Double",
 			"description": "p-Value (PHRED-scale) of CTCF evidence for open chromatin"
@@ -439,6 +500,7 @@
 		{
 			"text": "EncOCmycPVal",
 			"id": "EncOCmycPVal",
+			"raw": "EncOCmycPVal",
 			"hail": "va.cadd.EncOCmycPVal",
 			"type": "Double",
 			"description": "p-Value (PHRED-scale) of Myc evidence for open chromatin"
@@ -446,6 +508,7 @@
 		{
 			"text": "EncOCDNaseSig",
 			"id": "EncOCDNaseSig",
+			"raw": "EncOCDNaseSig",
 			"hail": "va.cadd.EncOCDNaseSig",
 			"type": "Double",
 			"description": "Peak signal for Dnase evidence of open chromatin"
@@ -453,6 +516,7 @@
 		{
 			"text": "EncOCFaireSig",
 			"id": "EncOCFaireSig",
+			"raw": "EncOCFaireSig",
 			"hail": "va.cadd.EncOCFaireSig",
 			"type": "Double",
 			"description": "Peak signal for Faire evidence of open chromatin"
@@ -460,6 +524,7 @@
 		{
 			"text": "EncOCpolIISig",
 			"id": "EncOCpolIISig",
+			"raw": "EncOCpolIISig",
 			"hail": "va.cadd.EncOCpolIISig",
 			"type": "Double",
 			"description": "Peak signal for polII evidence of open chromatin"
@@ -467,6 +532,7 @@
 		{
 			"text": "EncOCctcfSig",
 			"id": "EncOCctcfSig",
+			"raw": "EncOCctcfSig",
 			"hail": "va.cadd.EncOCctcfSig",
 			"type": "Double",
 			"description": "Peak signal for CTCF evidence of open chromatin"
@@ -474,6 +540,7 @@
 		{
 			"text": "EncOCmycSig",
 			"id": "EncOCmycSig",
+			"raw": "EncOCmycSig",
 			"hail": "va.cadd.EncOCmycSig",
 			"type": "Double",
 			"description": "Peak signal for Myc evidence of open chromatin"
@@ -481,6 +548,7 @@
 		{
 			"text": "Segway",
 			"id": "Segway",
+			"raw": "Segway",
 			"hail": "va.cadd.Segway",
 			"type": "String",
 			"description": "Result of genomic segmentation algorithm"
@@ -488,6 +556,7 @@
 		{
 			"text": "tOverlapMotifs",
 			"id": "tOverlapMotifs",
+			"raw": "tOverlapMotifs",
 			"hail": "va.cadd.tOverlapMotifs",
 			"type": "Int",
 			"description": "Number of overlapping predicted TF motifs"
@@ -495,6 +564,7 @@
 		{
 			"text": "motifDist",
 			"id": "motifDist",
+			"raw": "motifDist",
 			"hail": "va.cadd.motifDist",
 			"type": "Double",
 			"description": "Reference minus alternate allele difference in nucleotide frequency within a predicted overlapping motif"
@@ -502,6 +572,7 @@
 		{
 			"text": "motifECount",
 			"id": "motifECount",
+			"raw": "motifECount",
 			"hail": "va.cadd.motifECount",
 			"type": "Int",
 			"description": "Total number of overlapping motifs"
@@ -509,6 +580,7 @@
 		{
 			"text": "motifEName",
 			"id": "motifEName",
+			"raw": "motifEName",
 			"hail": "va.cadd.motifEName",
 			"type": "String",
 			"description": "Name of sequence motif the position overlaps"
@@ -516,6 +588,7 @@
 		{
 			"text": "motifEHIPos",
 			"id": "motifEHIPos",
+			"raw": "motifEHIPos",
 			"hail": "va.cadd.motifEHIPos",
 			"type": "Boolean",
 			"description": "Is the position considered highly onformative for an overlapping motif by VEP"
@@ -523,6 +596,7 @@
 		{
 			"text": "motifEScoreChng",
 			"id": "motifEScoreChng",
+			"raw": "motifEScoreChng",
 			"hail": "va.cadd.motifEScoreChng",
 			"type": "Double",
 			"description": "VEP score change for the overlapping motif site"
@@ -530,6 +604,7 @@
 		{
 			"text": "TFBS",
 			"id": "TFBS",
+			"raw": "TFBS",
 			"hail": "va.cadd.TFBS",
 			"type": "Int",
 			"description": "Number of different overlapping ChIP transcription factor binding sites"
@@ -537,6 +612,7 @@
 		{
 			"text": "TFBSPeaks",
 			"id": "TFBSPeaks",
+			"raw": "TFBSPeaks",
 			"hail": "va.cadd.TFBSPeaks",
 			"type": "Int",
 			"description": "Number of overlapping ChIP transcription factor binding site peaks summed over different cell types/tissue"
@@ -544,6 +620,7 @@
 		{
 			"text": "TFBSPeaksMax",
 			"id": "TFBSPeaksMax",
+			"raw": "TFBSPeaksMax",
 			"hail": "va.cadd.TFBSPeaksMax",
 			"type": "Double",
 			"description": "Maximum value of overlapping ChIP transcription factor binding site peaks across cell types/tissue"
@@ -551,6 +628,7 @@
 		{
 			"text": "isKnownVariant",
 			"id": "isKnownVariant",
+			"raw": "isKnownVariant",
 			"hail": "va.cadd.isKnownVariant",
 			"type": "Boolean",
 			"description": "Position is observed as being variable in 1000G or ESP?"
@@ -558,6 +636,7 @@
 		{
 			"text": "ESP_AF",
 			"id": "ESP_AF",
+			"raw": "ESP_AF",
 			"hail": "va.cadd.ESP_AF",
 			"type": "Double",
 			"description": "Average ESP frequency for alternative alleles at site"
@@ -565,6 +644,7 @@
 		{
 			"text": "ESP_AFR",
 			"id": "ESP_AFR",
+			"raw": "ESP_AFR",
 			"hail": "va.cadd.ESP_AFR",
 			"type": "Double",
 			"description": "Average ESP African ancestry frequency"
@@ -572,6 +652,7 @@
 		{
 			"text": "ESP_EUR",
 			"id": "ESP_EUR",
+			"raw": "ESP_EUR",
 			"hail": "va.cadd.ESP_EUR",
 			"type": "Double",
 			"description": "Average ESP European ancestry frequency"
@@ -579,6 +660,7 @@
 		{
 			"text": "TG_AF",
 			"id": "TG_AF",
+			"raw": "TG_AF",
 			"hail": "va.cadd.TG_AF",
 			"type": "Double",
 			"description": "Average 1000 Genomes frequency for alternative alleles at site"
@@ -586,6 +668,7 @@
 		{
 			"text": "TG_ASN",
 			"id": "TG_ASN",
+			"raw": "TG_ASN",
 			"hail": "va.cadd.TG_ASN",
 			"type": "Double",
 			"description": "Average 1000 Genomes Asian population frequency"
@@ -593,6 +676,7 @@
 		{
 			"text": "TG_AMR",
 			"id": "TG_AMR",
+			"raw": "TG_AMR",
 			"hail": "va.cadd.TG_AMR",
 			"type": "Double",
 			"description": "Average 1000 Genomes South American population frequency"
@@ -600,6 +684,7 @@
 		{
 			"text": "TG_AFR",
 			"id": "TG_AFR",
+			"raw": "TG_AFR",
 			"hail": "va.cadd.TG_AFR",
 			"type": "Double",
 			"description": "Average 1000 Genomes African population frequency"
@@ -607,6 +692,7 @@
 		{
 			"text": "TG_EUR",
 			"id": "TG_EUR",
+			"raw": "TG_EUR",
 			"hail": "va.cadd.TG_EUR",
 			"type": "Double",
 			"description": "Average 1000 Genomes European population frequency"
@@ -614,6 +700,7 @@
 		{
 			"text": "minDistTSS",
 			"id": "minDistTSS",
+			"raw": "minDistTSS",
 			"hail": "va.cadd.minDistTSS",
 			"type": "Int",
 			"description": "Distance to closest Transcribed Sequence Start (TSS)"
@@ -621,6 +708,7 @@
 		{
 			"text": "minDistTSE",
 			"id": "minDistTSE",
+			"raw": "minDistTSE",
 			"hail": "va.cadd.minDistTSE",
 			"type": "Int",
 			"description": "Distance to closest Transcribed Sequence End (TSE)"
@@ -628,6 +716,7 @@
 		{
 			"text": "GeneID",
 			"id": "GeneID",
+			"raw": "GeneID",
 			"hail": "va.cadd.GeneID",
 			"type": "String",
 			"description": "ENSEMBL GeneID"
@@ -635,6 +724,7 @@
 		{
 			"text": "FeatureID",
 			"id": "FeatureID",
+			"raw": "FeatureID",
 			"hail": "va.cadd.FeatureID",
 			"type": "String",
 			"description": "ENSEMBL feature ID (Transcript ID or regulatory feature ID)"
@@ -642,6 +732,7 @@
 		{
 			"text": "CCDS",
 			"id": "CCDS",
+			"raw": "CCDS",
 			"hail": "va.cadd.CCDS",
 			"type": "String",
 			"description": "Consensus Coding Sequence ID"
@@ -649,6 +740,7 @@
 		{
 			"text": "GeneName",
 			"id": "GeneName",
+			"raw": "GeneName",
 			"hail": "va.cadd.GeneName",
 			"type": "String",
 			"description": "GeneName provided in ENSEMBL annotation"
@@ -656,6 +748,7 @@
 		{
 			"text": "cDNApos",
 			"id": "cDNApos",
+			"raw": "cDNApos",
 			"hail": "va.cadd.cDNApos",
 			"type": "Int",
 			"description": "Base position from transcription start"
@@ -663,6 +756,7 @@
 		{
 			"text": "relcDNApos",
 			"id": "relcDNApos",
+			"raw": "relcDNApos",
 			"hail": "va.cadd.relcDNApos",
 			"type": "Double",
 			"description": "Relative position in transcript"
@@ -670,6 +764,7 @@
 		{
 			"text": "CDSpos",
 			"id": "CDSpos",
+			"raw": "CDSpos",
 			"hail": "va.cadd.CDSpos",
 			"type": "Int",
 			"description": "Base position from coding start"
@@ -677,6 +772,7 @@
 		{
 			"text": "relCDSpos",
 			"id": "relCDSpos",
+			"raw": "relCDSpos",
 			"hail": "va.cadd.relCDSpos",
 			"type": "Double",
 			"description": "Relative position in coding sequence"
@@ -684,6 +780,7 @@
 		{
 			"text": "protPos",
 			"id": "protPos",
+			"raw": "protPos",
 			"hail": "va.cadd.protPos",
 			"type": "Int",
 			"description": "Amino acid position from coding start"
@@ -691,6 +788,7 @@
 		{
 			"text": "relProtPos",
 			"id": "relProtPos",
+			"raw": "relProtPos",
 			"hail": "va.cadd.relProtPos",
 			"type": "Double",
 			"description": "Relative position in protein codon"
@@ -698,6 +796,7 @@
 		{
 			"text": "Domain",
 			"id": "Domain",
+			"raw": "Domain",
 			"hail": "va.cadd.Domain",
 			"type": "String",
 			"description": "Domain annotation inferred from VEP annotation (ncoils, tmhmm, sigp, lcompl, ndomain = \"other named domain\")"
@@ -705,6 +804,7 @@
 		{
 			"text": "Dst2Splice",
 			"id": "Dst2Splice",
+			"raw": "Dst2Splice",
 			"hail": "va.cadd.Dst2Splice",
 			"type": "Int",
 			"description": "Distance to splice site in 20bp; positive: exonic, negative: intronic"
@@ -712,6 +812,7 @@
 		{
 			"text": "Dst2SplType",
 			"id": "Dst2SplType",
+			"raw": "Dst2SplType",
 			"hail": "va.cadd.Dst2SplType",
 			"type": "String",
 			"description": "Closest splice site is ACCEPTOR or DONOR"
@@ -719,6 +820,7 @@
 		{
 			"text": "Exon",
 			"id": "Exon",
+			"raw": "Exon",
 			"hail": "va.cadd.Exon",
 			"type": "String",
 			"description": "Exon number/Total number of exons"
@@ -726,6 +828,7 @@
 		{
 			"text": "Intron",
 			"id": "Intron",
+			"raw": "Intron",
 			"hail": "va.cadd.Intron",
 			"type": "String",
 			"description": "Intron number/Total number of exons"
@@ -733,6 +836,7 @@
 		{
 			"text": "oAA",
 			"id": "oAA",
+			"raw": "oAA",
 			"hail": "va.cadd.oAA",
 			"type": "String",
 			"description": "Reference amino acid"
@@ -740,6 +844,7 @@
 		{
 			"text": "nAA",
 			"id": "nAA",
+			"raw": "nAA",
 			"hail": "va.cadd.nAA",
 			"type": "String",
 			"description": "Amino acid of observed variant"
@@ -747,6 +852,7 @@
 		{
 			"text": "Grantham",
 			"id": "Grantham",
+			"raw": "Grantham",
 			"hail": "va.cadd.Grantham",
 			"type": "Int",
 			"description": "Grantham score: oAA, nAA"
@@ -754,6 +860,7 @@
 		{
 			"text": "PolyPhenCat",
 			"id": "PolyPhenCat",
+			"raw": "PolyPhenCat",
 			"hail": "va.cadd.PolyPhenCat",
 			"type": "String",
 			"description": "PolyPhen category of change"
@@ -761,6 +868,7 @@
 		{
 			"text": "PolyPhenVal",
 			"id": "PolyPhenVal",
+			"raw": "PolyPhenVal",
 			"hail": "va.cadd.PolyPhenVal",
 			"type": "Double",
 			"description": "PolyPhen score"
@@ -768,6 +876,7 @@
 		{
 			"text": "SIFTcat",
 			"id": "SIFTcat",
+			"raw": "SIFTcat",
 			"hail": "va.cadd.SIFTcat",
 			"type": "String",
 			"description": "SIFT category of change"
@@ -775,6 +884,7 @@
 		{
 			"text": "SIFTval",
 			"id": "SIFTval",
+			"raw": "SIFTval",
 			"hail": "va.cadd.SIFTval",
 			"type": "Double",
 			"description": "SIFT score"
@@ -782,6 +892,7 @@
 		{
 			"text": "RawScore",
 			"id": "RawScore",
+			"raw": "RawScore",
 			"hail": "va.cadd.RawScore",
 			"type": "Double",
 			"description": "CADD Raw score"
@@ -789,6 +900,7 @@
 		{
 			"text": "PHRED",
 			"id": "PHRED",
+			"raw": "PHRED",
 			"hail": "va.cadd.PHRED",
 			"type": "Double",
 			"description": "CADD PHRED score"

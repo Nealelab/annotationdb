@@ -2,7 +2,7 @@
 	"text": "EIGEN",
 	"id": "eigen",
 	"hail": "va.eigen",
-	"type": "snp",
+	"type": "variant",
 	"selectable": false,
 	"study_link": "https://www.ncbi.nlm.nih.gov/pubmed/26727659",
 	"study_title": "IONITA-LAZA, IULIANA et al. “A SPECTRAL APPROACH INTEGRATING FUNCTIONAL GENOMIC ANNOTATIONS FOR CODING AND NONCODING VARIANTS.” Nature genetics 48.2 (2016): 214–220.",

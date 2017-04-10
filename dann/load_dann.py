@@ -2,43 +2,29 @@
 
 import hail
 
-# locations
-log = '/mnt/lustre/labbott/annotationdb/hail.log'
-raw = 'file:///mnt/lustre/labbott/annotationdb/dann/dann.tsv.bgz'
-vds = 'file:///mnt/lustre/labbott/annotationdb/dann/dann.vds'
-                                      
-(
-
 # start Hail context
-hail.HailContext(
-    log = log,
-    parquet_compression = 'snappy'
-)
+hc = hail.HailContext(parquet_compression = 'snappy')                                  
 
-# load DANN text file into sites-only VDS
-.import_annotations_table(
-    path = raw,
-    variant_expr = 'Variant(chr, pos, ref, alt)',
-    code = """
-           va.score1 = table.dann1,
-           va.score2 = table.dann2
-           """,
-    config = hail.TextTableConfig(
-                 types = """
-                         chr: String,
-                         pos: Int,
-                         ref: String,
-                         alt: String,
-                         dann1: Double,
-                         dann2: Double
-                         """
+# load into keytable
+(
+    
+    hc
+    .import_keytable(
+        'gs://annotationdb/dann/dann.tsv.bgz',
+        config = hail.TextTableConfig(
+            noheader = True,
+            types = """
+                _0: String,
+                _1: Int,
+                _2: String,
+                _3: String,
+                _4: Double
+            """
+        )
     )
-)
-
-# write VDS to bucket                                          
-.write(
-    output = vds, 
-    overwrite = True
-)
-
+    .annotate('variant = Variant(_0, _1, _2, _3)')
+    .key_by('variant')
+    .rename({'_4': 'score'})
+    .select(['variant', 'score'])
+    .write('gs://annotationdb/dann/dann.kt', overwrite=True)
 )

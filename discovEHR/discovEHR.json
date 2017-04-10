@@ -2,7 +2,7 @@
 	"text": "discovEHR",
 	"id": "discovEHR",
 	"hail": "va.discovEHR",
-	"type": "snp",
+	"type": "variant",
 	"selectable": true,
 	"study_link": "https://www.ncbi.nlm.nih.gov/pubmed/28008009",
 	"study_title": "Distribution and clinical impact of functional variants in 50,726 whole-exome sequences from the DiscovEHR study. Science",
@@ -11,8 +11,8 @@
 	"nodes": [
 		{
 			"text": "discovEHR AF",
-			"id": "af",
-			"hail": "va.discovEHR.af",
+			"id": "AF",
+			"hail": "va.discovEHR.AF",
 			"type": "Double",
 			"description": "Allele Frequency in discovEHR. AF=0.001 is equal to AF<=0.001"
 		}
