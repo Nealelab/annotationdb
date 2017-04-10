@@ -1,5 +1,6 @@
 annotationdb_andrea.json
 .DS_Store
+.*
 *.bgz
 *.gz
 *.vcf
