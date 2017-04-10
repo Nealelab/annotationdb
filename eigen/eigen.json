@@ -12,6 +12,7 @@
 		{
 			"text": "Raw",
 			"id": "raw",
+			"raw": "raw",
 			"hail": "va.eigen.raw",
 			"type": "Double",
 			"description": "Eigen score raw"
@@ -19,6 +20,7 @@
 		{
 			"text": "Phred",
 			"id": "phred",
+			"raw": "phred",
 			"hail": "va.eigen.phred",
 			"type": "Double",
 			"description": "Eigen score phred transformed"
@@ -26,6 +28,7 @@
 		{
 			"text": "PC Raw",
 			"id": "PC_raw",
+			"raw": "PC_raw",
 			"hail": "va.eigen.PC_raw",
 			"type": "Double",
 			"description": "Eigen PC score raw"
@@ -33,6 +36,7 @@
 		{
 			"text": "PC Phred",
 			"id": "PC_phred",
+			"raw": "PC_phred",
 			"hail": "va.eigen.PC_phred",
 			"type": "Double",
 			"description": "Eigen PC score phred transformed"
