@@ -11,7 +11,7 @@ with open('cadd.json', 'rb') as f:
 
 hc = hail.HailContext(parquet_compression = 'snappy')
 
-(
+kt = (
 
     hc
     .import_keytable(
@@ -41,12 +41,24 @@ hc = hail.HailContext(parquet_compression = 'snappy')
             var['raw'].strip('`'): var['id'] for var in dct['nodes']
         }
     )
-    .select(
-        ['variant'] + [variable['id'] for variable in dct['nodes']]
+    .annotate(
+        'cadd = {{{0}}}'.format(','.join(['{0}: {0}'.format(x['id']) for x in dct['nodes']]))
     )
-    .write(
-        'gs://annotationdb/cadd/cadd.kt',
-        overwrite = True
+    .select(
+        [
+            'variant',
+            'cadd'
+        ]
     )
 
+)
+
+# create sites-only VDS
+(
+    hail
+    .VariantDataset.from_keytable(kt)
+    .write(
+        'gs://annotationdb/cadd/cadd.vds',
+        overwrite = True
+    )
 )

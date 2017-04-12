@@ -15,7 +15,6 @@
 			"hail": "va.linsight.linsight_score",
 			"type": "Double",
 			"description": "The probability of fitness consequences for mutations at each site i"
-		},	
-		
+		}
 	]
 }

@@ -12,6 +12,7 @@
 		{
 			"text": "DNN Score",
 			"id": "score",
+			"raw": "_4",
 			"hail": "va.dann.score",
 			"type": "Double",
 			"description": "Deep neural network-based DANN score"

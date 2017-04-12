@@ -2,7 +2,7 @@
 	"text": "FUNSEQ2",
 	"id": "funseq2",
 	"hail": "va.funseq2",
-	"type": "snp",
+	"type": "variant",
 	"selectable": false,
 	"study_link": "https://www.ncbi.nlm.nih.gov/pubmed/25273974",
 	"study_title": "Fu Y, Liu Z, Lou S. “FunSeq2: a framework for prioritizing noncoding regulatory variants in cancer",
@@ -11,10 +11,10 @@
 	"nodes": [
 		{
 			"text": "FUNSEQ2 Score",
-			"id": "FUNSEQ2 Score",
+			"id": "score",
 			"hail": "va.funseq2.score",
 			"type": "Double",
 			"description": "FUNSEQ2 Score"
-		},
+		}
 	]
 }

@@ -11,7 +11,8 @@ with open('dbNSFP.json', 'rb') as f:
 
 hc = hail.HailContext(parquet_compression = 'snappy')
 
-(
+# load into keytable
+kt = (
 
 	hc
 	.import_keytable(
@@ -41,12 +42,24 @@ hc = hail.HailContext(parquet_compression = 'snappy')
 			var['raw'].strip('`'): var['id'] for var in dct['nodes']
 		}
 	)
-	.select(
-		['variant'] + [variable['id'] for variable in dct['nodes']]
-	)
-	.write(
-		'gs://annotationdb/dbNSFP/dbNSFP.kt',
-		overwrite = True
-	)
+    .annotate(
+        'dbNSFP = {{{0}}}'.format(','.join(['{0}: {0}'.format(x['id']) for x in dct['nodes']]))
+    )
+    .select(
+        [
+            'variant',
+            'dbNSFP'
+        ]
+    )
 
+)
+
+# create sites-only VDS
+(
+    hail
+    .VariantDataset.from_keytable(kt)
+    .write(
+        'gs://annotationdb/dbNSFP/dbNSFP.vds',
+        overwrite = True
+    )
 )

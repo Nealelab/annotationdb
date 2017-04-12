@@ -7,7 +7,7 @@
 	"study_link": "https://www.ncbi.nlm.nih.gov/pubmed/?term=17130149",
 	"study_title": "Visel A, Minovitsky S, Dubchak I, Pennacchio LA. VISTA Enhancer Browser-a database of tissue-specific human enhancers",
 	"study_data": "https://enhancer.lbl.gov/cgi-bin/imagedb3.pl?page_size=20000;show=1;search.result=yes;form=search;search.form=no;action=search;search.sequence=1",
-	"description": "Validated enhancers from VISTA. We select only positive human elements. Once downloaded, 2APR2017, the data were processed as follow: ```grep ">Human" vista_2APR2017.txt | grep "positive" | awk '{split($0,a,"|"); print a[2], a[5]}' > vista_2APR2017_processed.txt```. More info available here: https://enhancer.lbl.gov/aboutproject_n.html",
+	"description": "Validated enhancers from VISTA. We select only positive human elements. Once downloaded, 2APR2017, the data were processed as follow: 'grep \">Human\" vista_2APR2017.txt | grep \"positive\" | awk '{split($0,a,\"|\"); print a[2], a[5]}' > vista_2APR2017_processed.txt'. More info available here: https://enhancer.lbl.gov/aboutproject_n.html",
 	"nodes": [
 		{
 			"text": "Expression Pattern",
@@ -15,6 +15,6 @@
 			"hail": "va.vista.location",
 			"type": "Boolean",
 			"description": "VISTA Enhancers: Annotated expression patterns"
-		},
+		}
 	]
 }

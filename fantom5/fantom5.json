@@ -11,17 +11,17 @@
 	"nodes": [
 		{
 			"text": "FANTOM5 enhancers - robust",
-			"id": "robust enhancers",
+			"id": "robust_enhancers",
 			"hail": "va.fantom5.robust",
 			"type": "Boolean",
 			"description": "FANTOM5 enhancers - robust"
 		},
 		{
 			"text": "FANTOM5 enhancers - permissive",
-			"id": "permissive enhancers",
+			"id": "permissive_enhancers",
 			"hail": "va.fantom5.permissive",
 			"type": "Boolean",
 			"description": "FANTOM5 enhancers - permissive"
-		},
+		}
 	]
 }

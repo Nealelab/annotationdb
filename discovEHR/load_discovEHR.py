@@ -18,30 +18,18 @@ hc = hail.HailContext(log = '/home/labbott/hail.log', parquet_compression = 'sna
 		'gs://annotationdb/discovEHR/GHS_Freeze_50.L3DP10.pVCF.frq.vcf.bgz',
 		sites_only = True
 	)
-	.variants_keytable()
-	.flatten()
-	.annotate(
+	.annotate_variants_expr(
 		"""
-		AF = if (isDefined(`va.info.AF`))
-		         `va.info.AF`[0]
+		va.AF = if (isDefined(va.info.AF))
+			     va.info.AF[0]
 		     else
 		         0.001
 		"""
 	)
-	.rename(
-		{
-			'v': 'variant'
-		}
-	)
-	.select(
-		[
-			'variant',
-			'AF'
-		]
-	)
+	.split_multi()
+	.annotate_variants_expr('va = {discovEHR: {AF: va.AF}}')
 	.write(
-		'gs://annotationdb/discovEHR/discovEHR.kt',
+		'gs://annotationdb/discovEHR/discovEHR.vds',
 		overwrite = True
 	)
-
 )
