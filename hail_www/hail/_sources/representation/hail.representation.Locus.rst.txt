@@ -1,0 +1,33 @@
+Locus
+=========================
+
+.. currentmodule:: hail.representation
+
+.. autoclass:: Locus
+
+    
+    
+    .. rubric:: Attributes
+
+    .. autosummary::
+        :nosignatures:
+
+    
+        ~Locus.contig
+        ~Locus.position
+    
+    
+
+    
+    
+
+    .. rubric:: Methods
+
+    .. autosummary::
+        :nosignatures:
+
+    
+        ~Locus.__init__
+        ~Locus.parse
+    
+    

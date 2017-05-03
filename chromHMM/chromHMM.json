@@ -1,0 +1,1811 @@
+{
+	"text": "Epigenome Roadmap - ChromHMM",
+	"id": "chromHMM",
+	"hail": "va.chromHMM",
+	"type": "interval",
+	"selectable": false,
+	"study_link": "https://www.ncbi.nlm.nih.gov/pubmed/?term=25693563",
+	"study_title": "Roadmap Epigenomic Consortium. “Integrative analysis of 111 reference human epigenomes” Nature. 2015 Feb 19;518(7539):317-30",
+	"study_data": "https://personal.broadinstitute.org/meuleman/reg2map/HoneyBadger2-impute_release/",
+	"description": "Data were downloaded in R format. We included only intervals overlapping with DNaseI regions selected with -log10(p) >= 10. Information about the interpretation of each of the 25 states can be found here: http://egg2.wustl.edu/roadmap/web_portal/imputed.html#chr_imp. Name for each cell type can be found here: https://docs.google.com/spreadsheets/u/1/d/1yikGx4MsO9Ei36b64yOy9Vb6oPC5IBGlFbYEt-N6gOM/edit?usp=sharing#gid=15.",
+	"nodes": [
+		{
+			"text": "chromHMM - Enhancers",
+			"id": "chromHMM_enhancers",
+			"hail": "va.chromHMM.enhancers",
+			"type": "interval",
+			"selectable": true,
+			"description": "Enhancers states included: 10,11,12,13,14,15,16,17,18. Strong enhancers usually defined: 10,12,13,14,15. 0=no enhancer.",
+			"nodes": [
+				{
+					"text": "E001",
+					"id": "E001",
+					"hail": "va.chromHMM.enhancers.E001",
+					"type": "Int",
+					"description": "Enhancers - Cell type: E001" 
+				},
+				{
+					"text": "E002",
+					"id": "E002",
+					"hail": "va.chromHMM.enhancers.E002",
+					"type": "Int",
+					"description": "Enhancers - Cell type: E002" 
+				},
+				{
+					"text": "E003",
+					"id": "E003",
+					"hail": "va.chromHMM.enhancers.E003",
+					"type": "Int",
+					"description": "Enhancers - Cell type: E003" 
+				},
+				{
+					"text": "E004",
+					"id": "E004",
+					"hail": "va.chromHMM.enhancers.E004",
+					"type": "Int",
+					"description": "Enhancers - Cell type: E004" 
+				},
+				{
+					"text": "E005",
+					"id": "E005",
+					"hail": "va.chromHMM.enhancers.E005",
+					"type": "Int",
+					"description": "Enhancers - Cell type: E005" 
+				},
+				{
+					"text": "E006",
+					"id": "E006",
+					"hail": "va.chromHMM.enhancers.E006",
+					"type": "Int",
+					"description": "Enhancers - Cell type: E006" 
+				},
+				{
+					"text": "E007",
+					"id": "E007",
+					"hail": "va.chromHMM.enhancers.E007",
+					"type": "Int",
+					"description": "Enhancers - Cell type: E007" 
+				},
+				{
+					"text": "E008",
+					"id": "E008",
+					"hail": "va.chromHMM.enhancers.E008",
+					"type": "Int",
+					"description": "Enhancers - Cell type: E008" 
+				},
+				{
+					"text": "E009",
+					"id": "E009",
+					"hail": "va.chromHMM.enhancers.E009",
+					"type": "Int",
+					"description": "Enhancers - Cell type: E009" 
+				},
+				{
+					"text": "E010",
+					"id": "E010",
+					"hail": "va.chromHMM.enhancers.E010",
+					"type": "Int",
+					"description": "Enhancers - Cell type: E010" 
+				},
+				{
+					"text": "E011",
+					"id": "E011",
+					"hail": "va.chromHMM.enhancers.E011",
+					"type": "Int",
+					"description": "Enhancers - Cell type: E011" 
+				},
+				{
+					"text": "E012",
+					"id": "E012",
+					"hail": "va.chromHMM.enhancers.E012",
+					"type": "Int",
+					"description": "Enhancers - Cell type: E012" 
+				},
+				{
+					"text": "E013",
+					"id": "E013",
+					"hail": "va.chromHMM.enhancers.E013",
+					"type": "Int",
+					"description": "Enhancers - Cell type: E013" 
+				},
+				{
+					"text": "E014",
+					"id": "E014",
+					"hail": "va.chromHMM.enhancers.E014",
+					"type": "Int",
+					"description": "Enhancers - Cell type: E014" 
+				},
+				{
+					"text": "E015",
+					"id": "E015",
+					"hail": "va.chromHMM.enhancers.E015",
+					"type": "Int",
+					"description": "Enhancers - Cell type: E015" 
+				},
+				{
+					"text": "E016",
+					"id": "E016",
+					"hail": "va.chromHMM.enhancers.E016",
+					"type": "Int",
+					"description": "Enhancers - Cell type: E016" 
+				},
+				{
+					"text": "E017",
+					"id": "E017",
+					"hail": "va.chromHMM.enhancers.E017",
+					"type": "Int",
+					"description": "Enhancers - Cell type: E017" 
+				},
+				{
+					"text": "E018",
+					"id": "E018",
+					"hail": "va.chromHMM.enhancers.E018",
+					"type": "Int",
+					"description": "Enhancers - Cell type: E018" 
+				},
+				{
+					"text": "E019",
+					"id": "E019",
+					"hail": "va.chromHMM.enhancers.E019",
+					"type": "Int",
+					"description": "Enhancers - Cell type: E019" 
+				},
+				{
+					"text": "E020",
+					"id": "E020",
+					"hail": "va.chromHMM.enhancers.E020",
+					"type": "Int",
+					"description": "Enhancers - Cell type: E020" 
+				},
+				{
+					"text": "E021",
+					"id": "E021",
+					"hail": "va.chromHMM.enhancers.E021",
+					"type": "Int",
+					"description": "Enhancers - Cell type: E021" 
+				},
+				{
+					"text": "E022",
+					"id": "E022",
+					"hail": "va.chromHMM.enhancers.E022",
+					"type": "Int",
+					"description": "Enhancers - Cell type: E022" 
+				},
+				{
+					"text": "E023",
+					"id": "E023",
+					"hail": "va.chromHMM.enhancers.E023",
+					"type": "Int",
+					"description": "Enhancers - Cell type: E023" 
+				},
+				{
+					"text": "E024",
+					"id": "E024",
+					"hail": "va.chromHMM.enhancers.E024",
+					"type": "Int",
+					"description": "Enhancers - Cell type: E024" 
+				},
+				{
+					"text": "E025",
+					"id": "E025",
+					"hail": "va.chromHMM.enhancers.E025",
+					"type": "Int",
+					"description": "Enhancers - Cell type: E025" 
+				},
+				{
+					"text": "E026",
+					"id": "E026",
+					"hail": "va.chromHMM.enhancers.E026",
+					"type": "Int",
+					"description": "Enhancers - Cell type: E026" 
+				},
+				{
+					"text": "E027",
+					"id": "E027",
+					"hail": "va.chromHMM.enhancers.E027",
+					"type": "Int",
+					"description": "Enhancers - Cell type: E027" 
+				},
+				{
+					"text": "E028",
+					"id": "E028",
+					"hail": "va.chromHMM.enhancers.E028",
+					"type": "Int",
+					"description": "Enhancers - Cell type: E028" 
+				},
+				{
+					"text": "E029",
+					"id": "E029",
+					"hail": "va.chromHMM.enhancers.E029",
+					"type": "Int",
+					"description": "Enhancers - Cell type: E029" 
+				},
+				{
+					"text": "E030",
+					"id": "E030",
+					"hail": "va.chromHMM.enhancers.E030",
+					"type": "Int",
+					"description": "Enhancers - Cell type: E030" 
+				},
+				{
+					"text": "E031",
+					"id": "E031",
+					"hail": "va.chromHMM.enhancers.E031",
+					"type": "Int",
+					"description": "Enhancers - Cell type: E031" 
+				},
+				{
+					"text": "E032",
+					"id": "E032",
+					"hail": "va.chromHMM.enhancers.E032",
+					"type": "Int",
+					"description": "Enhancers - Cell type: E032" 
+				},
+				{
+					"text": "E033",
+					"id": "E033",
+					"hail": "va.chromHMM.enhancers.E033",
+					"type": "Int",
+					"description": "Enhancers - Cell type: E033" 
+				},
+				{
+					"text": "E034",
+					"id": "E034",
+					"hail": "va.chromHMM.enhancers.E034",
+					"type": "Int",
+					"description": "Enhancers - Cell type: E034" 
+				},
+				{
+					"text": "E035",
+					"id": "E035",
+					"hail": "va.chromHMM.enhancers.E035",
+					"type": "Int",
+					"description": "Enhancers - Cell type: E035" 
+				},
+				{
+					"text": "E036",
+					"id": "E036",
+					"hail": "va.chromHMM.enhancers.E036",
+					"type": "Int",
+					"description": "Enhancers - Cell type: E036" 
+				},
+				{
+					"text": "E037",
+					"id": "E037",
+					"hail": "va.chromHMM.enhancers.E037",
+					"type": "Int",
+					"description": "Enhancers - Cell type: E037" 
+				},
+				{
+					"text": "E038",
+					"id": "E038",
+					"hail": "va.chromHMM.enhancers.E038",
+					"type": "Int",
+					"description": "Enhancers - Cell type: E038" 
+				},
+				{
+					"text": "E039",
+					"id": "E039",
+					"hail": "va.chromHMM.enhancers.E039",
+					"type": "Int",
+					"description": "Enhancers - Cell type: E039" 
+				},
+				{
+					"text": "E040",
+					"id": "E040",
+					"hail": "va.chromHMM.enhancers.E040",
+					"type": "Int",
+					"description": "Enhancers - Cell type: E040" 
+				},
+				{
+					"text": "E041",
+					"id": "E041",
+					"hail": "va.chromHMM.enhancers.E041",
+					"type": "Int",
+					"description": "Enhancers - Cell type: E041" 
+				},
+				{
+					"text": "E042",
+					"id": "E042",
+					"hail": "va.chromHMM.enhancers.E042",
+					"type": "Int",
+					"description": "Enhancers - Cell type: E042" 
+				},
+				{
+					"text": "E043",
+					"id": "E043",
+					"hail": "va.chromHMM.enhancers.E043",
+					"type": "Int",
+					"description": "Enhancers - Cell type: E043" 
+				},
+				{
+					"text": "E044",
+					"id": "E044",
+					"hail": "va.chromHMM.enhancers.E044",
+					"type": "Int",
+					"description": "Enhancers - Cell type: E044" 
+				},
+				{
+					"text": "E045",
+					"id": "E045",
+					"hail": "va.chromHMM.enhancers.E045",
+					"type": "Int",
+					"description": "Enhancers - Cell type: E045" 
+				},
+				{
+					"text": "E046",
+					"id": "E046",
+					"hail": "va.chromHMM.enhancers.E046",
+					"type": "Int",
+					"description": "Enhancers - Cell type: E046" 
+				},
+				{
+					"text": "E047",
+					"id": "E047",
+					"hail": "va.chromHMM.enhancers.E047",
+					"type": "Int",
+					"description": "Enhancers - Cell type: E047" 
+				},
+				{
+					"text": "E048",
+					"id": "E048",
+					"hail": "va.chromHMM.enhancers.E048",
+					"type": "Int",
+					"description": "Enhancers - Cell type: E048" 
+				},
+				{
+					"text": "E049",
+					"id": "E049",
+					"hail": "va.chromHMM.enhancers.E049",
+					"type": "Int",
+					"description": "Enhancers - Cell type: E049" 
+				},
+				{
+					"text": "E050",
+					"id": "E050",
+					"hail": "va.chromHMM.enhancers.E050",
+					"type": "Int",
+					"description": "Enhancers - Cell type: E050" 
+				},
+				{
+					"text": "E051",
+					"id": "E051",
+					"hail": "va.chromHMM.enhancers.E051",
+					"type": "Int",
+					"description": "Enhancers - Cell type: E051" 
+				},
+				{
+					"text": "E052",
+					"id": "E052",
+					"hail": "va.chromHMM.enhancers.E052",
+					"type": "Int",
+					"description": "Enhancers - Cell type: E052" 
+				},
+				{
+					"text": "E053",
+					"id": "E053",
+					"hail": "va.chromHMM.enhancers.E053",
+					"type": "Int",
+					"description": "Enhancers - Cell type: E053" 
+				},
+				{
+					"text": "E054",
+					"id": "E054",
+					"hail": "va.chromHMM.enhancers.E054",
+					"type": "Int",
+					"description": "Enhancers - Cell type: E054" 
+				},
+				{
+					"text": "E055",
+					"id": "E055",
+					"hail": "va.chromHMM.enhancers.E055",
+					"type": "Int",
+					"description": "Enhancers - Cell type: E055" 
+				},
+				{
+					"text": "E056",
+					"id": "E056",
+					"hail": "va.chromHMM.enhancers.E056",
+					"type": "Int",
+					"description": "Enhancers - Cell type: E056" 
+				},
+				{
+					"text": "E057",
+					"id": "E057",
+					"hail": "va.chromHMM.enhancers.E057",
+					"type": "Int",
+					"description": "Enhancers - Cell type: E057" 
+				},
+				{
+					"text": "E058",
+					"id": "E058",
+					"hail": "va.chromHMM.enhancers.E058",
+					"type": "Int",
+					"description": "Enhancers - Cell type: E058" 
+				},
+				{
+					"text": "E059",
+					"id": "E059",
+					"hail": "va.chromHMM.enhancers.E059",
+					"type": "Int",
+					"description": "Enhancers - Cell type: E059" 
+				},
+				{
+					"text": "E061",
+					"id": "E061",
+					"hail": "va.chromHMM.enhancers.E061",
+					"type": "Int",
+					"description": "Enhancers - Cell type: E061" 
+				},
+				{
+					"text": "E062",
+					"id": "E062",
+					"hail": "va.chromHMM.enhancers.E062",
+					"type": "Int",
+					"description": "Enhancers - Cell type: E062" 
+				},
+				{
+					"text": "E063",
+					"id": "E063",
+					"hail": "va.chromHMM.enhancers.E063",
+					"type": "Int",
+					"description": "Enhancers - Cell type: E063" 
+				},
+				{
+					"text": "E065",
+					"id": "E065",
+					"hail": "va.chromHMM.enhancers.E065",
+					"type": "Int",
+					"description": "Enhancers - Cell type: E065" 
+				},
+				{
+					"text": "E066",
+					"id": "E066",
+					"hail": "va.chromHMM.enhancers.E066",
+					"type": "Int",
+					"description": "Enhancers - Cell type: E066" 
+				},
+				{
+					"text": "E067",
+					"id": "E067",
+					"hail": "va.chromHMM.enhancers.E067",
+					"type": "Int",
+					"description": "Enhancers - Cell type: E067" 
+				},
+				{
+					"text": "E068",
+					"id": "E068",
+					"hail": "va.chromHMM.enhancers.E068",
+					"type": "Int",
+					"description": "Enhancers - Cell type: E068" 
+				},
+				{
+					"text": "E069",
+					"id": "E069",
+					"hail": "va.chromHMM.enhancers.E069",
+					"type": "Int",
+					"description": "Enhancers - Cell type: E069" 
+				},
+				{
+					"text": "E070",
+					"id": "E070",
+					"hail": "va.chromHMM.enhancers.E070",
+					"type": "Int",
+					"description": "Enhancers - Cell type: E070" 
+				},
+				{
+					"text": "E071",
+					"id": "E071",
+					"hail": "va.chromHMM.enhancers.E071",
+					"type": "Int",
+					"description": "Enhancers - Cell type: E071" 
+				},
+				{
+					"text": "E072",
+					"id": "E072",
+					"hail": "va.chromHMM.enhancers.E072",
+					"type": "Int",
+					"description": "Enhancers - Cell type: E072" 
+				},
+				{
+					"text": "E073",
+					"id": "E073",
+					"hail": "va.chromHMM.enhancers.E073",
+					"type": "Int",
+					"description": "Enhancers - Cell type: E073" 
+				},
+				{
+					"text": "E074",
+					"id": "E074",
+					"hail": "va.chromHMM.enhancers.E074",
+					"type": "Int",
+					"description": "Enhancers - Cell type: E074" 
+				},
+				{
+					"text": "E075",
+					"id": "E075",
+					"hail": "va.chromHMM.enhancers.E075",
+					"type": "Int",
+					"description": "Enhancers - Cell type: E075" 
+				},
+				{
+					"text": "E076",
+					"id": "E076",
+					"hail": "va.chromHMM.enhancers.E076",
+					"type": "Int",
+					"description": "Enhancers - Cell type: E076" 
+				},
+				{
+					"text": "E077",
+					"id": "E077",
+					"hail": "va.chromHMM.enhancers.E077",
+					"type": "Int",
+					"description": "Enhancers - Cell type: E077" 
+				},
+				{
+					"text": "E078",
+					"id": "E078",
+					"hail": "va.chromHMM.enhancers.E078",
+					"type": "Int",
+					"description": "Enhancers - Cell type: E078" 
+				},
+				{
+					"text": "E079",
+					"id": "E079",
+					"hail": "va.chromHMM.enhancers.E079",
+					"type": "Int",
+					"description": "Enhancers - Cell type: E079" 
+				},
+				{
+					"text": "E080",
+					"id": "E080",
+					"hail": "va.chromHMM.enhancers.E080",
+					"type": "Int",
+					"description": "Enhancers - Cell type: E080" 
+				},
+				{
+					"text": "E081",
+					"id": "E081",
+					"hail": "va.chromHMM.enhancers.E081",
+					"type": "Int",
+					"description": "Enhancers - Cell type: E081" 
+				},
+				{
+					"text": "E082",
+					"id": "E082",
+					"hail": "va.chromHMM.enhancers.E082",
+					"type": "Int",
+					"description": "Enhancers - Cell type: E082" 
+				},
+				{
+					"text": "E083",
+					"id": "E083",
+					"hail": "va.chromHMM.enhancers.E083",
+					"type": "Int",
+					"description": "Enhancers - Cell type: E083" 
+				},
+				{
+					"text": "E084",
+					"id": "E084",
+					"hail": "va.chromHMM.enhancers.E084",
+					"type": "Int",
+					"description": "Enhancers - Cell type: E084" 
+				},
+				{
+					"text": "E085",
+					"id": "E085",
+					"hail": "va.chromHMM.enhancers.E085",
+					"type": "Int",
+					"description": "Enhancers - Cell type: E085" 
+				},
+				{
+					"text": "E086",
+					"id": "E086",
+					"hail": "va.chromHMM.enhancers.E086",
+					"type": "Int",
+					"description": "Enhancers - Cell type: E086" 
+				},
+				{
+					"text": "E087",
+					"id": "E087",
+					"hail": "va.chromHMM.enhancers.E087",
+					"type": "Int",
+					"description": "Enhancers - Cell type: E087" 
+				},
+				{
+					"text": "E088",
+					"id": "E088",
+					"hail": "va.chromHMM.enhancers.E088",
+					"type": "Int",
+					"description": "Enhancers - Cell type: E088" 
+				},
+				{
+					"text": "E089",
+					"id": "E089",
+					"hail": "va.chromHMM.enhancers.E089",
+					"type": "Int",
+					"description": "Enhancers - Cell type: E089" 
+				},
+				{
+					"text": "E090",
+					"id": "E090",
+					"hail": "va.chromHMM.enhancers.E090",
+					"type": "Int",
+					"description": "Enhancers - Cell type: E090" 
+				},
+				{
+					"text": "E091",
+					"id": "E091",
+					"hail": "va.chromHMM.enhancers.E091",
+					"type": "Int",
+					"description": "Enhancers - Cell type: E091" 
+				},
+				{
+					"text": "E092",
+					"id": "E092",
+					"hail": "va.chromHMM.enhancers.E092",
+					"type": "Int",
+					"description": "Enhancers - Cell type: E092" 
+				},
+				{
+					"text": "E093",
+					"id": "E093",
+					"hail": "va.chromHMM.enhancers.E093",
+					"type": "Int",
+					"description": "Enhancers - Cell type: E093" 
+				},
+				{
+					"text": "E094",
+					"id": "E094",
+					"hail": "va.chromHMM.enhancers.E094",
+					"type": "Int",
+					"description": "Enhancers - Cell type: E094" 
+				},
+				{
+					"text": "E095",
+					"id": "E095",
+					"hail": "va.chromHMM.enhancers.E095",
+					"type": "Int",
+					"description": "Enhancers - Cell type: E095" 
+				},
+				{
+					"text": "E096",
+					"id": "E096",
+					"hail": "va.chromHMM.enhancers.E096",
+					"type": "Int",
+					"description": "Enhancers - Cell type: E096" 
+				},
+				{
+					"text": "E097",
+					"id": "E097",
+					"hail": "va.chromHMM.enhancers.E097",
+					"type": "Int",
+					"description": "Enhancers - Cell type: E097" 
+				},
+				{
+					"text": "E098",
+					"id": "E098",
+					"hail": "va.chromHMM.enhancers.E098",
+					"type": "Int",
+					"description": "Enhancers - Cell type: E098" 
+				},
+				{
+					"text": "E099",
+					"id": "E099",
+					"hail": "va.chromHMM.enhancers.E099",
+					"type": "Int",
+					"description": "Enhancers - Cell type: E099" 
+				},
+				{
+					"text": "E100",
+					"id": "E100",
+					"hail": "va.chromHMM.enhancers.E100",
+					"type": "Int",
+					"description": "Enhancers - Cell type: E100" 
+				},
+				{
+					"text": "E101",
+					"id": "E101",
+					"hail": "va.chromHMM.enhancers.E101",
+					"type": "Int",
+					"description": "Enhancers - Cell type: E101" 
+				},
+				{
+					"text": "E102",
+					"id": "E102",
+					"hail": "va.chromHMM.enhancers.E102",
+					"type": "Int",
+					"description": "Enhancers - Cell type: E102" 
+				},
+				{
+					"text": "E103",
+					"id": "E103",
+					"hail": "va.chromHMM.enhancers.E103",
+					"type": "Int",
+					"description": "Enhancers - Cell type: E103" 
+				},
+				{
+					"text": "E104",
+					"id": "E104",
+					"hail": "va.chromHMM.enhancers.E104",
+					"type": "Int",
+					"description": "Enhancers - Cell type: E104" 
+				},
+				{
+					"text": "E105",
+					"id": "E105",
+					"hail": "va.chromHMM.enhancers.E105",
+					"type": "Int",
+					"description": "Enhancers - Cell type: E105" 
+				},
+				{
+					"text": "E106",
+					"id": "E106",
+					"hail": "va.chromHMM.enhancers.E106",
+					"type": "Int",
+					"description": "Enhancers - Cell type: E106" 
+				},
+				{
+					"text": "E107",
+					"id": "E107",
+					"hail": "va.chromHMM.enhancers.E107",
+					"type": "Int",
+					"description": "Enhancers - Cell type: E107" 
+				},
+				{
+					"text": "E108",
+					"id": "E108",
+					"hail": "va.chromHMM.enhancers.E108",
+					"type": "Int",
+					"description": "Enhancers - Cell type: E108" 
+				},
+				{
+					"text": "E109",
+					"id": "E109",
+					"hail": "va.chromHMM.enhancers.E109",
+					"type": "Int",
+					"description": "Enhancers - Cell type: E109" 
+				},
+				{
+					"text": "E110",
+					"id": "E110",
+					"hail": "va.chromHMM.enhancers.E110",
+					"type": "Int",
+					"description": "Enhancers - Cell type: E110" 
+				},
+				{
+					"text": "E111",
+					"id": "E111",
+					"hail": "va.chromHMM.enhancers.E111",
+					"type": "Int",
+					"description": "Enhancers - Cell type: E111" 
+				},
+				{
+					"text": "E112",
+					"id": "E112",
+					"hail": "va.chromHMM.enhancers.E112",
+					"type": "Int",
+					"description": "Enhancers - Cell type: E112" 
+				},
+				{
+					"text": "E113",
+					"id": "E113",
+					"hail": "va.chromHMM.enhancers.E113",
+					"type": "Int",
+					"description": "Enhancers - Cell type: E113" 
+				},
+				{
+					"text": "E114",
+					"id": "E114",
+					"hail": "va.chromHMM.enhancers.E114",
+					"type": "Int",
+					"description": "Enhancers - Cell type: E114" 
+				},
+				{
+					"text": "E115",
+					"id": "E115",
+					"hail": "va.chromHMM.enhancers.E115",
+					"type": "Int",
+					"description": "Enhancers - Cell type: E115" 
+				},
+				{
+					"text": "E116",
+					"id": "E116",
+					"hail": "va.chromHMM.enhancers.E116",
+					"type": "Int",
+					"description": "Enhancers - Cell type: E116" 
+				},
+				{
+					"text": "E117",
+					"id": "E117",
+					"hail": "va.chromHMM.enhancers.E117",
+					"type": "Int",
+					"description": "Enhancers - Cell type: E117" 
+				},
+				{
+					"text": "E118",
+					"id": "E118",
+					"hail": "va.chromHMM.enhancers.E118",
+					"type": "Int",
+					"description": "Enhancers - Cell type: E118" 
+				},
+				{
+					"text": "E119",
+					"id": "E119",
+					"hail": "va.chromHMM.enhancers.E119",
+					"type": "Int",
+					"description": "Enhancers - Cell type: E119" 
+				},
+				{
+					"text": "E120",
+					"id": "E120",
+					"hail": "va.chromHMM.enhancers.E120",
+					"type": "Int",
+					"description": "Enhancers - Cell type: E120" 
+				},
+				{
+					"text": "E121",
+					"id": "E121",
+					"hail": "va.chromHMM.enhancers.E121",
+					"type": "Int",
+					"description": "Enhancers - Cell type: E121" 
+				},
+				{
+					"text": "E122",
+					"id": "E122",
+					"hail": "va.chromHMM.enhancers.E122",
+					"type": "Int",
+					"description": "Enhancers - Cell type: E122" 
+				},
+				{
+					"text": "E123",
+					"id": "E123",
+					"hail": "va.chromHMM.enhancers.E123",
+					"type": "Int",
+					"description": "Enhancers - Cell type: E123" 
+				},
+				{
+					"text": "E124",
+					"id": "E124",
+					"hail": "va.chromHMM.enhancers.E124",
+					"type": "Int",
+					"description": "Enhancers - Cell type: E124" 
+				},
+				{
+					"text": "E125",
+					"id": "E125",
+					"hail": "va.chromHMM.enhancers.E125",
+					"type": "Int",
+					"description": "Enhancers - Cell type: E125" 
+				},
+				{
+					"text": "E126",
+					"id": "E126",
+					"hail": "va.chromHMM.enhancers.E126",
+					"type": "Int",
+					"description": "Enhancers - Cell type: E126" 
+				},
+				{
+					"text": "E127",
+					"id": "E127",
+					"hail": "va.chromHMM.enhancers.E127",
+					"type": "Int",
+					"description": "Enhancers - Cell type: E127" 
+				},
+				{
+					"text": "E128",
+					"id": "E128",
+					"hail": "va.chromHMM.enhancers.E128",
+					"type": "Int",
+					"description": "Enhancers - Cell type: E128" 
+				},
+				{
+					"text": "E129",
+					"id": "E129",
+					"hail": "va.chromHMM.enhancers.E129",
+					"type": "Int",
+					"description": "Enhancers - Cell type: E129" 
+				} 
+			]
+		},
+		{
+			"text": "chromHMM - Promoters",
+			"id": "chromHMM_promoters",
+			"hail": "va.chromHMM.promoters",
+			"type": "interval",
+			"selectable": true,
+			"description": "Promoters + TSS states included: 1,2,3,4,22,23. Strong promoters + TSS usually defined: 1,2,3,4. 1=TSS, 0=no promoters, TSS.",
+			"nodes": [
+				{
+					"text": "E001",
+					"id": "E001",
+					"hail": "va.chromHMM.promoters.E001",
+					"type": "Int",
+					"description": "Promoters - Cell type: E001" 
+				},
+				{
+					"text": "E002",
+					"id": "E002",
+					"hail": "va.chromHMM.promoters.E002",
+					"type": "Int",
+					"description": "Promoters - Cell type: E002" 
+				},
+				{
+					"text": "E003",
+					"id": "E003",
+					"hail": "va.chromHMM.promoters.E003",
+					"type": "Int",
+					"description": "Promoters - Cell type: E003" 
+				},
+				{
+					"text": "E004",
+					"id": "E004",
+					"hail": "va.chromHMM.promoters.E004",
+					"type": "Int",
+					"description": "Promoters - Cell type: E004" 
+				},
+				{
+					"text": "E005",
+					"id": "E005",
+					"hail": "va.chromHMM.promoters.E005",
+					"type": "Int",
+					"description": "Promoters - Cell type: E005" 
+				},
+				{
+					"text": "E006",
+					"id": "E006",
+					"hail": "va.chromHMM.promoters.E006",
+					"type": "Int",
+					"description": "Promoters - Cell type: E006" 
+				},
+				{
+					"text": "E007",
+					"id": "E007",
+					"hail": "va.chromHMM.promoters.E007",
+					"type": "Int",
+					"description": "Promoters - Cell type: E007" 
+				},
+				{
+					"text": "E008",
+					"id": "E008",
+					"hail": "va.chromHMM.promoters.E008",
+					"type": "Int",
+					"description": "Promoters - Cell type: E008" 
+				},
+				{
+					"text": "E009",
+					"id": "E009",
+					"hail": "va.chromHMM.promoters.E009",
+					"type": "Int",
+					"description": "Promoters - Cell type: E009" 
+				},
+				{
+					"text": "E010",
+					"id": "E010",
+					"hail": "va.chromHMM.promoters.E010",
+					"type": "Int",
+					"description": "Promoters - Cell type: E010" 
+				},
+				{
+					"text": "E011",
+					"id": "E011",
+					"hail": "va.chromHMM.promoters.E011",
+					"type": "Int",
+					"description": "Promoters - Cell type: E011" 
+				},
+				{
+					"text": "E012",
+					"id": "E012",
+					"hail": "va.chromHMM.promoters.E012",
+					"type": "Int",
+					"description": "Promoters - Cell type: E012" 
+				},
+				{
+					"text": "E013",
+					"id": "E013",
+					"hail": "va.chromHMM.promoters.E013",
+					"type": "Int",
+					"description": "Promoters - Cell type: E013" 
+				},
+				{
+					"text": "E014",
+					"id": "E014",
+					"hail": "va.chromHMM.promoters.E014",
+					"type": "Int",
+					"description": "Promoters - Cell type: E014" 
+				},
+				{
+					"text": "E015",
+					"id": "E015",
+					"hail": "va.chromHMM.promoters.E015",
+					"type": "Int",
+					"description": "Promoters - Cell type: E015" 
+				},
+				{
+					"text": "E016",
+					"id": "E016",
+					"hail": "va.chromHMM.promoters.E016",
+					"type": "Int",
+					"description": "Promoters - Cell type: E016" 
+				},
+				{
+					"text": "E017",
+					"id": "E017",
+					"hail": "va.chromHMM.promoters.E017",
+					"type": "Int",
+					"description": "Promoters - Cell type: E017" 
+				},
+				{
+					"text": "E018",
+					"id": "E018",
+					"hail": "va.chromHMM.promoters.E018",
+					"type": "Int",
+					"description": "Promoters - Cell type: E018" 
+				},
+				{
+					"text": "E019",
+					"id": "E019",
+					"hail": "va.chromHMM.promoters.E019",
+					"type": "Int",
+					"description": "Promoters - Cell type: E019" 
+				},
+				{
+					"text": "E020",
+					"id": "E020",
+					"hail": "va.chromHMM.promoters.E020",
+					"type": "Int",
+					"description": "Promoters - Cell type: E020" 
+				},
+				{
+					"text": "E021",
+					"id": "E021",
+					"hail": "va.chromHMM.promoters.E021",
+					"type": "Int",
+					"description": "Promoters - Cell type: E021" 
+				},
+				{
+					"text": "E022",
+					"id": "E022",
+					"hail": "va.chromHMM.promoters.E022",
+					"type": "Int",
+					"description": "Promoters - Cell type: E022" 
+				},
+				{
+					"text": "E023",
+					"id": "E023",
+					"hail": "va.chromHMM.promoters.E023",
+					"type": "Int",
+					"description": "Promoters - Cell type: E023" 
+				},
+				{
+					"text": "E024",
+					"id": "E024",
+					"hail": "va.chromHMM.promoters.E024",
+					"type": "Int",
+					"description": "Promoters - Cell type: E024" 
+				},
+				{
+					"text": "E025",
+					"id": "E025",
+					"hail": "va.chromHMM.promoters.E025",
+					"type": "Int",
+					"description": "Promoters - Cell type: E025" 
+				},
+				{
+					"text": "E026",
+					"id": "E026",
+					"hail": "va.chromHMM.promoters.E026",
+					"type": "Int",
+					"description": "Promoters - Cell type: E026" 
+				},
+				{
+					"text": "E027",
+					"id": "E027",
+					"hail": "va.chromHMM.promoters.E027",
+					"type": "Int",
+					"description": "Promoters - Cell type: E027" 
+				},
+				{
+					"text": "E028",
+					"id": "E028",
+					"hail": "va.chromHMM.promoters.E028",
+					"type": "Int",
+					"description": "Promoters - Cell type: E028" 
+				},
+				{
+					"text": "E029",
+					"id": "E029",
+					"hail": "va.chromHMM.promoters.E029",
+					"type": "Int",
+					"description": "Promoters - Cell type: E029" 
+				},
+				{
+					"text": "E030",
+					"id": "E030",
+					"hail": "va.chromHMM.promoters.E030",
+					"type": "Int",
+					"description": "Promoters - Cell type: E030" 
+				},
+				{
+					"text": "E031",
+					"id": "E031",
+					"hail": "va.chromHMM.promoters.E031",
+					"type": "Int",
+					"description": "Promoters - Cell type: E031" 
+				},
+				{
+					"text": "E032",
+					"id": "E032",
+					"hail": "va.chromHMM.promoters.E032",
+					"type": "Int",
+					"description": "Promoters - Cell type: E032" 
+				},
+				{
+					"text": "E033",
+					"id": "E033",
+					"hail": "va.chromHMM.promoters.E033",
+					"type": "Int",
+					"description": "Promoters - Cell type: E033" 
+				},
+				{
+					"text": "E034",
+					"id": "E034",
+					"hail": "va.chromHMM.promoters.E034",
+					"type": "Int",
+					"description": "Promoters - Cell type: E034" 
+				},
+				{
+					"text": "E035",
+					"id": "E035",
+					"hail": "va.chromHMM.promoters.E035",
+					"type": "Int",
+					"description": "Promoters - Cell type: E035" 
+				},
+				{
+					"text": "E036",
+					"id": "E036",
+					"hail": "va.chromHMM.promoters.E036",
+					"type": "Int",
+					"description": "Promoters - Cell type: E036" 
+				},
+				{
+					"text": "E037",
+					"id": "E037",
+					"hail": "va.chromHMM.promoters.E037",
+					"type": "Int",
+					"description": "Promoters - Cell type: E037" 
+				},
+				{
+					"text": "E038",
+					"id": "E038",
+					"hail": "va.chromHMM.promoters.E038",
+					"type": "Int",
+					"description": "Promoters - Cell type: E038" 
+				},
+				{
+					"text": "E039",
+					"id": "E039",
+					"hail": "va.chromHMM.promoters.E039",
+					"type": "Int",
+					"description": "Promoters - Cell type: E039" 
+				},
+				{
+					"text": "E040",
+					"id": "E040",
+					"hail": "va.chromHMM.promoters.E040",
+					"type": "Int",
+					"description": "Promoters - Cell type: E040" 
+				},
+				{
+					"text": "E041",
+					"id": "E041",
+					"hail": "va.chromHMM.promoters.E041",
+					"type": "Int",
+					"description": "Promoters - Cell type: E041" 
+				},
+				{
+					"text": "E042",
+					"id": "E042",
+					"hail": "va.chromHMM.promoters.E042",
+					"type": "Int",
+					"description": "Promoters - Cell type: E042" 
+				},
+				{
+					"text": "E043",
+					"id": "E043",
+					"hail": "va.chromHMM.promoters.E043",
+					"type": "Int",
+					"description": "Promoters - Cell type: E043" 
+				},
+				{
+					"text": "E044",
+					"id": "E044",
+					"hail": "va.chromHMM.promoters.E044",
+					"type": "Int",
+					"description": "Promoters - Cell type: E044" 
+				},
+				{
+					"text": "E045",
+					"id": "E045",
+					"hail": "va.chromHMM.promoters.E045",
+					"type": "Int",
+					"description": "Promoters - Cell type: E045" 
+				},
+				{
+					"text": "E046",
+					"id": "E046",
+					"hail": "va.chromHMM.promoters.E046",
+					"type": "Int",
+					"description": "Promoters - Cell type: E046" 
+				},
+				{
+					"text": "E047",
+					"id": "E047",
+					"hail": "va.chromHMM.promoters.E047",
+					"type": "Int",
+					"description": "Promoters - Cell type: E047" 
+				},
+				{
+					"text": "E048",
+					"id": "E048",
+					"hail": "va.chromHMM.promoters.E048",
+					"type": "Int",
+					"description": "Promoters - Cell type: E048" 
+				},
+				{
+					"text": "E049",
+					"id": "E049",
+					"hail": "va.chromHMM.promoters.E049",
+					"type": "Int",
+					"description": "Promoters - Cell type: E049" 
+				},
+				{
+					"text": "E050",
+					"id": "E050",
+					"hail": "va.chromHMM.promoters.E050",
+					"type": "Int",
+					"description": "Promoters - Cell type: E050" 
+				},
+				{
+					"text": "E051",
+					"id": "E051",
+					"hail": "va.chromHMM.promoters.E051",
+					"type": "Int",
+					"description": "Promoters - Cell type: E051" 
+				},
+				{
+					"text": "E052",
+					"id": "E052",
+					"hail": "va.chromHMM.promoters.E052",
+					"type": "Int",
+					"description": "Promoters - Cell type: E052" 
+				},
+				{
+					"text": "E053",
+					"id": "E053",
+					"hail": "va.chromHMM.promoters.E053",
+					"type": "Int",
+					"description": "Promoters - Cell type: E053" 
+				},
+				{
+					"text": "E054",
+					"id": "E054",
+					"hail": "va.chromHMM.promoters.E054",
+					"type": "Int",
+					"description": "Promoters - Cell type: E054" 
+				},
+				{
+					"text": "E055",
+					"id": "E055",
+					"hail": "va.chromHMM.promoters.E055",
+					"type": "Int",
+					"description": "Promoters - Cell type: E055" 
+				},
+				{
+					"text": "E056",
+					"id": "E056",
+					"hail": "va.chromHMM.promoters.E056",
+					"type": "Int",
+					"description": "Promoters - Cell type: E056" 
+				},
+				{
+					"text": "E057",
+					"id": "E057",
+					"hail": "va.chromHMM.promoters.E057",
+					"type": "Int",
+					"description": "Promoters - Cell type: E057" 
+				},
+				{
+					"text": "E058",
+					"id": "E058",
+					"hail": "va.chromHMM.promoters.E058",
+					"type": "Int",
+					"description": "Promoters - Cell type: E058" 
+				},
+				{
+					"text": "E059",
+					"id": "E059",
+					"hail": "va.chromHMM.promoters.E059",
+					"type": "Int",
+					"description": "Promoters - Cell type: E059" 
+				},
+				{
+					"text": "E061",
+					"id": "E061",
+					"hail": "va.chromHMM.promoters.E061",
+					"type": "Int",
+					"description": "Promoters - Cell type: E061" 
+				},
+				{
+					"text": "E062",
+					"id": "E062",
+					"hail": "va.chromHMM.promoters.E062",
+					"type": "Int",
+					"description": "Promoters - Cell type: E062" 
+				},
+				{
+					"text": "E063",
+					"id": "E063",
+					"hail": "va.chromHMM.promoters.E063",
+					"type": "Int",
+					"description": "Promoters - Cell type: E063" 
+				},
+				{
+					"text": "E065",
+					"id": "E065",
+					"hail": "va.chromHMM.promoters.E065",
+					"type": "Int",
+					"description": "Promoters - Cell type: E065" 
+				},
+				{
+					"text": "E066",
+					"id": "E066",
+					"hail": "va.chromHMM.promoters.E066",
+					"type": "Int",
+					"description": "Promoters - Cell type: E066" 
+				},
+				{
+					"text": "E067",
+					"id": "E067",
+					"hail": "va.chromHMM.promoters.E067",
+					"type": "Int",
+					"description": "Promoters - Cell type: E067" 
+				},
+				{
+					"text": "E068",
+					"id": "E068",
+					"hail": "va.chromHMM.promoters.E068",
+					"type": "Int",
+					"description": "Promoters - Cell type: E068" 
+				},
+				{
+					"text": "E069",
+					"id": "E069",
+					"hail": "va.chromHMM.promoters.E069",
+					"type": "Int",
+					"description": "Promoters - Cell type: E069" 
+				},
+				{
+					"text": "E070",
+					"id": "E070",
+					"hail": "va.chromHMM.promoters.E070",
+					"type": "Int",
+					"description": "Promoters - Cell type: E070" 
+				},
+				{
+					"text": "E071",
+					"id": "E071",
+					"hail": "va.chromHMM.promoters.E071",
+					"type": "Int",
+					"description": "Promoters - Cell type: E071" 
+				},
+				{
+					"text": "E072",
+					"id": "E072",
+					"hail": "va.chromHMM.promoters.E072",
+					"type": "Int",
+					"description": "Promoters - Cell type: E072" 
+				},
+				{
+					"text": "E073",
+					"id": "E073",
+					"hail": "va.chromHMM.promoters.E073",
+					"type": "Int",
+					"description": "Promoters - Cell type: E073" 
+				},
+				{
+					"text": "E074",
+					"id": "E074",
+					"hail": "va.chromHMM.promoters.E074",
+					"type": "Int",
+					"description": "Promoters - Cell type: E074" 
+				},
+				{
+					"text": "E075",
+					"id": "E075",
+					"hail": "va.chromHMM.promoters.E075",
+					"type": "Int",
+					"description": "Promoters - Cell type: E075" 
+				},
+				{
+					"text": "E076",
+					"id": "E076",
+					"hail": "va.chromHMM.promoters.E076",
+					"type": "Int",
+					"description": "Promoters - Cell type: E076" 
+				},
+				{
+					"text": "E077",
+					"id": "E077",
+					"hail": "va.chromHMM.promoters.E077",
+					"type": "Int",
+					"description": "Promoters - Cell type: E077" 
+				},
+				{
+					"text": "E078",
+					"id": "E078",
+					"hail": "va.chromHMM.promoters.E078",
+					"type": "Int",
+					"description": "Promoters - Cell type: E078" 
+				},
+				{
+					"text": "E079",
+					"id": "E079",
+					"hail": "va.chromHMM.promoters.E079",
+					"type": "Int",
+					"description": "Promoters - Cell type: E079" 
+				},
+				{
+					"text": "E080",
+					"id": "E080",
+					"hail": "va.chromHMM.promoters.E080",
+					"type": "Int",
+					"description": "Promoters - Cell type: E080" 
+				},
+				{
+					"text": "E081",
+					"id": "E081",
+					"hail": "va.chromHMM.promoters.E081",
+					"type": "Int",
+					"description": "Promoters - Cell type: E081" 
+				},
+				{
+					"text": "E082",
+					"id": "E082",
+					"hail": "va.chromHMM.promoters.E082",
+					"type": "Int",
+					"description": "Promoters - Cell type: E082" 
+				},
+				{
+					"text": "E083",
+					"id": "E083",
+					"hail": "va.chromHMM.promoters.E083",
+					"type": "Int",
+					"description": "Promoters - Cell type: E083" 
+				},
+				{
+					"text": "E084",
+					"id": "E084",
+					"hail": "va.chromHMM.promoters.E084",
+					"type": "Int",
+					"description": "Promoters - Cell type: E084" 
+				},
+				{
+					"text": "E085",
+					"id": "E085",
+					"hail": "va.chromHMM.promoters.E085",
+					"type": "Int",
+					"description": "Promoters - Cell type: E085" 
+				},
+				{
+					"text": "E086",
+					"id": "E086",
+					"hail": "va.chromHMM.promoters.E086",
+					"type": "Int",
+					"description": "Promoters - Cell type: E086" 
+				},
+				{
+					"text": "E087",
+					"id": "E087",
+					"hail": "va.chromHMM.promoters.E087",
+					"type": "Int",
+					"description": "Promoters - Cell type: E087" 
+				},
+				{
+					"text": "E088",
+					"id": "E088",
+					"hail": "va.chromHMM.promoters.E088",
+					"type": "Int",
+					"description": "Promoters - Cell type: E088" 
+				},
+				{
+					"text": "E089",
+					"id": "E089",
+					"hail": "va.chromHMM.promoters.E089",
+					"type": "Int",
+					"description": "Promoters - Cell type: E089" 
+				},
+				{
+					"text": "E090",
+					"id": "E090",
+					"hail": "va.chromHMM.promoters.E090",
+					"type": "Int",
+					"description": "Promoters - Cell type: E090" 
+				},
+				{
+					"text": "E091",
+					"id": "E091",
+					"hail": "va.chromHMM.promoters.E091",
+					"type": "Int",
+					"description": "Promoters - Cell type: E091" 
+				},
+				{
+					"text": "E092",
+					"id": "E092",
+					"hail": "va.chromHMM.promoters.E092",
+					"type": "Int",
+					"description": "Promoters - Cell type: E092" 
+				},
+				{
+					"text": "E093",
+					"id": "E093",
+					"hail": "va.chromHMM.promoters.E093",
+					"type": "Int",
+					"description": "Promoters - Cell type: E093" 
+				},
+				{
+					"text": "E094",
+					"id": "E094",
+					"hail": "va.chromHMM.promoters.E094",
+					"type": "Int",
+					"description": "Promoters - Cell type: E094" 
+				},
+				{
+					"text": "E095",
+					"id": "E095",
+					"hail": "va.chromHMM.promoters.E095",
+					"type": "Int",
+					"description": "Promoters - Cell type: E095" 
+				},
+				{
+					"text": "E096",
+					"id": "E096",
+					"hail": "va.chromHMM.promoters.E096",
+					"type": "Int",
+					"description": "Promoters - Cell type: E096" 
+				},
+				{
+					"text": "E097",
+					"id": "E097",
+					"hail": "va.chromHMM.promoters.E097",
+					"type": "Int",
+					"description": "Promoters - Cell type: E097" 
+				},
+				{
+					"text": "E098",
+					"id": "E098",
+					"hail": "va.chromHMM.promoters.E098",
+					"type": "Int",
+					"description": "Promoters - Cell type: E098" 
+				},
+				{
+					"text": "E099",
+					"id": "E099",
+					"hail": "va.chromHMM.promoters.E099",
+					"type": "Int",
+					"description": "Promoters - Cell type: E099" 
+				},
+				{
+					"text": "E100",
+					"id": "E100",
+					"hail": "va.chromHMM.promoters.E100",
+					"type": "Int",
+					"description": "Promoters - Cell type: E100" 
+				},
+				{
+					"text": "E101",
+					"id": "E101",
+					"hail": "va.chromHMM.promoters.E101",
+					"type": "Int",
+					"description": "Promoters - Cell type: E101" 
+				},
+				{
+					"text": "E102",
+					"id": "E102",
+					"hail": "va.chromHMM.promoters.E102",
+					"type": "Int",
+					"description": "Promoters - Cell type: E102" 
+				},
+				{
+					"text": "E103",
+					"id": "E103",
+					"hail": "va.chromHMM.promoters.E103",
+					"type": "Int",
+					"description": "Promoters - Cell type: E103" 
+				},
+				{
+					"text": "E104",
+					"id": "E104",
+					"hail": "va.chromHMM.promoters.E104",
+					"type": "Int",
+					"description": "Promoters - Cell type: E104" 
+				},
+				{
+					"text": "E105",
+					"id": "E105",
+					"hail": "va.chromHMM.promoters.E105",
+					"type": "Int",
+					"description": "Promoters - Cell type: E105" 
+				},
+				{
+					"text": "E106",
+					"id": "E106",
+					"hail": "va.chromHMM.promoters.E106",
+					"type": "Int",
+					"description": "Promoters - Cell type: E106" 
+				},
+				{
+					"text": "E107",
+					"id": "E107",
+					"hail": "va.chromHMM.promoters.E107",
+					"type": "Int",
+					"description": "Promoters - Cell type: E107" 
+				},
+				{
+					"text": "E108",
+					"id": "E108",
+					"hail": "va.chromHMM.promoters.E108",
+					"type": "Int",
+					"description": "Promoters - Cell type: E108" 
+				},
+				{
+					"text": "E109",
+					"id": "E109",
+					"hail": "va.chromHMM.promoters.E109",
+					"type": "Int",
+					"description": "Promoters - Cell type: E109" 
+				},
+				{
+					"text": "E110",
+					"id": "E110",
+					"hail": "va.chromHMM.promoters.E110",
+					"type": "Int",
+					"description": "Promoters - Cell type: E110" 
+				},
+				{
+					"text": "E111",
+					"id": "E111",
+					"hail": "va.chromHMM.promoters.E111",
+					"type": "Int",
+					"description": "Promoters - Cell type: E111" 
+				},
+				{
+					"text": "E112",
+					"id": "E112",
+					"hail": "va.chromHMM.promoters.E112",
+					"type": "Int",
+					"description": "Promoters - Cell type: E112" 
+				},
+				{
+					"text": "E113",
+					"id": "E113",
+					"hail": "va.chromHMM.promoters.E113",
+					"type": "Int",
+					"description": "Promoters - Cell type: E113" 
+				},
+				{
+					"text": "E114",
+					"id": "E114",
+					"hail": "va.chromHMM.promoters.E114",
+					"type": "Int",
+					"description": "Promoters - Cell type: E114" 
+				},
+				{
+					"text": "E115",
+					"id": "E115",
+					"hail": "va.chromHMM.promoters.E115",
+					"type": "Int",
+					"description": "Promoters - Cell type: E115" 
+				},
+				{
+					"text": "E116",
+					"id": "E116",
+					"hail": "va.chromHMM.promoters.E116",
+					"type": "Int",
+					"description": "Promoters - Cell type: E116" 
+				},
+				{
+					"text": "E117",
+					"id": "E117",
+					"hail": "va.chromHMM.promoters.E117",
+					"type": "Int",
+					"description": "Promoters - Cell type: E117" 
+				},
+				{
+					"text": "E118",
+					"id": "E118",
+					"hail": "va.chromHMM.promoters.E118",
+					"type": "Int",
+					"description": "Promoters - Cell type: E118" 
+				},
+				{
+					"text": "E119",
+					"id": "E119",
+					"hail": "va.chromHMM.promoters.E119",
+					"type": "Int",
+					"description": "Promoters - Cell type: E119" 
+				},
+				{
+					"text": "E120",
+					"id": "E120",
+					"hail": "va.chromHMM.promoters.E120",
+					"type": "Int",
+					"description": "Promoters - Cell type: E120" 
+				},
+				{
+					"text": "E121",
+					"id": "E121",
+					"hail": "va.chromHMM.promoters.E121",
+					"type": "Int",
+					"description": "Promoters - Cell type: E121" 
+				},
+				{
+					"text": "E122",
+					"id": "E122",
+					"hail": "va.chromHMM.promoters.E122",
+					"type": "Int",
+					"description": "Promoters - Cell type: E122" 
+				},
+				{
+					"text": "E123",
+					"id": "E123",
+					"hail": "va.chromHMM.promoters.E123",
+					"type": "Int",
+					"description": "Promoters - Cell type: E123" 
+				},
+				{
+					"text": "E124",
+					"id": "E124",
+					"hail": "va.chromHMM.promoters.E124",
+					"type": "Int",
+					"description": "Promoters - Cell type: E124" 
+				},
+				{
+					"text": "E125",
+					"id": "E125",
+					"hail": "va.chromHMM.promoters.E125",
+					"type": "Int",
+					"description": "Promoters - Cell type: E125" 
+				},
+				{
+					"text": "E126",
+					"id": "E126",
+					"hail": "va.chromHMM.promoters.E126",
+					"type": "Int",
+					"description": "Promoters - Cell type: E126" 
+				},
+				{
+					"text": "E127",
+					"id": "E127",
+					"hail": "va.chromHMM.promoters.E127",
+					"type": "Int",
+					"description": "Promoters - Cell type: E127" 
+				},
+				{
+					"text": "E128",
+					"id": "E128",
+					"hail": "va.chromHMM.promoters.E128",
+					"type": "Int",
+					"description": "Promoters - Cell type: E128" 
+				},
+				{
+					"text": "E129",
+					"id": "E129",
+					"hail": "va.chromHMM.promoters.E129",
+					"type": "Int",
+					"description": "Promoters - Cell type: E129" 
+				} 
+			]
+		}
+	]	
+}

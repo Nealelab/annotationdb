@@ -1,0 +1,23 @@
+TVariant
+==================
+
+.. currentmodule:: hail.expr
+
+.. autoclass:: TVariant
+
+    
+    
+    
+
+    
+    
+
+    .. rubric:: Methods
+
+    .. autosummary::
+        :nosignatures:
+
+    
+        ~TVariant.__init__
+    
+    

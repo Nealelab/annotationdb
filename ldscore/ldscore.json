@@ -1,0 +1,202 @@
+{
+	"text": "LD SCORE Annotations",
+	"id": "score",
+	"hail": "va.ldscore",
+	"type": "interval",
+	"selectable": true,
+	"study_link": "https://www.ncbi.nlm.nih.gov/pubmed/?term=26414678",
+	"study_title": "Finucane HK, Bulik-Sullivan, Partitioning heritability by functional annotation using genome-wide association summary statistics.",
+	"study_data": "https://data.broadinstitute.org/alkesgroup/LDSCORE/baseline_bedfiles.tgz",
+	"description": "Set of annotations used for LDSCORE partitioning heritability. Info for each annotation are available in the original publication",
+	"nodes": [
+		{
+			"text": "Coding UCSC",
+			"id": "coding_ucsc",
+			"hail": "va.ldscore.coding_ucsc",
+			"type": "Boolean",
+			"description": "Annotations from RefSeq gene models were obtained from the UCSC Genome Browser and post-processed by Gusev et al."
+		},
+		{
+			"text": "Conserved",
+			"id": "conserved",
+			"hail": "va.ldscore.conserved",
+			"type": "Boolean",
+			"description": "Regions conserved in mammals were obtained from Lindblad-Toh et al  and post-processed by Ward and Kelli."
+		},
+		{
+			"text": "CTCF",
+			"id": "ctcf",
+			"hail": "va.ldscore.ctcf",
+			"type": "Boolean",
+			"description": "The combined chromHMM and Segway annotations for six cell lines were obtained from Hoffman et al. This annotation is the union over the six cell lines."
+		},
+		{
+			"text": "DGF",
+			"id": "dgf",
+			"hail": "va.ldscore.dgf",
+			"type": "Boolean",
+			"description": "DNaseI Digital Genomic Footprinting from ENCODE3 and post-processed by Gusev et al."
+		},
+		{
+			"text": "DHS Peaks",
+			"id": "dhsp",
+			"hail": "va.ldscore.dhsp",
+			"type": "Boolean",
+			"description": "DHSs are a combination of ENCODE and Roadmap Epigenomics data, post-processed by Trynka et al. Union of cell type–specific annotations."
+		},
+		{
+			"text": "DHS",
+			"id": "dhs",
+			"hail": "va.ldscore.dhs",
+			"type": "Boolean",
+			"description": "DHSs are a combination of ENCODE and Roadmap Epigenomics data, post-processed by Trynka et al. Union of cell type–specific annotations."
+		},
+		{
+			"text": "Enhancers",
+			"id": "enhancers",
+			"hail": "va.ldscore.enhancers",
+			"type": "Boolean",
+			"description": "The combined chromHMM and Segway annotations for six cell lines were obtained from Hoffman et al. This annotation is the union over the six cell lines."
+		},
+		{
+			"text": "FANTOM5 Enhancers",
+			"id": "fantom5",
+			"hail": "va.ldscore.fantom5",
+			"type": "Boolean",
+			"description": "FANTOM5 enhancers were obtained from Andersson et al."
+		},
+		{
+			"text": "Fetal DHS",
+			"id": "dhsf",
+			"hail": "va.ldscore.dhsf",
+			"type": "Boolean",
+			"description": "DHSs are a combination of ENCODE and Roadmap Epigenomics data, post-processed by Trynka et al. Union of cell type–specific annotations."
+		},
+		{
+			"text": "H3K4me1 Peaks",
+			"id": "h3k4me1p",
+			"hail": "va.ldscore.h3k4me1p",
+			"type": "Boolean",
+			"description": "Cell type–specific H3K4me1, H3K4me3 and H3K9ac data were all obtained from Roadmap Epigenomics and post-processed by Trynka et al. For each mark, we took a union over cell types"
+		},
+		{
+			"text": "H3K4me1",
+			"id": "h3k4me1",
+			"hail": "va.ldscore.h3k4me1",
+			"type": "Boolean",
+			"description": "Cell type–specific H3K4me1, H3K4me3 and H3K9ac data were all obtained from Roadmap Epigenomics and post-processed by Trynka et al. For each mark, we took a union over cell types"
+		},
+		{
+			"text": "H3K4me3 Peaks",
+			"id": "h3k4me3p",
+			"hail": "va.ldscore.h3k4me3p",
+			"type": "Boolean",
+			"description": "Cell type–specific H3K4me1, H3K4me3 and H3K9ac data were all obtained from Roadmap Epigenomics and post-processed by Trynka et al. For each mark, we took a union over cell types"
+		},
+		{
+			"text": "H3K4me3",
+			"id": "h3k4me3",
+			"hail": "va.ldscore.h3k4me3",
+			"type": "Boolean",
+			"description": "Cell type–specific H3K4me1, H3K4me3 and H3K9ac data were all obtained from Roadmap Epigenomics and post-processed by Trynka et al. For each mark, we took a union over cell types"
+		},
+		{
+			"text": "H3K9ac Peaks",
+			"id": "h3k9acp",
+			"hail": "va.ldscore.h3k9acp",
+			"type": "Boolean",
+			"description": "Cell type–specific H3K4me1, H3K4me3 and H3K9ac data were all obtained from Roadmap Epigenomics and post-processed by Trynka et al. For each mark, we took a union over cell types"
+		},
+		{
+			"text": "H3K9ac",
+			"id": "h3k9ac",
+			"hail": "va.ldscore.h3k9ac",
+			"type": "Boolean",
+			"description": "Cell type–specific H3K4me1, H3K4me3 and H3K9ac data were all obtained from Roadmap Epigenomics and post-processed by Trynka et al. For each mark, we took a union over cell types"
+		},
+		{
+			"text": "h3k27ac",
+			"id": "h3k27ac",
+			"hail": "va.ldscore.h3k27ac",
+			"type": "Boolean",
+			"description": "H3K27ac data was obtained from Hnisz et al."
+		},
+		{
+			"text": "Intron UCSC",
+			"id": "intron_ucsc",
+			"hail": "va.ldscore.intron_ucsc",
+			"type": "Boolean",
+			"description": "Annotations from RefSeq gene models were obtained from the UCSC Genome Browser and post-processed by Gusev et al."
+		},
+		{
+			"text": "Promoter UCSC",
+			"id": "promoter_ucsc",
+			"hail": "va.ldscore.promoter_ucsc",
+			"type": "Boolean",
+			"description": "Annotations from RefSeq gene models were obtained from the UCSC Genome Browser and post-processed by Gusev et al."
+		},
+		{
+			"text": "Promoters Flanking",
+			"id": "promoter_flanking",
+			"hail": "va.ldscore.promoter_flanking",
+			"type": "Boolean",
+			"description": "The combined chromHMM and Segway annotations for six cell lines were obtained from Hoffman et al. This annotation is the union over the six cell lines."
+		},
+		{
+			"text": "Repressed Regions",
+			"id": "repressed",
+			"hail": "va.ldscore.repressed",
+			"type": "Boolean",
+			"description": "The combined chromHMM and Segway annotations for six cell lines were obtained from Hoffman et al. This annotation is the intersection over the six cell lines."
+		},
+		{
+			"text": "Super Enhancers",
+			"id": "superenh",
+			"hail": "va.ldscore.superenh",
+			"type": "Boolean",
+			"description": "Super Enhancers data was obtained from Hnisz et al."
+		},
+		{
+			"text": "TFBS",
+			"id": "tfbs",
+			"hail": "va.ldscore.tfbs",
+			"type": "Boolean",
+			"description": "Transcription factor binding sites were obtained from ENCODE3 and post-processed by Gusev et al."
+		},
+		{
+			"text": "Transcribed Regions",
+			"id": "transcribed",
+			"hail": "va.ldscore.transcribed",
+			"type": "Boolean",
+			"description": "The combined chromHMM and Segway annotations for six cell lines were obtained from Hoffman et al. This annotation is the union over the six cell lines."
+		},
+		{
+			"text": "TSS",
+			"id": "tss",
+			"hail": "va.ldscore.tss",
+			"type": "Boolean",
+			"description": "The combined chromHMM and Segway annotations for six cell lines were obtained from Hoffman et al. This annotation is the union over the six cell lines."
+		},
+		{
+			"text": "3' UTR UCSC",
+			"id": "3utr",
+			"hail": "va.ldscore.3utr",
+			"type": "Boolean",
+			"description": "Annotations from RefSeq gene models were obtained from the UCSC Genome Browser and post-processed by Gusev et al."
+		},
+		{
+			"text": "5' UTR UCSC",
+			"id": "5utr",
+			"hail": "va.ldscore.5utr",
+			"type": "Boolean",
+			"description": "Annotations from RefSeq gene models were obtained from the UCSC Genome Browser and post-processed by Gusev et al."
+		},
+		{
+			"text": "Weak Enhancers",
+			"id": "weakenh",
+			"hail": "va.ldscore.weakenh",
+			"type": "Boolean",
+			"description": "The combined chromHMM and Segway annotations for six cell lines were obtained from Hoffman et al. This annotation is the union over the six cell lines."
+		}
+	]
+}

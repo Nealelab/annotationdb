@@ -1,0 +1,1017 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>hail.context &mdash; Hail</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../../hail_logo_sq.png"/>
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../../navbar.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../../_static/rtd_modifications.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="../../genindex.html"/>
+        <link rel="search" title="Search" href="../../search.html"/>
+    <link rel="top" title="Hail" href="../../index.html"/>
+        <link rel="up" title="Module code" href="../index.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+  
+  
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <nav class="navbar navbar-default navbar-static-top" id="hail-navbar">
+<div class="container-fluid" id="hail-container-fluid">
+    <div class="navbar-header" id="hail-navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#hail-navbar-collapse" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+   
+      <a class="navbar-left" id="hail-navbar-brand" href="../index.html"><img alt="Hail" id="logo" src="hail-logo-cropped.png"></a>
+
+    </div>
+
+    <div class="collapse navbar-collapse" id="hail-navbar-collapse">
+      <ul class="nav navbar-nav navbar-right">
+          <li id="home" class="nav-item"><a href="../index.html">HOME</a></li>
+          <li id="docs" class="nav-item"><a href="index.html">DOCS</a></li>
+          <li id="forum" class="nav-item"><a href="http://discuss.hail.is">FORUM</a></li>
+          <li id="chat" class="nav-item dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">CHAT<span class="caret"></span></a>
+          <ul class="dropdown-menu dropdown-menu-left">
+            <li><a class="dropdown-item" href="https://gitter.im/hail-is/hail">General</a></li>
+            <li><a class="dropdown-item" href="https://gitter.im/hail-is/hail-dev">Developers</a></li>
+          </ul>
+        </li>
+       <li id="code" class="nav-item"><a href="https://github.com/hail-is/hail">CODE</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> Hail
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                devel
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../getting_started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial.html">Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../exprlang.html">Expression Language</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api.html">Python API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../annotationdb.html">Annotation Database</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../other_resources.html">Other Resources</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../index.html">Hail</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../index.html">Module code</a> &raquo;</li>
+        
+      <li>hail.context</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for hail.context</h1><div class="highlight"><pre>
+<span></span><span class="kn">from</span> <span class="nn">__future__</span> <span class="k">import</span> <span class="n">print_function</span>  <span class="c1"># Python 2 and 3 print compatibility</span>
+
+<span class="kn">from</span> <span class="nn">pyspark.sql</span> <span class="k">import</span> <span class="n">SQLContext</span>
+
+<span class="kn">from</span> <span class="nn">hail.dataset</span> <span class="k">import</span> <span class="n">VariantDataset</span>
+<span class="kn">from</span> <span class="nn">hail.java</span> <span class="k">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">hail.keytable</span> <span class="k">import</span> <span class="n">KeyTable</span>
+<span class="kn">from</span> <span class="nn">hail.expr</span> <span class="k">import</span> <span class="n">Type</span>
+<span class="kn">from</span> <span class="nn">hail.utils</span> <span class="k">import</span> <span class="n">TextTableConfig</span>
+<span class="kn">from</span> <span class="nn">hail.stats</span> <span class="k">import</span> <span class="n">UniformDist</span><span class="p">,</span> <span class="n">BetaDist</span><span class="p">,</span> <span class="n">TruncatedBetaDist</span>
+
+
+<div class="viewcode-block" id="HailContext"><a class="viewcode-back" href="../../hail.HailContext.html#hail.HailContext">[docs]</a><span class="k">class</span> <span class="nc">HailContext</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;The main entry point for Hail functionality.</span>
+
+<span class="sd">    .. warning::</span>
+<span class="sd">        Only one Hail context may be running in a Python session at any time. If you</span>
+<span class="sd">        need to reconfigure settings, restart the Python session or use the :py:meth:`.HailContext.stop` method.</span>
+
+<span class="sd">    :param sc: spark context, will be auto-generated if None</span>
+<span class="sd">    :type sc: :class:`.pyspark.SparkContext`</span>
+
+<span class="sd">    :param appName: Spark application identifier</span>
+
+<span class="sd">    :param master: Spark cluster master</span>
+
+<span class="sd">    :param local: local resources to use</span>
+
+<span class="sd">    :param log: log path</span>
+
+<span class="sd">    :param quiet: suppress log messages</span>
+
+<span class="sd">    :param append: write to end of log file instead of overwriting</span>
+
+<span class="sd">    :param parquet_compression: level of on-disk annotation compression</span>
+
+<span class="sd">    :param min_block_size: minimum file split size in MB</span>
+
+<span class="sd">    :param branching_factor: branching factor for tree aggregation</span>
+
+<span class="sd">    :param tmp_dir: temporary directory for file merging</span>
+
+<span class="sd">    :ivar sc: Spark context</span>
+<span class="sd">    :vartype sc: :class:`.pyspark.SparkContext`</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">sc</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">appName</span><span class="o">=</span><span class="s2">&quot;Hail&quot;</span><span class="p">,</span> <span class="n">master</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">local</span><span class="o">=</span><span class="s1">&#39;local[*]&#39;</span><span class="p">,</span>
+                 <span class="n">log</span><span class="o">=</span><span class="s1">&#39;hail.log&#39;</span><span class="p">,</span> <span class="n">quiet</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">append</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">parquet_compression</span><span class="o">=</span><span class="s1">&#39;snappy&#39;</span><span class="p">,</span>
+                 <span class="n">min_block_size</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">branching_factor</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">tmp_dir</span><span class="o">=</span><span class="s1">&#39;/tmp&#39;</span><span class="p">):</span>
+
+        <span class="k">if</span> <span class="n">Env</span><span class="o">.</span><span class="n">_hc</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">FatalError</span><span class="p">(</span><span class="s1">&#39;Hail Context has already been created, restart session &#39;</span>
+                             <span class="s1">&#39;or stop Hail context to change configuration.&#39;</span><span class="p">)</span>
+
+        <span class="kn">from</span> <span class="nn">pyspark</span> <span class="k">import</span> <span class="n">SparkContext</span>
+        <span class="n">SparkContext</span><span class="o">.</span><span class="n">_ensure_initialized</span><span class="p">()</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">_gateway</span> <span class="o">=</span> <span class="n">SparkContext</span><span class="o">.</span><span class="n">_gateway</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_jvm</span> <span class="o">=</span> <span class="n">SparkContext</span><span class="o">.</span><span class="n">_jvm</span>
+
+        <span class="c1"># hail package</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_hail</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_jvm</span><span class="p">,</span> <span class="s1">&#39;is&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">hail</span>
+
+        <span class="n">Env</span><span class="o">.</span><span class="n">_jvm</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_jvm</span>
+        <span class="n">Env</span><span class="o">.</span><span class="n">_gateway</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_gateway</span>
+
+        <span class="n">jsc</span> <span class="o">=</span> <span class="n">sc</span><span class="o">.</span><span class="n">_jsc</span><span class="o">.</span><span class="n">sc</span><span class="p">()</span> <span class="k">if</span> <span class="n">sc</span> <span class="k">else</span> <span class="kc">None</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">_jhc</span> <span class="o">=</span> <span class="n">scala_object</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_hail</span><span class="p">,</span> <span class="s1">&#39;HailContext&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span>
+            <span class="n">jsc</span><span class="p">,</span> <span class="n">appName</span><span class="p">,</span> <span class="n">joption</span><span class="p">(</span><span class="n">master</span><span class="p">),</span> <span class="n">local</span><span class="p">,</span> <span class="n">log</span><span class="p">,</span> <span class="n">quiet</span><span class="p">,</span> <span class="n">append</span><span class="p">,</span>
+            <span class="n">parquet_compression</span><span class="p">,</span> <span class="n">min_block_size</span><span class="p">,</span> <span class="n">branching_factor</span><span class="p">,</span> <span class="n">tmp_dir</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">_jsc</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_jhc</span><span class="o">.</span><span class="n">sc</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">sc</span> <span class="o">=</span> <span class="n">sc</span> <span class="k">if</span> <span class="n">sc</span> <span class="k">else</span> <span class="n">SparkContext</span><span class="p">(</span><span class="n">gateway</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_gateway</span><span class="p">,</span> <span class="n">jsc</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_jvm</span><span class="o">.</span><span class="n">JavaSparkContext</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_jsc</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_jsql_context</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_jhc</span><span class="o">.</span><span class="n">sqlContext</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_sql_context</span> <span class="o">=</span> <span class="n">SQLContext</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">sc</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_jsql_context</span><span class="p">)</span>
+
+        <span class="c1"># do this at the end in case something errors, so we don&#39;t raise the above error without a real HC</span>
+        <span class="n">Env</span><span class="o">.</span><span class="n">_hc</span> <span class="o">=</span> <span class="bp">self</span>
+
+    <span class="nd">@staticmethod</span>
+<div class="viewcode-block" id="HailContext.get_running"><a class="viewcode-back" href="../../hail.HailContext.html#hail.HailContext.get_running">[docs]</a>    <span class="k">def</span> <span class="nf">get_running</span><span class="p">():</span>
+        <span class="sd">&quot;&quot;&quot;Return the running Hail context in this Python session.</span>
+
+<span class="sd">        **Example**</span>
+
+<span class="sd">        .. doctest::</span>
+<span class="sd">            :options: +SKIP</span>
+
+<span class="sd">            &gt;&gt;&gt; HailContext()  # oops! Forgot to bind to &#39;hc&#39;</span>
+<span class="sd">            &gt;&gt;&gt; hc = HailContext.get_running()  # recovery</span>
+
+<span class="sd">        Useful to recover a Hail context that has been created but is unbound.</span>
+
+<span class="sd">        :return: Current Hail context.</span>
+<span class="sd">        :rtype: :class:`.HailContext`</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">return</span> <span class="n">Env</span><span class="o">.</span><span class="n">hc</span></div>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">version</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Return the version of Hail associated with this HailContext.</span>
+
+<span class="sd">        :rtype: str</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_jhc</span><span class="o">.</span><span class="n">version</span><span class="p">()</span>
+
+    <span class="nd">@handle_py4j</span>
+<div class="viewcode-block" id="HailContext.grep"><a class="viewcode-back" href="../../hail.HailContext.html#hail.HailContext.grep">[docs]</a>    <span class="k">def</span> <span class="nf">grep</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">regex</span><span class="p">,</span> <span class="n">path</span><span class="p">,</span> <span class="n">max_count</span><span class="o">=</span><span class="mi">100</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Grep big files, like, really fast.</span>
+
+<span class="sd">        **Examples**</span>
+
+<span class="sd">        Print all lines containing the string ``hello`` in *file.txt*:</span>
+
+<span class="sd">        &gt;&gt;&gt; hc.grep(&#39;hello&#39;,&#39;data/file.txt&#39;)</span>
+
+<span class="sd">        Print all lines containing digits in *file1.txt* and *file2.txt*:</span>
+
+<span class="sd">        &gt;&gt;&gt; hc.grep(&#39;\d&#39;, [&#39;data/file1.txt&#39;,&#39;data/file2.txt&#39;])</span>
+
+<span class="sd">        **Background**</span>
+
+<span class="sd">        :py:meth:`~hail.HailContext.grep` mimics the basic functionality of Unix ``grep`` in parallel, printing results to screen. This command is provided as a convenience to those in the statistical genetics community who often search enormous text files like VCFs. Find background on regular expressions at `RegExr &lt;http://regexr.com/&gt;`_.</span>
+
+<span class="sd">        :param str regex: The regular expression to match.</span>
+
+<span class="sd">        :param path: The files to search.</span>
+<span class="sd">        :type path: str or list of str</span>
+
+<span class="sd">        :param int max_count: The maximum number of matches to return.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">_jhc</span><span class="o">.</span><span class="n">grep</span><span class="p">(</span><span class="n">regex</span><span class="p">,</span> <span class="n">jindexed_seq_args</span><span class="p">(</span><span class="n">path</span><span class="p">),</span> <span class="n">max_count</span><span class="p">)</span></div>
+
+    <span class="nd">@handle_py4j</span>
+<div class="viewcode-block" id="HailContext.import_bgen"><a class="viewcode-back" href="../../hail.HailContext.html#hail.HailContext.import_bgen">[docs]</a>    <span class="k">def</span> <span class="nf">import_bgen</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="p">,</span> <span class="n">tolerance</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">sample_file</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">npartitions</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Import .bgen file(s) as variant dataset.</span>
+
+<span class="sd">        **Examples**</span>
+
+<span class="sd">        Importing a BGEN file as a VDS (assuming it has already been indexed).</span>
+
+<span class="sd">        &gt;&gt;&gt; vds = hc.import_bgen(&quot;data/example3.bgen&quot;, sample_file=&quot;data/example3.sample&quot;)</span>
+
+<span class="sd">        **Notes**</span>
+
+<span class="sd">        Hail supports importing data in the BGEN file format. For more information on the BGEN file format,</span>
+<span class="sd">        see `here &lt;http://www.well.ox.ac.uk/~gav/bgen_format/bgen_format_v1.1.html&gt;`_. Note that only v1.1 BGEN files</span>
+<span class="sd">        are supported at this time.</span>
+
+<span class="sd">        Before importing, ensure that:</span>
+<span class="sd">        - Files reside in Hadoop file system.</span>
+<span class="sd">        - The sample file has the same number of samples as the BGEN file.</span>
+<span class="sd">        - No duplicate sample IDs are present.</span>
+
+<span class="sd">        To load multiple files at the same time, use :ref:`Hadoop Glob Patterns &lt;sec-hadoop-glob&gt;`.</span>
+
+<span class="sd">        .. _dosagefilters:</span>
+
+<span class="sd">        **Dosage representation**:</span>
+
+<span class="sd">        Since dosages are understood as genotype probabilities, :py:meth:`~hail.HailContext.import_bgen` automatically sets to missing those genotypes for which the sum of the dosages is a distance greater than the ``tolerance`` parameter from 1.0.  The default tolerance is 0.2, so a genotype with sum .79 or 1.21 is filtered out, whereas a genotype with sum .8 or 1.2 remains.</span>
+
+<span class="sd">        :py:meth:`~hail.HailContext.import_gen` normalizes all dosages to sum to 1.0. Therefore, an input dosage of (0.98, 0.0, 0.0) will be stored as (1.0, 0.0, 0.0) in Hail.</span>
+
+<span class="sd">        Even when the dosages sum to 1.0, Hail may store slightly different values than the original GEN file (maximum observed difference is 3E-4).</span>
+
+<span class="sd">        **Annotations**</span>
+
+<span class="sd">        :py:meth:`~hail.HailContext.import_bgen` adds the following variant annotations:</span>
+
+<span class="sd">         - **va.varid** (*String*) -- 2nd column of .gen file if chromosome present, otherwise 1st column.</span>
+
+<span class="sd">         - **va.rsid** (*String*) -- 3rd column of .gen file if chromosome present, otherwise 2nd column.</span>
+
+<span class="sd">        :param path: .bgen files to import.</span>
+<span class="sd">        :type path: str or list of str</span>
+
+<span class="sd">        :param float tolerance: If the sum of the dosages for a</span>
+<span class="sd">            genotype differ from 1.0 by more than the tolerance, set</span>
+<span class="sd">            the genotype to missing.</span>
+
+<span class="sd">        :param sample_file: Sample file.</span>
+<span class="sd">        :type sample_file: str or None</span>
+
+<span class="sd">        :param npartitions: Number of partitions.</span>
+<span class="sd">        :type npartitions: int or None</span>
+
+<span class="sd">        :return: Variant dataset imported from .bgen file.</span>
+<span class="sd">        :rtype: :class:`.VariantDataset`</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">jvds</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_jhc</span><span class="o">.</span><span class="n">importBgens</span><span class="p">(</span><span class="n">jindexed_seq_args</span><span class="p">(</span><span class="n">path</span><span class="p">),</span> <span class="n">joption</span><span class="p">(</span><span class="n">sample_file</span><span class="p">),</span>
+                                     <span class="n">tolerance</span><span class="p">,</span> <span class="n">joption</span><span class="p">(</span><span class="n">npartitions</span><span class="p">))</span>
+        <span class="k">return</span> <span class="n">VariantDataset</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">jvds</span><span class="p">)</span></div>
+
+    <span class="nd">@handle_py4j</span>
+<div class="viewcode-block" id="HailContext.import_gen"><a class="viewcode-back" href="../../hail.HailContext.html#hail.HailContext.import_gen">[docs]</a>    <span class="k">def</span> <span class="nf">import_gen</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="p">,</span> <span class="n">sample_file</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">tolerance</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">npartitions</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">chromosome</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Import .gen file(s) as variant dataset.</span>
+
+<span class="sd">        **Examples**</span>
+
+<span class="sd">        Read a .gen file and a .sample file and write to a .vds file:</span>
+
+<span class="sd">        &gt;&gt;&gt; (hc.import_gen(&#39;data/example.gen&#39;, sample_file=&#39;data/example.sample&#39;)</span>
+<span class="sd">        ...    .write(&#39;output/gen_example1.vds&#39;))</span>
+
+<span class="sd">        Load multiple files at the same time with :ref:`Hadoop glob patterns &lt;sec-hadoop-glob&gt;`:</span>
+
+<span class="sd">        &gt;&gt;&gt; (hc.import_gen(&#39;data/example.chr*.gen&#39;, sample_file=&#39;data/example.sample&#39;)</span>
+<span class="sd">        ...    .write(&#39;output/gen_example2.vds&#39;))</span>
+
+<span class="sd">        **Notes**</span>
+
+<span class="sd">        For more information on the .gen file format, see `here &lt;http://www.stats.ox.ac.uk/%7Emarchini/software/gwas/file_format.html#mozTocId40300&gt;`_.</span>
+
+<span class="sd">        To ensure that the .gen file(s) and .sample file are correctly prepared for import:</span>
+
+<span class="sd">        - If there are only 5 columns before the start of the dosage data (chromosome field is missing), you must specify the chromosome using the ``chromosome`` parameter</span>
+
+<span class="sd">        - No duplicate sample IDs are allowed</span>
+
+<span class="sd">        The first column in the .sample file is used as the sample ID ``s``.</span>
+
+<span class="sd">        Also, see section in :py:meth:`~hail.HailContext.import_bgen` linked :ref:`here &lt;dosagefilters&gt;` for information about Hail&#39;s dosage representation.</span>
+
+<span class="sd">        **Annotations**</span>
+
+<span class="sd">        :py:meth:`~hail.HailContext.import_gen` adds the following variant annotations:</span>
+
+<span class="sd">         - **va.varid** (*String*) -- 2nd column of .gen file if chromosome present, otherwise 1st column.</span>
+
+<span class="sd">         - **va.rsid** (*String*) -- 3rd column of .gen file if chromosome present, otherwise 2nd column.</span>
+
+<span class="sd">        :param path: .gen files to import.</span>
+<span class="sd">        :type path: str or list of str</span>
+
+<span class="sd">        :param str sample_file: The sample file.</span>
+
+<span class="sd">        :param float tolerance: If the sum of the dosages for a genotype differ from 1.0 by more than the tolerance, set the genotype to missing.</span>
+
+<span class="sd">        :param npartitions: Number of partitions.</span>
+<span class="sd">        :type npartitions: int or None</span>
+
+<span class="sd">        :param chromosome: Chromosome if not listed in the .gen file.</span>
+<span class="sd">        :type chromosome: str or None</span>
+
+<span class="sd">        :return: Variant dataset imported from .gen and .sample files.</span>
+<span class="sd">        :rtype: :class:`.VariantDataset`</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">jvds</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_jhc</span><span class="o">.</span><span class="n">importGens</span><span class="p">(</span><span class="n">jindexed_seq_args</span><span class="p">(</span><span class="n">path</span><span class="p">),</span> <span class="n">sample_file</span><span class="p">,</span> <span class="n">joption</span><span class="p">(</span><span class="n">chromosome</span><span class="p">),</span> <span class="n">joption</span><span class="p">(</span><span class="n">npartitions</span><span class="p">),</span>
+                                    <span class="n">tolerance</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">VariantDataset</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">jvds</span><span class="p">)</span></div>
+
+    <span class="nd">@handle_py4j</span>
+<div class="viewcode-block" id="HailContext.import_keytable"><a class="viewcode-back" href="../../hail.HailContext.html#hail.HailContext.import_keytable">[docs]</a>    <span class="k">def</span> <span class="nf">import_keytable</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="p">[],</span> <span class="n">npartitions</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">config</span><span class="o">=</span><span class="n">TextTableConfig</span><span class="p">()):</span>
+        <span class="sd">&quot;&quot;&quot;Import delimited text file (text table) as key table.</span>
+
+<span class="sd">        The resulting key table will have no key columns, use :py:meth:`.KeyTable.key_by`</span>
+<span class="sd">        to specify keys.</span>
+
+<span class="sd">        :param path: files to import.</span>
+<span class="sd">        :type path: str or list of str</span>
+
+<span class="sd">        :param key: List of key columns.</span>
+<span class="sd">        :type key: str or list of str</span>
+
+<span class="sd">        :param npartitions: Number of partitions.</span>
+<span class="sd">        :type npartitions: int or None</span>
+
+<span class="sd">        :param config: Configuration options for importing text files</span>
+<span class="sd">        :type config: :class:`.TextTableConfig`</span>
+
+<span class="sd">        :return: Key table constructed from text table.</span>
+<span class="sd">        :rtype: :class:`.KeyTable`</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span>
+            <span class="n">key</span> <span class="o">=</span> <span class="p">[</span><span class="n">key</span><span class="p">]</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">config</span><span class="p">:</span>
+            <span class="n">config</span> <span class="o">=</span> <span class="n">TextTableConfig</span><span class="p">()</span>
+
+        <span class="n">jkt</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_jhc</span><span class="o">.</span><span class="n">importKeyTable</span><span class="p">(</span><span class="n">jindexed_seq_args</span><span class="p">(</span><span class="n">path</span><span class="p">),</span>
+                                       <span class="n">jarray</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_jvm</span><span class="o">.</span><span class="n">java</span><span class="o">.</span><span class="n">lang</span><span class="o">.</span><span class="n">String</span><span class="p">,</span> <span class="n">key</span><span class="p">),</span>
+                                       <span class="n">joption</span><span class="p">(</span><span class="n">npartitions</span><span class="p">),</span>
+                                       <span class="n">config</span><span class="o">.</span><span class="n">_to_java</span><span class="p">())</span>
+        <span class="k">return</span> <span class="n">KeyTable</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">jkt</span><span class="p">)</span></div>
+
+    <span class="nd">@handle_py4j</span>
+<div class="viewcode-block" id="HailContext.import_plink"><a class="viewcode-back" href="../../hail.HailContext.html#hail.HailContext.import_plink">[docs]</a>    <span class="k">def</span> <span class="nf">import_plink</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">bed</span><span class="p">,</span> <span class="n">bim</span><span class="p">,</span> <span class="n">fam</span><span class="p">,</span> <span class="n">npartitions</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s1">&#39;</span><span class="se">\\\\</span><span class="s1">s+&#39;</span><span class="p">,</span> <span class="n">missing</span><span class="o">=</span><span class="s1">&#39;NA&#39;</span><span class="p">,</span> <span class="n">quantpheno</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Import PLINK binary file (BED, BIM, FAM) as variant dataset.</span>
+
+<span class="sd">        **Examples**</span>
+
+<span class="sd">        Import data from a PLINK binary file:</span>
+
+<span class="sd">        &gt;&gt;&gt; vds = hc.import_plink(bed=&quot;data/test.bed&quot;,</span>
+<span class="sd">        ...                       bim=&quot;data/test.bim&quot;,</span>
+<span class="sd">        ...                       fam=&quot;data/test.fam&quot;)</span>
+
+<span class="sd">        **Notes**</span>
+
+<span class="sd">        Only binary SNP-major mode files can be read into Hail. To convert your file from individual-major mode to SNP-major mode, use PLINK to read in your fileset and use the ``--make-bed`` option.</span>
+
+<span class="sd">        The centiMorgan position is not currently used in Hail (Column 3 in BIM file).</span>
+
+<span class="sd">        The ID (``s``) used by Hail is the individual ID (column 2 in FAM file).</span>
+
+<span class="sd">        .. warning::</span>
+
+<span class="sd">            No duplicate individual IDs are allowed.</span>
+
+<span class="sd">        Chromosome names (Column 1) are automatically converted in the following cases:</span>
+
+<span class="sd">          - 23 =&gt; &quot;X&quot;</span>
+<span class="sd">          - 24 =&gt; &quot;Y&quot;</span>
+<span class="sd">          - 25 =&gt; &quot;X&quot;</span>
+<span class="sd">          - 26 =&gt; &quot;MT&quot;</span>
+
+<span class="sd">        **Annotations**</span>
+
+<span class="sd">        :py:meth:`~hail.HailContext.import_plink` adds the following annotations:</span>
+
+<span class="sd">         - **va.rsid** (*String*) -- Column 2 in the BIM file.</span>
+<span class="sd">         - **sa.famID** (*String*) -- Column 1 in the FAM file. Set to missing if ID equals &quot;0&quot;.</span>
+<span class="sd">         - **sa.patID** (*String*) -- Column 3 in the FAM file. Set to missing if ID equals &quot;0&quot;.</span>
+<span class="sd">         - **sa.matID** (*String*) -- Column 4 in the FAM file. Set to missing if ID equals &quot;0&quot;.</span>
+<span class="sd">         - **sa.isFemale** (*String*) -- Column 5 in the FAM file. Set to missing if value equals &quot;-9&quot;, &quot;0&quot;, or &quot;N/A&quot;.</span>
+<span class="sd">           Set to true if value equals &quot;2&quot;. Set to false if value equals &quot;1&quot;.</span>
+<span class="sd">         - **sa.isCase** (*String*) -- Column 6 in the FAM file. Only present if ``quantpheno`` equals False.</span>
+<span class="sd">           Set to missing if value equals &quot;-9&quot;, &quot;0&quot;, &quot;N/A&quot;, or the value specified by ``missing``.</span>
+<span class="sd">           Set to true if value equals &quot;2&quot;. Set to false if value equals &quot;1&quot;.</span>
+<span class="sd">         - **sa.qPheno** (*String*) -- Column 6 in the FAM file. Only present if ``quantpheno`` equals True.</span>
+<span class="sd">           Set to missing if value equals ``missing``.</span>
+
+<span class="sd">        :param str bed: PLINK BED file.</span>
+
+<span class="sd">        :param str bim: PLINK BIM file.</span>
+
+<span class="sd">        :param str fam: PLINK FAM file.</span>
+
+<span class="sd">        :param npartitions: Number of partitions.</span>
+<span class="sd">        :type npartitions: int or None</span>
+
+<span class="sd">        :param str missing: The string used to denote missing values **only** for the phenotype field. This is in addition to &quot;-9&quot;, &quot;0&quot;, and &quot;N/A&quot; for case-control phenotypes.</span>
+
+<span class="sd">        :param str delimiter: FAM file field delimiter regex.</span>
+
+<span class="sd">        :param bool quantpheno: If True, FAM phenotype is interpreted as quantitative.</span>
+
+<span class="sd">        :return: Variant dataset imported from PLINK binary file.</span>
+<span class="sd">        :rtype: :class:`.VariantDataset`</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">jvds</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_jhc</span><span class="o">.</span><span class="n">importPlink</span><span class="p">(</span><span class="n">bed</span><span class="p">,</span> <span class="n">bim</span><span class="p">,</span> <span class="n">fam</span><span class="p">,</span> <span class="n">joption</span><span class="p">(</span><span class="n">npartitions</span><span class="p">),</span> <span class="n">delimiter</span><span class="p">,</span> <span class="n">missing</span><span class="p">,</span> <span class="n">quantpheno</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">VariantDataset</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">jvds</span><span class="p">)</span></div>
+
+    <span class="nd">@handle_py4j</span>
+<div class="viewcode-block" id="HailContext.read"><a class="viewcode-back" href="../../hail.HailContext.html#hail.HailContext.read">[docs]</a>    <span class="k">def</span> <span class="nf">read</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="p">,</span> <span class="n">sites_only</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">samples_only</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Read .vds files as variant dataset.</span>
+
+<span class="sd">        When loading multiple .vds files, they must have the same</span>
+<span class="sd">        sample IDs, genotype schema, split status and variant metadata.</span>
+
+<span class="sd">        :param path: .vds files to read.</span>
+<span class="sd">        :type path: str or list of str</span>
+
+<span class="sd">        :param bool sites_only: If True, create sites-only variant</span>
+<span class="sd">          dataset.  Don&#39;t load sample ids, sample annotations</span>
+<span class="sd">          or gneotypes.</span>
+
+<span class="sd">        :param bool samples_only: If True, create samples-only variant</span>
+<span class="sd">          dataset (no variants or genotypes).</span>
+
+<span class="sd">        :return: Variant dataset read from disk.</span>
+<span class="sd">        :rtype: :class:`.VariantDataset`</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">metadata</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_jhc</span><span class="o">.</span><span class="n">readAllMetadata</span><span class="p">(</span><span class="n">jindexed_seq_args</span><span class="p">(</span><span class="n">path</span><span class="p">))</span>
+        <span class="n">is_generic_genotype</span> <span class="o">=</span> <span class="n">metadata</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">_1</span><span class="p">()</span><span class="o">.</span><span class="n">isGenericGenotype</span><span class="p">()</span>
+
+        <span class="k">if</span> <span class="n">is_generic_genotype</span><span class="p">:</span>
+            <span class="n">jvds</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_jhc</span><span class="o">.</span><span class="n">readAllGDS</span><span class="p">(</span><span class="n">jindexed_seq_args</span><span class="p">(</span><span class="n">path</span><span class="p">),</span> <span class="n">sites_only</span><span class="p">,</span> <span class="n">samples_only</span><span class="p">,</span> <span class="n">joption</span><span class="p">(</span><span class="n">metadata</span><span class="p">))</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">jvds</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_jhc</span><span class="o">.</span><span class="n">readAll</span><span class="p">(</span><span class="n">jindexed_seq_args</span><span class="p">(</span><span class="n">path</span><span class="p">),</span> <span class="n">sites_only</span><span class="p">,</span> <span class="n">samples_only</span><span class="p">,</span> <span class="n">joption</span><span class="p">(</span><span class="n">metadata</span><span class="p">))</span>
+
+        <span class="k">return</span> <span class="n">VariantDataset</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">jvds</span><span class="p">)</span></div>
+
+    <span class="nd">@handle_py4j</span>
+<div class="viewcode-block" id="HailContext.write_partitioning"><a class="viewcode-back" href="../../hail.HailContext.html#hail.HailContext.write_partitioning">[docs]</a>    <span class="k">def</span> <span class="nf">write_partitioning</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Write partitioning.json.gz file for legacy VDS file.</span>
+
+<span class="sd">        :param str path: path to VDS file.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">_jhc</span><span class="o">.</span><span class="n">writePartitioning</span><span class="p">(</span><span class="n">path</span><span class="p">)</span></div>
+
+    <span class="nd">@handle_py4j</span>
+<div class="viewcode-block" id="HailContext.import_vcf"><a class="viewcode-back" href="../../hail.HailContext.html#hail.HailContext.import_vcf">[docs]</a>    <span class="k">def</span> <span class="nf">import_vcf</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="p">,</span> <span class="n">force</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">force_bgz</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">header_file</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">npartitions</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                   <span class="n">sites_only</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">store_gq</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">pp_as_pl</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">skip_bad_ad</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">generic</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+                   <span class="n">call_fields</span><span class="o">=</span><span class="p">[]):</span>
+        <span class="sd">&quot;&quot;&quot;Import VCF file(s) as variant dataset.</span>
+
+<span class="sd">        **Examples**</span>
+
+<span class="sd">        &gt;&gt;&gt; vds = hc.import_vcf(&#39;data/example2.vcf.bgz&#39;)</span>
+
+<span class="sd">        **Notes**</span>
+
+<span class="sd">        Hail is designed to be maximally compatible with files in the `VCF v4.2 spec &lt;https://samtools.github.io/hts-specs/VCFv4.2.pdf&gt;`_.</span>
+
+<span class="sd">        :py:meth:`~hail.HailContext.import_vcf` takes a list of VCF files to load. All files must have the same header and the same set of samples in the same order</span>
+<span class="sd">        (e.g., a variant dataset split by chromosome). Files can be specified as :ref:`Hadoop glob patterns &lt;sec-hadoop-glob&gt;`.</span>
+
+<span class="sd">        Ensure that the VCF file is correctly prepared for import: VCFs should either be uncompressed (*.vcf*) or block compressed</span>
+<span class="sd">        (*.vcf.bgz*).  If you have a large compressed VCF that ends in *.vcf.gz*, it is likely that the file is actually block-compressed,</span>
+<span class="sd">        and you should rename the file to &quot;.vcf.bgz&quot; accordingly. If you actually have a standard gzipped file, it is possible to import</span>
+<span class="sd">        it to Hail using the ``force`` optional parameter. However, this is not recommended -- all parsing will have to take place on one node because</span>
+<span class="sd">        gzip decompression is not parallelizable. In this case, import could take significantly longer.</span>
+
+<span class="sd">        If ``generic`` equals False (default), Hail makes certain assumptions about the genotype fields, see :class:`Representation &lt;hail.representation.Genotype&gt;`. On import, Hail filters</span>
+<span class="sd">        (sets to no-call) any genotype that violates these assumptions. Hail interprets the format fields: GT, AD, OD, DP, GQ, PL; all others are</span>
+<span class="sd">        silently dropped.</span>
+
+<span class="sd">        If ``generic`` equals True, the genotype schema is a :py:class:`~hail.type.TStruct` with field names equal to the IDs of the FORMAT fields.</span>
+<span class="sd">        The ``GT`` field is automatically read in as a :py:class:`~hail.type.TCall` type. To specify additional fields to import as a</span>
+<span class="sd">        :py:class:`~hail.type.TCall` type, use the ``call_fields`` parameter. All other fields are imported as the type specified in the FORMAT header field.</span>
+
+<span class="sd">        An example genotype schema after importing a VCF with ``generic=True`` is</span>
+
+<span class="sd">        .. code-block:: text</span>
+
+<span class="sd">            Struct {</span>
+<span class="sd">                GT: Call,</span>
+<span class="sd">                AD: Array[Int],</span>
+<span class="sd">                DP: Int,</span>
+<span class="sd">                GQ: Int,</span>
+<span class="sd">                PL: Array[Int]</span>
+<span class="sd">            }</span>
+
+<span class="sd">        .. warning::</span>
+
+<span class="sd">            - The variant dataset generated with ``generic=True`` will have significantly slower performance.</span>
+
+<span class="sd">            - Not all :py:class:`.VariantDataset` methods will work with a generic genotype schema.</span>
+
+<span class="sd">        :py:meth:`~hail.HailContext.import_vcf` does not perform deduplication - if the provided VCF(s) contain multiple records with the same chrom, pos, ref, alt, all</span>
+<span class="sd">        these records will be imported and will not be collapsed into a single variant.</span>
+
+<span class="sd">        Since Hail&#39;s genotype representation does not yet support ploidy other than 2,</span>
+<span class="sd">        this method imports haploid genotypes as diploid. If ``generic=False``, Hail fills in missing indices</span>
+<span class="sd">        in PL / PP arrays with 1000 to support the standard VCF / VDS &quot;genotype schema.</span>
+
+<span class="sd">        Below are two example haploid genotypes and diploid equivalents that Hail sees.</span>
+
+<span class="sd">        .. code-block:: text</span>
+
+<span class="sd">            Haploid:     1:0,6:7:70:70,0</span>
+<span class="sd">            Imported as: 1/1:0,6:7:70:70,1000,0</span>
+
+<span class="sd">            Haploid:     2:0,0,9:9:24:24,40,0</span>
+<span class="sd">            Imported as: 2/2:0,0,9:9:24:24,1000,40,1000:1000:0</span>
+
+
+<span class="sd">        .. note::</span>
+<span class="sd">            </span>
+<span class="sd">            Using the **FILTER** field:</span>
+<span class="sd">            </span>
+<span class="sd">            The information in the FILTER field of a VCF is contained in the ``va.filters`` annotation.</span>
+<span class="sd">            This annotation is a ``Set`` and can be queried for filter membership with expressions </span>
+<span class="sd">            like ``va.filters.contains(&quot;VQSRTranche99.5...&quot;)``. Variants that are flagged as &quot;PASS&quot; </span>
+<span class="sd">            will have no filters applied; for these variants, ``va.filters.isEmpty()`` is true. Thus, </span>
+<span class="sd">            filtering to PASS variants can be done with :py:meth:`.VariantDataset.filter_variants_expr`</span>
+<span class="sd">            as follows:</span>
+<span class="sd">            </span>
+<span class="sd">            &gt;&gt;&gt; pass_vds = vds.filter_variants_expr(&#39;va.filters.isEmpty()&#39;, keep=True)</span>
+
+<span class="sd">        **Annotations**</span>
+
+<span class="sd">        - **va.filters** (*Set[String]*) -- Set containing all filters applied to a variant. </span>
+<span class="sd">        - **va.rsid** (*String*) -- rsID of the variant.</span>
+<span class="sd">        - **va.qual** (*Double*) -- Floating-point number in the QUAL field.</span>
+<span class="sd">        - **va.info** (*Struct*) -- All INFO fields defined in the VCF header can be found in the</span>
+<span class="sd">          struct ``va.info``. Data types match the type specified in the VCF header, and if </span>
+<span class="sd">         the declared ``Number`` is not 1, the result will be stored as an array. </span>
+
+
+<span class="sd">        :param path: VCF file(s) to read.</span>
+<span class="sd">        :type path: str or list of str</span>
+
+<span class="sd">        :param bool force: If True, load .gz files serially. This means that no downstream operations</span>
+<span class="sd">            can be parallelized, so using this mode is strongly discouraged for VCFs larger than a few MB.</span>
+
+<span class="sd">        :param bool force_bgz: If True, load .gz files as blocked gzip files (BGZF)</span>
+
+<span class="sd">        :param header_file: File to load VCF header from.  If not specified, the first file in path is used.</span>
+<span class="sd">        :type header_file: str or None</span>
+
+<span class="sd">        :param npartitions: Number of partitions.</span>
+<span class="sd">        :type npartitions: int or None</span>
+
+<span class="sd">        :param bool sites_only: If True, create sites-only</span>
+<span class="sd">            variant dataset.  Don&#39;t load sample ids, sample annotations</span>
+<span class="sd">            or genotypes.</span>
+
+<span class="sd">        :param bool store_gq: If True, store GQ FORMAT field instead of computing from PL. Only applies if ``generic=False``.</span>
+
+<span class="sd">        :param bool pp_as_pl: If True, store PP FORMAT field as PL.  EXPERIMENTAL. Only applies if ``generic=False``.</span>
+
+<span class="sd">        :param bool skip_bad_ad: If True, set AD FORMAT field with</span>
+<span class="sd">            wrong number of elements to missing, rather than setting</span>
+<span class="sd">            the entire genotype to missing. Only applies if ``generic=False``.</span>
+
+<span class="sd">        :param bool generic: If True, read the genotype with a generic schema.</span>
+
+<span class="sd">        :param call_fields: FORMAT fields in VCF to treat as a :py:class:`~hail.type.TCall`. Only applies if ``generic=True``.</span>
+<span class="sd">        :type call_fields: str or list of str</span>
+
+<span class="sd">        :return: Variant dataset imported from VCF file(s)</span>
+<span class="sd">        :rtype: :py:class:`.VariantDataset`</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">if</span> <span class="n">generic</span><span class="p">:</span>
+            <span class="n">jvds</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_jhc</span><span class="o">.</span><span class="n">importVCFsGeneric</span><span class="p">(</span><span class="n">jindexed_seq_args</span><span class="p">(</span><span class="n">path</span><span class="p">),</span> <span class="n">force</span><span class="p">,</span> <span class="n">force_bgz</span><span class="p">,</span> <span class="n">joption</span><span class="p">(</span><span class="n">header_file</span><span class="p">),</span>
+                                           <span class="n">joption</span><span class="p">(</span><span class="n">npartitions</span><span class="p">),</span> <span class="n">sites_only</span><span class="p">,</span> <span class="n">jset_args</span><span class="p">(</span><span class="n">call_fields</span><span class="p">))</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">jvds</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_jhc</span><span class="o">.</span><span class="n">importVCFs</span><span class="p">(</span><span class="n">jindexed_seq_args</span><span class="p">(</span><span class="n">path</span><span class="p">),</span> <span class="n">force</span><span class="p">,</span> <span class="n">force_bgz</span><span class="p">,</span> <span class="n">joption</span><span class="p">(</span><span class="n">header_file</span><span class="p">),</span>
+                                        <span class="n">joption</span><span class="p">(</span><span class="n">npartitions</span><span class="p">),</span> <span class="n">sites_only</span><span class="p">,</span> <span class="n">store_gq</span><span class="p">,</span>
+                                        <span class="n">pp_as_pl</span><span class="p">,</span> <span class="n">skip_bad_ad</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">VariantDataset</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">jvds</span><span class="p">)</span></div>
+
+    <span class="nd">@handle_py4j</span>
+<div class="viewcode-block" id="HailContext.index_bgen"><a class="viewcode-back" href="../../hail.HailContext.html#hail.HailContext.index_bgen">[docs]</a>    <span class="k">def</span> <span class="nf">index_bgen</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Index .bgen files. :py:meth:`.HailContext.import_bgen` cannot run without these indices.</span>
+
+<span class="sd">        **Example**</span>
+
+<span class="sd">        &gt;&gt;&gt; vds = hc.index_bgen(&quot;data/example3.bgen&quot;)</span>
+
+<span class="sd">        .. warning::</span>
+
+<span class="sd">            While this method parallelizes over a list of BGEN files, each file is</span>
+<span class="sd">            indexed serially by one core. Indexing several BGEN files on a large</span>
+<span class="sd">            cluster is a waste of resources, so indexing should generally be done</span>
+<span class="sd">            as a one-time step separately from large analyses.</span>
+
+<span class="sd">        :param path: .bgen files to index.</span>
+<span class="sd">        :type path: str or list of str</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">_jhc</span><span class="o">.</span><span class="n">indexBgen</span><span class="p">(</span><span class="n">jindexed_seq_args</span><span class="p">(</span><span class="n">path</span><span class="p">))</span></div>
+
+    <span class="nd">@handle_py4j</span>
+<div class="viewcode-block" id="HailContext.balding_nichols_model"><a class="viewcode-back" href="../../hail.HailContext.html#hail.HailContext.balding_nichols_model">[docs]</a>    <span class="k">def</span> <span class="nf">balding_nichols_model</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">populations</span><span class="p">,</span> <span class="n">samples</span><span class="p">,</span> <span class="n">variants</span><span class="p">,</span> <span class="n">npartitions</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                              <span class="n">pop_dist</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">fst</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">af_dist</span><span class="o">=</span><span class="n">UniformDist</span><span class="p">(</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.9</span><span class="p">),</span>
+                              <span class="n">seed</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Simulate a variant dataset using the Balding-Nichols model.</span>
+
+<span class="sd">        **Examples**</span>
+
+<span class="sd">        To generate a VDS with 3 populations, 100 samples in total, and 1000 variants:</span>
+
+<span class="sd">        &gt;&gt;&gt; vds = hc.balding_nichols_model(3, 100, 1000)</span>
+
+<span class="sd">        To generate a VDS with 4 populations, 2000 samples, 5000 variants, 10 partitions, population distribution [0.1, 0.2, 0.3, 0.4], :math:`F_{ST}` values [.02, .06, .04, .12], ancestral allele frequencies drawn from a truncated beta distribution with a = .01 and b = .05 over the interval [0.05, 1], and random seed 1:</span>
+
+<span class="sd">        &gt;&gt;&gt; from hail.stats import TruncatedBetaDist</span>
+<span class="sd">        &gt;&gt;&gt; vds = hc.balding_nichols_model(4, 40, 150, 10,</span>
+<span class="sd">        ...                                pop_dist=[0.1, 0.2, 0.3, 0.4],</span>
+<span class="sd">        ...                                fst=[.02, .06, .04, .12],</span>
+<span class="sd">        ...                                af_dist=TruncatedBetaDist(a=0.01, b=2.0, minVal=0.05, maxVal=1.0),</span>
+<span class="sd">        ...                                seed=1)</span>
+
+<span class="sd">        **Notes**</span>
+
+<span class="sd">        Hail is able to randomly generate a VDS using the Balding-Nichols model.</span>
+
+<span class="sd">        - :math:`K` populations are labeled by integers 0, 1, ..., K - 1</span>
+<span class="sd">        - :math:`N` samples are named by strings 0, 1, ..., N - 1</span>
+<span class="sd">        - :math:`M` variants are defined as ``1:1:A:C``, ``1:2:A:C``, ..., ``1:M:A:C``</span>
+<span class="sd">        - The default ancestral frequency distribution :math:`P_0` is uniform on [0.1, 0.9]. Options are UniformDist(minVal, maxVal), BetaDist(a, b), and TruncatedBetaDist(a, b, minVal, maxVal). All three classes are located in hail.stats.</span>
+<span class="sd">        - The population distribution :math:`\pi` defaults to uniform</span>
+<span class="sd">        - The :math:`F_{ST}` values default to 0.1</span>
+<span class="sd">        - The number of partitions defaults to one partition per million genotypes (i.e., samples * variants / 10^6) or 8, whichever is larger</span>
+
+<span class="sd">        The Balding-Nichols model models genotypes of individuals from a structured population comprising :math:`K` homogeneous subpopulations</span>
+<span class="sd">        that have each diverged from a single ancestral population (a `star phylogeny`). We take :math:`N` samples and :math:`M` bi-allelic variants in perfect</span>
+<span class="sd">        linkage equilibrium. The relative sizes of the subpopulations are given by a probability vector :math:`\pi`; the ancestral allele frequencies are</span>
+<span class="sd">        drawn independently from a frequency spectrum :math:`P_0`; the subpopulations have diverged with possibly different :math:`F_{ST}` parameters :math:`F_k`</span>
+<span class="sd">        (here and below, lowercase indices run over a range bounded by the corresponding uppercase parameter, e.g. :math:`k = 1, \ldots, K`).</span>
+<span class="sd">        For each variant, the subpopulation allele frequencies are drawn a `beta distribution &lt;https://en.wikipedia.org/wiki/Beta_distribution&gt;`_, a useful continuous approximation of</span>
+<span class="sd">        the effect of genetic drift. We denote the individual subpopulation memberships by :math:`k_n`, the ancestral allele frequences by :math:`p_{0, m}`,</span>
+<span class="sd">        the subpopulation allele frequencies by :math:`p_{k, m}`, and the genotypes by :math:`g_{n, m}`. The generative model in then given by:</span>
+
+<span class="sd">        .. math::</span>
+<span class="sd">            k_n \,&amp;\sim\, \pi</span>
+
+<span class="sd">            p_{0,m}\,&amp;\sim\, P_0</span>
+
+<span class="sd">            p_{k,m}\mid p_{0,m}\,&amp;\sim\, \mathrm{Beta}(\mu = p_{0,m},\, \sigma^2 = F_k p_{0,m}(1 - p_{0,m}))</span>
+
+<span class="sd">            g_{n,m}\mid k_n, p_{k, m} \,&amp;\sim\, \mathrm{Binomial}(2, p_{k_n, m})</span>
+
+<span class="sd">        We have parametrized the beta distribution by its mean and variance; the usual parameters are :math:`a = (1 - p)(1 - F)/F,\; b = p(1-F)/F` with :math:`F = F_k,\; p = p_{0,m}`.</span>
+
+<span class="sd">        **Annotations**</span>
+
+<span class="sd">        :py:meth:`~hail.HailContext.balding_nichols_model` adds the following global, sample, and variant annotations:</span>
+
+<span class="sd">         - **global.nPops** (*Int*) -- Number of populations</span>
+<span class="sd">         - **global.nSamples** (*Int*) -- Number of samples</span>
+<span class="sd">         - **global.nVariants** (*Int*) -- Number of variants</span>
+<span class="sd">         - **global.popDist** (*Array[Double]*) -- Normalized population distribution indexed by population</span>
+<span class="sd">         - **global.Fst** (*Array[Double]*) -- :math:`F_{ST}` values indexed by population</span>
+<span class="sd">         - **global.seed** (*Int*) -- Random seed</span>
+<span class="sd">         - **global.ancestralAFDist** (*Struct*) -- Description of the ancestral allele frequency distribution</span>
+<span class="sd">         - **sa.pop** (*Int*) -- Population of sample</span>
+<span class="sd">         - **va.ancestralAF** (*Double*) -- Ancestral allele frequency</span>
+<span class="sd">         - **va.AF** (*Array[Double]*) -- Allele frequency indexed by population</span>
+
+<span class="sd">        :param int populations: Number of populations.</span>
+
+<span class="sd">        :param int samples: Number of samples.</span>
+
+<span class="sd">        :param int variants: Number of variants.</span>
+
+<span class="sd">        :param int npartitions: Number of partitions.</span>
+
+<span class="sd">        :param pop_dist: Unnormalized population distribution</span>
+<span class="sd">        :type pop_dist: array of float or None</span>
+
+<span class="sd">        :param fst: :math:`F_{ST}` values</span>
+<span class="sd">        :type fst: array of float or None</span>
+
+<span class="sd">        :param af_dist: Ancestral allele frequency distribution</span>
+<span class="sd">        :type af_dist: :class:`.UniformDist` or :class:`.BetaDist` or :class:`.TruncatedBetaDist`</span>
+
+<span class="sd">        :param int seed: Random seed.</span>
+
+<span class="sd">        :return: Variant dataset simulated using the Balding-Nichols model.</span>
+<span class="sd">        :rtype: :class:`.VariantDataset`</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">if</span> <span class="n">pop_dist</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">jvm_pop_dist_opt</span> <span class="o">=</span> <span class="n">joption</span><span class="p">(</span><span class="n">pop_dist</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">jvm_pop_dist_opt</span> <span class="o">=</span> <span class="n">joption</span><span class="p">(</span><span class="n">jarray</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_jvm</span><span class="o">.</span><span class="n">double</span><span class="p">,</span> <span class="n">pop_dist</span><span class="p">))</span>
+
+        <span class="k">if</span> <span class="n">fst</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">jvm_fst_opt</span> <span class="o">=</span> <span class="n">joption</span><span class="p">(</span><span class="n">fst</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">jvm_fst_opt</span> <span class="o">=</span> <span class="n">joption</span><span class="p">(</span><span class="n">jarray</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_jvm</span><span class="o">.</span><span class="n">double</span><span class="p">,</span> <span class="n">fst</span><span class="p">))</span>
+
+        <span class="n">jvds</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_jhc</span><span class="o">.</span><span class="n">baldingNicholsModel</span><span class="p">(</span><span class="n">populations</span><span class="p">,</span> <span class="n">samples</span><span class="p">,</span> <span class="n">variants</span><span class="p">,</span>
+                                             <span class="n">joption</span><span class="p">(</span><span class="n">npartitions</span><span class="p">),</span>
+                                             <span class="n">jvm_pop_dist_opt</span><span class="p">,</span>
+                                             <span class="n">jvm_fst_opt</span><span class="p">,</span>
+                                             <span class="n">af_dist</span><span class="o">.</span><span class="n">_jrep</span><span class="p">(),</span>
+                                             <span class="n">seed</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">VariantDataset</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">jvds</span><span class="p">)</span></div>
+
+    <span class="nd">@handle_py4j</span>
+<div class="viewcode-block" id="HailContext.dataframe_to_keytable"><a class="viewcode-back" href="../../hail.HailContext.html#hail.HailContext.dataframe_to_keytable">[docs]</a>    <span class="k">def</span> <span class="nf">dataframe_to_keytable</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">df</span><span class="p">,</span> <span class="n">keys</span><span class="o">=</span><span class="p">[]):</span>
+        <span class="sd">&quot;&quot;&quot;Convert Spark SQL DataFrame to key table.</span>
+
+<span class="sd">        Spark SQL data types are converted to Hail types in the obvious way as follows:</span>
+
+<span class="sd">        .. code-block:: text</span>
+
+<span class="sd">          BooleanType =&gt; Boolean</span>
+<span class="sd">          IntegerType =&gt; Int</span>
+<span class="sd">          LongType =&gt; Long</span>
+<span class="sd">          FloatType =&gt; Float</span>
+<span class="sd">          DoubleType =&gt; Double</span>
+<span class="sd">          StringType =&gt; String</span>
+<span class="sd">          BinaryType =&gt; Binary</span>
+<span class="sd">          ArrayType =&gt; Array</span>
+<span class="sd">          StructType =&gt; Struct</span>
+
+<span class="sd">        Unlisted Spark SQL data types are currently unsupported.</span>
+
+<span class="sd">        :param keys: List of key column names.</span>
+<span class="sd">        :type keys: list of string</span>
+
+<span class="sd">        :return: Key table constructed from the Spark SQL DataFrame.</span>
+<span class="sd">        :rtype: :class:`.KeyTable`</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">jkeys</span> <span class="o">=</span> <span class="n">jarray</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_jvm</span><span class="o">.</span><span class="n">java</span><span class="o">.</span><span class="n">lang</span><span class="o">.</span><span class="n">String</span><span class="p">,</span> <span class="n">keys</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">KeyTable</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_hail</span><span class="o">.</span><span class="n">keytable</span><span class="o">.</span><span class="n">KeyTable</span><span class="o">.</span><span class="n">fromDF</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_jhc</span><span class="p">,</span> <span class="n">df</span><span class="o">.</span><span class="n">_jdf</span><span class="p">,</span> <span class="n">jkeys</span><span class="p">))</span></div>
+
+    <span class="nd">@handle_py4j</span>
+<div class="viewcode-block" id="HailContext.eval_expr_typed"><a class="viewcode-back" href="../../hail.HailContext.html#hail.HailContext.eval_expr_typed">[docs]</a>    <span class="k">def</span> <span class="nf">eval_expr_typed</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">expr</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Evaluate an expression and return the result as well as its type.</span>
+
+<span class="sd">        :param str expr: Expression to evaluate.</span>
+
+<span class="sd">        :rtype: (annotation, :class:`.Type`)</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">x</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_jhc</span><span class="o">.</span><span class="n">eval</span><span class="p">(</span><span class="n">expr</span><span class="p">)</span>
+        <span class="n">t</span> <span class="o">=</span> <span class="n">Type</span><span class="o">.</span><span class="n">_from_java</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">_2</span><span class="p">())</span>
+        <span class="n">v</span> <span class="o">=</span> <span class="n">t</span><span class="o">.</span><span class="n">_convert_to_py</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">_1</span><span class="p">())</span>
+        <span class="k">return</span> <span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">t</span><span class="p">)</span></div>
+
+    <span class="nd">@handle_py4j</span>
+<div class="viewcode-block" id="HailContext.eval_expr"><a class="viewcode-back" href="../../hail.HailContext.html#hail.HailContext.eval_expr">[docs]</a>    <span class="k">def</span> <span class="nf">eval_expr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">expr</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Evaluate an expression.</span>
+
+<span class="sd">        :param str expr: Expression to evaluate.</span>
+
+<span class="sd">        :rtype: annotation</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">r</span><span class="p">,</span> <span class="n">t</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">eval_expr_typed</span><span class="p">(</span><span class="n">expr</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">r</span></div>
+
+<div class="viewcode-block" id="HailContext.stop"><a class="viewcode-back" href="../../hail.HailContext.html#hail.HailContext.stop">[docs]</a>    <span class="k">def</span> <span class="nf">stop</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; Shut down the Hail context.</span>
+
+<span class="sd">        It is not possible to have multiple Hail contexts running in a</span>
+<span class="sd">        single Python session, so use this if you need to reconfigure the Hail</span>
+<span class="sd">        context. Note that this also stops a running Spark context.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">sc</span><span class="o">.</span><span class="n">stop</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">sc</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="n">Env</span><span class="o">.</span><span class="n">_jvm</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="n">Env</span><span class="o">.</span><span class="n">_gateway</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="n">Env</span><span class="o">.</span><span class="n">_hc</span> <span class="o">=</span> <span class="kc">None</span></div>
+
+    <span class="nd">@handle_py4j</span>
+<div class="viewcode-block" id="HailContext.read_keytable"><a class="viewcode-back" href="../../hail.HailContext.html#hail.HailContext.read_keytable">[docs]</a>    <span class="k">def</span> <span class="nf">read_keytable</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Read a KT file as key table.</span>
+
+<span class="sd">        :param str path: KT file to read.</span>
+
+<span class="sd">        :return: Key table read from disk.</span>
+<span class="sd">        :rtype: :class:`.KeyTable`</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">jkt</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_jhc</span><span class="o">.</span><span class="n">readKeyTable</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">KeyTable</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">jkt</span><span class="p">)</span></div>
+
+    <span class="nd">@handle_py4j</span>
+<div class="viewcode-block" id="HailContext.report"><a class="viewcode-back" href="../../hail.HailContext.html#hail.HailContext.report">[docs]</a>    <span class="k">def</span> <span class="nf">report</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Print information and warnings about VCF + GEN import and deduplication.&quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_jhc</span><span class="o">.</span><span class="n">report</span><span class="p">()</span></div></div>
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, Hail Team.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'devel',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script type="text/javascript" src="../../../bootstrap.min.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+  
+  
+   
+
+</body>
+</html>

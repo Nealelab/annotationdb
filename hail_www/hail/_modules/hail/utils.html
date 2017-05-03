@@ -1,0 +1,388 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>hail.utils &mdash; Hail</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../../hail_logo_sq.png"/>
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../../navbar.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../../_static/rtd_modifications.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="../../genindex.html"/>
+        <link rel="search" title="Search" href="../../search.html"/>
+    <link rel="top" title="Hail" href="../../index.html"/>
+        <link rel="up" title="Module code" href="../index.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+  
+  
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <nav class="navbar navbar-default navbar-static-top" id="hail-navbar">
+<div class="container-fluid" id="hail-container-fluid">
+    <div class="navbar-header" id="hail-navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#hail-navbar-collapse" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+   
+      <a class="navbar-left" id="hail-navbar-brand" href="../index.html"><img alt="Hail" id="logo" src="hail-logo-cropped.png"></a>
+
+    </div>
+
+    <div class="collapse navbar-collapse" id="hail-navbar-collapse">
+      <ul class="nav navbar-nav navbar-right">
+          <li id="home" class="nav-item"><a href="../index.html">HOME</a></li>
+          <li id="docs" class="nav-item"><a href="index.html">DOCS</a></li>
+          <li id="forum" class="nav-item"><a href="http://discuss.hail.is">FORUM</a></li>
+          <li id="chat" class="nav-item dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">CHAT<span class="caret"></span></a>
+          <ul class="dropdown-menu dropdown-menu-left">
+            <li><a class="dropdown-item" href="https://gitter.im/hail-is/hail">General</a></li>
+            <li><a class="dropdown-item" href="https://gitter.im/hail-is/hail-dev">Developers</a></li>
+          </ul>
+        </li>
+       <li id="code" class="nav-item"><a href="https://github.com/hail-is/hail">CODE</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> Hail
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                devel
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../getting_started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial.html">Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../exprlang.html">Expression Language</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api.html">Python API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../annotationdb.html">Annotation Database</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../other_resources.html">Other Resources</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../index.html">Hail</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../index.html">Module code</a> &raquo;</li>
+        
+      <li>hail.utils</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for hail.utils</h1><div class="highlight"><pre>
+<span></span><span class="kn">from</span> <span class="nn">hail.java</span> <span class="k">import</span> <span class="n">Env</span><span class="p">,</span> <span class="n">handle_py4j</span><span class="p">,</span> <span class="n">jiterable_to_list</span>
+
+
+<div class="viewcode-block" id="TextTableConfig"><a class="viewcode-back" href="../../hail.TextTableConfig.html#hail.TextTableConfig">[docs]</a><span class="k">class</span> <span class="nc">TextTableConfig</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Configuration for delimited (text table) files.</span>
+
+<span class="sd">    :param bool noheader: File has no header and columns the N columns are named ``_1``, ``_2``, ... ``_N`` (0-indexed)</span>
+<span class="sd">    :param bool impute: Impute column types from the file</span>
+<span class="sd">    :param comment: Skip lines beginning with the given pattern</span>
+<span class="sd">    :type comment: str or None</span>
+<span class="sd">    :param str delimiter: Field delimiter regex</span>
+<span class="sd">    :param str missing: Specify identifier to be treated as missing</span>
+<span class="sd">    :param types: Define types of fields in annotations files   </span>
+<span class="sd">    :type types: str or None</span>
+
+<span class="sd">    :ivar bool noheader: File has no header and columns the N columns are named ``_1``, ``_2``, ... ``_N`` (0-indexed)</span>
+<span class="sd">    :ivar bool impute: Impute column types from the file</span>
+<span class="sd">    :ivar comment: Skip lines beginning with the given pattern</span>
+<span class="sd">    :vartype comment: str or None</span>
+<span class="sd">    :ivar str delimiter: Field delimiter regex</span>
+<span class="sd">    :ivar str missing: Specify identifier to be treated as missing</span>
+<span class="sd">    :ivar types: Define types of fields in annotations files</span>
+<span class="sd">    :vartype types: str or None</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">noheader</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">impute</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+                 <span class="n">comment</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s2">&quot;</span><span class="se">\\</span><span class="s2">t&quot;</span><span class="p">,</span> <span class="n">missing</span><span class="o">=</span><span class="s2">&quot;NA&quot;</span><span class="p">,</span> <span class="n">types</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">noheader</span> <span class="o">=</span> <span class="n">noheader</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">impute</span> <span class="o">=</span> <span class="n">impute</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">comment</span> <span class="o">=</span> <span class="n">comment</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">delimiter</span> <span class="o">=</span> <span class="n">delimiter</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">missing</span> <span class="o">=</span> <span class="n">missing</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">types</span> <span class="o">=</span> <span class="n">types</span>
+
+    <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_to_java</span><span class="p">()</span><span class="o">.</span><span class="n">toString</span><span class="p">()</span>
+
+    <span class="nd">@handle_py4j</span>
+    <span class="k">def</span> <span class="nf">_to_java</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Convert to Java TextTableConfiguration object.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">Env</span><span class="o">.</span><span class="n">hail</span><span class="p">()</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">TextTableConfiguration</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">types</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">comment</span><span class="p">,</span>
+                                                             <span class="bp">self</span><span class="o">.</span><span class="n">delimiter</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">missing</span><span class="p">,</span>
+                                                             <span class="bp">self</span><span class="o">.</span><span class="n">noheader</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">impute</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="Summary"><a class="viewcode-back" href="../../utils/index.html#hail.Summary">[docs]</a><span class="k">class</span> <span class="nc">Summary</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Class holding summary statistics about a dataset.</span>
+<span class="sd">    </span>
+<span class="sd">    :ivar int samples: Number of samples.</span>
+<span class="sd">    </span>
+<span class="sd">    :ivar int variants: Number of variants.</span>
+<span class="sd">    </span>
+<span class="sd">    :ivar float call_rate: Fraction of all genotypes called.</span>
+<span class="sd">    </span>
+<span class="sd">    :ivar contigs: Unique contigs found in dataset.</span>
+<span class="sd">    :vartype contigs: list of str </span>
+<span class="sd">    </span>
+<span class="sd">    :ivar int multiallelics: Number of multiallelic variants.</span>
+<span class="sd">    </span>
+<span class="sd">    :ivar int snps: Number of SNP alternate alleles.</span>
+<span class="sd">    </span>
+<span class="sd">    :ivar int mnps: Number of MNP alternate alleles.</span>
+
+<span class="sd">    :ivar int insertions: Number of insertion alternate alleles.</span>
+<span class="sd">    </span>
+<span class="sd">    :ivar int deletions: Number of deletion alternate alleles.</span>
+<span class="sd">    </span>
+<span class="sd">    :ivar int complex: Number of complex alternate alleles.</span>
+<span class="sd">    </span>
+<span class="sd">    :ivar int star: Number of star (upstream deletion) alternate alleles.</span>
+<span class="sd">    </span>
+<span class="sd">    :ivar int max_alleles: Highest number of alleles at any variant.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">_from_java</span><span class="p">(</span><span class="n">cls</span><span class="p">,</span> <span class="n">jrep</span><span class="p">):</span>
+        <span class="n">summary</span> <span class="o">=</span> <span class="n">Summary</span><span class="o">.</span><span class="n">__new__</span><span class="p">(</span><span class="n">cls</span><span class="p">)</span>
+        <span class="n">summary</span><span class="o">.</span><span class="n">samples</span> <span class="o">=</span> <span class="n">jrep</span><span class="o">.</span><span class="n">samples</span><span class="p">()</span>
+        <span class="n">summary</span><span class="o">.</span><span class="n">variants</span> <span class="o">=</span> <span class="n">jrep</span><span class="o">.</span><span class="n">variants</span><span class="p">()</span>
+        <span class="n">summary</span><span class="o">.</span><span class="n">call_rate</span> <span class="o">=</span> <span class="n">jrep</span><span class="o">.</span><span class="n">callRate</span><span class="p">()</span><span class="o">.</span><span class="n">getOrElse</span><span class="p">(</span><span class="kc">None</span><span class="p">)</span>
+        <span class="n">summary</span><span class="o">.</span><span class="n">contigs</span> <span class="o">=</span> <span class="p">[</span><span class="nb">str</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">jiterable_to_list</span><span class="p">(</span><span class="n">jrep</span><span class="o">.</span><span class="n">contigs</span><span class="p">())]</span>
+        <span class="n">summary</span><span class="o">.</span><span class="n">multiallelics</span> <span class="o">=</span> <span class="n">jrep</span><span class="o">.</span><span class="n">multiallelics</span><span class="p">()</span>
+        <span class="n">summary</span><span class="o">.</span><span class="n">snps</span> <span class="o">=</span> <span class="n">jrep</span><span class="o">.</span><span class="n">snps</span><span class="p">()</span>
+        <span class="n">summary</span><span class="o">.</span><span class="n">mnps</span> <span class="o">=</span> <span class="n">jrep</span><span class="o">.</span><span class="n">mnps</span><span class="p">()</span>
+        <span class="n">summary</span><span class="o">.</span><span class="n">insertions</span> <span class="o">=</span> <span class="n">jrep</span><span class="o">.</span><span class="n">insertions</span><span class="p">()</span>
+        <span class="n">summary</span><span class="o">.</span><span class="n">deletions</span> <span class="o">=</span> <span class="n">jrep</span><span class="o">.</span><span class="n">deletions</span><span class="p">()</span>
+        <span class="n">summary</span><span class="o">.</span><span class="n">complex</span> <span class="o">=</span> <span class="n">jrep</span><span class="o">.</span><span class="n">complex</span><span class="p">()</span>
+        <span class="n">summary</span><span class="o">.</span><span class="n">star</span> <span class="o">=</span> <span class="n">jrep</span><span class="o">.</span><span class="n">star</span><span class="p">()</span>
+        <span class="n">summary</span><span class="o">.</span><span class="n">max_alleles</span> <span class="o">=</span> <span class="n">jrep</span><span class="o">.</span><span class="n">maxAlleles</span><span class="p">()</span>
+        <span class="k">return</span> <span class="n">summary</span>
+
+    <span class="k">def</span> <span class="nf">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s1">&#39;Summary(samples=</span><span class="si">%d</span><span class="s1">, variants=</span><span class="si">%d</span><span class="s1">, call_rate=</span><span class="si">%f</span><span class="s1">, contigs=</span><span class="si">%s</span><span class="s1">, multiallelics=</span><span class="si">%d</span><span class="s1">, snps=</span><span class="si">%d</span><span class="s1">, &#39;</span> \
+               <span class="s1">&#39;mnps=</span><span class="si">%d</span><span class="s1">, insertions=</span><span class="si">%d</span><span class="s1">, deletions=</span><span class="si">%d</span><span class="s1">, complex=</span><span class="si">%d</span><span class="s1">, star=</span><span class="si">%d</span><span class="s1">, max_alleles=</span><span class="si">%d</span><span class="s1">)&#39;</span> <span class="o">%</span> <span class="p">(</span>
+                   <span class="bp">self</span><span class="o">.</span><span class="n">samples</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">variants</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">call_rate</span><span class="p">,</span>
+                   <span class="bp">self</span><span class="o">.</span><span class="n">contigs</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">multiallelics</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">snps</span><span class="p">,</span>
+                   <span class="bp">self</span><span class="o">.</span><span class="n">mnps</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">insertions</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">deletions</span><span class="p">,</span>
+                   <span class="bp">self</span><span class="o">.</span><span class="n">complex</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">star</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">max_alleles</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="nb">repr</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+
+<div class="viewcode-block" id="Summary.report"><a class="viewcode-back" href="../../utils/index.html#hail.Summary.report">[docs]</a>    <span class="k">def</span> <span class="nf">report</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Print the summary information.&quot;&quot;&quot;</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">)</span>  <span class="c1"># clear out pesky progress bar if necessary</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%16s</span><span class="s1">: </span><span class="si">%d</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="s1">&#39;Samples&#39;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">samples</span><span class="p">))</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%16s</span><span class="s1">: </span><span class="si">%d</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="s1">&#39;Variants&#39;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">variants</span><span class="p">))</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%16s</span><span class="s1">: </span><span class="si">%f</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="s1">&#39;Call Rate&#39;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">call_rate</span><span class="p">))</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%16s</span><span class="s1">: </span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="s1">&#39;Contigs&#39;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">contigs</span><span class="p">))</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%16s</span><span class="s1">: </span><span class="si">%d</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="s1">&#39;Multiallelics&#39;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">multiallelics</span><span class="p">))</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%16s</span><span class="s1">: </span><span class="si">%d</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="s1">&#39;SNPs&#39;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">snps</span><span class="p">))</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%16s</span><span class="s1">: </span><span class="si">%d</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="s1">&#39;MNPs&#39;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">mnps</span><span class="p">))</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%16s</span><span class="s1">: </span><span class="si">%d</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="s1">&#39;Insertions&#39;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">insertions</span><span class="p">))</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%16s</span><span class="s1">: </span><span class="si">%d</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="s1">&#39;Deletions&#39;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">deletions</span><span class="p">))</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%16s</span><span class="s1">: </span><span class="si">%d</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="s1">&#39;Complex Alleles&#39;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">complex</span><span class="p">))</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%16s</span><span class="s1">: </span><span class="si">%d</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="s1">&#39;Star Alleles&#39;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">star</span><span class="p">))</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%16s</span><span class="s1">: </span><span class="si">%d</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="s1">&#39;Max Alleles&#39;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">max_alleles</span><span class="p">))</span></div></div>
+
+
+<span class="k">class</span> <span class="nc">FunctionDocumentation</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="nd">@handle_py4j</span>
+    <span class="k">def</span> <span class="nf">types_rst</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">file_name</span><span class="p">):</span>
+        <span class="n">Env</span><span class="o">.</span><span class="n">hail</span><span class="p">()</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">FunctionDocumentation</span><span class="o">.</span><span class="n">makeTypesDocs</span><span class="p">(</span><span class="n">file_name</span><span class="p">)</span>
+
+    <span class="nd">@handle_py4j</span>
+    <span class="k">def</span> <span class="nf">functions_rst</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">file_name</span><span class="p">):</span>
+        <span class="n">Env</span><span class="o">.</span><span class="n">hail</span><span class="p">()</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">FunctionDocumentation</span><span class="o">.</span><span class="n">makeFunctionsDocs</span><span class="p">(</span><span class="n">file_name</span><span class="p">)</span>
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, Hail Team.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'devel',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script type="text/javascript" src="../../../bootstrap.min.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+  
+  
+   
+
+</body>
+</html>

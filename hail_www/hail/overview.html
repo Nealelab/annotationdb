@@ -1,0 +1,689 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Overview &mdash; Hail</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="hail_logo_sq.png"/>
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="navbar.css" type="text/css" />
+  
+    <link rel="stylesheet" href="_static/rtd_modifications.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="Hail" href="index.html"/>
+        <link rel="next" title="Hail Tutorial" href="tutorial.html"/>
+        <link rel="prev" title="Getting Started" href="getting_started.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+  
+  
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <nav class="navbar navbar-default navbar-static-top" id="hail-navbar">
+<div class="container-fluid" id="hail-container-fluid">
+    <div class="navbar-header" id="hail-navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#hail-navbar-collapse" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+   
+      <a class="navbar-left" id="hail-navbar-brand" href="../index.html"><img alt="Hail" id="logo" src="hail-logo-cropped.png"></a>
+
+    </div>
+
+    <div class="collapse navbar-collapse" id="hail-navbar-collapse">
+      <ul class="nav navbar-nav navbar-right">
+          <li id="home" class="nav-item"><a href="../index.html">HOME</a></li>
+          <li id="docs" class="nav-item"><a href="index.html">DOCS</a></li>
+          <li id="forum" class="nav-item"><a href="http://discuss.hail.is">FORUM</a></li>
+          <li id="chat" class="nav-item dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">CHAT<span class="caret"></span></a>
+          <ul class="dropdown-menu dropdown-menu-left">
+            <li><a class="dropdown-item" href="https://gitter.im/hail-is/hail">General</a></li>
+            <li><a class="dropdown-item" href="https://gitter.im/hail-is/hail-dev">Developers</a></li>
+          </ul>
+        </li>
+       <li id="code" class="nav-item"><a href="https://github.com/hail-is/hail">CODE</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Hail
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                devel
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="getting_started.html">Getting Started</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#variant-dataset-vds">Variant Dataset (VDS)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#expressions">Expressions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#define-variables-to-export">Define Variables to Export</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#input-variables-to-methods">Input Variables to Methods</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#filtering">Filtering</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#add-new-annotations">Add New Annotations</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#computed-from-existing-annotations">Computed From Existing Annotations</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#variant-annotation-computed-from-a-genotype-aggregable-gs">Variant Annotation Computed from a Genotype Aggregable (gs)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#sample-annotation-computed-from-a-genotype-aggregable-gs">Sample Annotation Computed from a Genotype Aggregable (gs)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#global-annotation-computed-from-a-sample-aggregable-samples">Global Annotation Computed from a Sample Aggregable (samples)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#global-annotation-computed-from-a-variant-aggregable-variants">Global Annotation Computed from a Variant Aggregable (variants)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial.html">Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="exprlang.html">Expression Language</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api.html">Python API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="annotationdb.html">Annotation Database</a></li>
+<li class="toctree-l1"><a class="reference internal" href="other_resources.html">Other Resources</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">Hail</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Overview</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/overview.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast,
+.nboutput.nblast {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast + .nbinput {
+    margin-top: -19px;
+}
+
+/* nice headers on first paragraph of info/warning boxes */
+.admonition .first {
+    margin: -12px;
+    padding: 6px 12px;
+    margin-bottom: 12px;
+    color: #fff;
+    line-height: 1;
+    display: block;
+}
+.admonition.warning .first {
+    background: #f0b37e;
+}
+.admonition.note .first {
+    background: #6ab0de;
+}
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+</style>
+<div class="section" id="overview">
+<span id="sec-overview"></span><h1>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h1>
+<p>A typical workflow in Hail begins with <strong>importing</strong> genotype data from a standard file format such as VCF, PLINK Binary files, GEN, or BGEN files into Hail&#8217;s <a class="reference internal" href="#overview-vds"><span class="std std-ref">Variant Dataset</span></a> format.
+Next, samples and variants are <strong>annotated</strong> with additional meta-information such as phenotype for samples and functional consequence for variants.
+Samples, variants, and genotypes are <strong>filtered</strong> from the dataset based on <a class="reference internal" href="#overview-expressions"><span class="std std-ref">expressions</span></a> constructed using Hail&#8217;s Domain-Specific Language.
+Once the dataset has been cleaned, various <strong>analytic</strong> methods such as PCA and logistic regression are used to find genetic associations.
+Lastly, data is <strong>exported</strong> to a variety of file formats.</p>
+<div class="section" id="variant-dataset-vds">
+<span id="overview-vds"></span><h2>Variant Dataset (VDS)<a class="headerlink" href="#variant-dataset-vds" title="Permalink to this headline">¶</a></h2>
+<img alt="_images/hail-vds-rep.png" src="_images/hail-vds-rep.png" />
+<p>Hail represents a genetic dataset as a matrix where the rows are keyed by <strong>Variants</strong>, the columns are keyed by <strong>Samples</strong>, and each cell is a <strong>Genotype</strong>.
+Variants, Samples, and Genotypes each have <span class="xref std std-ref">methods</span> to access attributes such as chromosome name, sample ID, and genotype call.
+Although this representation is similar to the VCF format, Hail uses a fast and storage-efficient internal representation called a Variant Dataset (<strong>VDS</strong>).</p>
+<p>In addition to information about Samples, Variants, and Genotypes, Hail stores meta-data as annotations that can be attached to each variant (<strong>variant annotations</strong>),
+each sample (<strong>sample annotations</strong>), and global to the dataset (<strong>global annotations</strong>).
+Annotations in Hail can be thought of as a hierarchial data structure with a specific schema that is typed (similar to the JSON format).
+For example, given this schema:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">va</span><span class="p">:</span> <span class="n">Struct</span> <span class="p">{</span>
+    <span class="n">qc</span><span class="p">:</span> <span class="n">Struct</span> <span class="p">{</span>
+        <span class="n">callRate</span><span class="p">:</span> <span class="n">Double</span><span class="p">,</span>
+        <span class="n">AC</span><span class="p">:</span> <span class="n">Int</span><span class="p">,</span>
+        <span class="n">hwe</span><span class="p">:</span> <span class="n">Struct</span> <span class="p">{</span>
+            <span class="n">rExpectedHetFrequency</span><span class="p">:</span> <span class="n">Double</span><span class="p">,</span>
+            <span class="n">pHWE</span><span class="p">:</span> <span class="n">Double</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>The callRate variable can be accessed with <code class="docutils literal"><span class="pre">va.qc.callRate</span></code> and has a Double type and the AC variable can be accessed with <code class="docutils literal"><span class="pre">va.qc.AC</span></code> and has an Int type.
+To access the pHWE and the rExpectedHetFrequency variables which are nested inside an extra struct referenced as <code class="docutils literal"><span class="pre">va.hwe</span></code>, use <code class="docutils literal"><span class="pre">va.qc.hwe.pHWE</span></code> and <code class="docutils literal"><span class="pre">va.qc.hwe.rExpectedHetFrequency</span></code>.</p>
+</div>
+<div class="section" id="expressions">
+<span id="overview-expressions"></span><h2>Expressions<a class="headerlink" href="#expressions" title="Permalink to this headline">¶</a></h2>
+<p>Expressions are snippets of code written in <a class="reference external" href="https://hail.is/expr_lang.html">Hail&#8217;s Expression Language</a> referencing elements of a VDS that are used for the following operations:</p>
+<blockquote>
+<div><ul class="simple">
+<li><a class="reference internal" href="#overview-expr-export"><span class="std std-ref">Define Variables to Export</span></a></li>
+<li><a class="reference internal" href="#overview-expr-input"><span class="std std-ref">Input Variables to Methods</span></a></li>
+<li><a class="reference internal" href="#overview-expr-filter"><span class="std std-ref">Filter Data</span></a></li>
+<li><a class="reference internal" href="#overview-expr-add"><span class="std std-ref">Add New Annotations</span></a></li>
+</ul>
+</div></blockquote>
+<p>The abbreviations for the VDS elements in expressions are as follows:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Symbol</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">v</span></code></td>
+<td><a class="reference internal" href="types.html#variant"><span class="std std-ref">Variant</span></a></td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal"><span class="pre">s</span></code></td>
+<td><span class="xref std std-ref">sample</span></td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">va</span></code></td>
+<td>Variant Annotations</td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal"><span class="pre">sa</span></code></td>
+<td>Sample Annotations</td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">global</span></code></td>
+<td>Global Annotations</td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal"><span class="pre">gs</span></code></td>
+<td>Row or Column of Genotypes (Genotype Aggregable)</td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">variants</span></code></td>
+<td>Variant Aggregable</td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal"><span class="pre">samples</span></code></td>
+<td>Sample Aggregable</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Which VDS elements are accessible in an expression is dependent on the command being used.</strong></p>
+<div class="section" id="define-variables-to-export">
+<span id="overview-expr-export"></span><h3>Define Variables to Export<a class="headerlink" href="#define-variables-to-export" title="Permalink to this headline">¶</a></h3>
+<p>To define how to export VDS elements to a TSV file, use an expression that defines the columns of the output file. Multiple columns are separated by commas.</p>
+<blockquote>
+<div><ul>
+<li><p class="first">Export the variant name <code class="docutils literal"><span class="pre">v</span></code>, the PASS annotation <code class="docutils literal"><span class="pre">va.pass</span></code>, and the mean GQ annotation <code class="docutils literal"><span class="pre">va.gqStats.mean</span></code> to a TSV file. There will be one line per variant and the output for the variant column <code class="docutils literal"><span class="pre">v</span></code> will be of the form <em>contig:start:ref:alt</em>. No header line will be present!!</p>
+<blockquote>
+<div><div class="highlight-none"><div class="highlight"><pre><span></span>v, va.pass, va.gqStats.mean
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p class="first">Same as above but include a header with the column names &#8220;Variant&#8221;, &#8220;PASS&#8221;, and &#8220;MeanGQ&#8221;</p>
+<blockquote>
+<div><div class="highlight-none"><div class="highlight"><pre><span></span>Variant = v, PASS = va.pass, MeanGQ = va.gqStats.mean
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p class="first">Export the sample name <code class="docutils literal"><span class="pre">s</span></code>, a sample annotation for the number of het calls <code class="docutils literal"><span class="pre">sa.nHet</span></code>, and a sample annotation for case status <code class="docutils literal"><span class="pre">sa.pheno.isCase</span></code>. There will be one line per sample. The header line will be &#8220;Sample&#8221;, &#8220;nHet&#8221;, and &#8220;Phenotype&#8221;.</p>
+<blockquote>
+<div><div class="highlight-none"><div class="highlight"><pre><span></span>Sample = s, nHet = sa.nHet, Phenotype = sa.pheno.isCase
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p class="first">Export all annotations generated by <a class="reference internal" href="hail.VariantDataset.html#hail.VariantDataset.variant_qc" title="hail.VariantDataset.variant_qc"><code class="xref py py-meth docutils literal"><span class="pre">variant_qc()</span></code></a></p>
+<blockquote>
+<div><div class="highlight-none"><div class="highlight"><pre><span></span>Variant = v, va.qc.*
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="input-variables-to-methods">
+<span id="overview-expr-input"></span><h3>Input Variables to Methods<a class="headerlink" href="#input-variables-to-methods" title="Permalink to this headline">¶</a></h3>
+<p>The <a class="reference internal" href="hail.VariantDataset.html#hail.VariantDataset.linreg" title="hail.VariantDataset.linreg"><code class="xref py py-func docutils literal"><span class="pre">linear</span></code></a> and <a class="reference internal" href="hail.VariantDataset.html#hail.VariantDataset.logreg" title="hail.VariantDataset.logreg"><code class="xref py py-func docutils literal"><span class="pre">logistic</span></code></a> regression commands utilize expressions containing sample annotation variables to define the response variable and covariates.</p>
+<blockquote>
+<div><ul>
+<li><p class="first">Linear regression command defining the response variable and covariates from sample annotations</p>
+<blockquote>
+<div><div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">vds</span><span class="o">.</span><span class="n">linreg</span><span class="p">(</span><span class="s1">&#39;sa.isCase&#39;</span><span class="p">,</span> <span class="n">covariates</span><span class="o">=</span><span class="s1">&#39;sa.PC1, sa.PC2, sa.PC3, sa.AGE&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="filtering">
+<span id="overview-expr-filter"></span><h3>Filtering<a class="headerlink" href="#filtering" title="Permalink to this headline">¶</a></h3>
+<p>Filter commands take a <strong>boolean expression</strong>. Here are some examples of boolean expressions using VDS elements:</p>
+<blockquote>
+<div><ul>
+<li><p class="first">Variant chromosome name <code class="docutils literal"><span class="pre">v.contig</span></code> does not equal &#8220;X&#8221; or &#8220;Y&#8221;</p>
+<blockquote>
+<div><div class="highlight-none"><div class="highlight"><pre><span></span>v.contig != “X” &amp;&amp; v.contig != “Y”
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p class="first">Sample id <code class="docutils literal"><span class="pre">s</span></code> does not match the substring &#8220;NA12&#8221;</p>
+<blockquote>
+<div><div class="highlight-none"><div class="highlight"><pre><span></span>!(&quot;NA12&quot; ~ s)
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p class="first">Sample annotation for whether a sample is female <code class="docutils literal"><span class="pre">sa.isFemale</span></code>, which is a boolean variable</p>
+<blockquote>
+<div><div class="highlight-none"><div class="highlight"><pre><span></span>sa.isFemale
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p class="first">Variant annotation for whether a variant has a pass flag <code class="docutils literal"><span class="pre">va.pass</span></code>, which is a boolean variable</p>
+<blockquote>
+<div><div class="highlight-none"><div class="highlight"><pre><span></span>va.pass
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p class="first">Variant annotation for the quality score <code class="docutils literal"><span class="pre">va.qual</span></code> (numeric variable) is greater than 20</p>
+<blockquote>
+<div><div class="highlight-none"><div class="highlight"><pre><span></span>va.qual &gt; 20
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p class="first">Expression that combines attributes of both <code class="docutils literal"><span class="pre">v</span></code> and <code class="docutils literal"><span class="pre">va</span></code></p>
+<blockquote>
+<div><div class="highlight-none"><div class="highlight"><pre><span></span>(va.qual &gt; 20 &amp;&amp; va.pass) || v.nAlleles == 2
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p class="first">Expression that combine attributes of both <code class="docutils literal"><span class="pre">s</span></code> and <code class="docutils literal"><span class="pre">sa</span></code></p>
+<blockquote>
+<div><div class="highlight-none"><div class="highlight"><pre><span></span>&quot;CONTROL&quot; ~ s || !sa.pheno.isCase
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="add-new-annotations">
+<span id="overview-expr-add"></span><h3>Add New Annotations<a class="headerlink" href="#add-new-annotations" title="Permalink to this headline">¶</a></h3>
+<p>To add new annotations, define an equation where the left-hand side is the name (path) of the new sample annotation and the right-hand side is the result of evaluating an expression with VDS elements.</p>
+<div class="section" id="computed-from-existing-annotations">
+<h4>Computed From Existing Annotations<a class="headerlink" href="#computed-from-existing-annotations" title="Permalink to this headline">¶</a></h4>
+<blockquote>
+<div><ul>
+<li><p class="first">Add a new variant annotation called <code class="docutils literal"><span class="pre">passAll</span></code> which is the result of a boolean expression evaluating other variant annotation variables</p>
+<blockquote>
+<div><div class="highlight-none"><div class="highlight"><pre><span></span>va.passAll = va.pass &amp;&amp; va.meanGQ &gt; 20 &amp;&amp; va.meanDP &gt; 20
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p class="first">Add a new sample annotation called <code class="docutils literal"><span class="pre">batch1</span></code> which is the result of a boolean expression comparing an existing boolean sample annotation variable to the string &#8220;Batch1&#8221;</p>
+<blockquote>
+<div><div class="highlight-none"><div class="highlight"><pre><span></span>sa.batch1 = sa.cohort == &quot;Batch1&quot;
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p class="first">Add a new boolean sample annotation based on the length of the sample ID</p>
+<blockquote>
+<div><div class="highlight-none"><div class="highlight"><pre><span></span>sa.idTooLong = s.length &gt; 10
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p class="first">Add a new variant annotation that is a String representing the chromosome and start position</p>
+<blockquote>
+<div><div class="highlight-none"><div class="highlight"><pre><span></span>va.altName = v.contig + &quot;:&quot; + v.start
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p class="first">Add a new variant annotation that splits a comma-separated string with gene names and keeps the first element of the resulting array</p>
+<blockquote>
+<div><div class="highlight-none"><div class="highlight"><pre><span></span>va.geneName = va.geneNames.split(&quot;,&quot;)[0]
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p class="first">Add a new variant annotation that is the log of an existing annotation</p>
+<blockquote>
+<div><div class="highlight-none"><div class="highlight"><pre><span></span>va.logIntensity = log(va.intensity)
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p class="first">Add a new global annotation computed from existing global annotations</p>
+<blockquote>
+<div><div class="highlight-none"><div class="highlight"><pre><span></span>global.callRate = global.nCalled / global.nGenotypes
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="variant-annotation-computed-from-a-genotype-aggregable-gs">
+<h4>Variant Annotation Computed from a Genotype Aggregable (gs)<a class="headerlink" href="#variant-annotation-computed-from-a-genotype-aggregable-gs" title="Permalink to this headline">¶</a></h4>
+<p>In the context of creating new variant annotations, a genotype aggregable (<code class="docutils literal"><span class="pre">gs</span></code>) represents a row of genotypes in the variant-sample matrix.
+The result of evaluating the genotype aggregable expression per row is added to the corresponding variant annotation.
+The <code class="docutils literal"><span class="pre">map</span></code> function takes a lambda expression as input (<code class="docutils literal"><span class="pre">g</span> <span class="pre">=&gt;</span> <span class="pre">...</span></code>). The <code class="docutils literal"><span class="pre">filter</span></code> function takes a boolean lambda expression as input (<code class="docutils literal"><span class="pre">g</span> <span class="pre">=&gt;</span> <span class="pre">Boolean</span> <span class="pre">Expression</span></code>).</p>
+<blockquote>
+<div><ul>
+<li><p class="first">Transform the genotype aggregable to an aggregable of GQ scores using the <code class="docutils literal"><span class="pre">map</span></code> function and then calculate summary statistics on the GQ scores with the <code class="docutils literal"><span class="pre">stats</span></code> function.</p>
+<blockquote>
+<div><div class="highlight-none"><div class="highlight"><pre><span></span>va.gqStats = gs.map(g =&gt; g.gq).stats()
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p class="first">Filter the genotype aggregable based on case status (<code class="docutils literal"><span class="pre">sa.pheno.isCase</span></code>) and genotype call (<code class="docutils literal"><span class="pre">g.isHet</span></code> and <code class="docutils literal"><span class="pre">g.isHomVar</span></code>) and then count the number of elements remaining</p>
+<blockquote>
+<div><div class="highlight-none"><div class="highlight"><pre><span></span>va.caseMAC = gs.filter(g =&gt; sa.pheno.isCase &amp;&amp; g.isHet).count() +
+         2 * gs.filter(g =&gt; sa.pheno.isCase &amp;&amp; g.isHomVar).count()
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p class="first">Define a filtered genotype aggregable from cases (<code class="docutils literal"><span class="pre">sa.pheno.isCase</span></code>) using the <code class="docutils literal"><span class="pre">let..in</span></code> syntax and then use the case-only genotype aggregable to calculate the fraction of genotypes called</p>
+<blockquote>
+<div><div class="highlight-none"><div class="highlight"><pre><span></span>va.caseCallRate = let caseGS = gs.filter(g =&gt; sa.pheno.isCase) in caseGS.fraction(g =&gt; g.isCalled)
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p class="first">Count the number of genotypes remaining after filtering the genotype aggregable to genotypes with a variant allele (<code class="docutils literal"><span class="pre">g.isCalledNonRef</span></code>) and then create a boolean variable by comparing the result to 1</p>
+<blockquote>
+<div><div class="highlight-none"><div class="highlight"><pre><span></span>va.isSingleton = gs.filter(g =&gt; g.isCalledNonRef).count() == 1
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="sample-annotation-computed-from-a-genotype-aggregable-gs">
+<h4>Sample Annotation Computed from a Genotype Aggregable (gs)<a class="headerlink" href="#sample-annotation-computed-from-a-genotype-aggregable-gs" title="Permalink to this headline">¶</a></h4>
+<p>In the context of creating new sample annotations, a genotype aggregable (<code class="docutils literal"><span class="pre">gs</span></code>) represents a column of genotypes in the variant-sample matrix.
+The result of evaluating the genotype aggregable expression per column is added to the corresponding sample annotation.
+The <code class="docutils literal"><span class="pre">map</span></code> function takes a lambda expression as input (<code class="docutils literal"><span class="pre">g</span> <span class="pre">=&gt;</span> <span class="pre">...</span></code>). The <code class="docutils literal"><span class="pre">filter</span></code> function takes a boolean lambda expression as input (<code class="docutils literal"><span class="pre">g</span> <span class="pre">=&gt;</span> <span class="pre">Boolean</span> <span class="pre">Expression</span></code>).</p>
+<blockquote>
+<div><ul>
+<li><p class="first">Filter the genotype aggregable to only genotypes that have a heterozygote call (<code class="docutils literal"><span class="pre">g.isHet</span></code>) and count the number of elements remaining</p>
+<blockquote>
+<div><div class="highlight-none"><div class="highlight"><pre><span></span>sa.numHet = gs.filter(g =&gt; g.isHet).count()
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p class="first">Count the number of elements remaining after filtering the genotype aggregable to only genotypes where the corresponding variant annotation is True for <code class="docutils literal"><span class="pre">isSingleton</span></code> and the genotype call has a variant allele (<code class="docutils literal"><span class="pre">g.isCalledNonRef</span></code>)</p>
+<blockquote>
+<div><div class="highlight-none"><div class="highlight"><pre><span></span>sa.nSingletons = gs.filter(g =&gt; va.isSingleton &amp;&amp; g.isCalledNonRef).count()
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p class="first">Count the fraction of genotypes per sample where the genotype call is defined <code class="docutils literal"><span class="pre">g.isCalled</span></code></p>
+<blockquote>
+<div><div class="highlight-none"><div class="highlight"><pre><span></span>sa.callRate = gs.fraction(g =&gt; g.isCalled)
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="global-annotation-computed-from-a-sample-aggregable-samples">
+<h4>Global Annotation Computed from a Sample Aggregable (samples)<a class="headerlink" href="#global-annotation-computed-from-a-sample-aggregable-samples" title="Permalink to this headline">¶</a></h4>
+<p>In the context of creating new global annotations, a sample aggregable (<code class="docutils literal"><span class="pre">samples</span></code>) represents iterating over all samples in the VDS.
+The <code class="docutils literal"><span class="pre">map</span></code> function takes a lambda expression as input (<code class="docutils literal"><span class="pre">s</span> <span class="pre">=&gt;</span> <span class="pre">...</span></code>). The <code class="docutils literal"><span class="pre">filter</span></code> function takes a boolean lambda expression as input (<code class="docutils literal"><span class="pre">s</span> <span class="pre">=&gt;</span> <span class="pre">Boolean</span> <span class="pre">Expression</span></code>).</p>
+<blockquote>
+<div><ul>
+<li><p class="first">Add a global annotation by filtering the samples aggregable to samples where the sample annotation <code class="docutils literal"><span class="pre">sa.pheno.isCase</span></code> evaluates to True and then count the number of elements remaining.</p>
+<blockquote>
+<div><div class="highlight-none"><div class="highlight"><pre><span></span>global.nCases = samples.filter(s =&gt; sa.pheno.isCase).count()
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p class="first">Add an array of passing sample IDs to global annotations by filtering the samples aggregable where the sample annotation <code class="docutils literal"><span class="pre">sa.pass</span></code> evaluates to True and then collecting the result</p>
+<blockquote>
+<div><div class="highlight-none"><div class="highlight"><pre><span></span>global.passingSamples = samples.filter(s =&gt; sa.pass).collect()
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="global-annotation-computed-from-a-variant-aggregable-variants">
+<h4>Global Annotation Computed from a Variant Aggregable (variants)<a class="headerlink" href="#global-annotation-computed-from-a-variant-aggregable-variants" title="Permalink to this headline">¶</a></h4>
+<p>In the context of creating new global annotations, a variant aggregable (<code class="docutils literal"><span class="pre">variants</span></code>) represents iterating over all variants in the VDS.
+The <code class="docutils literal"><span class="pre">map</span></code> function takes a lambda expression as input (<code class="docutils literal"><span class="pre">v</span> <span class="pre">=&gt;</span> <span class="pre">...</span></code>). The <code class="docutils literal"><span class="pre">filter</span></code> function takes a boolean lambda expression as input (<code class="docutils literal"><span class="pre">v</span> <span class="pre">=&gt;</span> <span class="pre">Boolean</span> <span class="pre">Expression</span></code>).</p>
+<blockquote>
+<div><ul>
+<li><p class="first">Count the number of elements in the variants aggregable and assign it to a new global annotation <code class="docutils literal"><span class="pre">global.nVariants</span></code></p>
+<blockquote>
+<div><div class="highlight-none"><div class="highlight"><pre><span></span>global.nVariants = variants.count()
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p class="first">Filter the variants aggregable to variants where the variant annotation <code class="docutils literal"><span class="pre">va.isSingleton</span></code> evaluates to True, count the number of elements remaining, and assign it to a new global annotation <code class="docutils literal"><span class="pre">global.nSingletons</span></code></p>
+<blockquote>
+<div><div class="highlight-none"><div class="highlight"><pre><span></span>global.nSingletons = variants.filter(v =&gt; va.isSingleton).count()
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+</ul>
+</div></blockquote>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="tutorial.html" class="btn btn-neutral float-right" title="Hail Tutorial" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="getting_started.html" class="btn btn-neutral" title="Getting Started" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, Hail Team.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'devel',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script type="text/javascript" src="../bootstrap.min.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+  
+  
+   
+
+</body>
+</html>

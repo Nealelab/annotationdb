@@ -1,0 +1,559 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Operators &mdash; Hail</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="hail_logo_sq.png"/>
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="navbar.css" type="text/css" />
+  
+    <link rel="stylesheet" href="_static/rtd_modifications.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="Hail" href="index.html"/>
+        <link rel="up" title="Expression Language" href="exprlang.html"/>
+        <link rel="next" title="Types" href="types.html"/>
+        <link rel="prev" title="Language Constructs" href="language_constructs.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+  
+  
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <nav class="navbar navbar-default navbar-static-top" id="hail-navbar">
+<div class="container-fluid" id="hail-container-fluid">
+    <div class="navbar-header" id="hail-navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#hail-navbar-collapse" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+   
+      <a class="navbar-left" id="hail-navbar-brand" href="../index.html"><img alt="Hail" id="logo" src="hail-logo-cropped.png"></a>
+
+    </div>
+
+    <div class="collapse navbar-collapse" id="hail-navbar-collapse">
+      <ul class="nav navbar-nav navbar-right">
+          <li id="home" class="nav-item"><a href="../index.html">HOME</a></li>
+          <li id="docs" class="nav-item"><a href="index.html">DOCS</a></li>
+          <li id="forum" class="nav-item"><a href="http://discuss.hail.is">FORUM</a></li>
+          <li id="chat" class="nav-item dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">CHAT<span class="caret"></span></a>
+          <ul class="dropdown-menu dropdown-menu-left">
+            <li><a class="dropdown-item" href="https://gitter.im/hail-is/hail">General</a></li>
+            <li><a class="dropdown-item" href="https://gitter.im/hail-is/hail-dev">Developers</a></li>
+          </ul>
+        </li>
+       <li id="code" class="nav-item"><a href="https://github.com/hail-is/hail">CODE</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Hail
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                devel
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="getting_started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial.html">Tutorial</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="exprlang.html">Expression Language</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="language_constructs.html">Language Constructs</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Operators</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#numeric">Numeric</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#array-numeric">Array[Numeric]</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#comparison">Comparison</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#logical">Logical</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#string">String</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="types.html">Types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="functions.html">Functions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="api.html">Python API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="annotationdb.html">Annotation Database</a></li>
+<li class="toctree-l1"><a class="reference internal" href="other_resources.html">Other Resources</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">Hail</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="exprlang.html">Expression Language</a> &raquo;</li>
+        
+      <li>Operators</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/operators.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast,
+.nboutput.nblast {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast + .nbinput {
+    margin-top: -19px;
+}
+
+/* nice headers on first paragraph of info/warning boxes */
+.admonition .first {
+    margin: -12px;
+    padding: 6px 12px;
+    margin-bottom: 12px;
+    color: #fff;
+    line-height: 1;
+    display: block;
+}
+.admonition.warning .first {
+    background: #f0b37e;
+}
+.admonition.note .first {
+    background: #6ab0de;
+}
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+</style>
+<div class="section" id="operators">
+<span id="sec-operators"></span><h1>Operators<a class="headerlink" href="#operators" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="numeric">
+<h2>Numeric<a class="headerlink" href="#numeric" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul>
+<li><p class="first"><code class="docutils literal"><span class="pre">+</span></code> &#8211; Add two operands.</p>
+<blockquote>
+<div><div class="highlight-text"><div class="highlight"><pre><span></span>5 + 3
+<span class="hll">8
+</span></pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p class="first"><code class="docutils literal"><span class="pre">-</span></code> &#8211; Subtract right operand from the left.</p>
+<blockquote>
+<div><div class="highlight-text"><div class="highlight"><pre><span></span>5 - 3
+<span class="hll">2
+</span></pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p class="first"><code class="docutils literal"><span class="pre">-</span></code> &#8211; Negates a number.</p>
+<blockquote>
+<div><div class="highlight-text"><div class="highlight"><pre><span></span>let x = 1 in -x
+<span class="hll">-1
+</span></pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p class="first"><code class="docutils literal"><span class="pre">*</span></code> &#8211; Multiply two operands.</p>
+<blockquote>
+<div><div class="highlight-text"><div class="highlight"><pre><span></span>5 * 3
+<span class="hll">15
+</span></pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p class="first"><code class="docutils literal"><span class="pre">/</span></code> &#8211; Divide left operand by the right one. Always results in a Double.</p>
+<blockquote>
+<div><div class="highlight-text"><div class="highlight"><pre><span></span>7 / 2
+<span class="hll">result: 3.5
+</span></pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p class="first"><code class="docutils literal"><span class="pre">%</span></code> &#8211; Remainder of the division of left operand by the right (modulus).</p>
+<blockquote>
+<div><div class="highlight-text"><div class="highlight"><pre><span></span>7 % 2
+<span class="hll">result: 1
+</span>
+10 % 4
+<span class="hll">result: 2
+</span></pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p class="first"><code class="docutils literal"><span class="pre">//</span></code> &#8211; Floor division - division that results into whole number adjusted to the left in the number line.</p>
+<blockquote>
+<div><div class="highlight-text"><div class="highlight"><pre><span></span>7 // 2
+<span class="hll">result: 3
+</span>
+-7 // 2
+<span class="hll">result: -4
+</span></pre></div>
+</div>
+</div></blockquote>
+</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="array-numeric">
+<h2>Array[Numeric]<a class="headerlink" href="#array-numeric" title="Permalink to this headline">¶</a></h2>
+<p>If one of the two operands is a scalar, the operation will be applied to each element of the Array. If both operands are Arrays, the operation will be applied positionally. This will fail if the array dimensions do not match.</p>
+<blockquote>
+<div><ul>
+<li><p class="first"><code class="docutils literal"><span class="pre">+</span></code> &#8211; Add two operands.</p>
+<blockquote>
+<div><div class="highlight-text"><div class="highlight"><pre><span></span>let a = [1, 2, 3] and b = [1, 1, 1] in a + b
+<span class="hll">result: [2, 3, 4]
+</span>
+let c = [2, 0, 1] and d = 5 in c + d
+<span class="hll">result: [7, 5, 6]
+</span></pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p class="first"><code class="docutils literal"><span class="pre">-</span></code> &#8211; Subtract right operand from the left.</p>
+<blockquote>
+<div><div class="highlight-text"><div class="highlight"><pre><span></span>let a = [1, 2, 3] and b = [1, 1, 1] in a - b
+<span class="hll">result: [0, 1, 2]
+</span>
+let c = [2, 0, 1] and d = 5 in c - d
+<span class="hll">result: [-3, -5, -4]
+</span>
+let e = 3 and f = [2, 4, 5] in e - f
+<span class="hll">result: [1, -1, -2]
+</span></pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p class="first"><code class="docutils literal"><span class="pre">*</span></code> &#8211; Multiply two operands.</p>
+<blockquote>
+<div><div class="highlight-text"><div class="highlight"><pre><span></span>let a = [1, 2, 3] and b = [1, 1, 1] in a * b
+<span class="hll">result: [1, 2, 3]
+</span>
+let c = [2, 0, 1] and d = 5 in c * d
+<span class="hll">result: [10, 0, 5]
+</span></pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p class="first"><code class="docutils literal"><span class="pre">/</span></code> &#8211; Divide left operand by the right one. Always results in a Double.</p>
+<blockquote>
+<div><div class="highlight-text"><div class="highlight"><pre><span></span>let a = [1, 2, 3] and b = [1, 4, 9] in a / b
+<span class="hll">result: [1.0, 0.5, 0.333]
+</span>
+let c = [2, 0, 1] and d = 5 in c / d
+<span class="hll">result: [0.4, 0.0, 0.2]
+</span>
+let e = 5 and f = [2, 4, 1] in e / f
+<span class="hll">result: [2.5, 1.25, 5.0]
+</span></pre></div>
+</div>
+</div></blockquote>
+</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="comparison">
+<h2>Comparison<a class="headerlink" href="#comparison" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul>
+<li><p class="first"><code class="docutils literal"><span class="pre">==</span></code> &#8211; True if the left operand is equal to the right operand.</p>
+<blockquote>
+<div><div class="highlight-text"><div class="highlight"><pre><span></span>let a = [1, 2, 3] and b = [1, 2, 3] in a == b
+<span class="hll">result: true
+</span></pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p class="first"><code class="docutils literal"><span class="pre">!=</span></code> &#8211; True if the left operand is not equal to the right operand.</p>
+<blockquote>
+<div><div class="highlight-text"><div class="highlight"><pre><span></span>let a = [1, 2, 3] and b = [4, 5, 6] in a != b
+<span class="hll">result: true
+</span></pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p class="first"><code class="docutils literal"><span class="pre">&lt;</span></code> &#8211; True if the left operand is less than the right operand.</p>
+<blockquote>
+<div><div class="highlight-text"><div class="highlight"><pre><span></span>5 &lt; 3
+<span class="hll">result: false
+</span></pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p class="first"><code class="docutils literal"><span class="pre">&lt;=</span></code> &#8211; True if the left operand is less than or equal to the right operand.</p>
+<blockquote>
+<div><div class="highlight-text"><div class="highlight"><pre><span></span>3 &lt;= 5
+<span class="hll">result: true
+</span></pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p class="first"><code class="docutils literal"><span class="pre">&gt;</span></code> &#8211; True if the left operand is greater than the right operand.</p>
+<blockquote>
+<div><div class="highlight-text"><div class="highlight"><pre><span></span>7 &gt; 2
+<span class="hll">result: true
+</span></pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p class="first"><code class="docutils literal"><span class="pre">&gt;=</span></code> &#8211; True if the left operand is greater than or equal to the right operand.</p>
+<blockquote>
+<div><div class="highlight-text"><div class="highlight"><pre><span></span>3 &gt;= 9
+<span class="hll">result: false
+</span></pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p class="first"><code class="docutils literal"><span class="pre">~</span></code> &#8211; True if a regular expression pattern matches the target string.</p>
+<blockquote>
+<div><div class="highlight-text"><div class="highlight"><pre><span></span>let regex = &#39;1kg&#39; and target = &#39;1kg-NA12878&#39; in regex ~ target
+<span class="hll">result: true
+</span></pre></div>
+</div>
+</div></blockquote>
+</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="logical">
+<h2>Logical<a class="headerlink" href="#logical" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul>
+<li><p class="first"><code class="docutils literal"><span class="pre">&amp;&amp;</span></code> &#8211; True if both the left and right operands are true.</p>
+<blockquote>
+<div><div class="highlight-text"><div class="highlight"><pre><span></span>(5 &gt;= 3) &amp;&amp; (2 &lt; 10)
+<span class="hll">result: true
+</span></pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p class="first"><code class="docutils literal"><span class="pre">||</span></code> &#8211; True if at least one operand is true.</p>
+<blockquote>
+<div><div class="highlight-text"><div class="highlight"><pre><span></span>(5 &lt;= 3) || (2 &lt; 10)
+<span class="hll">result: true
+</span></pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p class="first"><code class="docutils literal"><span class="pre">!</span></code> &#8211; Negates a boolean variable. Returns false if the variable is true and true if the variable is false.</p>
+<blockquote>
+<div><div class="highlight-text"><div class="highlight"><pre><span></span>!(5 &gt;= 3)
+<span class="hll">result: false
+</span></pre></div>
+</div>
+</div></blockquote>
+</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="string">
+<h2>String<a class="headerlink" href="#string" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul>
+<li><p class="first"><code class="docutils literal"><span class="pre">+</span></code> &#8211; Concatenate two strings together.</p>
+<blockquote>
+<div><div class="highlight-text"><div class="highlight"><pre><span></span>&quot;a&quot; + &quot;b&quot;
+<span class="hll">&quot;ab&quot;
+</span></pre></div>
+</div>
+</div></blockquote>
+</li>
+</ul>
+</div></blockquote>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="types.html" class="btn btn-neutral float-right" title="Types" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="language_constructs.html" class="btn btn-neutral" title="Language Constructs" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, Hail Team.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'devel',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script type="text/javascript" src="../bootstrap.min.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+  
+  
+   
+
+</body>
+</html>

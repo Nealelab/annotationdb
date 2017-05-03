@@ -1,0 +1,1117 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>hail.keytable &mdash; Hail</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../../hail_logo_sq.png"/>
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../../navbar.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../../_static/rtd_modifications.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="../../genindex.html"/>
+        <link rel="search" title="Search" href="../../search.html"/>
+    <link rel="top" title="Hail" href="../../index.html"/>
+        <link rel="up" title="Module code" href="../index.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+  
+  
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <nav class="navbar navbar-default navbar-static-top" id="hail-navbar">
+<div class="container-fluid" id="hail-container-fluid">
+    <div class="navbar-header" id="hail-navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#hail-navbar-collapse" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+   
+      <a class="navbar-left" id="hail-navbar-brand" href="../index.html"><img alt="Hail" id="logo" src="hail-logo-cropped.png"></a>
+
+    </div>
+
+    <div class="collapse navbar-collapse" id="hail-navbar-collapse">
+      <ul class="nav navbar-nav navbar-right">
+          <li id="home" class="nav-item"><a href="../index.html">HOME</a></li>
+          <li id="docs" class="nav-item"><a href="index.html">DOCS</a></li>
+          <li id="forum" class="nav-item"><a href="http://discuss.hail.is">FORUM</a></li>
+          <li id="chat" class="nav-item dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">CHAT<span class="caret"></span></a>
+          <ul class="dropdown-menu dropdown-menu-left">
+            <li><a class="dropdown-item" href="https://gitter.im/hail-is/hail">General</a></li>
+            <li><a class="dropdown-item" href="https://gitter.im/hail-is/hail-dev">Developers</a></li>
+          </ul>
+        </li>
+       <li id="code" class="nav-item"><a href="https://github.com/hail-is/hail">CODE</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> Hail
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                devel
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../getting_started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial.html">Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../exprlang.html">Expression Language</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api.html">Python API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../annotationdb.html">Annotation Database</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../other_resources.html">Other Resources</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../index.html">Hail</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../index.html">Module code</a> &raquo;</li>
+        
+      <li>hail.keytable</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for hail.keytable</h1><div class="highlight"><pre>
+<span></span><span class="kn">from</span> <span class="nn">__future__</span> <span class="k">import</span> <span class="n">print_function</span>  <span class="c1"># Python 2 and 3 print compatibility</span>
+
+<span class="kn">from</span> <span class="nn">hail.java</span> <span class="k">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">hail.expr</span> <span class="k">import</span> <span class="n">Type</span><span class="p">,</span> <span class="n">TArray</span><span class="p">,</span> <span class="n">TStruct</span>
+<span class="kn">from</span> <span class="nn">pyspark.sql</span> <span class="k">import</span> <span class="n">DataFrame</span>
+
+<span class="k">def</span> <span class="nf">asc</span><span class="p">(</span><span class="n">col</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Sort by ``col`` ascending.&quot;&quot;&quot;</span>
+    
+    <span class="k">return</span> <span class="n">scala_package_object</span><span class="p">(</span><span class="n">Env</span><span class="o">.</span><span class="n">hail</span><span class="p">()</span><span class="o">.</span><span class="n">keytable</span><span class="p">)</span><span class="o">.</span><span class="n">asc</span><span class="p">(</span><span class="n">col</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">desc</span><span class="p">(</span><span class="n">col</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Sort by ``col`` descending.&quot;&quot;&quot;</span>
+    
+    <span class="k">return</span> <span class="n">scala_package_object</span><span class="p">(</span><span class="n">Env</span><span class="o">.</span><span class="n">hail</span><span class="p">()</span><span class="o">.</span><span class="n">keytable</span><span class="p">)</span><span class="o">.</span><span class="n">desc</span><span class="p">(</span><span class="n">col</span><span class="p">)</span>
+
+<div class="viewcode-block" id="KeyTable"><a class="viewcode-back" href="../../hail.KeyTable.html#hail.KeyTable">[docs]</a><span class="k">class</span> <span class="nc">KeyTable</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Hail&#39;s version of a SQL table where columns can be designated as keys.</span>
+
+<span class="sd">    Key tables may be imported from a text file or Spark DataFrame with :py:meth:`~hail.HailContext.import_keytable`</span>
+<span class="sd">    or :py:meth:`~hail.HailContext.dataframe_to_keytable`, or generated from an existing variant dataset</span>
+<span class="sd">    with :py:meth:`~hail.VariantDataset.aggregate_by_key`, :py:meth:`~hail.VariantDataset.make_keytable`,</span>
+<span class="sd">    :py:meth:`~hail.VariantDataset.samples_keytable`, or :py:meth:`~hail.VariantDataset.variants_keytable`.</span>
+
+<span class="sd">    In the examples below, we have imported two key tables from text files (``kt1`` and ``kt2``).</span>
+
+<span class="sd">    &gt;&gt;&gt; kt1 = hc.import_keytable(&#39;data/kt_example1.tsv&#39;, config=TextTableConfig(impute=True))</span>
+
+<span class="sd">    +--+---+---+-+-+----+----+----+</span>
+<span class="sd">    |ID|HT |SEX|X|Z| C1 | C2 | C3 |</span>
+<span class="sd">    +==+===+===+=+=+====+====+====+</span>
+<span class="sd">    |1 |65 |M  |5|4|2	|50  |5   |</span>
+<span class="sd">    +--+---+---+-+-+----+----+----+</span>
+<span class="sd">    |2 |72 |M  |6|3|2	|61  |1   |</span>
+<span class="sd">    +--+---+---+-+-+----+----+----+</span>
+<span class="sd">    |3 |70 |F  |7|3|10	|81  |-5  |</span>
+<span class="sd">    +--+---+---+-+-+----+----+----+</span>
+<span class="sd">    |4 |60 |F  |8|2|11	|90  |-10 |</span>
+<span class="sd">    +--+---+---+-+-+----+----+----+</span>
+
+<span class="sd">    &gt;&gt;&gt; kt2 = hc.import_keytable(&#39;data/kt_example2.tsv&#39;, config=TextTableConfig(impute=True))</span>
+
+<span class="sd">    +---+---+------+</span>
+<span class="sd">    |ID	|A  |B     |</span>
+<span class="sd">    +===+===+======+</span>
+<span class="sd">    |1	|65 |cat   |</span>
+<span class="sd">    +---+---+------+</span>
+<span class="sd">    |2	|72 |dog   |</span>
+<span class="sd">    +---+---+------+</span>
+<span class="sd">    |3	|70 |mouse |</span>
+<span class="sd">    +---+---+------+</span>
+<span class="sd">    |4	|60 |rabbit|</span>
+<span class="sd">    +---+---+------+</span>
+
+<span class="sd">    :ivar hc: Hail Context</span>
+<span class="sd">    :vartype hc: :class:`.HailContext`</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">hc</span><span class="p">,</span> <span class="n">jkt</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">hc</span> <span class="o">=</span> <span class="n">hc</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_jkt</span> <span class="o">=</span> <span class="n">jkt</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">_schema</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_num_columns</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_key</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_column_names</span> <span class="o">=</span> <span class="kc">None</span>
+
+    <span class="k">def</span> <span class="nf">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_jkt</span><span class="o">.</span><span class="n">toString</span><span class="p">()</span>
+
+    <span class="nd">@staticmethod</span>
+<div class="viewcode-block" id="KeyTable.from_py"><a class="viewcode-back" href="../../hail.KeyTable.html#hail.KeyTable.from_py">[docs]</a>    <span class="k">def</span> <span class="nf">from_py</span><span class="p">(</span><span class="n">hc</span><span class="p">,</span> <span class="n">rows_py</span><span class="p">,</span> <span class="n">schema</span><span class="p">,</span> <span class="n">key_names</span><span class="o">=</span><span class="p">[],</span> <span class="n">npartitions</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">KeyTable</span><span class="p">(</span>
+            <span class="n">hc</span><span class="p">,</span>
+            <span class="n">Env</span><span class="o">.</span><span class="n">hail</span><span class="p">()</span><span class="o">.</span><span class="n">keytable</span><span class="o">.</span><span class="n">KeyTable</span><span class="o">.</span><span class="n">parallelize</span><span class="p">(</span>
+                <span class="n">hc</span><span class="o">.</span><span class="n">_jhc</span><span class="p">,</span> <span class="p">[</span><span class="n">schema</span><span class="o">.</span><span class="n">_convert_to_j</span><span class="p">(</span><span class="n">r</span><span class="p">)</span> <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">rows_py</span><span class="p">],</span>
+                <span class="n">schema</span><span class="o">.</span><span class="n">_jtype</span><span class="p">,</span> <span class="n">key_names</span><span class="p">,</span> <span class="n">joption</span><span class="p">(</span><span class="n">npartitions</span><span class="p">)))</span></div>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">num_columns</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Number of columns.</span>
+
+<span class="sd">        &gt;&gt;&gt; kt1.num_columns</span>
+<span class="sd">        8</span>
+
+<span class="sd">        :rtype: int</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_num_columns</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_num_columns</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_jkt</span><span class="o">.</span><span class="n">nFields</span><span class="p">()</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_num_columns</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">schema</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Key table schema.</span>
+
+<span class="sd">        **Example:**</span>
+
+<span class="sd">        Print the key table columns / signatures:</span>
+
+<span class="sd">        &gt;&gt;&gt; print(kt1.schema)</span>
+<span class="sd">        Struct {</span>
+<span class="sd">            ID: Int,</span>
+<span class="sd">            HT: Int,</span>
+<span class="sd">            SEX: String,</span>
+<span class="sd">            X: Int,</span>
+<span class="sd">            Z: Int,</span>
+<span class="sd">            C1: Int,</span>
+<span class="sd">            C2: Int,</span>
+<span class="sd">            C3: Int</span>
+<span class="sd">        }</span>
+
+<span class="sd">        :rtype: :class:`.TStruct`</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_schema</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_schema</span> <span class="o">=</span> <span class="n">Type</span><span class="o">.</span><span class="n">_from_java</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_jkt</span><span class="o">.</span><span class="n">signature</span><span class="p">())</span>
+            <span class="k">assert</span> <span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_schema</span><span class="p">,</span> <span class="n">TStruct</span><span class="p">))</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_schema</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">key</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;List of key column names.</span>
+
+<span class="sd">        &gt;&gt;&gt; kt1.key</span>
+<span class="sd">        [u&#39;ID&#39;]</span>
+
+<span class="sd">        :rtype: list of str</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_key</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_key</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_jkt</span><span class="o">.</span><span class="n">key</span><span class="p">())</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_key</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">column_names</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Names of all columns.</span>
+
+<span class="sd">        &gt;&gt;&gt; kt1.column_names</span>
+<span class="sd">        [u&#39;ID&#39;, u&#39;HT&#39;, u&#39;SEX&#39;, u&#39;X&#39;, u&#39;Z&#39;, u&#39;C1&#39;, u&#39;C2&#39;, u&#39;C3&#39;]</span>
+
+<span class="sd">        :rtype: list of str</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_column_names</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_column_names</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_jkt</span><span class="o">.</span><span class="n">fieldNames</span><span class="p">())</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_column_names</span>
+
+    <span class="nd">@handle_py4j</span>
+<div class="viewcode-block" id="KeyTable.count_rows"><a class="viewcode-back" href="../../hail.KeyTable.html#hail.KeyTable.count_rows">[docs]</a>    <span class="k">def</span> <span class="nf">count_rows</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Number of rows.</span>
+
+<span class="sd">        &gt;&gt;&gt; kt1.count_rows()</span>
+<span class="sd">        4L</span>
+
+<span class="sd">        :rtype: long</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_jkt</span><span class="o">.</span><span class="n">nRows</span><span class="p">()</span></div>
+
+    <span class="nd">@handle_py4j</span>
+<div class="viewcode-block" id="KeyTable.same"><a class="viewcode-back" href="../../hail.KeyTable.html#hail.KeyTable.same">[docs]</a>    <span class="k">def</span> <span class="nf">same</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Test whether two key tables are identical.</span>
+
+<span class="sd">        **Examples**</span>
+
+<span class="sd">        &gt;&gt;&gt; if kt1.same(kt2):</span>
+<span class="sd">        ...     print(&quot;KeyTables are the same!&quot;)</span>
+
+<span class="sd">        :param other: key table to compare against</span>
+<span class="sd">        :type other: :class:`.KeyTable` </span>
+
+<span class="sd">        :rtype: bool</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_jkt</span><span class="o">.</span><span class="n">same</span><span class="p">(</span><span class="n">other</span><span class="o">.</span><span class="n">_jkt</span><span class="p">)</span></div>
+
+    <span class="nd">@handle_py4j</span>
+<div class="viewcode-block" id="KeyTable.export"><a class="viewcode-back" href="../../hail.KeyTable.html#hail.KeyTable.export">[docs]</a>    <span class="k">def</span> <span class="nf">export</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">output</span><span class="p">,</span> <span class="n">types_file</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Export to a TSV file.</span>
+
+<span class="sd">        **Examples**</span>
+
+<span class="sd">        Rename column names of key table and export to file:</span>
+
+<span class="sd">        &gt;&gt;&gt; (kt1.rename({&#39;HT&#39; : &#39;Height&#39;})</span>
+<span class="sd">        ...     .export(&quot;output/kt1_renamed.tsv&quot;))</span>
+
+<span class="sd">        :param str output: Output file path.</span>
+
+<span class="sd">        :param str types_file: Output path of types file.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">_jkt</span><span class="o">.</span><span class="n">export</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">hc</span><span class="o">.</span><span class="n">_jsc</span><span class="p">,</span> <span class="n">output</span><span class="p">,</span> <span class="n">types_file</span><span class="p">)</span></div>
+
+    <span class="nd">@handle_py4j</span>
+<div class="viewcode-block" id="KeyTable.filter"><a class="viewcode-back" href="../../hail.KeyTable.html#hail.KeyTable.filter">[docs]</a>    <span class="k">def</span> <span class="nf">filter</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">condition</span><span class="p">,</span> <span class="n">keep</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Filter rows.</span>
+
+<span class="sd">        **Examples**</span>
+
+<span class="sd">        Keep rows where ``C1`` equals 5:</span>
+
+<span class="sd">        &gt;&gt;&gt; kt_result = kt1.filter(&quot;C1 == 5&quot;)</span>
+
+<span class="sd">        Remove rows where ``C1`` equals 10:</span>
+
+<span class="sd">        &gt;&gt;&gt; kt_result = kt1.filter(&quot;C1 == 10&quot;, keep=False)</span>
+
+<span class="sd">        **Notes**</span>
+
+<span class="sd">        The scope for ``condition`` is all column names in the input :class:`KeyTable`.</span>
+
+<span class="sd">        For more information, see the documentation on writing `expressions &lt;../overview.html#expressions&gt;`_</span>
+<span class="sd">        and using the `Hail Expression Language &lt;../reference.html#HailExpressionLanguage&gt;`_.</span>
+
+<span class="sd">        .. caution::</span>
+<span class="sd">           When ``condition`` evaluates to missing, the row will be removed regardless of whether ``keep=True`` or ``keep=False``.</span>
+
+<span class="sd">        :param str condition: Annotation expression.</span>
+
+<span class="sd">        :param bool keep: Keep rows where ``condition`` evaluates to True.</span>
+
+<span class="sd">        :return: Key table whose rows have been filtered by evaluating ``condition``.</span>
+<span class="sd">        :rtype: :class:`.KeyTable`</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">return</span> <span class="n">KeyTable</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">hc</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_jkt</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">condition</span><span class="p">,</span> <span class="n">keep</span><span class="p">))</span></div>
+
+    <span class="nd">@handle_py4j</span>
+<div class="viewcode-block" id="KeyTable.annotate"><a class="viewcode-back" href="../../hail.KeyTable.html#hail.KeyTable.annotate">[docs]</a>    <span class="k">def</span> <span class="nf">annotate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">expr</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Add new columns computed from existing columns.</span>
+
+<span class="sd">        **Examples**</span>
+
+<span class="sd">        Add new column ``Y`` which is equal to 5 times ``X``:</span>
+
+<span class="sd">        &gt;&gt;&gt; kt_result = kt1.annotate(&quot;Y = 5 * X&quot;)</span>
+
+
+<span class="sd">        **Notes**</span>
+
+<span class="sd">        The scope for ``expr`` is all column names in the input :class:`KeyTable`.</span>
+
+<span class="sd">        For more information, see the documentation on writing `expressions &lt;../overview.html#expressions&gt;`_</span>
+<span class="sd">        and using the `Hail Expression Language &lt;../reference.html#HailExpressionLanguage&gt;`_.</span>
+
+<span class="sd">        :param expr: Annotation expression or multiple annotation expressions.</span>
+<span class="sd">        :type expr: str or list of str</span>
+
+<span class="sd">        :return: Key table with new columns specified by ``expr``.</span>
+<span class="sd">        :rtype: :class:`.KeyTable`</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">expr</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span>
+            <span class="n">expr</span> <span class="o">=</span> <span class="s1">&#39;,&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">expr</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">KeyTable</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">hc</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_jkt</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="n">expr</span><span class="p">))</span></div>
+
+<div class="viewcode-block" id="KeyTable.join"><a class="viewcode-back" href="../../hail.KeyTable.html#hail.KeyTable.join">[docs]</a>    <span class="k">def</span> <span class="nf">join</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">right</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s1">&#39;inner&#39;</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Join two key tables together.</span>
+
+<span class="sd">        **Examples**</span>
+
+<span class="sd">        Join ``kt1`` to ``kt2`` to produce ``kt_joined``:</span>
+
+<span class="sd">        &gt;&gt;&gt; kt_result = kt1.key_by(&#39;ID&#39;).join(kt2.key_by(&#39;ID&#39;))</span>
+
+<span class="sd">        **Notes:**</span>
+
+<span class="sd">        Hail supports four types of joins specified by ``how``:</span>
+
+<span class="sd">         - **inner** -- Key must be present in both ``kt1`` and ``kt2``.</span>
+<span class="sd">         - **outer** -- Key present in ``kt1`` or ``kt2``. For keys only in ``kt1``, the value of non-key columns from ``kt2`` is set to missing.</span>
+<span class="sd">           Likewise, for keys only in ``kt2``, the value of non-key columns from ``kt1`` is set to missing.</span>
+<span class="sd">         - **left** -- Key present in ``kt1``. For keys only in ``kt1``, the value of non-key columns from ``kt2`` is set to missing.</span>
+<span class="sd">         - **right** -- Key present in ``kt2``. For keys only in ``kt2``, the value of non-key columns from ``kt1`` is set to missing.</span>
+
+<span class="sd">        The non-key fields in ``kt2`` must have non-overlapping column names with ``kt1``.</span>
+
+<span class="sd">        Both key tables must have the same number of keys and the corresponding types of each key must be the same (order matters), but the key names can be different.</span>
+<span class="sd">        For example, if ``kt1`` has the key schema ``Struct{(&quot;a&quot;, Int), (&quot;b&quot;, String)}``, ``kt1`` can be merged with a key table that has a key schema equal to</span>
+<span class="sd">        ``Struct{(&quot;b&quot;, Int), (&quot;c&quot;, String)}`` but cannot be merged to a key table with key schema ``Struct{(&quot;b&quot;, &quot;String&quot;), (&quot;a&quot;, Int)}``. ``kt_joined`` will have the same key names and schema as ``kt1``.</span>
+
+<span class="sd">        :param  right: Key table to join</span>
+<span class="sd">        :type right: :class:`.KeyTable`</span>
+
+<span class="sd">        :param str how: Method for joining two tables together. One of &quot;inner&quot;, &quot;outer&quot;, &quot;left&quot;, &quot;right&quot;.</span>
+
+<span class="sd">        :return: Key table that results from joining this key table with another.</span>
+<span class="sd">        :rtype: :class:`.KeyTable`</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">return</span> <span class="n">KeyTable</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">hc</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_jkt</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">right</span><span class="o">.</span><span class="n">_jkt</span><span class="p">,</span> <span class="n">how</span><span class="p">))</span></div>
+
+    <span class="nd">@handle_py4j</span>
+<div class="viewcode-block" id="KeyTable.aggregate_by_key"><a class="viewcode-back" href="../../hail.KeyTable.html#hail.KeyTable.aggregate_by_key">[docs]</a>    <span class="k">def</span> <span class="nf">aggregate_by_key</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key_expr</span><span class="p">,</span> <span class="n">agg_expr</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Group by key condition and aggregate results.</span>
+
+<span class="sd">        **Examples**</span>
+
+<span class="sd">        Compute mean height by sex:</span>
+
+<span class="sd">        &gt;&gt;&gt; kt_ht_by_sex = kt1.aggregate_by_key(&quot;SEX = SEX&quot;, &quot;MEAN_HT = HT.stats().mean&quot;)</span>
+
+<span class="sd">        The result of :py:meth:`.aggregate_by_key` is a key table ``kt_ht_by_sex`` with the following data:</span>
+
+<span class="sd">        +--------+----------+</span>
+<span class="sd">        |   SEX  |MEAN_HT   |</span>
+<span class="sd">        +========+==========+</span>
+<span class="sd">        |   M    |  68.5    |</span>
+<span class="sd">        +--------+----------+</span>
+<span class="sd">        |   F    |   65     |</span>
+<span class="sd">        +--------+----------+</span>
+
+<span class="sd">        **Notes**</span>
+
+<span class="sd">        The scope for both ``key_expr`` and ``agg_expr`` is all column names in the input :class:`KeyTable`.</span>
+
+<span class="sd">        For more information, see the documentation on writing :ref:`expressions &lt;overview-expressions&gt;`</span>
+<span class="sd">        and using the `Hail Expression Language &lt;https://hail.is/expr_lang.html&gt;`_</span>
+
+<span class="sd">        :param key_expr: Named expression(s) for how to compute the keys of the new key table.</span>
+<span class="sd">        :type key_expr: str or list of str</span>
+
+<span class="sd">        :param agg_expr: Named aggregation expression(s).</span>
+<span class="sd">        :type agg_expr: str or list of str</span>
+
+<span class="sd">        :return: A new key table with the keys computed from the ``key_expr`` and the remaining columns computed from the ``agg_expr``.</span>
+<span class="sd">        :rtype: :class:`.KeyTable`</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">key_expr</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span>
+            <span class="n">key_expr</span> <span class="o">=</span> <span class="s2">&quot;,&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">key_expr</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">agg_expr</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span>
+            <span class="n">agg_expr</span> <span class="o">=</span> <span class="s2">&quot;, &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">agg_expr</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">KeyTable</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">hc</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_jkt</span><span class="o">.</span><span class="n">aggregate</span><span class="p">(</span><span class="n">key_expr</span><span class="p">,</span> <span class="n">agg_expr</span><span class="p">))</span></div>
+
+    <span class="nd">@handle_py4j</span>
+<div class="viewcode-block" id="KeyTable.forall"><a class="viewcode-back" href="../../hail.KeyTable.html#hail.KeyTable.forall">[docs]</a>    <span class="k">def</span> <span class="nf">forall</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">code</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Test whether a condition is true for all rows.</span>
+
+<span class="sd">        **Examples**</span>
+
+<span class="sd">        Test whether all rows in the key table have the value of ``C1`` equal to 5:</span>
+
+<span class="sd">        &gt;&gt;&gt; if kt1.forall(&quot;C1 == 5&quot;):</span>
+<span class="sd">        ...     print(&quot;All rows have C1 equal 5.&quot;)</span>
+
+<span class="sd">        :param str code: Boolean expression.</span>
+
+<span class="sd">        :rtype: bool</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_jkt</span><span class="o">.</span><span class="n">forall</span><span class="p">(</span><span class="n">code</span><span class="p">)</span></div>
+
+    <span class="nd">@handle_py4j</span>
+<div class="viewcode-block" id="KeyTable.exists"><a class="viewcode-back" href="../../hail.KeyTable.html#hail.KeyTable.exists">[docs]</a>    <span class="k">def</span> <span class="nf">exists</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">code</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Test whether a condition is true for at least one row.</span>
+
+<span class="sd">        **Examples**</span>
+
+<span class="sd">        Test whether any row in the key table has the value of ``C1`` equal to 5:</span>
+
+<span class="sd">        &gt;&gt;&gt; if kt1.exists(&quot;C1 == 5&quot;):</span>
+<span class="sd">        ...     print(&quot;At least one row has C1 equal 5.&quot;)</span>
+
+<span class="sd">        :param str code: Boolean expression.</span>
+
+<span class="sd">        :rtype: bool</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_jkt</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">code</span><span class="p">)</span></div>
+
+    <span class="nd">@handle_py4j</span>
+<div class="viewcode-block" id="KeyTable.rename"><a class="viewcode-back" href="../../hail.KeyTable.html#hail.KeyTable.rename">[docs]</a>    <span class="k">def</span> <span class="nf">rename</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">column_names</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Rename columns of key table.</span>
+
+<span class="sd">        ``column_names`` can be either a list of new names or a dict</span>
+<span class="sd">        mapping old names to new names.  If ``column_names`` is a list,</span>
+<span class="sd">        its length must be the number of columns in this :py:class:`.KeyTable`.</span>
+
+<span class="sd">        **Examples**</span>
+
+<span class="sd">        Rename using a list:</span>
+
+<span class="sd">        &gt;&gt;&gt; kt2.rename([&#39;newColumn1&#39;, &#39;newColumn2&#39;, &#39;newColumn3&#39;])</span>
+
+<span class="sd">        Rename using a dict:</span>
+
+<span class="sd">        &gt;&gt;&gt; kt2.rename({&#39;A&#39; : &#39;C1&#39;})</span>
+
+<span class="sd">        :param column_names: list of new column names or a dict mapping old names to new names.</span>
+<span class="sd">        :type list of str or dict of str: str</span>
+
+<span class="sd">        :return: Key table with renamed columns.</span>
+<span class="sd">        :rtype: :class:`.KeyTable`</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">return</span> <span class="n">KeyTable</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">hc</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_jkt</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">column_names</span><span class="p">))</span></div>
+
+    <span class="nd">@handle_py4j</span>
+<div class="viewcode-block" id="KeyTable.expand_types"><a class="viewcode-back" href="../../hail.KeyTable.html#hail.KeyTable.expand_types">[docs]</a>    <span class="k">def</span> <span class="nf">expand_types</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Expand types Locus, Interval, AltAllele, Variant, Genotype, Char,</span>
+<span class="sd">        Set and Dict.  Char is converted to String.  Set is converted</span>
+<span class="sd">        to Array.  Dict[K, V] is converted to</span>
+
+<span class="sd">        .. code-block:: text</span>
+
+<span class="sd">            Array[Struct {</span>
+<span class="sd">                key: K</span>
+<span class="sd">                value: V</span>
+<span class="sd">            }]</span>
+
+<span class="sd">        :return: key table with signature containing only types:</span>
+<span class="sd">          Boolean, Int, Long, Float, Double, Array and Struct</span>
+<span class="sd">        :rtype: :class:`.KeyTable`</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">return</span> <span class="n">KeyTable</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">hc</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_jkt</span><span class="o">.</span><span class="n">expandTypes</span><span class="p">())</span></div>
+
+    <span class="nd">@handle_py4j</span>
+<div class="viewcode-block" id="KeyTable.key_by"><a class="viewcode-back" href="../../hail.KeyTable.html#hail.KeyTable.key_by">[docs]</a>    <span class="k">def</span> <span class="nf">key_by</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Change which columns are keys.</span>
+
+<span class="sd">        **Examples**</span>
+
+<span class="sd">        Assume ``kt`` is a :py:class:`.KeyTable` with three columns: c1, c2 and</span>
+<span class="sd">        c3 and key c1.</span>
+
+<span class="sd">        Change key columns:</span>
+
+<span class="sd">        &gt;&gt;&gt; kt_result = kt1.key_by([&#39;C2&#39;, &#39;C3&#39;])</span>
+
+<span class="sd">        &gt;&gt;&gt; kt_result = kt1.key_by(&#39;C2&#39;)</span>
+
+<span class="sd">        Set to no keys:</span>
+
+<span class="sd">        &gt;&gt;&gt; kt_result = kt1.key_by([])</span>
+
+<span class="sd">        :param key: List of columns to be used as keys.</span>
+<span class="sd">        :type key: str or list of str</span>
+
+<span class="sd">        :return: Key table whose key columns are given by ``key``.</span>
+<span class="sd">        :rtype: :class:`.KeyTable`</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span>
+            <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">key</span><span class="p">:</span>
+                <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span> <span class="ow">and</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">unicode</span><span class="p">):</span>
+                    <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;expected str or unicode elements of &#39;key&#39; list, but found </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="nb">type</span><span class="p">(</span><span class="n">k</span><span class="p">))</span>
+        <span class="k">elif</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span> <span class="ow">and</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">unicode</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;expected str or list of str for parameter &#39;key&#39;, but found </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="nb">type</span><span class="p">(</span><span class="n">key</span><span class="p">))</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span>
+            <span class="n">key</span> <span class="o">=</span> <span class="p">[</span><span class="n">key</span><span class="p">]</span>
+
+        <span class="k">return</span> <span class="n">KeyTable</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">hc</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_jkt</span><span class="o">.</span><span class="n">keyBy</span><span class="p">(</span><span class="n">key</span><span class="p">))</span></div>
+
+    <span class="nd">@handle_py4j</span>
+<div class="viewcode-block" id="KeyTable.flatten"><a class="viewcode-back" href="../../hail.KeyTable.html#hail.KeyTable.flatten">[docs]</a>    <span class="k">def</span> <span class="nf">flatten</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Flatten nested Structs.  Column names will be concatenated with dot</span>
+<span class="sd">        (.).</span>
+
+<span class="sd">        **Examples**</span>
+
+<span class="sd">        Flatten Structs in key table:</span>
+
+<span class="sd">        &gt;&gt;&gt; kt_result = kt3.flatten()</span>
+
+<span class="sd">        Consider a key table ``kt`` with signature</span>
+
+<span class="sd">        .. code-block:: text</span>
+
+<span class="sd">            a: Struct {</span>
+<span class="sd">                p: Int</span>
+<span class="sd">                q: Double</span>
+<span class="sd">            }</span>
+<span class="sd">            b: Int</span>
+<span class="sd">            c: Struct {</span>
+<span class="sd">                x: String</span>
+<span class="sd">                y: Array[Struct {</span>
+<span class="sd">                z: Map[Int]</span>
+<span class="sd">                }]</span>
+<span class="sd">            }</span>
+
+<span class="sd">        and a single key column ``a``.  The result of flatten is</span>
+
+<span class="sd">        .. code-block:: text</span>
+
+<span class="sd">            a.p: Int</span>
+<span class="sd">            a.q: Double</span>
+<span class="sd">            b: Int</span>
+<span class="sd">            c.x: String</span>
+<span class="sd">            c.y: Array[Struct {</span>
+<span class="sd">                z: Map[Int]</span>
+<span class="sd">            }]</span>
+
+<span class="sd">        with key columns ``a.p, a.q``.</span>
+
+<span class="sd">        Note, structures inside non-struct types will not be</span>
+<span class="sd">        flattened.</span>
+
+<span class="sd">        :return: Key table with no columns of type Struct.</span>
+<span class="sd">        :rtype: :class:`.KeyTable`</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">return</span> <span class="n">KeyTable</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">hc</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_jkt</span><span class="o">.</span><span class="n">flatten</span><span class="p">())</span></div>
+
+    <span class="nd">@handle_py4j</span>
+<div class="viewcode-block" id="KeyTable.select"><a class="viewcode-back" href="../../hail.KeyTable.html#hail.KeyTable.select">[docs]</a>    <span class="k">def</span> <span class="nf">select</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">column_names</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Select a subset of columns.</span>
+
+<span class="sd">        **Examples**</span>
+
+<span class="sd">        Assume ``kt`` is a :py:class:`.KeyTable` with three columns: C1, C2 and</span>
+<span class="sd">        C3.</span>
+
+<span class="sd">        Select/drop columns:</span>
+
+<span class="sd">        &gt;&gt;&gt; kt_result = kt1.select([&#39;C1&#39;])</span>
+
+<span class="sd">        Reorder the columns:</span>
+
+<span class="sd">        &gt;&gt;&gt; kt_result = kt1.select([&#39;C3&#39;, &#39;C1&#39;, &#39;C2&#39;])</span>
+
+<span class="sd">        Drop all columns:</span>
+
+<span class="sd">        &gt;&gt;&gt; kt_result = kt1.select([])</span>
+
+<span class="sd">        :param column_names: List of columns to be selected.</span>
+<span class="sd">        :type: list of str</span>
+
+<span class="sd">        :return: Key table with selected columns.</span>
+<span class="sd">        :rtype: :class:`.KeyTable`</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">new_key</span> <span class="o">=</span> <span class="p">[</span><span class="n">k</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">key</span> <span class="k">if</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">column_names</span><span class="p">]</span>
+        <span class="k">return</span> <span class="n">KeyTable</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">hc</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_jkt</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="n">column_names</span><span class="p">,</span> <span class="n">new_key</span><span class="p">))</span></div>
+
+    <span class="nd">@handle_py4j</span>
+<div class="viewcode-block" id="KeyTable.to_dataframe"><a class="viewcode-back" href="../../hail.KeyTable.html#hail.KeyTable.to_dataframe">[docs]</a>    <span class="k">def</span> <span class="nf">to_dataframe</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">expand</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">flatten</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Converts this key table to a Spark DataFrame.</span>
+
+<span class="sd">        :param bool expand: If true, expand_types before converting to</span>
+<span class="sd">          DataFrame.</span>
+
+<span class="sd">        :param bool flatten: If true, flatten before converting to</span>
+<span class="sd">          DataFrame.  If both are true, flatten is run after expand so</span>
+<span class="sd">          that expanded types are flattened.</span>
+
+<span class="sd">        :rtype: :class:`pyspark.sql.DataFrame`</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">jkt</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_jkt</span>
+        <span class="k">if</span> <span class="n">expand</span><span class="p">:</span>
+            <span class="n">jkt</span> <span class="o">=</span> <span class="n">jkt</span><span class="o">.</span><span class="n">expandTypes</span><span class="p">()</span>
+        <span class="k">if</span> <span class="n">flatten</span><span class="p">:</span>
+            <span class="n">jkt</span> <span class="o">=</span> <span class="n">jkt</span><span class="o">.</span><span class="n">flatten</span><span class="p">()</span>
+        <span class="k">return</span> <span class="n">DataFrame</span><span class="p">(</span><span class="n">jkt</span><span class="o">.</span><span class="n">toDF</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">hc</span><span class="o">.</span><span class="n">_jsql_context</span><span class="p">),</span> <span class="bp">self</span><span class="o">.</span><span class="n">hc</span><span class="o">.</span><span class="n">_sql_context</span><span class="p">)</span></div>
+
+    <span class="nd">@handle_py4j</span>
+<div class="viewcode-block" id="KeyTable.to_pandas"><a class="viewcode-back" href="../../hail.KeyTable.html#hail.KeyTable.to_pandas">[docs]</a>    <span class="k">def</span> <span class="nf">to_pandas</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">expand</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">flatten</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Converts this key table into a Pandas DataFrame.</span>
+
+<span class="sd">        :param bool expand: If true, expand_types before converting to</span>
+<span class="sd">          Pandas DataFrame.</span>
+
+<span class="sd">        :param bool flatten: If true, flatten before converting to Pandas</span>
+<span class="sd">          DataFrame.  If both are true, flatten is run after expand so</span>
+<span class="sd">          that expanded types are flattened.</span>
+
+<span class="sd">        :returns: Pandas DataFrame constructed from the key table.</span>
+<span class="sd">        :rtype: :py:class:`pandas.DataFrame`</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">to_dataframe</span><span class="p">(</span><span class="n">expand</span><span class="p">,</span> <span class="n">flatten</span><span class="p">)</span><span class="o">.</span><span class="n">toPandas</span><span class="p">()</span></div>
+
+    <span class="nd">@handle_py4j</span>
+<div class="viewcode-block" id="KeyTable.export_mongodb"><a class="viewcode-back" href="../../hail.KeyTable.html#hail.KeyTable.export_mongodb">[docs]</a>    <span class="k">def</span> <span class="nf">export_mongodb</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;append&#39;</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Export to MongoDB</span>
+
+<span class="sd">        .. warning::</span>
+
+<span class="sd">          :py:meth:`~.export_mongodb` is EXPERIMENTAL.</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        
+        <span class="p">(</span><span class="n">scala_package_object</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">hc</span><span class="o">.</span><span class="n">_hail</span><span class="o">.</span><span class="n">driver</span><span class="p">)</span>
+         <span class="o">.</span><span class="n">exportMongoDB</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">hc</span><span class="o">.</span><span class="n">_jsql_context</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_jkt</span><span class="p">,</span> <span class="n">mode</span><span class="p">))</span></div>
+
+    <span class="nd">@handle_py4j</span>
+<div class="viewcode-block" id="KeyTable.export_solr"><a class="viewcode-back" href="../../hail.KeyTable.html#hail.KeyTable.export_solr">[docs]</a>    <span class="k">def</span> <span class="nf">export_solr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">zk_host</span><span class="p">,</span> <span class="n">collection</span><span class="p">,</span> <span class="n">block_size</span><span class="o">=</span><span class="mi">100</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Export to Solr.</span>
+<span class="sd">        </span>
+<span class="sd">        .. warning::</span>
+
+<span class="sd">          :py:meth:`~.export_solr` is EXPERIMENTAL.</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">_jkt</span><span class="o">.</span><span class="n">exportSolr</span><span class="p">(</span><span class="n">zk_host</span><span class="p">,</span> <span class="n">collection</span><span class="p">,</span> <span class="n">block_size</span><span class="p">)</span></div>
+
+    <span class="nd">@handle_py4j</span>
+<div class="viewcode-block" id="KeyTable.export_cassandra"><a class="viewcode-back" href="../../hail.KeyTable.html#hail.KeyTable.export_cassandra">[docs]</a>    <span class="k">def</span> <span class="nf">export_cassandra</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">address</span><span class="p">,</span> <span class="n">keyspace</span><span class="p">,</span> <span class="n">table</span><span class="p">,</span> <span class="n">block_size</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">rate</span><span class="o">=</span><span class="mi">1000</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Export to Cassandra.</span>
+
+<span class="sd">        .. warning::</span>
+
+<span class="sd">          :py:meth:`~.export_cassandra` is EXPERIMENTAL.</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        
+        <span class="bp">self</span><span class="o">.</span><span class="n">_jkt</span><span class="o">.</span><span class="n">exportCassandra</span><span class="p">(</span><span class="n">address</span><span class="p">,</span> <span class="n">keyspace</span><span class="p">,</span> <span class="n">table</span><span class="p">,</span> <span class="n">block_size</span><span class="p">,</span> <span class="n">rate</span><span class="p">)</span></div>
+
+    <span class="nd">@handle_py4j</span>
+<div class="viewcode-block" id="KeyTable.explode"><a class="viewcode-back" href="../../hail.KeyTable.html#hail.KeyTable.explode">[docs]</a>    <span class="k">def</span> <span class="nf">explode</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">column_names</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Explode columns of this key table.</span>
+
+<span class="sd">        The explode operation unpacks the elements in a column of type ``Array`` or ``Set`` into its own row.</span>
+<span class="sd">        If an empty ``Array`` or ``Set`` is exploded, the entire row is removed from the :py:class:`.KeyTable`.</span>
+
+<span class="sd">        **Examples**</span>
+
+<span class="sd">        Assume ``kt3`` is a :py:class:`.KeyTable` with three columns: c1, c2 and</span>
+<span class="sd">        c3.</span>
+
+<span class="sd">        &gt;&gt;&gt; kt3 = hc.import_keytable(&#39;data/kt_example3.tsv&#39;,</span>
+<span class="sd">        ...   config=TextTableConfig(impute=True, types=&#39;c1:String,c2:Array[Int],c3:Array[Array[Int]]&#39;))</span>
+
+<span class="sd">        The types of each column are ``String``, ``Array[Int]``, and ``Array[Array[Int]]`` respectively.</span>
+<span class="sd">        c1 cannot be exploded because its type is not an ``Array`` or ``Set``.</span>
+<span class="sd">        c2 can only be exploded once because the type of c2 after the first explode operation is ``Int``.</span>
+
+<span class="sd">        +----+----------+----------------+</span>
+<span class="sd">        | c1 |   c2     |   c3           |</span>
+<span class="sd">        +====+==========+================+</span>
+<span class="sd">        |  a | [1,2,NA] |[[3,4], []]     |</span>
+<span class="sd">        +----+----------+----------------+</span>
+
+<span class="sd">        Explode c2:</span>
+
+<span class="sd">        &gt;&gt;&gt; kt3.explode(&#39;c2&#39;)</span>
+
+<span class="sd">        +----+-------+-----------------+</span>
+<span class="sd">        | c1 |   c2  |    c3           |</span>
+<span class="sd">        +====+=======+=================+</span>
+<span class="sd">        |  a | 1     | [[3,4], []]     |</span>
+<span class="sd">        +----+-------+-----------------+</span>
+<span class="sd">        |  a | 2     | [[3,4], []]     |</span>
+<span class="sd">        +----+-------+-----------------+</span>
+
+<span class="sd">        Explode c2 once and c3 twice:</span>
+
+<span class="sd">        &gt;&gt;&gt; kt3.explode([&#39;c2&#39;, &#39;c3&#39;, &#39;c3&#39;])</span>
+
+<span class="sd">        +----+-------+-------------+</span>
+<span class="sd">        | c1 |   c2  |   c3        |</span>
+<span class="sd">        +====+=======+=============+</span>
+<span class="sd">        |  a | 1     |3            |</span>
+<span class="sd">        +----+-------+-------------+</span>
+<span class="sd">        |  a | 2     |3            |</span>
+<span class="sd">        +----+-------+-------------+</span>
+<span class="sd">        |  a | 1     |4            |</span>
+<span class="sd">        +----+-------+-------------+</span>
+<span class="sd">        |  a | 2     |4            |</span>
+<span class="sd">        +----+-------+-------------+</span>
+
+<span class="sd">        :param column_names: Column name(s) to be exploded.</span>
+<span class="sd">        :type column_names: str or list of str</span>
+<span class="sd">            </span>
+<span class="sd">        :return: Key table with columns exploded.</span>
+<span class="sd">        :rtype: :class:`.KeyTable`</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">column_names</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+            <span class="n">column_names</span> <span class="o">=</span> <span class="p">[</span><span class="n">column_names</span><span class="p">]</span>
+        <span class="k">return</span> <span class="n">KeyTable</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">hc</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_jkt</span><span class="o">.</span><span class="n">explode</span><span class="p">(</span><span class="n">column_names</span><span class="p">))</span></div>
+
+    <span class="nd">@handle_py4j</span>
+<div class="viewcode-block" id="KeyTable.query_typed"><a class="viewcode-back" href="../../hail.KeyTable.html#hail.KeyTable.query_typed">[docs]</a>    <span class="k">def</span> <span class="nf">query_typed</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">exprs</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Performs aggregation queries over columns of the table, and returns Python object(s) and types.</span>
+
+<span class="sd">        **Examples**</span>
+
+<span class="sd">        &gt;&gt;&gt; mean_value, t = kt1.query_typed(&#39;C1.stats().mean&#39;)</span>
+
+<span class="sd">        &gt;&gt;&gt; [hist, counter], [t1, t2] = kt1.query_typed([&#39;HT.hist(50, 80, 10)&#39;, &#39;SEX.counter()&#39;])</span>
+
+<span class="sd">        See :py:meth:`.Keytable.query` for more information.</span>
+
+<span class="sd">        :param exprs:</span>
+<span class="sd">        :type exprs: str or list of str</span>
+
+<span class="sd">        :rtype: (annotation or list of annotation,  :class:`.Type` or list of :class:`.Type`)</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">exprs</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span>
+            <span class="n">result_list</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_jkt</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="n">jarray</span><span class="p">(</span><span class="n">Env</span><span class="o">.</span><span class="n">jvm</span><span class="p">()</span><span class="o">.</span><span class="n">java</span><span class="o">.</span><span class="n">lang</span><span class="o">.</span><span class="n">String</span><span class="p">,</span> <span class="n">exprs</span><span class="p">))</span>
+            <span class="n">ptypes</span> <span class="o">=</span> <span class="p">[</span><span class="n">Type</span><span class="o">.</span><span class="n">_from_java</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">_2</span><span class="p">())</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">result_list</span><span class="p">]</span>
+            <span class="n">annotations</span> <span class="o">=</span> <span class="p">[</span><span class="n">ptypes</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">_convert_to_py</span><span class="p">(</span><span class="n">result_list</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">_1</span><span class="p">())</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">xrange</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">ptypes</span><span class="p">))]</span>
+            <span class="k">return</span> <span class="n">annotations</span><span class="p">,</span> <span class="n">ptypes</span>
+
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">result</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_jkt</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="n">exprs</span><span class="p">)</span>
+            <span class="n">t</span> <span class="o">=</span> <span class="n">Type</span><span class="o">.</span><span class="n">_from_java</span><span class="p">(</span><span class="n">result</span><span class="o">.</span><span class="n">_2</span><span class="p">())</span>
+            <span class="k">return</span> <span class="n">t</span><span class="o">.</span><span class="n">_convert_to_py</span><span class="p">(</span><span class="n">result</span><span class="o">.</span><span class="n">_1</span><span class="p">()),</span> <span class="n">t</span></div>
+
+
+    <span class="nd">@handle_py4j</span>
+<div class="viewcode-block" id="KeyTable.query"><a class="viewcode-back" href="../../hail.KeyTable.html#hail.KeyTable.query">[docs]</a>    <span class="k">def</span> <span class="nf">query</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">exprs</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Performs aggregation queries over columns of the table, and returns Python object(s).</span>
+
+<span class="sd">        **Examples**</span>
+
+<span class="sd">        &gt;&gt;&gt; mean_value = kt1.query(&#39;C1.stats().mean&#39;)</span>
+
+<span class="sd">        &gt;&gt;&gt; [hist, counter] = kt1.query([&#39;HT.hist(50, 80, 10)&#39;, &#39;SEX.counter()&#39;])</span>
+
+<span class="sd">        **Notes**</span>
+
+<span class="sd">        This method evaluates Hail expressions over the rows of the key table.</span>
+<span class="sd">        The ``exprs`` argument requires either a single string or a list of</span>
+<span class="sd">        strings. If a single string was passed, then a single result is</span>
+<span class="sd">        returned. If a list is passed, a list is returned.</span>
+
+
+<span class="sd">        The namespace of the expressions includes one aggregable for each column</span>
+<span class="sd">        of the key table. We use the example ``kt1`` here, which contains columns</span>
+<span class="sd">        ``ID``, ``HT``, ``Sex``, ``X``, ``Z``, ``C1``, ``C2``, and ``C3``. Queries</span>
+<span class="sd">        in this key table will contain the following namespace:</span>
+
+<span class="sd">        - ``ID``: (*Aggregable[Int]*)</span>
+<span class="sd">        - ``HT``: (*Aggregable[Int]*)</span>
+<span class="sd">        - ``SEX``: (*Aggregable[String]*)</span>
+<span class="sd">        - ``X``: (*Aggregable[Int]*)</span>
+<span class="sd">        - ``Z``: (*Aggregable[Int]*)</span>
+<span class="sd">        - ``C1``: (*Aggregable[Int]*)</span>
+<span class="sd">        - ``C2``: (*Aggregable[Int]*)</span>
+<span class="sd">        - ``C3``: (*Aggregable[Int]*)</span>
+
+<span class="sd">        Map and filter expressions on these aggregables have the same additional</span>
+<span class="sd">        scope, which is all the columns in the key table. In our example, this</span>
+<span class="sd">        includes:</span>
+
+<span class="sd">        - ``ID``: (*Int*)</span>
+<span class="sd">        - ``HT``: (*Int*)</span>
+<span class="sd">        - ``SEX``: (*String*)</span>
+<span class="sd">        - ``X``: (*Int*)</span>
+<span class="sd">        - ``Z``: (*Int*)</span>
+<span class="sd">        - ``C1``: (*Int*)</span>
+<span class="sd">        - ``C2``: (*Int*)</span>
+<span class="sd">        - ``C3``: (*Int*)</span>
+
+<span class="sd">        This scope means that operations like the below are permitted:</span>
+
+<span class="sd">        &gt;&gt;&gt; fraction_tall_male = kt1.query(&#39;HT.filter(x =&gt; SEX == &quot;M&quot;).fraction(x =&gt; x &gt; 70)&#39;)</span>
+
+<span class="sd">        &gt;&gt;&gt; ids = kt1.query(&#39;ID.filter(x =&gt; C2 &lt; C3).collect()&#39;)</span>
+
+<span class="sd">        :param exprs:</span>
+<span class="sd">        :type exprs: str or list of str</span>
+
+<span class="sd">        :rtype: annotation or list of annotation</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">r</span><span class="p">,</span> <span class="n">t</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">query_typed</span><span class="p">(</span><span class="n">exprs</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">r</span></div>
+
+    <span class="nd">@handle_py4j</span>
+<div class="viewcode-block" id="KeyTable.collect"><a class="viewcode-back" href="../../hail.KeyTable.html#hail.KeyTable.collect">[docs]</a>    <span class="k">def</span> <span class="nf">collect</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Collect key table as a Python object.&quot;&quot;&quot;</span>
+
+        <span class="k">return</span> <span class="n">TArray</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">schema</span><span class="p">)</span><span class="o">.</span><span class="n">_convert_to_py</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_jkt</span><span class="o">.</span><span class="n">collect</span><span class="p">())</span></div>
+
+    <span class="nd">@handle_py4j</span>
+    <span class="k">def</span> <span class="nf">_typecheck</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Check if all values with the schema.&quot;&quot;&quot;</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">_jkt</span><span class="o">.</span><span class="n">typeCheck</span><span class="p">()</span>
+
+    <span class="nd">@handle_py4j</span>
+<div class="viewcode-block" id="KeyTable.write"><a class="viewcode-back" href="../../hail.KeyTable.html#hail.KeyTable.write">[docs]</a>    <span class="k">def</span> <span class="nf">write</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">output</span><span class="p">,</span> <span class="n">overwrite</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Write as KT file.</span>
+
+<span class="sd">        ***Examples***</span>
+
+<span class="sd">        &gt;&gt;&gt; kt1.write(&#39;output/kt1.kt&#39;)</span>
+
+<span class="sd">        .. note:: The write path must end in &quot;.kt&quot;.       </span>
+
+<span class="sd">        :param str output: Path of KT file to write.</span>
+
+<span class="sd">        :param bool overwrite: If True, overwrite any existing KT file. Cannot be used </span>
+<span class="sd">               to read from and write to the same path.</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">_jkt</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">output</span><span class="p">,</span> <span class="n">overwrite</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="KeyTable.cache"><a class="viewcode-back" href="../../hail.KeyTable.html#hail.KeyTable.cache">[docs]</a>    <span class="k">def</span> <span class="nf">cache</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Mark this key table to be cached in memory.</span>
+
+<span class="sd">        :py:meth:`~hail.KeyTable.cache` is the same as :func:`persist(&quot;MEMORY_ONLY&quot;) &lt;hail.KeyTable.persist&gt;`.</span>
+
+<span class="sd">        :rtype: :class:`.KeyTable`</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">KeyTable</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">hc</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_jkt</span><span class="o">.</span><span class="n">cache</span><span class="p">())</span></div>
+
+<div class="viewcode-block" id="KeyTable.persist"><a class="viewcode-back" href="../../hail.KeyTable.html#hail.KeyTable.persist">[docs]</a>    <span class="k">def</span> <span class="nf">persist</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">storage_level</span><span class="o">=</span><span class="s2">&quot;MEMORY_AND_DISK&quot;</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Persist this key table to memory and/or disk.</span>
+
+<span class="sd">        **Examples**</span>
+
+<span class="sd">        Persist the key table to both memory and disk:</span>
+
+<span class="sd">        &gt;&gt;&gt; kt = kt.persist() # doctest: +SKIP</span>
+
+<span class="sd">        **Notes**</span>
+
+<span class="sd">        The :py:meth:`~hail.KeyTable.persist` and :py:meth:`~hail.KeyTable.cache` methods </span>
+<span class="sd">        allow you to store the current table on disk or in memory to avoid redundant computation and </span>
+<span class="sd">        improve the performance of Hail pipelines.</span>
+
+<span class="sd">        :py:meth:`~hail.KeyTable.cache` is an alias for </span>
+<span class="sd">        :func:`persist(&quot;MEMORY_ONLY&quot;) &lt;hail.KeyTable.persist&gt;`.  Most users will want &quot;MEMORY_AND_DISK&quot;.</span>
+<span class="sd">        See the `Spark documentation &lt;http://spark.apache.org/docs/latest/programming-guide.html#rdd-persistence&gt;`_ </span>
+<span class="sd">        for a more in-depth discussion of persisting data.</span>
+
+<span class="sd">        :param storage_level: Storage level.  One of: NONE, DISK_ONLY,</span>
+<span class="sd">            DISK_ONLY_2, MEMORY_ONLY, MEMORY_ONLY_2, MEMORY_ONLY_SER,</span>
+<span class="sd">            MEMORY_ONLY_SER_2, MEMORY_AND_DISK, MEMORY_AND_DISK_2,</span>
+<span class="sd">            MEMORY_AND_DISK_SER, MEMORY_AND_DISK_SER_2, OFF_HEAP</span>
+<span class="sd">        </span>
+<span class="sd">        :rtype: :class:`.KeyTable`</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">return</span> <span class="n">KeyTable</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">hc</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_jkt</span><span class="o">.</span><span class="n">persist</span><span class="p">(</span><span class="n">storage_level</span><span class="p">))</span></div>
+
+<div class="viewcode-block" id="KeyTable.order_by"><a class="viewcode-back" href="../../hail.KeyTable.html#hail.KeyTable.order_by">[docs]</a>    <span class="k">def</span> <span class="nf">order_by</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">cols</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Sort by the specified columns.  Missing values are sorted after non-missing values.  Sort by the first column, then the second, etc.</span>
+
+<span class="sd">        :param cols: Columns to sort by.</span>
+<span class="sd">        :type: str or asc(str) or desc(str)</span>
+
+<span class="sd">        :return: Key table sorted by ``cols``.</span>
+<span class="sd">        :rtype: :class:`.KeyTable`</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        
+        <span class="n">jsort_columns</span> <span class="o">=</span> <span class="p">[</span><span class="n">asc</span><span class="p">(</span><span class="n">col</span><span class="p">)</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">col</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span> <span class="k">else</span> <span class="n">col</span> <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">cols</span><span class="p">]</span>
+        <span class="k">return</span> <span class="n">KeyTable</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">hc</span><span class="p">,</span>
+                        <span class="bp">self</span><span class="o">.</span><span class="n">_jkt</span><span class="o">.</span><span class="n">orderBy</span><span class="p">(</span><span class="n">jarray</span><span class="p">(</span><span class="n">Env</span><span class="o">.</span><span class="n">hail</span><span class="p">()</span><span class="o">.</span><span class="n">keytable</span><span class="o">.</span><span class="n">SortColumn</span><span class="p">,</span> <span class="n">jsort_columns</span><span class="p">)))</span></div></div>
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, Hail Team.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'devel',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script type="text/javascript" src="../../../bootstrap.min.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+  
+  
+   
+
+</body>
+</html>

@@ -1,0 +1,23 @@
+TGenotype
+===================
+
+.. currentmodule:: hail.expr
+
+.. autoclass:: TGenotype
+
+    
+    
+    
+
+    
+    
+
+    .. rubric:: Methods
+
+    .. autosummary::
+        :nosignatures:
+
+    
+        ~TGenotype.__init__
+    
+    

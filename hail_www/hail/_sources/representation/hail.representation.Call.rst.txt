@@ -1,0 +1,42 @@
+Call
+========================
+
+.. currentmodule:: hail.representation
+
+.. autoclass:: Call
+
+    
+    
+    .. rubric:: Attributes
+
+    .. autosummary::
+        :nosignatures:
+
+    
+        ~Call.gt
+    
+    
+
+    
+    
+
+    .. rubric:: Methods
+
+    .. autosummary::
+        :nosignatures:
+
+    
+        ~Call.__init__
+        ~Call.is_called
+        ~Call.is_called_non_ref
+        ~Call.is_het
+        ~Call.is_het_non_ref
+        ~Call.is_het_ref
+        ~Call.is_hom_ref
+        ~Call.is_hom_var
+        ~Call.is_not_called
+        ~Call.num_alt_alleles
+        ~Call.one_hot_alleles
+        ~Call.one_hot_genotype
+    
+    

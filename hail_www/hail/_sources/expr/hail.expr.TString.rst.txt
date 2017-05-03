@@ -1,0 +1,23 @@
+TString
+=================
+
+.. currentmodule:: hail.expr
+
+.. autoclass:: TString
+
+    
+    
+    
+
+    
+    
+
+    .. rubric:: Methods
+
+    .. autosummary::
+        :nosignatures:
+
+    
+        ~TString.__init__
+    
+    

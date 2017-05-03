@@ -1,0 +1,23 @@
+TDict
+===============
+
+.. currentmodule:: hail.expr
+
+.. autoclass:: TDict
+
+    
+    
+    
+
+    
+    
+
+    .. rubric:: Methods
+
+    .. autosummary::
+        :nosignatures:
+
+    
+        ~TDict.__init__
+    
+    

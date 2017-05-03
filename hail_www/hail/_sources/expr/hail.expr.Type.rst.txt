@@ -1,0 +1,23 @@
+Type
+==============
+
+.. currentmodule:: hail.expr
+
+.. autoclass:: Type
+
+    
+    
+    
+
+    
+    
+
+    .. rubric:: Methods
+
+    .. autosummary::
+        :nosignatures:
+
+    
+        ~Type.__init__
+    
+    

@@ -1,0 +1,1914 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Hail Tutorial &mdash; Hail</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="hail_logo_sq.png"/>
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="navbar.css" type="text/css" />
+  
+    <link rel="stylesheet" href="_static/rtd_modifications.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="Hail" href="index.html"/>
+        <link rel="next" title="Expression Language" href="exprlang.html"/>
+        <link rel="prev" title="Overview" href="overview.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+  
+  
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <nav class="navbar navbar-default navbar-static-top" id="hail-navbar">
+<div class="container-fluid" id="hail-container-fluid">
+    <div class="navbar-header" id="hail-navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#hail-navbar-collapse" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+   
+      <a class="navbar-left" id="hail-navbar-brand" href="../index.html"><img alt="Hail" id="logo" src="hail-logo-cropped.png"></a>
+
+    </div>
+
+    <div class="collapse navbar-collapse" id="hail-navbar-collapse">
+      <ul class="nav navbar-nav navbar-right">
+          <li id="home" class="nav-item"><a href="../index.html">HOME</a></li>
+          <li id="docs" class="nav-item"><a href="index.html">DOCS</a></li>
+          <li id="forum" class="nav-item"><a href="http://discuss.hail.is">FORUM</a></li>
+          <li id="chat" class="nav-item dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">CHAT<span class="caret"></span></a>
+          <ul class="dropdown-menu dropdown-menu-left">
+            <li><a class="dropdown-item" href="https://gitter.im/hail-is/hail">General</a></li>
+            <li><a class="dropdown-item" href="https://gitter.im/hail-is/hail-dev">Developers</a></li>
+          </ul>
+        </li>
+       <li id="code" class="nav-item"><a href="https://github.com/hail-is/hail">CODE</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Hail
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                devel
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="getting_started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="overview.html">Overview</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Tutorial</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#Download-tutorial-data-files">Download tutorial data files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#Start-an-IPython-interactive-shell">Start an IPython interactive shell</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#Import-data">Import data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#Start-exploring">Start exploring</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#Quality-control-(QC)">Quality control (QC)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#Filter-genotypes">Filter genotypes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Filter-samples">Filter samples</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Filter-variants">Filter variants</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Sex-check">Sex check</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#PCA">PCA</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#Association-testing">Association testing</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#Linear-regression-with-covariates">Linear regression with covariates</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Logistic-regression-with-covariates">Logistic regression with covariates</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Fisher's-Exact-Test-for-Rare-Variants">Fisher&#8217;s Exact Test for Rare Variants</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#Eplilogue">Eplilogue</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="exprlang.html">Expression Language</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api.html">Python API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="annotationdb.html">Annotation Database</a></li>
+<li class="toctree-l1"><a class="reference internal" href="other_resources.html">Other Resources</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">Hail</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Hail Tutorial</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/tutorial.ipynb.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS for nbsphinx extension */
+
+/* remove conflicting styling from Sphinx themes */
+div.nbinput,
+div.nbinput div.prompt,
+div.nbinput div.input_area,
+div.nbinput div[class*=highlight],
+div.nbinput div[class*=highlight] pre,
+div.nboutput,
+div.nbinput div.prompt,
+div.nbinput div.output_area,
+div.nboutput div[class*=highlight],
+div.nboutput div[class*=highlight] pre {
+    background: none;
+    border: none;
+    padding: 0 0;
+    margin: 0;
+    box-shadow: none;
+}
+
+/* avoid gaps between output lines */
+div.nboutput div[class*=highlight] pre {
+    line-height: normal;
+}
+
+/* input/output containers */
+div.nbinput,
+div.nboutput {
+    display: -webkit-flex;
+    display: flex;
+    align-items: flex-start;
+    margin: 0;
+    width: 100%;
+}
+@media (max-width: 540px) {
+    div.nbinput,
+    div.nboutput {
+        flex-direction: column;
+    }
+}
+
+/* input container */
+div.nbinput {
+    padding-top: 5px;
+}
+
+/* last container */
+div.nblast {
+    padding-bottom: 5px;
+}
+
+/* input prompt */
+div.nbinput div.prompt pre {
+    color: #303F9F;
+}
+
+/* output prompt */
+div.nboutput div.prompt pre {
+    color: #D84315;
+}
+
+/* all prompts */
+div.nbinput div.prompt,
+div.nboutput div.prompt {
+    min-width: 8ex;
+    padding-top: 0.4em;
+    padding-right: 0.4em;
+    text-align: right;
+    flex: 0;
+}
+@media (max-width: 540px) {
+    div.nbinput div.prompt,
+    div.nboutput div.prompt {
+        text-align: left;
+        padding: 0.4em;
+    }
+    div.nboutput div.prompt.empty {
+        padding: 0;
+    }
+}
+
+/* disable scrollbars on prompts */
+div.nbinput div.prompt pre,
+div.nboutput div.prompt pre {
+    overflow: hidden;
+}
+
+/* input/output area */
+div.nbinput div.input_area,
+div.nboutput div.output_area {
+    padding: 0.4em;
+    -webkit-flex: 1;
+    flex: 1;
+    overflow: auto;
+}
+@media (max-width: 540px) {
+    div.nbinput div.input_area,
+    div.nboutput div.output_area {
+        width: 100%;
+    }
+}
+
+/* input area */
+div.nbinput div.input_area {
+    border: 1px solid #cfcfcf;
+    border-radius: 2px;
+    background: #f7f7f7;
+}
+
+/* override MathJax center alignment in output cells */
+div.nboutput div[class*=MathJax] {
+    text-align: left !important;
+}
+
+/* override sphinx.ext.pngmath center alignment in output cells */
+div.nboutput div.math p {
+    text-align: left;
+}
+
+/* standard error */
+div.nboutput div.output_area.stderr {
+    background: #fdd;
+}
+
+/* ANSI colors */
+.ansi-black-fg { color: #3E424D; }
+.ansi-black-bg { background-color: #3E424D; }
+.ansi-black-intense-fg { color: #282C36; }
+.ansi-black-intense-bg { background-color: #282C36; }
+.ansi-red-fg { color: #E75C58; }
+.ansi-red-bg { background-color: #E75C58; }
+.ansi-red-intense-fg { color: #B22B31; }
+.ansi-red-intense-bg { background-color: #B22B31; }
+.ansi-green-fg { color: #00A250; }
+.ansi-green-bg { background-color: #00A250; }
+.ansi-green-intense-fg { color: #007427; }
+.ansi-green-intense-bg { background-color: #007427; }
+.ansi-yellow-fg { color: #DDB62B; }
+.ansi-yellow-bg { background-color: #DDB62B; }
+.ansi-yellow-intense-fg { color: #B27D12; }
+.ansi-yellow-intense-bg { background-color: #B27D12; }
+.ansi-blue-fg { color: #208FFB; }
+.ansi-blue-bg { background-color: #208FFB; }
+.ansi-blue-intense-fg { color: #0065CA; }
+.ansi-blue-intense-bg { background-color: #0065CA; }
+.ansi-magenta-fg { color: #D160C4; }
+.ansi-magenta-bg { background-color: #D160C4; }
+.ansi-magenta-intense-fg { color: #A03196; }
+.ansi-magenta-intense-bg { background-color: #A03196; }
+.ansi-cyan-fg { color: #60C6C8; }
+.ansi-cyan-bg { background-color: #60C6C8; }
+.ansi-cyan-intense-fg { color: #258F8F; }
+.ansi-cyan-intense-bg { background-color: #258F8F; }
+.ansi-white-fg { color: #C5C1B4; }
+.ansi-white-bg { background-color: #C5C1B4; }
+.ansi-white-intense-fg { color: #A1A6B2; }
+.ansi-white-intense-bg { background-color: #A1A6B2; }
+
+.ansi-bold { font-weight: bold; }
+
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast,
+.nboutput.nblast {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast + .nbinput {
+    margin-top: -19px;
+}
+
+/* nice headers on first paragraph of info/warning boxes */
+.admonition .first {
+    margin: -12px;
+    padding: 6px 12px;
+    margin-bottom: 12px;
+    color: #fff;
+    line-height: 1;
+    display: block;
+}
+.admonition.warning .first {
+    background: #f0b37e;
+}
+.admonition.note .first {
+    background: #6ab0de;
+}
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+</style>
+<div class="section" id="Hail-Tutorial">
+<h1>Hail Tutorial<a class="headerlink" href="#Hail-Tutorial" title="Permalink to this headline">¶</a></h1>
+<p>In this tutorial, we will analyze data from the final phase of the <a class="reference external" href="http://www.internationalgenome.org/about">1000
+Genomes Project</a>, as
+described in <a class="reference external" href="http://www.nature.com/nature/journal/v526/n7571/full/nature15393.html">A global reference for human genetic variation (Nature
+2015)</a>.
+We have downsampled the dataset to approximately 10,000 variants
+consisting of both rare and common variants. We obtained sample
+information (population, super-population, sex) from the <a class="reference external" href="http://www.internationalgenome.org/data-portal/sample">1000 Genomes
+website</a>.</p>
+<p>If you haven&#8217;t already installed Hail, go to <a class="reference external" href="https://hail.is/hail/getting_started.html">Getting
+Started</a> for instructions.</p>
+<div class="section" id="Download-tutorial-data-files">
+<h2>Download tutorial data files<a class="headerlink" href="#Download-tutorial-data-files" title="Permalink to this headline">¶</a></h2>
+<p>Download the zip file <em>Hail_Tutorial_Data-v2.tgz</em> using
+<a class="reference external" href="https://www.google.com/search?q=install+wget">wget</a> or
+<a class="reference external" href="https://www.google.com/search?q=install+curl">curl</a>:</p>
+<pre class="code noexec">
+wget https://storage.googleapis.com/hail-tutorial/Hail_Tutorial_Data-v2.tgz
+</pre><p>Unzip the file:</p>
+<pre class="code noexec">
+tar -xvzf Hail_Tutorial_Data-v2.tgz --strip 1
+</pre><p>The contents are as follows:</p>
+<ul class="simple">
+<li>1000 Genomes compressed VCF (downsampled to 10K variants, 248
+samples):<ul>
+<li><em>1000Genomes_248samples_coreExome10K.vcf.bgz</em></li>
+</ul>
+</li>
+<li>Sample annotations:<ul>
+<li><em>1000Genomes.sample_annotations</em></li>
+</ul>
+</li>
+<li>LD-pruned SNP list:<ul>
+<li><em>purcell5k.interval_list</em></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="Start-an-IPython-interactive-shell">
+<h2>Start an IPython interactive shell<a class="headerlink" href="#Start-an-IPython-interactive-shell" title="Permalink to this headline">¶</a></h2>
+<p>Start an IPython shell by running the command <code class="docutils literal"><span class="pre">ipython</span></code> from the
+directory containing the tutorial files. You should see a window similar
+to the one shown below. Otherwise, Anaconda is not installed properly.</p>
+<pre class="code noexec">
+hail@tutorial-vm:~$ ipython
+Python 2.7.12 |Anaconda 4.2.0 (64-bit)| (default, Jul  2 2016, 17:42:40)
+Type "copyright", "credits" or "license" for more information.
+
+IPython 5.1.0 -- An enhanced Interactive Python.
+?         -> Introduction and overview of IPython's features.
+%quickref -> Quick reference.
+help      -> Python's own help system.
+object?   -> Details about 'object', use 'object??' for extra details.
+
+In [1]:
+</pre><p>In this window, enter two commands:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [1]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython2"><div class="highlight"><pre>
+<span></span>from hail import *
+hc = HailContext()
+</pre></div>
+</div>
+</div>
+<p>If there is no error, you&#8217;re ready to start using Hail! Otherwise, make
+sure that the <code class="docutils literal"><span class="pre">export</span></code> variables are correctly set and appropriate
+versions of all dependencies are installed.</p>
+<p>Before using Hail, let&#8217;s import the following Python libraries for use
+throughout the tutorial. Installing and importing
+<a class="reference external" href="http://seaborn.pydata.org/installing.html">seaborn</a> is optional; it
+just makes the plots prettier.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [2]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython2"><div class="highlight"><pre>
+<span></span>import pandas as pd
+import matplotlib.pyplot as plt
+import matplotlib.patches as mpatches
+import numpy as np
+import seaborn
+from math import log, isnan
+
+%matplotlib inline
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="Import-data">
+<h2>Import data<a class="headerlink" href="#Import-data" title="Permalink to this headline">¶</a></h2>
+<p>We must first import variant data into Hail&#8217;s internal format of Variant
+Dataset (VDS). We use the <code class="docutils literal"><span class="pre">import_vcf</span></code> method on <code class="docutils literal"><span class="pre">HailContext</span></code> to
+load the downsampled 1000 Genomes VCF into Hail. The VCF file is
+block-compressed (<code class="docutils literal"><span class="pre">.vcf.bgz</span></code>) which enables Hail to read the file in
+parallel. Reading files that have not been block-compressed (<code class="docutils literal"><span class="pre">.vcf</span></code>,
+<code class="docutils literal"><span class="pre">.vcf.gz</span></code>) is <em>significantly</em> slower and should be avoided (though
+often <code class="docutils literal"><span class="pre">.vcf.gz</span></code> files are in fact block-compressed, in which case
+renaming to <code class="docutils literal"><span class="pre">.vcf.bgz</span></code> solves the problem).</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [3]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython2"><div class="highlight"><pre>
+<span></span>vds = hc.import_vcf(&#39;1000Genomes_248samples_coreExome10K.vcf.bgz&#39;)
+</pre></div>
+</div>
+</div>
+<p>We next use the <code class="docutils literal"><span class="pre">split_multi</span></code> method on <code class="docutils literal"><span class="pre">dataset</span></code> to split
+multi-allelic variants into biallelic variants. For example, the variant
+<code class="docutils literal"><span class="pre">1:1000:A:T,C</span></code> would become two variants: <code class="docutils literal"><span class="pre">1:1000:A:T</span></code> and
+<code class="docutils literal"><span class="pre">1:1000:A:C</span></code>.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [4]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython2"><div class="highlight"><pre>
+<span></span>vds = vds.split_multi()
+</pre></div>
+</div>
+</div>
+<p>We next use the <code class="docutils literal"><span class="pre">annotate_samples_table</span></code> method to load phenotypic
+information on each sample from the sample annotations file.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [5]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython2"><div class="highlight"><pre>
+<span></span>vds = vds.annotate_samples_table(&#39;1000Genomes.sample_annotations&#39;,
+                                 root=&#39;sa.pheno&#39;,
+                                 sample_expr=&#39;Sample&#39;,
+                                 config=TextTableConfig(impute=True))
+</pre></div>
+</div>
+</div>
+<p>Here <code class="docutils literal"><span class="pre">1000Genomes.sample_annotations</span></code> refers to the sample annotation
+data file. <code class="docutils literal"><span class="pre">%%sh</span></code> is a handy IPython magic command that allows you to
+peek at this file without leaving the IPython interpreter.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [6]:
+</pre></div>
+</div>
+<div class="input_area highlight-sh"><div class="highlight"><pre>
+<span></span>%%sh
+head 1000Genomes.sample_annotations <span class="p">|</span> column -t
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Sample   Population  SuperPopulation  isFemale  PurpleHair  CaffeineConsumption
+HG00096  GBR         EUR              False     False       77.0
+HG00097  GBR         EUR              True      True        67.0
+HG00098  GBR         EUR              False     False       83.0
+HG00099  GBR         EUR              True      False       64.0
+HG00100  GBR         EUR              True      False       59.0
+HG00101  GBR         EUR              False     True        77.0
+HG00102  GBR         EUR              True      True        67.0
+HG00103  GBR         EUR              False     True        74.0
+HG00104  GBR         EUR              True      False       66.0
+</pre></div></div>
+</div>
+<p>The <code class="docutils literal"><span class="pre">root</span></code> argument says where to put this data. For sample
+annotations, the root must start with <code class="docutils literal"><span class="pre">sa</span></code> followed by a <code class="docutils literal"><span class="pre">.</span></code> and the
+rest is up to you, so let&#8217;s use <code class="docutils literal"><span class="pre">sa.pheno</span></code>.</p>
+<p>The <code class="docutils literal"><span class="pre">sample_expr</span></code> argument indicates that the sample ID is in column
+<code class="docutils literal"><span class="pre">Sample</span></code>.</p>
+<p>The object <code class="docutils literal"><span class="pre">TextTableConfig</span></code> allows users to provide information about
+column data types, header existence, comment characters, and field
+delimiters. Here we&#8217;d like to store columns &#8216;isFemale&#8217; and &#8216;PurpleHair&#8217;
+as Booleans and the &#8216;CaffeineConsumption&#8217; column as Doubles
+(floating-point). We could do so by passing an explicit type string to
+<code class="docutils literal"><span class="pre">TextTableConfig</span></code> of the form &#8216;isFemale: Boolean, PurpleHair: Boolean,
+CaffeineConsumption: Boolean&#8217;. Instead, we pass <code class="docutils literal"><span class="pre">impute=True</span></code> to infer
+column types automatically.</p>
+<p>Lastly, we&#8217;ll write the dataset to disk so that all future computations
+begin by reading in the fast VDS rather than the slow VCF.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [7]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython2"><div class="highlight"><pre>
+<span></span>out_path = &#39;1kg.vds&#39;
+vds.write(out_path, overwrite=True)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="Start-exploring">
+<h2>Start exploring<a class="headerlink" href="#Start-exploring" title="Permalink to this headline">¶</a></h2>
+<p>Now we&#8217;re ready to start exploring! Let&#8217;s practice reading the vds back
+in:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [8]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython2"><div class="highlight"><pre>
+<span></span>vds = hc.read(out_path)
+</pre></div>
+</div>
+</div>
+<p>First, we&#8217;ll print some statistics about the size of the dataset using
+<code class="docutils literal"><span class="pre">summarize</span></code>:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [9]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython2"><div class="highlight"><pre>
+<span></span>vds.summarize().report()
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+
+         Samples: 284
+        Variants: 10961
+       Call Rate: 0.986588
+         Contigs: [&#39;X&#39;, &#39;12&#39;, &#39;8&#39;, &#39;19&#39;, &#39;4&#39;, &#39;15&#39;, &#39;11&#39;, &#39;9&#39;, &#39;22&#39;, &#39;13&#39;, &#39;16&#39;, &#39;5&#39;, &#39;10&#39;, &#39;21&#39;, &#39;6&#39;, &#39;1&#39;, &#39;17&#39;, &#39;14&#39;, &#39;20&#39;, &#39;2&#39;, &#39;18&#39;, &#39;7&#39;, &#39;3&#39;]
+   Multiallelics: 0
+            SNPs: 10961
+            MNPs: 0
+      Insertions: 0
+       Deletions: 0
+ Complex Alleles: 0
+    Star Alleles: 0
+     Max Alleles: 2
+</pre></div></div>
+</div>
+<p>So the call rate before any QC filtering is about 98.7%.</p>
+<p>Let&#8217;s print the types of all annotations.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [10]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython2"><div class="highlight"><pre>
+<span></span>print(&#39;variant annotations:&#39;)
+print(vds.variant_schema)
+print(&#39;\nsample annotations:&#39;)
+print(vds.sample_schema)
+print(&#39;\nglobal annotations:&#39;)
+print(vds.global_schema)
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+variant annotations:
+Struct {
+    rsid: String,
+    qual: Double,
+    filters: Set[String],
+    info: Struct {
+        AC: Array[Int],
+        AF: Array[Double],
+        AN: Int,
+        BaseQRankSum: Double,
+        ClippingRankSum: Double,
+        DP: Int,
+        DS: Boolean,
+        FS: Double,
+        HaplotypeScore: Double,
+        InbreedingCoeff: Double,
+        MLEAC: Array[Int],
+        MLEAF: Array[Double],
+        MQ: Double,
+        MQ0: Int,
+        MQRankSum: Double,
+        QD: Double,
+        ReadPosRankSum: Double,
+        set: String
+    }
+}
+
+sample annotations:
+Struct {
+    pheno: Struct {
+        Sample: String,
+        Population: String,
+        SuperPopulation: String,
+        isFemale: Boolean,
+        PurpleHair: Boolean,
+        CaffeineConsumption: Double
+    }
+}
+
+global annotations:
+Empty
+</pre></div></div>
+</div>
+<p>Note the annotations imported from the original VCF, as well as the
+sample annotations added above. Notice how those six sample annotations
+loaded above are nested inside <code class="docutils literal"><span class="pre">sa.pheno</span></code> as defined by the <code class="docutils literal"><span class="pre">root</span></code>
+option in <code class="docutils literal"><span class="pre">annotate_samples</span> <span class="pre">table</span></code>.</p>
+<p>Next we&#8217;ll add some global annotations including the list of populations
+that are present in our dataset and the number of samples in each
+population, using the Hail expression language and the <code class="docutils literal"><span class="pre">query_samples</span></code>
+method. The 1000 Genomes Super-Population codings are:</p>
+<ul class="simple">
+<li>SAS = South Asian</li>
+<li>AMR = Americas</li>
+<li>EUR = European</li>
+<li>AFR = African</li>
+<li>EAS = East Asian</li>
+</ul>
+<p>We&#8217;ll first build up a list of query expressions, then evaluate them all
+at once to save time.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [11]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython2"><div class="highlight"><pre>
+<span></span>expressions = [
+  &#39;samples.map(s =&gt; sa.pheno.Population).collect().toSet()&#39;,
+  &#39;samples.map(s =&gt; sa.pheno.SuperPopulation).collect().toSet()&#39;,
+  &#39;samples.filter(s =&gt; sa.pheno.PurpleHair).count()&#39;,
+  &#39;samples.filter(s =&gt; !sa.pheno.PurpleHair).count()&#39; ]
+[populations, super_populations, case_count, control_count] = vds.query_samples(expressions)
+
+print(&#39;populations = %s&#39; % populations)
+print(&#39;super populations = %s&#39; % super_populations)
+print(&#39;case count = %s&#39; % case_count)
+print(&#39;control count = %s&#39; % control_count)
+print(&#39;total samples = %s&#39; % vds.num_samples)
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+populations = set([u&#39;GWD&#39;, u&#39;TSI&#39;, u&#39;BEB&#39;, u&#39;PEL&#39;, u&#39;LWK&#39;, u&#39;MSL&#39;, u&#39;GBR&#39;, u&#39;IBS&#39;, u&#39;ASW&#39;, u&#39;FIN&#39;, u&#39;KHV&#39;, u&#39;CEU&#39;, u&#39;CLM&#39;, u&#39;CHB&#39;, u&#39;YRI&#39;, u&#39;STU&#39;, u&#39;CHS&#39;, u&#39;ESN&#39;, u&#39;ACB&#39;, u&#39;GIH&#39;, u&#39;PJL&#39;, u&#39;MXL&#39;, u&#39;ITU&#39;, u&#39;CDX&#39;, u&#39;JPT&#39;, u&#39;PUR&#39;])
+super populations = set([u&#39;SAS&#39;, u&#39;EAS&#39;, u&#39;AMR&#39;, u&#39;AFR&#39;, u&#39;EUR&#39;])
+case count = 140
+control count = 144
+total samples = 284
+</pre></div></div>
+</div>
+<p>Now it&#8217;s easy to count samples by population using the <code class="docutils literal"><span class="pre">counter()</span></code>
+aggregator:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [12]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython2"><div class="highlight"><pre>
+<span></span>[counter] = vds.query_samples([&#39;samples.map(s =&gt; sa.pheno.SuperPopulation).counter()&#39;])
+for k, v in counter.iteritems():
+    print(&#39;population %s found %s times&#39; % (k, v))
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+population SAS found 55 times
+population EAS found 72 times
+population AMR found 34 times
+population AFR found 76 times
+population EUR found 47 times
+</pre></div></div>
+</div>
+</div>
+<div class="section" id="Quality-control-(QC)">
+<h2>Quality control (QC)<a class="headerlink" href="#Quality-control-(QC)" title="Permalink to this headline">¶</a></h2>
+<p>Before running genotype-phenotype association tests, we better clean up
+the raw data! We&#8217;ll filter out:</p>
+<ul class="simple">
+<li>genotypes that don&#8217;t have strong evidence supporting the genotype
+call</li>
+<li>samples that are outliers on key summary statistics across the
+dataset</li>
+<li>variants with low mean genotype quality or out of <a class="reference external" href="https://en.wikipedia.org/wiki/Hardy–Weinberg_principle">Hardy-Weinberg
+equilibrium</a>.</li>
+</ul>
+<p>The QC procedures below are a sampler covering various features of Hail,
+not an optimal pipeline for your research.</p>
+<p>For filtering, we make extensive use of the <a class="reference external" href="https://hail.is/hail/exprlang.html">Hail expression
+language</a>. Here <code class="docutils literal"><span class="pre">g</span></code> is
+genotype, <code class="docutils literal"><span class="pre">v</span></code> is variant, <code class="docutils literal"><span class="pre">s</span></code> is sample, and annotations are
+accessible via <code class="docutils literal"><span class="pre">va</span></code>, <code class="docutils literal"><span class="pre">sa</span></code>, and <code class="docutils literal"><span class="pre">global</span></code>.</p>
+<div class="section" id="Filter-genotypes">
+<h3>Filter genotypes<a class="headerlink" href="#Filter-genotypes" title="Permalink to this headline">¶</a></h3>
+<p>Let&#8217;s filter genotypes based on allelic balance using the
+<code class="docutils literal"><span class="pre">filter_genotypes</span></code> method.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [13]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython2"><div class="highlight"><pre>
+<span></span>filter_condition_ab = &#39;&#39;&#39;let ab = g.ad[1] / g.ad.sum() in
+                         ((g.isHomRef() &amp;&amp; ab &lt;= 0.1) ||
+                          (g.isHet() &amp;&amp; ab &gt;= 0.25 &amp;&amp; ab &lt;= 0.75) ||
+                          (g.isHomVar() &amp;&amp; ab &gt;= 0.9))&#39;&#39;&#39;
+vds_gAB = vds.filter_genotypes(filter_condition_ab)
+</pre></div>
+</div>
+</div>
+<p>In this code, we first construct an expression <code class="docutils literal"><span class="pre">filter_condition_ab</span></code>
+that evaluates to a Boolean. We use <code class="docutils literal"><span class="pre">let</span> <span class="pre">...</span> <span class="pre">in</span></code> syntax to define a
+temporary variable <code class="docutils literal"><span class="pre">ab</span></code> for the allelic balance which is calculated
+from the allelic depth <code class="docutils literal"><span class="pre">g.ad</span></code>, a zero-indexed array (so <code class="docutils literal"><span class="pre">g.ad[0]</span></code>
+and <code class="docutils literal"><span class="pre">g.ad[1]</span></code> are read counts for reference allele and unique
+alternate allele, respectively; this dataset is bi-allelic, but Hail
+supports multi-allelic variants as well). We require for homozygous
+calls that the allelic balance be within <code class="docutils literal"><span class="pre">.1</span></code> of the expected mode,
+and that for heterozygote calls (<code class="docutils literal"><span class="pre">g.isHet()</span></code>) the allelic balance be
+between 0.25 and 0.75. Additional methods on genotype are documented
+<a class="reference external" href="https://hail.is/hail/types.html#genotype">here</a>.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [14]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython2"><div class="highlight"><pre>
+<span></span>vds_gAB.summarize().call_rate
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>Out[14]:
+</pre></div>
+</div>
+<div class="output_area highlight-none"><div class="highlight"><pre>
+<span></span>0.9506367646624203
+</pre></div>
+</div>
+</div>
+<p>Now the call rate is about 95%, so nearly 4% of genotypes failed the
+filter. Filtering out a genotype is equivalent to setting the genotype
+call to missing.</p>
+</div>
+<div class="section" id="Filter-samples">
+<h3>Filter samples<a class="headerlink" href="#Filter-samples" title="Permalink to this headline">¶</a></h3>
+<p>Having removed suspect genotypes, let&#8217;s next remove variants with low
+call rate and then calculate summary statistics per sample with the
+<code class="docutils literal"><span class="pre">sample_qc</span></code> method.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [15]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython2"><div class="highlight"><pre>
+<span></span>vds_gAB_vCR = (vds_gAB
+    .filter_variants_expr(&#39;gs.fraction(g =&gt; g.isCalled()) &gt; 0.95&#39;)
+    .sample_qc())
+</pre></div>
+</div>
+</div>
+<p>The call rate for each variant is calculated using the <code class="docutils literal"><span class="pre">fraction</span></code>
+<a class="reference external" href="https://hail.is/hail/types.html#aggregable-genotype">aggregable</a> on
+the genotypes <code class="docutils literal"><span class="pre">gs</span></code>. <code class="docutils literal"><span class="pre">sample_qc</span></code> adds a number of statistics to
+sample annotations:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [16]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython2"><div class="highlight"><pre>
+<span></span>print(vds_gAB_vCR.sample_schema)
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Struct {
+    pheno: Struct {
+        Sample: String,
+        Population: String,
+        SuperPopulation: String,
+        isFemale: Boolean,
+        PurpleHair: Boolean,
+        CaffeineConsumption: Double
+    },
+    qc: Struct {
+        callRate: Double,
+        nCalled: Int,
+        nNotCalled: Int,
+        nHomRef: Int,
+        nHet: Int,
+        nHomVar: Int,
+        nSNP: Int,
+        nInsertion: Int,
+        nDeletion: Int,
+        nSingleton: Int,
+        nTransition: Int,
+        nTransversion: Int,
+        dpMean: Double,
+        dpStDev: Double,
+        gqMean: Double,
+        gqStDev: Double,
+        nNonRef: Int,
+        rTiTv: Double,
+        rHetHomVar: Double,
+        rInsertionDeletion: Double
+    }
+}
+</pre></div></div>
+</div>
+<p>Let&#8217;s export these sample annotations to a text file and take a look at
+them:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [17]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython2"><div class="highlight"><pre>
+<span></span>vds_gAB_vCR.export_samples(&#39;sampleqc.txt&#39;, &#39;Sample = s, sa.qc.*&#39;)
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [18]:
+</pre></div>
+</div>
+<div class="input_area highlight-sh"><div class="highlight"><pre>
+<span></span>%%sh
+head sampleqc.txt <span class="p">|</span> cut -f 1-10
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Sample  callRate        nCalled nNotCalled      nHomRef nHet    nHomVar nSNP    nInsertion      nDeletion
+HG00096 9.63127e-01     6086    233     4289    923     874     2671    0       0
+HG00099 9.75629e-01     6165    154     4249    1046    870     2786    0       0
+HG00105 9.75154e-01     6162    157     4326    1025    811     2647    0       0
+HG00118 9.86707e-01     6235    84      4270    1157    808     2773    0       0
+HG00129 9.76420e-01     6170    149     4226    1114    830     2774    0       0
+HG00148 9.81010e-01     6199    120     4241    1095    863     2821    0       0
+HG00177 9.35908e-01     5914    405     4179    740     995     2730    0       0
+HG00182 9.11695e-01     5761    558     4028    751     982     2715    0       0
+HG00242 9.51100e-01     6010    309     4237    830     943     2716    0       0
+</pre></div></div>
+</div>
+<p>We can further analyze these results locally using Python&#8217;s
+<a class="reference external" href="http://matplotlib.org/">matplotlib</a> library. Below is an example
+plot of two variables (call rate and meanGQ), along with the code that
+generate the plot.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [19]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython2"><div class="highlight"><pre>
+<span></span>sampleqc_table = vds_gAB_vCR.samples_keytable().to_pandas()
+
+plt.subplot(1, 2, 1)
+plt.hist(sampleqc_table[&quot;sa.qc.callRate&quot;], bins=np.arange(.75, 1.01, .01))
+plt.xlabel(&quot;Call Rate&quot;)
+plt.ylabel(&quot;Frequency&quot;)
+plt.xlim(.75, 1)
+plt.axvline(.97, color=&#39;r&#39;)
+
+plt.subplot(1, 2, 2)
+plt.hist(sampleqc_table[&quot;sa.qc.gqMean&quot;], bins = np.arange(0, 105, 5))
+plt.xlabel(&quot;Mean Sample GQ&quot;)
+plt.ylabel(&quot;Frequency&quot;)
+plt.xlim(0, 105)
+plt.axvline(20, color = &#39;r&#39;)
+
+plt.tight_layout()
+plt.show()
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="_images/tutorial_36_0.png" src="_images/tutorial_36_0.png" />
+</div>
+</div>
+<p>Let&#8217;s remove the samples that are outliers in the plots above, where
+cutoffs are given by the red lines. We&#8217;ll remove these samples from
+<code class="docutils literal"><span class="pre">vds_gAB</span></code> (after filtering genotypes but before filtering variants)
+because it&#8217;s possible that poor-quality samples decreased the call rate
+on variants we&#8217;d actually like to keep. Here is one of the many ways we
+could do this step:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [20]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython2"><div class="highlight"><pre>
+<span></span>vds_gAB_sCR_sGQ = (vds_gAB
+    .annotate_samples_vds(vds_gAB_vCR, code = &#39;sa.qc = vds.qc&#39; )
+    .filter_samples_expr(&#39;sa.qc.callRate &gt;= 0.97 &amp;&amp; sa.qc.gqMean &gt;= 20&#39;))
+</pre></div>
+</div>
+</div>
+<p>As before, let&#8217;s use the <code class="docutils literal"><span class="pre">annotate_global_expr_by_sample</span></code> method to
+count the number of samples by phenotype that remain in the dataset
+after filtering.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [21]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython2"><div class="highlight"><pre>
+<span></span>post_qc_exprs = [
+    &#39;samples.filter(s =&gt; sa.pheno.PurpleHair).count()&#39;,
+    &#39;samples.filter(s =&gt; !sa.pheno.PurpleHair).count()&#39; ]
+[num_cases, num_controls] = vds_gAB_sCR_sGQ.query_samples(post_qc_exprs)
+print(&#39;case count is %s, control count is %s&#39; % (num_cases, num_controls))
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+case count is 93, control count is 99
+</pre></div></div>
+</div>
+</div>
+<div class="section" id="Filter-variants">
+<h3>Filter variants<a class="headerlink" href="#Filter-variants" title="Permalink to this headline">¶</a></h3>
+<p>We now have <code class="docutils literal"><span class="pre">vds_gAB_sCR_sGQ</span></code>, a VDS where low-quality genotypes and
+samples have been removed.</p>
+<p>Let&#8217;s use the <code class="docutils literal"><span class="pre">variant_qc</span></code> method to start exploring variant metrics:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [22]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython2"><div class="highlight"><pre>
+<span></span>vds_gAB_sCR_sGQ = vds_gAB_sCR_sGQ.variant_qc()
+
+print(vds_gAB_sCR_sGQ.variant_schema)
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Struct {
+    rsid: String,
+    qual: Double,
+    filters: Set[String],
+    info: Struct {
+        AC: Array[Int],
+        AF: Array[Double],
+        AN: Int,
+        BaseQRankSum: Double,
+        ClippingRankSum: Double,
+        DP: Int,
+        DS: Boolean,
+        FS: Double,
+        HaplotypeScore: Double,
+        InbreedingCoeff: Double,
+        MLEAC: Array[Int],
+        MLEAF: Array[Double],
+        MQ: Double,
+        MQ0: Int,
+        MQRankSum: Double,
+        QD: Double,
+        ReadPosRankSum: Double,
+        set: String
+    },
+    qc: Struct {
+        callRate: Double,
+        AC: Int,
+        AF: Double,
+        nCalled: Int,
+        nNotCalled: Int,
+        nHomRef: Int,
+        nHet: Int,
+        nHomVar: Int,
+        dpMean: Double,
+        dpStDev: Double,
+        gqMean: Double,
+        gqStDev: Double,
+        nNonRef: Int,
+        rHeterozygosity: Double,
+        rHetHomVar: Double,
+        rExpectedHetFrequency: Double,
+        pHWE: Double
+    }
+}
+</pre></div></div>
+</div>
+<p>We&#8217;ve once again used matplotlib to make histograms of four summary
+statistics (call rate, allele frequency, mean GQ, and Hardy Weinberg
+Equilibrium p-value. Notice how the histogram for HWE is massively
+inflated for small p-values. This is because we calculated HWE p-values
+with all five populations lumped together.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [23]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython2"><div class="highlight"><pre>
+<span></span>variantqc_table = vds_gAB_sCR_sGQ.variants_keytable().to_pandas()
+
+plt.subplot(2, 2, 1)
+variantgq_means = variantqc_table[&quot;va.qc.gqMean&quot;]
+plt.hist(variantgq_means, bins = np.arange(0, 85, 5))
+plt.xlabel(&quot;Variant Mean GQ&quot;)
+plt.ylabel(&quot;Frequency&quot;)
+plt.xlim(0, 80)
+plt.axvline(20, color = &#39;r&#39;)
+
+plt.subplot(2, 2, 2)
+variant_mleaf = variantqc_table[&quot;va.qc.AF&quot;]
+plt.hist(variant_mleaf, bins = np.arange(0, 1.05, .05))
+plt.xlabel(&quot;Minor Allele Frequency&quot;)
+plt.ylabel(&quot;Frequency&quot;)
+plt.xlim(0, 1)
+plt.axvline(0.05, color = &#39;r&#39;)
+
+plt.subplot(2, 2, 3)
+plt.hist(variantqc_table[&#39;va.qc.callRate&#39;], bins = np.arange(0, 1.05, .05))
+plt.xlabel(&quot;Variant Call Rate&quot;)
+plt.ylabel(&quot;Frequency&quot;)
+plt.xlim(.5, 1)
+
+plt.subplot(2, 2, 4)
+plt.hist(variantqc_table[&#39;va.qc.pHWE&#39;], bins = np.arange(0, 1.05, .05))
+plt.xlabel(&quot;Hardy-Weinberg Equilibrium p-value&quot;)
+plt.ylabel(&quot;Frequency&quot;)
+plt.xlim(0, 1)
+
+plt.tight_layout()
+plt.show()
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="_images/tutorial_44_0.png" src="_images/tutorial_44_0.png" />
+</div>
+</div>
+<p>Let&#8217;s use the <code class="docutils literal"><span class="pre">annotate_variants_expr</span></code> method to programmatically
+compute Hardy Weinberg Equilibrium for each population. First, we
+construct <code class="docutils literal"><span class="pre">hwe-expressions</span></code>.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [24]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython2"><div class="highlight"><pre>
+<span></span>hwe_expressions = [
+    &#39;va.hweByPop.hweEUR = gs.filter(g =&gt; sa.pheno.SuperPopulation == &quot;EUR&quot;).hardyWeinberg()&#39;,
+    &#39;va.hweByPop.hweSAS = gs.filter(g =&gt; sa.pheno.SuperPopulation == &quot;SAS&quot;).hardyWeinberg()&#39;,
+    &#39;va.hweByPop.hweAMR = gs.filter(g =&gt; sa.pheno.SuperPopulation == &quot;AMR&quot;).hardyWeinberg()&#39;,
+    &#39;va.hweByPop.hweAFR = gs.filter(g =&gt; sa.pheno.SuperPopulation == &quot;AFR&quot;).hardyWeinberg()&#39;,
+    &#39;va.hweByPop.hweEAS = gs.filter(g =&gt; sa.pheno.SuperPopulation == &quot;EAS&quot;).hardyWeinberg()&#39; ]
+</pre></div>
+</div>
+</div>
+<p>We can do this more tersely using list comprehensions in Python; we&#8217;ll
+use this approach in the remainder of the tutorial.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [25]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython2"><div class="highlight"><pre>
+<span></span>populations = [&#39;EUR&#39;, &#39;SAS&#39;, &#39;AMR&#39;, &#39;AFR&#39;, &#39;EAS&#39;]
+hwe_expressions = [&#39;va.hweByPop.hwe%s = gs.filter(g =&gt; sa.pheno.SuperPopulation == &quot;%s&quot;).hardyWeinberg()&#39; % (pop, pop) for pop in populations]
+</pre></div>
+</div>
+</div>
+<p>Now we can go ahead and use <code class="docutils literal"><span class="pre">annotate_variants_expr</span></code>.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [26]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython2"><div class="highlight"><pre>
+<span></span>vds_gAB_sCR_sGQ = vds_gAB_sCR_sGQ.annotate_variants_expr(hwe_expressions).persist()
+
+print(vds_gAB_sCR_sGQ.variant_schema)
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Struct {
+    rsid: String,
+    qual: Double,
+    filters: Set[String],
+    info: Struct {
+        AC: Array[Int],
+        AF: Array[Double],
+        AN: Int,
+        BaseQRankSum: Double,
+        ClippingRankSum: Double,
+        DP: Int,
+        DS: Boolean,
+        FS: Double,
+        HaplotypeScore: Double,
+        InbreedingCoeff: Double,
+        MLEAC: Array[Int],
+        MLEAF: Array[Double],
+        MQ: Double,
+        MQ0: Int,
+        MQRankSum: Double,
+        QD: Double,
+        ReadPosRankSum: Double,
+        set: String
+    },
+    qc: Struct {
+        callRate: Double,
+        AC: Int,
+        AF: Double,
+        nCalled: Int,
+        nNotCalled: Int,
+        nHomRef: Int,
+        nHet: Int,
+        nHomVar: Int,
+        dpMean: Double,
+        dpStDev: Double,
+        gqMean: Double,
+        gqStDev: Double,
+        nNonRef: Int,
+        rHeterozygosity: Double,
+        rHetHomVar: Double,
+        rExpectedHetFrequency: Double,
+        pHWE: Double
+    },
+    hweByPop: Struct {
+        hweEUR: Struct {
+            rExpectedHetFrequency: Double,
+            pHWE: Double
+        },
+        hweSAS: Struct {
+            rExpectedHetFrequency: Double,
+            pHWE: Double
+        },
+        hweAMR: Struct {
+            rExpectedHetFrequency: Double,
+            pHWE: Double
+        },
+        hweAFR: Struct {
+            rExpectedHetFrequency: Double,
+            pHWE: Double
+        },
+        hweEAS: Struct {
+            rExpectedHetFrequency: Double,
+            pHWE: Double
+        }
+    }
+}
+</pre></div></div>
+</div>
+<p>Above, for each variant, we filter the genotypes to only those genotypes
+from the population of interest using a filter function on the <a class="reference external" href="https://hail.is/hail/types.html#aggregable-genotype">genotype
+aggregable</a> and
+then calculate the Hardy-Weinberg Equilibrium p-value using the
+<code class="docutils literal"><span class="pre">hardyWeinberg()</span></code> function on the filtered genotype aggregable.</p>
+<p>The <code class="docutils literal"><span class="pre">persist</span></code> method caches the dataset in its current state on
+memory/disk, so that downstream processing will be faster.</p>
+<p>Printing the schema reveals that we&#8217;ve added new fields to the variant
+annotations for HWE p-values for each population. We&#8217;ve got quite a few
+variant annotations now! Notice that the results of these annotation
+statements are structs containing two elements:</p>
+<pre class="code noexec">
+...
+        hweEUR: Struct {
+            rExpectedHetFrequency: Double,
+            pHWE: Double
+        },
+        hweSAS: Struct {
+            rExpectedHetFrequency: Double,
+            pHWE: Double
+        },
+        hweAMR: Struct {
+            rExpectedHetFrequency: Double,
+            pHWE: Double
+        },
+        hweAFR: Struct {
+            rExpectedHetFrequency: Double,
+            pHWE: Double
+        },
+        hweEAS: Struct {
+            rExpectedHetFrequency: Double,
+            pHWE: Double
+        }
+    }
+}
+</pre><p>We can now filter variants based on HWE p-values with respect to each
+population.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [27]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython2"><div class="highlight"><pre>
+<span></span>hwe_filter_expression = &quot; &amp;&amp; &quot;.join([&#39;va.hweByPop.hwe%s.pHWE &gt; 1e-6&#39; % pop for pop in populations])
+vds_gAD_sCR_sGQ_vHWE = vds_gAB_sCR_sGQ.filter_variants_expr(hwe_filter_expression)
+
+print(&#39;variants after HWE filter: %d&#39; % vds_gAD_sCR_sGQ_vHWE.count_variants())
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+variants after HWE filter: 10891
+</pre></div></div>
+</div>
+<p>Running <code class="docutils literal"><span class="pre">count_variants</span></code>, we see that by calculating HWE p-values in
+each population separately, we keep 10891 variants, filtering out 70. We
+would have filtered far more if we used the population-agnostic single
+statistic!</p>
+<p>Lastly we use the <code class="docutils literal"><span class="pre">filter_variants_expr</span></code> method to keep only those
+variants with a mean GQ greater than or equal to 20.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [28]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython2"><div class="highlight"><pre>
+<span></span>vds_gAD_sCR_sGQ_vHWE_vGQ = vds_gAD_sCR_sGQ_vHWE.filter_variants_expr(&#39;va.qc.gqMean &gt;= 20&#39;)
+
+print(&#39;variants after GQ filter: %d&#39; % vds_gAD_sCR_sGQ_vHWE_vGQ.count_variants())
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+variants after GQ filter: 10662
+</pre></div></div>
+</div>
+<p>We are left with 10662 total variants.</p>
+</div>
+<div class="section" id="Sex-check">
+<h3>Sex check<a class="headerlink" href="#Sex-check" title="Permalink to this headline">¶</a></h3>
+<p>It&#8217;s <em>always</em> a good idea to check that the reported sex of samples is
+consistent with sex chromosome ploidy estimated directly from genetic
+data. A high sex-check failure rate would suggest that sample swaps may
+have occurred.</p>
+<p>There are 273 X chromosome variants in the original dataset:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [29]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython2"><div class="highlight"><pre>
+<span></span>vds.filter_variants_expr(&#39;v.contig == &quot;X&quot;&#39;).count_variants()
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>Out[29]:
+</pre></div>
+</div>
+<div class="output_area highlight-none"><div class="highlight"><pre>
+<span></span>273L
+</pre></div>
+</div>
+</div>
+<p>However, after variant QC, the number of X chromosome variants has
+dropped to 164.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [30]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython2"><div class="highlight"><pre>
+<span></span>vds_gAD_sCR_sGQ_vHWE_vGQ.filter_variants_expr(&#39;v.contig == &quot;X&quot;&#39;).count_variants()
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>Out[30]:
+</pre></div>
+</div>
+<div class="output_area highlight-none"><div class="highlight"><pre>
+<span></span>164L
+</pre></div>
+</div>
+</div>
+<p>Oops! HWE statistics on the X chromosome should ignore male samples,
+since males have only two possible genotypes (HomRef or HomVar). We&#8217;re
+going to have to go back to <code class="docutils literal"><span class="pre">vds_gAB_sCR_sGQ</span></code> and modify how we
+calculate HWE. We use a conditional expression on the <a class="reference external" href="https://hail.is/hail/types.html#variant">Variant object
+method</a> <code class="docutils literal"><span class="pre">v.isAutosomal</span></code> so
+that variants on the X chromosome will only include female samples in
+the calculation. We can also use the same <code class="docutils literal"><span class="pre">hwe_filter_expression</span></code> from
+above.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [31]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython2"><div class="highlight"><pre>
+<span></span>sex_aware_hwe_exprs = [
+&#39;&#39;&#39;va.hweByPop.hwe{pop} =
+if (v.isAutosomal())
+ gs.filter(g =&gt; sa.pheno.SuperPopulation == &quot;{pop}&quot;).hardyWeinberg()
+else
+  gs.filter(g =&gt; sa.pheno.SuperPopulation == &quot;{pop}&quot; &amp;&amp; sa.pheno.isFemale).hardyWeinberg()&#39;&#39;&#39;.format(pop = p) for p in populations]
+
+vds_filtered = (vds_gAB_sCR_sGQ
+    .annotate_variants_expr(sex_aware_hwe_exprs)
+    .filter_variants_expr(hwe_filter_expression + &#39;&amp;&amp; va.qc.gqMean &gt;= 20&#39;)
+    .persist())
+
+print(&#39;total variants = %s&#39; % vds_filtered.count_variants())
+print(&#39;X chromosome variants = %s&#39; % vds_filtered.query_variants([&#39;variants.filter(v =&gt; v.contig == &quot;X&quot;).count()&#39;])[0])
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+total variants = 10726
+X chromosome variants = 228
+</pre></div></div>
+</div>
+<p>For sex check, we first use the <code class="docutils literal"><span class="pre">impute_sex</span></code> method with a minimum
+minor allele frequency threshold <code class="docutils literal"><span class="pre">maf_threshold</span></code> argument of 0.05 to
+determine the genetic sex of each sample based on the inbreeding
+coefficient. <code class="docutils literal"><span class="pre">impute_sex</span></code> adds the Boolean sample annotation
+<code class="docutils literal"><span class="pre">sa.imputesex.isFemale</span></code> and we then create a new Boolean sample
+annotation <code class="docutils literal"><span class="pre">sa.sexcheck</span></code> which indicates whether the imputed sex
+<code class="docutils literal"><span class="pre">sa.imputesex.isFemale</span></code> is the same as the reported sex
+<code class="docutils literal"><span class="pre">sa.pheno.isFemale</span></code>.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [32]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython2"><div class="highlight"><pre>
+<span></span>vds_sex_check = (vds_filtered
+    .impute_sex(maf_threshold=0.05)
+    .annotate_samples_expr(&#39;sa.sexcheck = sa.pheno.isFemale == sa.imputesex.isFemale&#39;))
+total_samples = vds_sex_check.num_samples
+sex_check_passes = vds_sex_check.filter_samples_expr(&#39;sa.sexcheck&#39;).num_samples
+
+print(&#39;total samples: %s&#39; % total_samples)
+print(&#39;sex_check_passes: %s&#39; % sex_check_passes)
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+total samples: 192
+sex_check_passes: 120
+</pre></div></div>
+</div>
+<p>We see that the genetic sex does not match the reported sex for 567
+samples, an extremely high sex check failure rate! To figure out why
+this happened, we can use a Hail expression to look at the values that
+<code class="docutils literal"><span class="pre">sa.sexcheck</span></code> takes.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [33]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython2"><div class="highlight"><pre>
+<span></span>[counter] = vds_sex_check.query_samples([&#39;samples.map(s =&gt; sa.sexcheck).counter()&#39;])
+for k, v in counter.iteritems():
+    print(&#39;population %s found %s times&#39; % (k, v))
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+population False found 1 times
+population True found 120 times
+population None found 71 times
+</pre></div></div>
+</div>
+<p>Aha! While we only have 1 &#8216;false&#8217; sex-check values, we have 71 missing
+sex-check values. Since <code class="docutils literal"><span class="pre">pheno.isFemale</span></code> is never missing in the
+sample annotations file, this means that there were 71 samples that
+could not be confidently imputed as male or female. This is because in
+our small dataset the number of variants on the X chromosome (about 200)
+is not sufficient to impute sex reliably. Let&#8217;s instead keep those
+samples with missing sex-check.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [34]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython2"><div class="highlight"><pre>
+<span></span>vds_QCed = vds_sex_check.filter_samples_expr(&#39;sa.sexcheck || isMissing(sa.sexcheck)&#39;).persist()
+
+print(&#39;samples after filter: %s&#39; % vds_QCed.num_samples)
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+samples after filter: 191
+</pre></div></div>
+</div>
+</div>
+</div>
+<div class="section" id="PCA">
+<h2>PCA<a class="headerlink" href="#PCA" title="Permalink to this headline">¶</a></h2>
+<p>To account for population stratification in association testing, we use
+principal component analysis to compute features that are proxies for
+genetic similarity. PCA is typically performed on variants in linkage
+equilibrium. The text file <em>purcell5k.interval_list</em> contains a list of
+such independent common variants.</p>
+<p>To calculate principal components, we first use the
+<code class="docutils literal"><span class="pre">filter_variants_intervals</span></code> method to filter down to SNPs from this
+list. Next, we use the <code class="docutils literal"><span class="pre">pca</span></code> method to calculate the first 10
+principal components (10 is the default number). The results are stored
+as sample annotations with root given by the <code class="docutils literal"><span class="pre">scores</span></code> parameter.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [35]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython2"><div class="highlight"><pre>
+<span></span>purcell_filter = IntervalTree.read(&#39;purcell5k.interval_list&#39;)
+vds_pca = (vds_QCed.filter_variants_intervals(purcell_filter)
+    .pca(scores=&#39;sa.pca&#39;))
+</pre></div>
+</div>
+</div>
+<p>We can then make a Python plot of the samples in PC space colored by
+population group:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [36]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython2"><div class="highlight"><pre>
+<span></span>pca_table = vds_pca.samples_keytable().to_pandas()
+colors = {&#39;AFR&#39;: &#39;black&#39;, &#39;AMR&#39;: &#39;red&#39;, &#39;EAS&#39;: &#39;green&#39;, &#39;EUR&#39;: &#39;blue&#39;, &#39;SAS&#39;: &#39;cyan&#39;}
+plt.scatter(pca_table[&quot;sa.pca.PC1&quot;], pca_table[&quot;sa.pca.PC2&quot;], c = pca_table[&quot;sa.pheno.SuperPopulation&quot;].map(colors), alpha = .5)
+plt.xlabel(&quot;PC1&quot;)
+plt.ylabel(&quot;PC2&quot;)
+legend_entries = [mpatches.Patch(color= c, label=pheno) for pheno, c in colors.items()]
+plt.legend(handles=legend_entries)
+plt.show()
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="_images/tutorial_70_0.png" src="_images/tutorial_70_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="Association-testing">
+<h2>Association testing<a class="headerlink" href="#Association-testing" title="Permalink to this headline">¶</a></h2>
+<p>Now that we have a clean dataset with principal component annotations,
+let&#8217;s test for association between genetic variation and the phenotypes
+CaffeineConsumption (continuous) and PurpleHair (dichotomous).</p>
+<div class="section" id="Linear-regression-with-covariates">
+<h3>Linear regression with covariates<a class="headerlink" href="#Linear-regression-with-covariates" title="Permalink to this headline">¶</a></h3>
+<p>Let&#8217;s run linear regression on <code class="docutils literal"><span class="pre">vds_QCed</span></code>. First, we will filter to
+variants with a allele frequency between 5% and 95%. Next, we use the
+<code class="docutils literal"><span class="pre">linreg</span></code> method, specifying the response variable <code class="docutils literal"><span class="pre">y</span></code> to be the
+sample annotation <code class="docutils literal"><span class="pre">sa.pheno.CaffeineConsumption</span></code>. We use four sample
+covariates in addition to the (implicit) intercept: <code class="docutils literal"><span class="pre">sa.pca.PC1</span></code>,
+<code class="docutils literal"><span class="pre">sa.pca.PC2</span></code>, <code class="docutils literal"><span class="pre">sa.pca.PC3</span></code>, <code class="docutils literal"><span class="pre">sa.pheno.isFemale</span></code>.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [37]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython2"><div class="highlight"><pre>
+<span></span>vds_gwas = (vds_QCed
+    .filter_variants_expr(&#39;va.qc.AF &gt; 0.05 &amp;&amp; va.qc.AF &lt; 0.95&#39;)
+    .annotate_samples_vds(vds_pca, code=&#39;sa.pca = vds.pca&#39;)
+    .linreg(&#39;sa.pheno.CaffeineConsumption&#39;,
+            covariates=[&#39;sa.pca.PC1&#39;, &#39;sa.pca.PC2&#39;, &#39;sa.pca.PC3&#39;, &#39;sa.pheno.isFemale&#39;]))
+</pre></div>
+</div>
+</div>
+<p>The results of linear regression are stored as variant annotations and
+can be accessed with the root name <code class="docutils literal"><span class="pre">va.linreg</span></code>. To check for p-value
+inflation and significant associations, let&#8217;s create a log-scaled <a class="reference external" href="https://en.wikipedia.org/wiki/Q%E2%80%93Q_plot">Q-Q
+plot</a>. We&#8217;ll be
+making such plots a few times, so let&#8217;s first define a function for this
+purpose.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [38]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython2"><div class="highlight"><pre>
+<span></span>def qqplot(pvals, xMax, yMax):
+    spvals = sorted(filter(lambda x: not(isnan(x)), pvals))
+    exp = [-log(float(i) / len(spvals), 10) for i in np.arange(1, len(spvals) + 1, 1)]
+    obs = [-log(p, 10) for p in spvals]
+    plt.scatter(exp, obs)
+    plt.plot(np.arange(0, max(xMax, yMax)), c=&quot;red&quot;)
+    plt.xlabel(&quot;Expected p-value (-log10 scale)&quot;)
+    plt.ylabel(&quot;Observed p-value (-log10 scale)&quot;)
+    plt.xlim(0, xMax)
+    plt.ylim(0, yMax)
+    plt.show()
+</pre></div>
+</div>
+</div>
+<p>With this new function, we can make a Q-Q plot for our linear regression
+as follows.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [39]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython2"><div class="highlight"><pre>
+<span></span>linreg_pvals = sorted(vds_gwas.variants_keytable().to_pandas()[&quot;va.linreg.pval&quot;])
+qqplot(linreg_pvals, 5, 6)
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="_images/tutorial_76_0.png" src="_images/tutorial_76_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="Logistic-regression-with-covariates">
+<h3>Logistic regression with covariates<a class="headerlink" href="#Logistic-regression-with-covariates" title="Permalink to this headline">¶</a></h3>
+<p>We continue from <code class="docutils literal"><span class="pre">vds_gwas</span></code>. The logistic regression method also takes
+a test type argument. We will use the Wald test.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [40]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython2"><div class="highlight"><pre>
+<span></span>vds_gwas = (vds_gwas
+    .logreg(test=&#39;wald&#39;, y=&#39;sa.pheno.PurpleHair&#39;,
+            covariates=[&#39;sa.pca.PC1&#39;, &#39;sa.pca.PC2&#39;, &#39;sa.pca.PC3&#39;, &#39;sa.pheno.isFemale&#39;]))
+</pre></div>
+</div>
+</div>
+<p>We can reuse our Q-Q plot function:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [41]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython2"><div class="highlight"><pre>
+<span></span>logreg_pvals = vds_gwas.variants_keytable().to_pandas()[&quot;va.logreg.pval&quot;]
+qqplot(logreg_pvals, 5, 6)
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="_images/tutorial_80_0.png" src="_images/tutorial_80_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="Fisher's-Exact-Test-for-Rare-Variants">
+<h3>Fisher&#8217;s Exact Test for Rare Variants<a class="headerlink" href="#Fisher's-Exact-Test-for-Rare-Variants" title="Permalink to this headline">¶</a></h3>
+<p>We&#8217;ll start with <code class="docutils literal"><span class="pre">vds_QCed</span></code> here (our <code class="docutils literal"><span class="pre">vds_gwas</span></code> isn&#8217;t appropriate
+for rare variant tests because we filtered them all out!). This time we
+filter to rare variants (allele frequency less than 5% or greater than
+95%). Next we annotate variants with four counts about the aggregate
+statistics of the samples at each position. These new variant
+annotations can be used as inputs to <a class="reference external" href="https://en.wikipedia.org/wiki/Fisher's_exact_test">Fisher&#8217;s Exact
+Test</a> test which
+takes as input four integers representing a 2 x 2 contingency table. We
+define the variant annotation <code class="docutils literal"><span class="pre">va.fet</span></code> to be the output of the <code class="docutils literal"><span class="pre">fet</span></code>
+function in the <a class="reference external" href="https://hail.is/expr_lang.html">expression
+language</a>. The results are stored in
+vds_fet with Q-Q plot below.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [42]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython2"><div class="highlight"><pre>
+<span></span>rare_variant_annotations = [
+    &#39;&#39;&#39;va.minorCase =
+        gs.filter(g =&gt; sa.pheno.PurpleHair &amp;&amp; g.isHet()).count() +
+        2 * gs.filter(g =&gt; sa.pheno.PurpleHair &amp;&amp; g.isHomVar()).count()&#39;&#39;&#39;,
+    &#39;&#39;&#39;va.minorControl =
+        gs.filter(g =&gt; !sa.pheno.PurpleHair &amp;&amp; g.isHet()).count() +
+        2 * gs.filter(g =&gt; !sa.pheno.PurpleHair &amp;&amp; g.isHomVar()).count()&#39;&#39;&#39;,
+    &#39;&#39;&#39;va.majorCase =
+        gs.filter(g =&gt; sa.pheno.PurpleHair &amp;&amp; g.isHet()).count() +
+        2 * gs.filter(g =&gt; sa.pheno.PurpleHair &amp;&amp; g.isHomRef()).count()&#39;&#39;&#39;,
+    &#39;&#39;&#39;va.majorControl =
+        gs.filter(g =&gt; !sa.pheno.PurpleHair &amp;&amp; g.isHet()).count() +
+        2 * gs.filter(g =&gt; !sa.pheno.PurpleHair &amp;&amp; g.isHomRef()).count()&#39;&#39;&#39; ]
+
+vds_fet = (vds_QCed
+    .filter_variants_expr(&#39;va.qc.AF &lt;= 0.05 || va.qc.AF &gt;= 0.95&#39;)
+    .annotate_variants_expr(rare_variant_annotations)
+    .annotate_variants_expr(&#39;&#39;&#39;va.fet =
+                                fet(va.minorCase.toInt(), va.minorControl.toInt(),
+                                    va.majorCase.toInt(), va.majorControl.toInt())&#39;&#39;&#39;))
+
+fet_pvals = vds_fet.variants_keytable().to_pandas()[&quot;va.fet.pValue&quot;]
+qqplot(fet_pvals, 5, 6)
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="_images/tutorial_82_0.png" src="_images/tutorial_82_0.png" />
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="Eplilogue">
+<h2>Eplilogue<a class="headerlink" href="#Eplilogue" title="Permalink to this headline">¶</a></h2>
+<p>Congrats! If you&#8217;ve made it this far, you&#8217;re perfectly primed to read
+the <a class="reference external" href="https://hail.is/hail/overview.html">Overview</a>, look through the
+<a class="reference external" href="https://hail.is/hail/types.html">Hail objects</a> representing many
+core concepts in genetics, and check out the many Hail functions defined
+in the <a class="reference external" href="https://hail.is/hail/api.html">Python API</a>. As you use Hail
+for your own science, we&#8217;d love to hear from you on <a class="reference external" href="https://gitter.im/hail-is/hail">Gitter
+chat</a> or the <a class="reference external" href="http://discuss.hail.is">discussion
+forum</a>.</p>
+<p>For reference, here&#8217;s the full workflow to all tutorial endpoints
+combined into one script, assuming you&#8217;ve already created the expression
+strings like <code class="docutils literal"><span class="pre">filter_condition_ab</span></code> above.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none"><div class="highlight"><pre>
+<span></span>In [43]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython2"><div class="highlight"><pre>
+<span></span>vds_gAB_vCR = (hc.import_vcf(&#39;1000Genomes_248samples_coreExome10K.vcf.bgz&#39;)
+         .split_multi()
+         .annotate_samples_table(&#39;1000Genomes.sample_annotations&#39;,
+                                 root=&#39;sa.pheno&#39;,
+                                 sample_expr=&#39;Sample&#39;,
+                                 config=TextTableConfig(impute=True))
+         .filter_genotypes(filter_condition_ab)
+         .filter_variants_expr(&#39;gs.fraction(g =&gt; g.isCalled()) &gt; 0.95&#39;)
+         .sample_qc())
+
+vds_QCed = (vds_gAB_vCR
+    .annotate_samples_vds(vds_gAB_vCR, code = &#39;sa.qc = vds.qc&#39;)
+    .filter_samples_expr(&#39;sa.qc.callRate &gt;= 0.97 &amp;&amp; sa.qc.gqMean &gt;= 20&#39;)
+    .variant_qc()
+    .annotate_variants_expr(sex_aware_hwe_exprs)
+    .filter_variants_expr(hwe_filter_expression + &#39;&amp;&amp; va.qc.gqMean &gt;= 20&#39;)
+    .impute_sex(maf_threshold=0.05)
+    .annotate_samples_expr(&#39;sa.sexcheck = sa.pheno.isFemale == sa.imputesex.isFemale&#39;)
+    .filter_samples_expr(&#39;sa.sexcheck || isMissing(sa.sexcheck)&#39;))
+
+vds_pca = (vds_QCed.filter_variants_intervals(IntervalTree.read(&#39;purcell5k.interval_list&#39;))
+    .pca(scores=&#39;sa.pca&#39;))
+
+vds_gwas = (vds_QCed
+    .filter_variants_expr(&#39;va.qc.AF &gt; 0.05 &amp;&amp; va.qc.AF &lt; 0.95&#39;)
+    .annotate_samples_vds(vds_pca, code=&#39;sa.pca = vds.pca&#39;)
+    .linreg(&#39;sa.pheno.CaffeineConsumption&#39;,
+            covariates=[&#39;sa.pca.PC1&#39;, &#39;sa.pca.PC2&#39;, &#39;sa.pca.PC3&#39;, &#39;sa.pheno.isFemale&#39;])
+    .logreg(test=&#39;wald&#39;, y=&#39;sa.pheno.PurpleHair&#39;,
+            covariates=[&#39;sa.pca.PC1&#39;, &#39;sa.pca.PC2&#39;, &#39;sa.pca.PC3&#39;, &#39;sa.pheno.isFemale&#39;]))
+
+vds_fet = (vds_QCed
+    .filter_variants_expr(&#39;va.qc.AF &lt;= 0.05 || va.qc.AF &gt;= 0.95&#39;)
+    .annotate_variants_expr(rare_variant_annotations)
+    .annotate_variants_expr(&#39;&#39;&#39;va.fet = fet(va.minorCase.toInt(), va.minorControl.toInt(),
+                                            va.majorCase.toInt(), va.majorControl.toInt())&#39;&#39;&#39;))
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="exprlang.html" class="btn btn-neutral float-right" title="Expression Language" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="overview.html" class="btn btn-neutral" title="Overview" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, Hail Team.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'devel',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script type="text/javascript" src="../bootstrap.min.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+  
+  
+   
+
+</body>
+</html>

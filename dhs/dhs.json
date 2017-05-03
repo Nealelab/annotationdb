@@ -1,0 +1,477 @@
+{
+	"text": "Replicated DHS",
+	"id": "dhs",
+	"hail": "va.dhs",
+	"type": "interval",
+	"selectable": true,
+	"study_link": "http://biorxiv.org/content/early/2016/05/19/054361",
+	"study_title": "Shooshtari et Al. Integrative genetic and epigenetic analysis uncovers regulatory mechanisms of autoimmune disease",
+	"study_data": "Shared by pshoosh@broadinstitute.org",
+	"description": "Detailed information about the processing are available <a target=\"_blank\" href=\"https://storage.googleapis.com/annotationdb/dhs/Replicable-DHS.pdf\">here</a>",
+	"nodes": [
+		 {
+			"text": "TSS Status",
+			"raw": "TSS.Status",
+			"id": "TSS_Status",
+			"hail": "va.dhs.TSS_Status",
+			"type": "Boolean",
+			"description": "TSS (1=yes,0=no)" 
+		},
+		{
+			"text": "P-value",
+			"id": "pvalue",
+			"raw": "Pvalue",
+			"hail": "va.dhs.pvalue",
+			"type": "Double",
+			"description": "P-value for replication" 
+		},
+		{
+			"text": "breast_vhmec",
+			"id": "breast_vhmec",
+			"raw": "Breast_vHMEC",
+			"hail": "va.dhs.breast_vhmec",
+			"type": "Boolean",
+			"description": "Cell type: breast_vhmec" 
+		},
+		{
+			"text": "cd14_primary_cells",
+			"id": "cd14_primary_cells",
+			"raw": "CD14_Primary_Cells",
+			"hail": "va.dhs.cd14_primary_cells",
+			"type": "Boolean",
+			"description": "Cell type: cd14_primary_cells" 
+		},
+		{
+			"text": "cd19_primary_cells",
+			"id": "cd19_primary_cells",
+			"raw": "CD19_Primary_Cells",
+			"hail": "va.dhs.cd19_primary_cells",
+			"type": "Boolean",
+			"description": "Cell type: cd19_primary_cells" 
+		},
+		{
+			"text": "cd3_primary_cells",
+			"id": "cd3_primary_cells",
+			"raw": "CD3_Primary_Cells",
+			"hail": "va.dhs.cd3_primary_cells",
+			"type": "Boolean",
+			"description": "Cell type: cd3_primary_cells" 
+		},
+		{
+			"text": "cd4_primary_cells",
+			"id": "cd4_primary_cells",
+			"raw": "CD4_Primary_Cells",
+			"hail": "va.dhs.cd4_primary_cells",
+			"type": "Boolean",
+			"description": "Cell type: cd4_primary_cells" 
+		},
+		{
+			"text": "cd56_primary_cells",
+			"id": "cd56_primary_cells",
+			"raw": "CD56_Primary_Cells",
+			"hail": "va.dhs.cd56_primary_cells",
+			"type": "Boolean",
+			"description": "Cell type: cd56_primary_cells" 
+		},
+		{
+			"text": "cd8_primary_cells",
+			"id": "cd8_primary_cells",
+			"raw": "CD8_Primary_Cells",
+			"hail": "va.dhs.cd8_primary_cells",
+			"type": "Boolean",
+			"description": "Cell type: cd8_primary_cells" 
+		},
+		{
+			"text": "fetal_adrenal_gland",
+			"id": "fetal_adrenal_gland",
+			"raw": "Fetal_Adrenal_Gland",
+			"hail": "va.dhs.fetal_adrenal_gland",
+			"type": "Boolean",
+			"description": "Cell type: fetal_adrenal_gland" 
+		},
+		{
+			"text": "fetal_brain",
+			"id": "fetal_brain",
+			"raw": "Fetal_Brain",
+			"hail": "va.dhs.fetal_brain",
+			"type": "Boolean",
+			"description": "Cell type: fetal_brain" 
+		},
+		{
+			"text": "fetal_heart",
+			"id": "fetal_heart",
+			"raw": "Fetal_Heart",
+			"hail": "va.dhs.fetal_heart",
+			"type": "Boolean",
+			"description": "Cell type: fetal_heart" 
+		},
+		{
+			"text": "fetal_intestine_large",
+			"id": "fetal_intestine_large",
+			"raw": "Fetal_Intestine_Large",
+			"hail": "va.dhs.fetal_intestine_large",
+			"type": "Boolean",
+			"description": "Cell type: fetal_intestine_large" 
+		},
+		{
+			"text": "fetal_intestine_small",
+			"id": "fetal_intestine_small",
+			"raw": "Fetal_Intestine_Small",
+			"hail": "va.dhs.fetal_intestine_small",
+			"type": "Boolean",
+			"description": "Cell type: fetal_intestine_small" 
+		},
+		{
+			"text": "fetal_kidney",
+			"id": "fetal_kidney",
+			"raw": "Fetal_Kidney",
+			"hail": "va.dhs.fetal_kidney",
+			"type": "Boolean",
+			"description": "Cell type: fetal_kidney" 
+		},
+		{
+			"text": "fetal_kidney_left",
+			"id": "fetal_kidney_left",
+			"raw": "Fetal_Kidney_Left",
+			"hail": "va.dhs.fetal_kidney_left",
+			"type": "Boolean",
+			"description": "Cell type: fetal_kidney_left" 
+		},
+		{
+			"text": "fetal_kidney_right",
+			"id": "fetal_kidney_right",
+			"raw": "Fetal_Kidney_Right",
+			"hail": "va.dhs.fetal_kidney_right",
+			"type": "Boolean",
+			"description": "Cell type: fetal_kidney_right" 
+		},
+		{
+			"text": "fetal_lung",
+			"id": "fetal_lung",
+			"raw": "Fetal_Lung",
+			"hail": "va.dhs.fetal_lung",
+			"type": "Boolean",
+			"description": "Cell type: fetal_lung" 
+		},
+		{
+			"text": "fetal_lung_left",
+			"id": "fetal_lung_left",
+			"raw": "Fetal_Lung_Left",
+			"hail": "va.dhs.fetal_lung_left",
+			"type": "Boolean",
+			"description": "Cell type: fetal_lung_left" 
+		},
+		{
+			"text": "fetal_lung_right",
+			"id": "fetal_lung_right",
+			"raw": "Fetal_Lung_Right",
+			"hail": "va.dhs.fetal_lung_right",
+			"type": "Boolean",
+			"description": "Cell type: fetal_lung_right" 
+		},
+		{
+			"text": "fetal_muscle_arm",
+			"id": "fetal_muscle_arm",
+			"raw": "Fetal_Muscle_Arm",
+			"hail": "va.dhs.fetal_muscle_arm",
+			"type": "Boolean",
+			"description": "Cell type: fetal_muscle_arm" 
+		},
+		{
+			"text": "fetal_muscle_back",
+			"id": "fetal_muscle_back",
+			"raw": "Fetal_Muscle_Back",
+			"hail": "va.dhs.fetal_muscle_back",
+			"type": "Boolean",
+			"description": "Cell type: fetal_muscle_back" 
+		},
+		{
+			"text": "fetal_muscle_leg",
+			"id": "fetal_muscle_leg",
+			"raw": "Fetal_Muscle_Leg",
+			"hail": "va.dhs.fetal_muscle_leg",
+			"type": "Boolean",
+			"description": "Cell type: fetal_muscle_leg" 
+		},
+		{
+			"text": "fetal_muscle_trunk",
+			"id": "fetal_muscle_trunk",
+			"raw": "Fetal_Muscle_Trunk",
+			"hail": "va.dhs.fetal_muscle_trunk",
+			"type": "Boolean",
+			"description": "Cell type: fetal_muscle_trunk" 
+		},
+		{
+			"text": "fetal_placenta",
+			"id": "fetal_placenta",
+			"raw": "Fetal_Placenta",
+			"hail": "va.dhs.fetal_placenta",
+			"type": "Boolean",
+			"description": "Cell type: fetal_placenta" 
+		},
+		{
+			"text": "fetal_renal_cortex",
+			"id": "fetal_renal_cortex",
+			"raw": "Fetal_Renal_Cortex",
+			"hail": "va.dhs.fetal_renal_cortex",
+			"type": "Boolean",
+			"description": "Cell type: fetal_renal_cortex" 
+		},
+		{
+			"text": "fetal_renal_cortex_left",
+			"id": "fetal_renal_cortex_left",
+			"raw": "Fetal_Renal_Cortex_Left",
+			"hail": "va.dhs.fetal_renal_cortex_left",
+			"type": "Boolean",
+			"description": "Cell type: fetal_renal_cortex_left" 
+		},
+		{
+			"text": "fetal_renal_cortex_right",
+			"id": "fetal_renal_cortex_right",
+			"raw": "Fetal_Renal_Cortex_Right",
+			"hail": "va.dhs.fetal_renal_cortex_right",
+			"type": "Boolean",
+			"description": "Cell type: fetal_renal_cortex_right" 
+		},
+		{
+			"text": "fetal_renal_pelvis",
+			"id": "fetal_renal_pelvis",
+			"raw": "Fetal_Renal_Pelvis",
+			"hail": "va.dhs.fetal_renal_pelvis",
+			"type": "Boolean",
+			"description": "Cell type: fetal_renal_pelvis" 
+		},
+		{
+			"text": "fetal_renal_pelvis_left",
+			"id": "fetal_renal_pelvis_left",
+			"raw": "Fetal_Renal_Pelvis_Left",
+			"hail": "va.dhs.fetal_renal_pelvis_left",
+			"type": "Boolean",
+			"description": "Cell type: fetal_renal_pelvis_left" 
+		},
+		{
+			"text": "fetal_renal_pelvis_right",
+			"id": "fetal_renal_pelvis_right",
+			"raw": "Fetal_Renal_Pelvis_Right",
+			"hail": "va.dhs.fetal_renal_pelvis_right",
+			"type": "Boolean",
+			"description": "Cell type: fetal_renal_pelvis_right" 
+		},
+		{
+			"text": "fetal_spinal_cord",
+			"id": "fetal_spinal_cord",
+			"raw": "Fetal_Spinal_Cord",
+			"hail": "va.dhs.fetal_spinal_cord",
+			"type": "Boolean",
+			"description": "Cell type: fetal_spinal_cord" 
+		},
+		{
+			"text": "fetal_stomach",
+			"id": "fetal_stomach",
+			"raw": "Fetal_Stomach",
+			"hail": "va.dhs.fetal_stomach",
+			"type": "Boolean",
+			"description": "Cell type: fetal_stomach" 
+		},
+		{
+			"text": "fetal_testes",
+			"id": "fetal_testes",
+			"raw": "Fetal_Testes",
+			"hail": "va.dhs.fetal_testes",
+			"type": "Boolean",
+			"description": "Cell type: fetal_testes" 
+		},
+		{
+			"text": "fetal_thymus",
+			"id": "fetal_thymus",
+			"raw": "Fetal_Thymus",
+			"hail": "va.dhs.fetal_thymus",
+			"type": "Boolean",
+			"description": "Cell type: fetal_thymus" 
+		},
+		{
+			"text": "fibroblasts_fetal_skin_abdomen",
+			"id": "fibroblasts_fetal_skin_abdomen",
+			"raw": "Fibroblasts_Fetal_Skin_Abdomen",
+			"hail": "va.dhs.fibroblasts_fetal_skin_abdomen",
+			"type": "Boolean",
+			"description": "Cell type: fibroblasts_fetal_skin_abdomen" 
+		},
+		{
+			"text": "fibroblasts_fetal_skin_back",
+			"id": "fibroblasts_fetal_skin_back",
+			"raw": "Fibroblasts_Fetal_Skin_Back",
+			"hail": "va.dhs.fibroblasts_fetal_skin_back",
+			"type": "Boolean",
+			"description": "Cell type: fibroblasts_fetal_skin_back" 
+		},
+		{
+			"text": "fibroblasts_fetal_skin_biceps_left",
+			"id": "fibroblasts_fetal_skin_biceps_left",
+			"raw": "Fibroblasts_Fetal_Skin_Biceps_Left",
+			"hail": "va.dhs.fibroblasts_fetal_skin_biceps_left",
+			"type": "Boolean",
+			"description": "Cell type: fibroblasts_fetal_skin_biceps_left" 
+		},
+		{
+			"text": "fibroblasts_fetal_skin_biceps_right",
+			"id": "fibroblasts_fetal_skin_biceps_right",
+			"raw": "Fibroblasts_Fetal_Skin_Biceps_Right",
+			"hail": "va.dhs.fibroblasts_fetal_skin_biceps_right",
+			"type": "Boolean",
+			"description": "Cell type: fibroblasts_fetal_skin_biceps_right" 
+		},
+		{
+			"text": "fibroblasts_fetal_skin_quadriceps_left",
+			"id": "fibroblasts_fetal_skin_quadriceps_left",
+			"raw": "Fibroblasts_Fetal_Skin_Quadriceps_Left",
+			"hail": "va.dhs.fibroblasts_fetal_skin_quadriceps_left",
+			"type": "Boolean",
+			"description": "Cell type: fibroblasts_fetal_skin_quadriceps_left" 
+		},
+		{
+			"text": "fibroblasts_fetal_skin_quadriceps_right",
+			"id": "fibroblasts_fetal_skin_quadriceps_right",
+			"raw": "Fibroblasts_Fetal_Skin_Quadriceps_Right",
+			"hail": "va.dhs.fibroblasts_fetal_skin_quadriceps_right",
+			"type": "Boolean",
+			"description": "Cell type: fibroblasts_fetal_skin_quadriceps_right" 
+		},
+		{
+			"text": "fibroblasts_fetal_skin_scalp",
+			"id": "fibroblasts_fetal_skin_scalp",
+			"raw": "Fibroblasts_Fetal_Skin_Scalp",
+			"hail": "va.dhs.fibroblasts_fetal_skin_scalp",
+			"type": "Boolean",
+			"description": "Cell type: fibroblasts_fetal_skin_scalp" 
+		},
+		{
+			"text": "fibroblasts_fetal_skin_upper_back",
+			"id": "fibroblasts_fetal_skin_upper_back",
+			"raw": "Fibroblasts_Fetal_Skin_Upper_Back",
+			"hail": "va.dhs.fibroblasts_fetal_skin_upper_back",
+			"type": "Boolean",
+			"description": "Cell type: fibroblasts_fetal_skin_upper_back" 
+		},
+		{
+			"text": "gastric",
+			"id": "gastric",
+			"raw": "Gastric",
+			"hail": "va.dhs.gastric",
+			"type": "Boolean",
+			"description": "Cell type: gastric" 
+		},
+		{
+			"text": "h1",
+			"id": "h1",
+			"raw": "H1",
+			"hail": "va.dhs.h1",
+			"type": "Boolean",
+			"description": "Cell type: h1" 
+		},
+		{
+			"text": "h1_bmp4_derived_mesendoderm_cultured_cells",
+			"id": "h1_bmp4_derived_mesendoderm_cultured_cells",
+			"raw": "H1_BMP4_Derived_Mesendoderm_Cultured_Cells",
+			"hail": "va.dhs.h1_bmp4_derived_mesendoderm_cultured_cells",
+			"type": "Boolean",
+			"description": "Cell type: h1_bmp4_derived_mesendoderm_cultured_cells" 
+		},
+		{
+			"text": "h1_bmp4_derived_trophoblast_cultured_cells",
+			"id": "h1_bmp4_derived_trophoblast_cultured_cells",
+			"raw": "H1_BMP4_Derived_Trophoblast_Cultured_Cells",
+			"hail": "va.dhs.h1_bmp4_derived_trophoblast_cultured_cells",
+			"type": "Boolean",
+			"description": "Cell type: h1_bmp4_derived_trophoblast_cultured_cells" 
+		},
+		{
+			"text": "h1_derived_mesenchymal_stem_cells",
+			"id": "h1_derived_mesenchymal_stem_cells",
+			"raw": "H1_Derived_Mesenchymal_Stem_Cells",
+			"hail": "va.dhs.h1_derived_mesenchymal_stem_cells",
+			"type": "Boolean",
+			"description": "Cell type: h1_derived_mesenchymal_stem_cells" 
+		},
+		{
+			"text": "h1_derived_neuronal_progenitor_cultured_cells",
+			"id": "h1_derived_neuronal_progenitor_cultured_cells",
+			"raw": "H1_Derived_Neuronal_Progenitor_Cultured_Cells",
+			"hail": "va.dhs.h1_derived_neuronal_progenitor_cultured_cells",
+			"type": "Boolean",
+			"description": "Cell type: h1_derived_neuronal_progenitor_cultured_cells" 
+		},
+		{
+			"text": "h9",
+			"id": "h9",
+			"raw": "H9",
+			"hail": "va.dhs.h9",
+			"type": "Boolean",
+			"description": "Cell type: h9" 
+		},
+		{
+			"text": "imr90",
+			"id": "imr90",
+			"raw": "IMR90",
+			"hail": "va.dhs.imr90",
+			"type": "Boolean",
+			"description": "Cell type: imr90" 
+		},
+		{
+			"text": "mobilized_cd3_primary_cells",
+			"id": "mobilized_cd3_primary_cells",
+			"raw": "Mobilized_CD3_Primary_Cells",
+			"hail": "va.dhs.mobilized_cd3_primary_cells",
+			"type": "Boolean",
+			"description": "Cell type: mobilized_cd3_primary_cells" 
+		},
+		{
+			"text": "mobilized_cd34_primary_cells",
+			"id": "mobilized_cd34_primary_cells",
+			"raw": "Mobilized_CD34_Primary_Cells",
+			"hail": "va.dhs.mobilized_cd34_primary_cells",
+			"type": "Boolean",
+			"description": "Cell type: mobilized_cd34_primary_cells" 
+		},
+		{
+			"text": "mobilized_cd4_primary_cells",
+			"id": "mobilized_cd4_primary_cells",
+			"raw": "Mobilized_CD4_Primary_Cells",
+			"hail": "va.dhs.mobilized_cd4_primary_cells",
+			"type": "Boolean",
+			"description": "Cell type: mobilized_cd4_primary_cells" 
+		},
+		{
+			"text": "pancreas",
+			"id": "pancreas",
+			"raw": "Pancreas",
+			"hail": "va.dhs.pancreas",
+			"type": "Boolean",
+			"description": "Cell type: pancreas" 
+		},
+		{
+			"text": "penis_foreskin_fibroblast_primary_cells",
+			"id": "penis_foreskin_fibroblast_primary_cells",
+			"raw": "Penis_Foreskin_Fibroblast_Primary_Cells",
+			"hail": "va.dhs.penis_foreskin_fibroblast_primary_cells",
+			"type": "Boolean",
+			"description": "Cell type: penis_foreskin_fibroblast_primary_cells" 
+		},
+		{
+			"text": "penis_foreskin_keratinocyte_primary_cells",
+			"id": "penis_foreskin_keratinocyte_primary_cells",
+			"raw": "Penis_Foreskin_Keratinocyte_Primary_Cells",
+			"hail": "va.dhs.penis_foreskin_keratinocyte_primary_cells",
+			"type": "Boolean",
+			"description": "Cell type: penis_foreskin_keratinocyte_primary_cells" 
+		},
+		{
+			"text": "penis_foreskin_melanocyte_primary_cells",
+			"id": "penis_foreskin_melanocyte_primary_cells",
+			"raw": "Penis_Foreskin_Melanocyte_Primary_Cells",
+			"hail": "va.dhs.penis_foreskin_melanocyte_primary_cells",
+			"type": "Boolean",
+			"description": "Cell type: penis_foreskin_melanocyte_primary_cells" 
+		} 
+	]
+}

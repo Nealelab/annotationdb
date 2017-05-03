@@ -1,0 +1,23 @@
+TBoolean
+==================
+
+.. currentmodule:: hail.expr
+
+.. autoclass:: TBoolean
+
+    
+    
+    
+
+    
+    
+
+    .. rubric:: Methods
+
+    .. autosummary::
+        :nosignatures:
+
+    
+        ~TBoolean.__init__
+    
+    

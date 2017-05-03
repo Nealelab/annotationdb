@@ -1,0 +1,23 @@
+TInt
+==============
+
+.. currentmodule:: hail.expr
+
+.. autoclass:: TInt
+
+    
+    
+    
+
+    
+    
+
+    .. rubric:: Methods
+
+    .. autosummary::
+        :nosignatures:
+
+    
+        ~TInt.__init__
+    
+    

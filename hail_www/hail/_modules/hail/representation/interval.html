@@ -1,0 +1,483 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>hail.representation.interval &mdash; Hail</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../../../hail_logo_sq.png"/>
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../../../navbar.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../../../_static/rtd_modifications.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="../../../genindex.html"/>
+        <link rel="search" title="Search" href="../../../search.html"/>
+    <link rel="top" title="Hail" href="../../../index.html"/>
+        <link rel="up" title="Module code" href="../../index.html"/> 
+
+  
+  <script src="../../../_static/js/modernizr.min.js"></script>
+  
+  
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <nav class="navbar navbar-default navbar-static-top" id="hail-navbar">
+<div class="container-fluid" id="hail-container-fluid">
+    <div class="navbar-header" id="hail-navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#hail-navbar-collapse" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+   
+      <a class="navbar-left" id="hail-navbar-brand" href="../index.html"><img alt="Hail" id="logo" src="hail-logo-cropped.png"></a>
+
+    </div>
+
+    <div class="collapse navbar-collapse" id="hail-navbar-collapse">
+      <ul class="nav navbar-nav navbar-right">
+          <li id="home" class="nav-item"><a href="../index.html">HOME</a></li>
+          <li id="docs" class="nav-item"><a href="index.html">DOCS</a></li>
+          <li id="forum" class="nav-item"><a href="http://discuss.hail.is">FORUM</a></li>
+          <li id="chat" class="nav-item dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">CHAT<span class="caret"></span></a>
+          <ul class="dropdown-menu dropdown-menu-left">
+            <li><a class="dropdown-item" href="https://gitter.im/hail-is/hail">General</a></li>
+            <li><a class="dropdown-item" href="https://gitter.im/hail-is/hail-dev">Developers</a></li>
+          </ul>
+        </li>
+       <li id="code" class="nav-item"><a href="https://github.com/hail-is/hail">CODE</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> Hail
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                devel
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../getting_started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../tutorial.html">Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../exprlang.html">Expression Language</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../api.html">Python API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../annotationdb.html">Annotation Database</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../other_resources.html">Other Resources</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../../index.html">Hail</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../index.html">Module code</a> &raquo;</li>
+        
+      <li>hail.representation.interval</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for hail.representation.interval</h1><div class="highlight"><pre>
+<span></span><span class="kn">from</span> <span class="nn">hail.java</span> <span class="k">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">hail.representation.variant</span> <span class="k">import</span> <span class="n">Locus</span>
+
+
+<div class="viewcode-block" id="Interval"><a class="viewcode-back" href="../../../representation/hail.representation.Interval.html#hail.representation.Interval">[docs]</a><span class="k">class</span> <span class="nc">Interval</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    A genomic interval marked by start and end loci.</span>
+
+<span class="sd">    .. testsetup::</span>
+
+<span class="sd">        interval1 = Interval.parse(&#39;X:100005-X:150020&#39;)</span>
+<span class="sd">        interval2 = Interval.parse(&#39;16:29500000-30200000&#39;)</span>
+
+<span class="sd">    :param start: inclusive start locus</span>
+<span class="sd">    :type start: :class:`.Locus`</span>
+<span class="sd">    :param end: exclusive end locus</span>
+<span class="sd">    :type end: :class:`.Locus`</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="nd">@handle_py4j</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">):</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">Locus</span><span class="p">)</span> <span class="ow">and</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">end</span><span class="p">,</span> <span class="n">Locus</span><span class="p">)):</span>
+            <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s1">&#39;expect arguments of type (Locus, Locus) but found (</span><span class="si">%s</span><span class="s1">, </span><span class="si">%s</span><span class="s1">)&#39;</span> <span class="o">%</span>
+                            <span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">start</span><span class="p">)),</span> <span class="nb">str</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">end</span><span class="p">))))</span>
+        <span class="n">jrep</span> <span class="o">=</span> <span class="n">scala_object</span><span class="p">(</span><span class="n">Env</span><span class="o">.</span><span class="n">hail</span><span class="p">()</span><span class="o">.</span><span class="n">variant</span><span class="p">,</span> <span class="s1">&#39;Locus&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">makeInterval</span><span class="p">(</span><span class="n">start</span><span class="o">.</span><span class="n">_jrep</span><span class="p">,</span> <span class="n">end</span><span class="o">.</span><span class="n">_jrep</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_init_from_java</span><span class="p">(</span><span class="n">jrep</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_jrep</span><span class="o">.</span><span class="n">toString</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s1">&#39;Interval(start=</span><span class="si">%s</span><span class="s1">, end=</span><span class="si">%s</span><span class="s1">)&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="nb">repr</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">start</span><span class="p">),</span> <span class="nb">repr</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">end</span><span class="p">))</span>
+
+    <span class="k">def</span> <span class="nf">__eq__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_jrep</span><span class="o">.</span><span class="n">equals</span><span class="p">(</span><span class="n">other</span><span class="o">.</span><span class="n">_jrep</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">__hash__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_jrep</span><span class="o">.</span><span class="n">hashCode</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">_init_from_java</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">jrep</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_jrep</span> <span class="o">=</span> <span class="n">jrep</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_start</span> <span class="o">=</span> <span class="n">Locus</span><span class="o">.</span><span class="n">_from_java</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_jrep</span><span class="o">.</span><span class="n">start</span><span class="p">())</span>
+
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">_from_java</span><span class="p">(</span><span class="n">cls</span><span class="p">,</span> <span class="n">jrep</span><span class="p">):</span>
+        <span class="n">interval</span> <span class="o">=</span> <span class="n">Interval</span><span class="o">.</span><span class="n">__new__</span><span class="p">(</span><span class="n">cls</span><span class="p">)</span>
+        <span class="n">interval</span><span class="o">.</span><span class="n">_init_from_java</span><span class="p">(</span><span class="n">jrep</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">interval</span>
+
+    <span class="nd">@staticmethod</span>
+    <span class="nd">@handle_py4j</span>
+<div class="viewcode-block" id="Interval.parse"><a class="viewcode-back" href="../../../representation/hail.representation.Interval.html#hail.representation.Interval.parse">[docs]</a>    <span class="k">def</span> <span class="nf">parse</span><span class="p">(</span><span class="n">string</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Parses a genomic interval from string representation.</span>
+
+<span class="sd">        **Examples**:</span>
+
+<span class="sd">        &gt;&gt;&gt; interval_1 = Interval.parse(&#39;X:100005-X:150020&#39;)</span>
+<span class="sd">        &gt;&gt;&gt; interval_2 = Interval.parse(&#39;16:29500000-30200000&#39;)</span>
+<span class="sd">        &gt;&gt;&gt; interval_3 = Interval.parse(&#39;16:29.5M-30.2M&#39;)  # same as interval_2</span>
+<span class="sd">        &gt;&gt;&gt; interval_4 = Interval.parse(&#39;16:30000000-END&#39;)</span>
+<span class="sd">        &gt;&gt;&gt; interval_5 = Interval.parse(&#39;16:30M-END&#39;)  # same as interval_4</span>
+<span class="sd">        &gt;&gt;&gt; interval_6 = Interval.parse(&#39;1-22&#39;)  # autosomes</span>
+<span class="sd">        &gt;&gt;&gt; interval_7 = Interval.parse(&#39;X&#39;)  # all of chromosome X</span>
+
+
+<span class="sd">        There are several acceptable representations.</span>
+
+<span class="sd">        ``CHR1:POS1-CHR2:POS2`` is the fully specified representation, and</span>
+<span class="sd">        we use this to define the various shortcut representations.</span>
+
+<span class="sd">        In a ``POS`` field, ``start`` (``Start``, ``START``) stands for 0.</span>
+
+<span class="sd">        In a ``POS`` field, ``end`` (``End``, ``END``) stands for max int.</span>
+
+<span class="sd">        In a ``POS`` field, the qualifiers ``m`` (``M``) and ``k`` (``K``) multiply</span>
+<span class="sd">        the given number by ``1,000,000`` and ``1,000``, respectively.  ``1.6K`` is short for</span>
+<span class="sd">        1600, and ``29M`` is short for 29000000.</span>
+
+<span class="sd">        ``CHR:POS1-POS2`` stands for ``CHR:POS1-CHR:POS2``</span>
+
+<span class="sd">        ``CHR1-CHR2`` stands for ``CHR1:START-CHR2:END``</span>
+
+<span class="sd">        ``CHR`` stands for ``CHR:START-CHR:END``</span>
+
+<span class="sd">        Note that the start locus must precede the start locus.</span>
+
+<span class="sd">        :rtype: :class:`.Interval`</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">jrep</span> <span class="o">=</span> <span class="n">scala_object</span><span class="p">(</span><span class="n">Env</span><span class="o">.</span><span class="n">hail</span><span class="p">()</span><span class="o">.</span><span class="n">variant</span><span class="p">,</span> <span class="s1">&#39;Locus&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">parseInterval</span><span class="p">(</span><span class="n">string</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">Interval</span><span class="o">.</span><span class="n">_from_java</span><span class="p">(</span><span class="n">jrep</span><span class="p">)</span></div>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">start</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Locus object referring to the start of the interval (inclusive).</span>
+
+<span class="sd">        :rtype: :class:`.Locus`</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">Locus</span><span class="o">.</span><span class="n">_from_java</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_jrep</span><span class="o">.</span><span class="n">start</span><span class="p">())</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">end</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Locus object referring to the end of the interval (exclusive).</span>
+
+<span class="sd">        :rtype: :class:`.Locus`</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">Locus</span><span class="o">.</span><span class="n">_from_java</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_jrep</span><span class="o">.</span><span class="n">end</span><span class="p">())</span>
+
+    <span class="nd">@handle_py4j</span>
+<div class="viewcode-block" id="Interval.contains"><a class="viewcode-back" href="../../../representation/hail.representation.Interval.html#hail.representation.Interval.contains">[docs]</a>    <span class="k">def</span> <span class="nf">contains</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">locus</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;True if the supplied locus is contained within the interval.</span>
+
+<span class="sd">        This membership check is left-inclusive, right-exclusive.  This</span>
+<span class="sd">        means that the interval 1:100-101 includes 1:100 but not 1:101.</span>
+
+<span class="sd">        :type: locus: :class:`.Locus.`</span>
+<span class="sd">        :rtype: bool</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_jrep</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="n">locus</span><span class="o">.</span><span class="n">_jrep</span><span class="p">)</span></div>
+
+    <span class="nd">@handle_py4j</span>
+<div class="viewcode-block" id="Interval.overlaps"><a class="viewcode-back" href="../../../representation/hail.representation.Interval.html#hail.representation.Interval.overlaps">[docs]</a>    <span class="k">def</span> <span class="nf">overlaps</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">interval</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;True if the the supplied interval contains any locus in common with this one.</span>
+
+<span class="sd">        The statement</span>
+
+<span class="sd">        &gt;&gt;&gt; interval1.overlaps(interval2)</span>
+
+<span class="sd">        is equivalent to</span>
+
+<span class="sd">        &gt;&gt;&gt; interval1.contains(interval2.start) or interval2.contains(interval1.start)</span>
+
+<span class="sd">        :type: interval: :class:`.Interval`</span>
+<span class="sd">        :rtype: bool&quot;&quot;&quot;</span>
+
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_jrep</span><span class="o">.</span><span class="n">overlaps</span><span class="p">(</span><span class="n">interval</span><span class="o">.</span><span class="n">_jrep</span><span class="p">)</span></div></div>
+
+
+<div class="viewcode-block" id="IntervalTree"><a class="viewcode-back" href="../../../representation/hail.representation.IntervalTree.html#hail.representation.IntervalTree">[docs]</a><span class="k">class</span> <span class="nc">IntervalTree</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;An object used for efficient filtering of genomic intervals.</span>
+
+<span class="sd">    :param intervals: list of intervals to index in tree representation</span>
+<span class="sd">    :type intervals: list of :class:`.Interval`</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">intervals</span><span class="p">):</span>
+        <span class="n">jarr</span> <span class="o">=</span> <span class="n">jarray</span><span class="p">(</span><span class="n">Env</span><span class="o">.</span><span class="n">hail</span><span class="p">()</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">Interval</span><span class="p">,</span> <span class="p">[</span><span class="n">i</span><span class="o">.</span><span class="n">_jrep</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">intervals</span><span class="p">])</span>
+        <span class="n">jrep</span> <span class="o">=</span> <span class="n">Env</span><span class="o">.</span><span class="n">jutils</span><span class="p">()</span><span class="o">.</span><span class="n">makeIntervalList</span><span class="p">([</span><span class="n">i</span><span class="o">.</span><span class="n">_jrep</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">intervals</span><span class="p">])</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_jrep</span> <span class="o">=</span> <span class="n">jrep</span>
+
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">_init_from_java</span><span class="p">(</span><span class="n">cls</span><span class="p">,</span> <span class="n">jrep</span><span class="p">):</span>
+        <span class="n">itree</span> <span class="o">=</span> <span class="n">IntervalTree</span><span class="o">.</span><span class="n">__new__</span><span class="p">(</span><span class="n">cls</span><span class="p">)</span>
+        <span class="n">itree</span><span class="o">.</span><span class="n">_jrep</span> <span class="o">=</span> <span class="n">jrep</span>
+        <span class="k">return</span> <span class="n">itree</span>
+
+    <span class="nd">@staticmethod</span>
+    <span class="nd">@handle_py4j</span>
+<div class="viewcode-block" id="IntervalTree.parse_all"><a class="viewcode-back" href="../../../representation/hail.representation.IntervalTree.html#hail.representation.IntervalTree.parse_all">[docs]</a>    <span class="k">def</span> <span class="nf">parse_all</span><span class="p">(</span><span class="n">interval_strings</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Parse a list of strings into an interval list</span>
+
+<span class="sd">        :param interval_strings: list of interval strings to be parsed</span>
+<span class="sd">        :type interval_strings: list of str</span>
+
+<span class="sd">        :rtype: :class:`.IntervalTree`</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">jrep</span> <span class="o">=</span> <span class="n">Env</span><span class="o">.</span><span class="n">jutils</span><span class="p">()</span><span class="o">.</span><span class="n">parseIntervalList</span><span class="p">(</span><span class="n">interval_strings</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">IntervalTree</span><span class="o">.</span><span class="n">_init_from_java</span><span class="p">(</span><span class="n">jrep</span><span class="p">)</span></div>
+
+    <span class="nd">@staticmethod</span>
+    <span class="nd">@handle_py4j</span>
+<div class="viewcode-block" id="IntervalTree.read"><a class="viewcode-back" href="../../../representation/hail.representation.IntervalTree.html#hail.representation.IntervalTree.read">[docs]</a>    <span class="k">def</span> <span class="nf">read</span><span class="p">(</span><span class="n">path</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Read an interval tree from a file.</span>
+
+<span class="sd">        **The File Format**</span>
+
+<span class="sd">        Hail expects an interval file to contain either three or five fields per</span>
+<span class="sd">        line in the following formats:</span>
+
+<span class="sd">        - ``contig:start-end``</span>
+<span class="sd">        - ``contig  start  end`` (tab-separated)</span>
+<span class="sd">        - ``contig  start  end  direction  target`` (tab-separated)</span>
+
+<span class="sd">        .. note::</span>
+
+<span class="sd">            ``start`` and ``end`` match positions inclusively, e.g. ``start &lt;= position &lt;= end``.</span>
+<span class="sd">            :py:meth:`.Interval.parse` is exclusive of the end position.</span>
+
+<span class="sd">        .. note::</span>
+
+<span class="sd">            Hail uses the following ordering for contigs: 1-22 sorted numerically, then X, Y, MT,</span>
+<span class="sd">            then alphabetically for any contig not matching the standard human chromosomes.</span>
+
+<span class="sd">        .. caution::</span>
+
+<span class="sd">            The interval parser for these files does not support the full range of formats supported</span>
+<span class="sd">            by the python parser :py:meth:`.Interval.parse`.  &#39;k&#39;, &#39;m&#39;, &#39;start&#39;, and &#39;end&#39; are all</span>
+<span class="sd">            invalid motifs in the ``contig:start-end`` format here.</span>
+
+<span class="sd">        :param str path: file name</span>
+
+<span class="sd">        :rtype: :class:`.IntervalTree`</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">jrep</span> <span class="o">=</span> <span class="n">scala_object</span><span class="p">(</span><span class="n">Env</span><span class="o">.</span><span class="n">hail</span><span class="p">()</span><span class="o">.</span><span class="n">io</span><span class="o">.</span><span class="n">annotators</span><span class="p">,</span> <span class="s1">&#39;IntervalListAnnotator&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">Env</span><span class="o">.</span><span class="n">hc</span><span class="p">()</span><span class="o">.</span><span class="n">_jhc</span><span class="o">.</span><span class="n">hadoopConf</span><span class="p">(),</span>
+                                                                                    <span class="kc">True</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">IntervalTree</span><span class="o">.</span><span class="n">_init_from_java</span><span class="p">(</span><span class="n">jrep</span><span class="p">)</span></div>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">intervals</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Access a sorted iterator of genomic intervals.</span>
+
+<span class="sd">        :rtype: iterator of :class:`.Interval`</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">return</span> <span class="p">(</span><span class="n">Interval</span><span class="o">.</span><span class="n">_from_java</span><span class="p">(</span><span class="n">j_interval</span><span class="p">)</span> <span class="k">for</span> <span class="n">j_interval</span> <span class="ow">in</span>
+                <span class="n">Env</span><span class="o">.</span><span class="n">jutils</span><span class="p">()</span><span class="o">.</span><span class="n">iterableToArrayList</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_jrep</span><span class="o">.</span><span class="n">toIterable</span><span class="p">()))</span></div>
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, Hail Team.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../',
+            VERSION:'devel',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script type="text/javascript" src="../../../../bootstrap.min.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+  
+  
+   
+
+</body>
+</html>

@@ -1,0 +1,48 @@
+HailContext
+================
+
+.. currentmodule:: hail
+
+.. autoclass:: HailContext
+
+    
+    
+    .. rubric:: Attributes
+
+    .. autosummary::
+        :nosignatures:
+
+    
+        ~HailContext.version
+    
+    
+
+    
+    
+
+    .. rubric:: Methods
+
+    .. autosummary::
+        :nosignatures:
+
+    
+        ~HailContext.__init__
+        ~HailContext.balding_nichols_model
+        ~HailContext.dataframe_to_keytable
+        ~HailContext.eval_expr
+        ~HailContext.eval_expr_typed
+        ~HailContext.get_running
+        ~HailContext.grep
+        ~HailContext.import_bgen
+        ~HailContext.import_gen
+        ~HailContext.import_keytable
+        ~HailContext.import_plink
+        ~HailContext.import_vcf
+        ~HailContext.index_bgen
+        ~HailContext.read
+        ~HailContext.read_keytable
+        ~HailContext.report
+        ~HailContext.stop
+        ~HailContext.write_partitioning
+    
+    

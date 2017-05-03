@@ -1,0 +1,287 @@
+.panel-group{
+	margin-bottom:20px;
+}
+
+.panel{
+	background-color:#fff;
+	border:1px solid transparent;
+	border-color: #337ab7;
+	border-radius:4px;
+	-webkit-box-shadow:0 1px 1px rgba(0,0,0,.05);
+	box-shadow:0 1px 1px rgba(0,0,0,.05);
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+.panel-heading{
+	border: 1px solid;
+	border-bottom:0;
+	color: #fff;
+	background-color: #337ab7;
+	border-color: #337ab7;
+	padding-top: 7px;
+	padding-bottom: 10px;
+	padding-left: 15px;
+	padding-right: 15px;
+	border-top-left-radius: 3px;
+	border-top-right-radius: 3px;
+}
+
+.panel-heading .pull-left{
+	padding-top: 5px;
+}
+
+.panel-heading span{
+	color: #fff!important;
+}
+
+.panel-heading .btn{
+	background-color: #fff;
+	color: #555;
+	padding: 4px 10px;
+}
+
+.panel-heading #annotations-clear{
+	padding-left: 15.5px;
+	padding-right: 15.5px;
+}
+
+.panel-body{
+	padding:15px;
+	border-top:1px solid #ddd;
+	border-top-color: #ddd;
+	border-bottom-color: #ddd;
+}
+
+.collapse{
+	display:none;
+}
+
+.collapse.in{
+	display:block;
+}
+
+.collapsing{
+	position:relative;
+	height:0;
+	overflow:hidden;
+	-webkit-transition-timing-function:ease;
+	-o-transition-timing-function:ease;
+	transition-timing-function:ease;
+	-webkit-transition-duration:.35s;
+	-o-transition-duration:.35s;
+	transition-duration:.35s;
+	-webkit-transition-property:height,visibility;
+	-o-transition-property:height,visibility;
+	transition-property:height,visibility
+}
+
+table.docutils{
+	width: 100%;
+}
+
+table.docutils thead{
+	background-color: #f5f5f5;
+}
+
+code{
+	background-color: transparent;
+	font-weight: bold;
+	color:#404040;
+}
+
+.text-expand:hover{
+	text-decoration: underline;
+}
+
+.text-link:hover{
+	text-decoration: underline;
+}
+
+.text-link{
+	color: #2980B9;
+}
+
+.btn-group {
+	position: relative;
+	vertical-align: middle;
+}
+
+.btn-default {
+	border-color: #ccc;
+}
+
+.btn-default:hover {
+	border-color: #adadad;
+}
+
+.btn-group>.btn:first-child {
+	margin-left: 0;
+}
+
+.btn-group>.btn {
+	position: relative;
+	float: left;
+}
+
+.btn {
+	display: inline-block;
+	padding: 6px 12px;
+	margin-bottom: 0;
+	font-size: 14px;
+	font-weight: 400;
+	line-height: 1.42857143;
+	text-align: center;
+	white-space: nowrap;
+	vertical-align: middle;
+	touch-action: manipulation;
+	cursor: pointer;
+	user-select: none;
+	background-image: none;
+	border: 1px solid transparent;
+	border-radius: 4px;
+	box-shadow: 0px 1px 2px -1px rgba(255,255,255,0.5) inset, 0px -1px 0px 0px rgba(0,0,0,0.1) inset;
+}
+
+button {
+	overflow: visible;
+	margin: 0;
+	font: inherit;
+	text-transform: none;
+	-webkit-appearance: button;
+}
+
+.pull-left {
+	float: left!important;
+}
+
+.btn .caret {
+	margin-left: 0;
+}
+
+.caret {
+	display: inline-block;
+	width: 0;
+	height: 0;
+	border-top: 4px dashed;
+	border-right: 4px solid transparent;
+	border-left: 4px solid transparent;
+}
+
+.form-control:hover {
+	box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.75), 0 0 8px rgba(102, 175, 233, 0.6);
+}
+
+.panel-body.hail-code span.hail-code.placeholder {
+	color: #999;
+	font-size: 14px;
+	font-weight: normal;
+}
+
+.panel-body.hail-code span.hail-code.query {
+	color: #404040;
+	font-size: 14px;
+	white-space: pre-wrap;
+	font-weight: bold;
+}
+
+.table span.hail-code {
+	color: #404040;
+	font-size: 75%;
+	font-weight: bold;
+}
+
+.panel-body.hail-code span.hail-code.query pre {
+	margin-top: 0em;
+	margin-bottom: 0em;
+	margin-left: 2em;
+}
+
+.panel-body.annotations{
+	padding: 0px;
+}
+
+.treeview .list-group-item{
+	list-style: none!important;
+	margin-left: 0px!important;
+	padding: 7.5px 5px;
+	border-top: 1px solid #ddd;
+}
+
+.treeview .list-group-item:not(.node-selected){
+	color: #555;
+}
+
+.treeview span.icon{
+	margin-left: 5px;
+	margin-right: 0px!important;
+}
+
+.treeview .list-group{
+	margin-bottom: 0px!important;
+}
+
+@font-face {
+	font-family:'Glyphicons Halflings';
+	src: url('./fonts/glyphicons-halflings-regular.eot');
+    src: url('./fonts/glyphicons-halflings-regular.woff2') format('woff2'),
+		 url('./fonts/glyphicons-halflings-regular.woff') format('woff'),
+		 url('./fonts/glyphicons-halflings-regular.ttf') format('ttf'),
+		 url('./fonts/glyphicons-halflings-regular.svg') format('svg');
+}
+
+.glyphicon {
+	top: 1px;
+	font-family: 'Glyphicons Halflings'!important;
+	font-style: normal;
+	font-weight: 400;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+}
+
+.glyphicon-plus:before{
+	content: "\2b";
+	margin-left: 5px;
+}
+
+.glyphicon-minus:before{
+	content: "\2212";
+	margin-left: 5px;
+}
+
+.table{
+	width:100%;
+	max-width:100%
+}
+
+.table th, .table td{
+	text-align: left;
+	padding: 8px;
+	line-height: 1.42857143;
+	vertical-align: middle;
+	border-top: 1px solid #ddd;
+	border-bottom: 2px solid #ddd;
+}
+
+.table>thead:first-child>tr:first-child>td,.table>thead:first-child>tr:first-child>th{
+	border-top: 0;
+}
+
+.table tbody tr:hover {
+	background-color:#ddd!important;
+}
+
+.panel-text{
+	padding-top: 0px;
+	padding-bottom: 20px;
+}
+
+#annotation-database a:link, #annotation-database a:visited{
+	color: #2980B9;
+}
+
+#annotation-database a:hover{
+	text-decoration: underline;
+}
+
+

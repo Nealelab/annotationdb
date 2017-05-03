@@ -1,0 +1,47 @@
+{
+	"text": "Coronary Artery Disease", 
+	"id": "cad",
+	"hail": "va.gwas.cad",
+	"type": "variant",
+	"study_title": "Nikpay, Majid et al. “A Comprehensive 1000 Genomes-Based Genome-Wide Association Meta-Analysis of Coronary Artery Disease.” Nature genetics 47.10 (2015): 1121–1130.",
+	"study_id": "nikpay_2015",
+	"study_link": "https://www.ncbi.nlm.nih.gov/pubmed/26343387",
+	"study_data": "http://www.cardiogramplusc4d.org/media/cardiogramplusc4d-consortium/data-downloads/cad.additive.Oct2015.pub.zip",
+	"nodes": [
+		{
+			"text": "Odds ratio",
+			"id": "or",
+			"hail": "va.gwas.cad.or",
+			"type": "Double",
+			"description": "Odds ratio"
+		}, 
+		{
+			"text": "Beta",
+			"id": "beta",
+			"hail": "va.gwas.cad.beta",
+			"type": "Double",
+			"description": "Beta"
+		}, 
+		{
+			"text": "Standard error",
+			"id": "se",
+			"hail": "va.gwas.cad.se",
+			"type": "Double",
+			"description": "Standard error"
+		}, 
+		{
+			"text": "P-value",
+			"id": "p",
+			"hail": "va.gwas.cad.p",
+			"type": "Double",
+			"description": "P-value"
+		}, 
+		{
+			"text": "Info score",
+			"id": "info",
+			"hail": "va.gwas.cad.info",
+			"type": "Double",
+			"description": "Info score"
+		}
+	]
+}

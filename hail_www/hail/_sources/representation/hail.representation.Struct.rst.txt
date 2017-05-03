@@ -1,0 +1,24 @@
+Struct
+==========================
+
+.. currentmodule:: hail.representation
+
+.. autoclass:: Struct
+
+    
+    
+    
+
+    
+    
+
+    .. rubric:: Methods
+
+    .. autosummary::
+        :nosignatures:
+
+    
+        ~Struct.__init__
+        ~Struct.get
+    
+    

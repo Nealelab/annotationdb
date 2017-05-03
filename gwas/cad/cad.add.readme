@@ -1,0 +1,5 @@
+median_info: Median imputation quality based on all particiapting studies
+model: fixed/random effects
+se_dgc: standard error (double genomic controlled)
+p_dgc: Association p-value based on beta & se_dgc
+het_pvalue: Heterogeneity p-value

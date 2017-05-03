@@ -1,0 +1,21 @@
+{
+	"text": "DANN",
+	"id": "dann",
+	"hail": "va.dann",
+	"type": "variant",
+	"selectable": false,
+	"study_link": "https://www.ncbi.nlm.nih.gov/pubmed/25338716",
+	"study_title": "Quang, Daniel, Yifei Chen, and Xiaohui Xie. “DANN: A Deep Learning Approach for Annotating the Pathogenicity of Genetic Variants.” Bioinformatics 31.5 (2015): 761–763.",
+	"study_data": "https://cbcl.ics.uci.edu/public_data/DANN/data/DANN_whole_genome_SNVs.tsv.bgz",
+	"description": "Same as CADD, but using different machine-learning approaches",
+	"nodes": [
+		{
+			"text": "DNN Score",
+			"id": "score",
+			"raw": "_4",
+			"hail": "va.dann.score",
+			"type": "Double",
+			"description": "Deep neural network-based DANN score"
+		}
+	]
+}

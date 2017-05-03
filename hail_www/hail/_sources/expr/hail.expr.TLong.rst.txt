@@ -1,0 +1,23 @@
+TLong
+===============
+
+.. currentmodule:: hail.expr
+
+.. autoclass:: TLong
+
+    
+    
+    
+
+    
+    
+
+    .. rubric:: Methods
+
+    .. autosummary::
+        :nosignatures:
+
+    
+        ~TLong.__init__
+    
+    

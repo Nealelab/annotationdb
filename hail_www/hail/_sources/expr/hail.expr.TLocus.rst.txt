@@ -1,0 +1,23 @@
+TLocus
+================
+
+.. currentmodule:: hail.expr
+
+.. autoclass:: TLocus
+
+    
+    
+    
+
+    
+    
+
+    .. rubric:: Methods
+
+    .. autosummary::
+        :nosignatures:
+
+    
+        ~TLocus.__init__
+    
+    

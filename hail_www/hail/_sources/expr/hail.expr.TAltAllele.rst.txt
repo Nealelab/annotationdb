@@ -1,0 +1,23 @@
+TAltAllele
+====================
+
+.. currentmodule:: hail.expr
+
+.. autoclass:: TAltAllele
+
+    
+    
+    
+
+    
+    
+
+    .. rubric:: Methods
+
+    .. autosummary::
+        :nosignatures:
+
+    
+        ~TAltAllele.__init__
+    
+    

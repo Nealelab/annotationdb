@@ -1,0 +1,47 @@
+{
+	"text": "Crohn's Disease",
+	"id": "crohns",
+	"hail": "va.gwas.crohns",
+	"type": "snp",
+	"study_title": "Liu, Jimmy Z et al. “Association Analyses Identify 38 Susceptibility Loci for Inflammatory Bowel Disease and Highlight Shared Genetic Risk across Populations.” Nature genetics 47.9 (2015): 979–986.",
+	"study_id": "liu_2015",
+	"study_link": "https://www.ncbi.nlm.nih.gov/pubmed/26192919",
+	"study_data": "ftp://ftp.sanger.ac.uk/pub/consortia/ibdgenetics/iibdgc-trans-ancestry-filtered-summary-stats.tgz",
+	"nodes": [
+		{
+			"text": "Odds ratio",
+			"id": "or",
+			"hail": "va.gwas.crohns.or",
+			"type": "Double",
+			"description": "Odds ratio"
+		}, 
+		{
+			"text": "Beta",
+			"id": "beta",
+			"hail": "va.gwas.crohns.beta",
+			"type": "Double",
+			"description": "Beta"
+		}, 
+		{
+			"text": "Standard error",
+			"id": "se",
+			"hail": "va.gwas.crohns.se",
+			"type": "Double",
+			"description": "Standard error"
+		}, 
+		{
+			"text": "P-value",
+			"id": "p",
+			"hail": "va.gwas.crohns.p",
+			"type": "Double",
+			"description": "P-value"
+		}, 
+		{
+			"text": "Info score",
+			"id": "info",
+			"hail": "va.gwas.crohns.info",
+			"type": "Double",
+			"description": "Info score"
+		}		
+	]
+}

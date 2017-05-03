@@ -1,0 +1,23 @@
+TInterval
+===================
+
+.. currentmodule:: hail.expr
+
+.. autoclass:: TInterval
+
+    
+    
+    
+
+    
+    
+
+    .. rubric:: Methods
+
+    .. autosummary::
+        :nosignatures:
+
+    
+        ~TInterval.__init__
+    
+    

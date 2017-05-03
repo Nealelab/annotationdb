@@ -1,0 +1,23 @@
+TFloat
+================
+
+.. currentmodule:: hail.expr
+
+.. autoclass:: TFloat
+
+    
+    
+    
+
+    
+    
+
+    .. rubric:: Methods
+
+    .. autosummary::
+        :nosignatures:
+
+    
+        ~TFloat.__init__
+    
+    

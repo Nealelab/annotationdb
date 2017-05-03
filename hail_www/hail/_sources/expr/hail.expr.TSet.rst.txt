@@ -1,0 +1,23 @@
+TSet
+==============
+
+.. currentmodule:: hail.expr
+
+.. autoclass:: TSet
+
+    
+    
+    
+
+    
+    
+
+    .. rubric:: Methods
+
+    .. autosummary::
+        :nosignatures:
+
+    
+        ~TSet.__init__
+    
+    

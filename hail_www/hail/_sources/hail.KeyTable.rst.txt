@@ -1,0 +1,62 @@
+KeyTable
+=============
+
+.. currentmodule:: hail
+
+.. autoclass:: KeyTable
+
+    
+    
+    .. rubric:: Attributes
+
+    .. autosummary::
+        :nosignatures:
+
+    
+        ~KeyTable.column_names
+        ~KeyTable.key
+        ~KeyTable.num_columns
+        ~KeyTable.schema
+    
+    
+
+    
+    
+
+    .. rubric:: Methods
+
+    .. autosummary::
+        :nosignatures:
+
+    
+        ~KeyTable.__init__
+        ~KeyTable.aggregate_by_key
+        ~KeyTable.annotate
+        ~KeyTable.cache
+        ~KeyTable.collect
+        ~KeyTable.count_rows
+        ~KeyTable.exists
+        ~KeyTable.expand_types
+        ~KeyTable.explode
+        ~KeyTable.export
+        ~KeyTable.export_cassandra
+        ~KeyTable.export_mongodb
+        ~KeyTable.export_solr
+        ~KeyTable.filter
+        ~KeyTable.flatten
+        ~KeyTable.forall
+        ~KeyTable.from_py
+        ~KeyTable.join
+        ~KeyTable.key_by
+        ~KeyTable.order_by
+        ~KeyTable.persist
+        ~KeyTable.query
+        ~KeyTable.query_typed
+        ~KeyTable.rename
+        ~KeyTable.same
+        ~KeyTable.select
+        ~KeyTable.to_dataframe
+        ~KeyTable.to_pandas
+        ~KeyTable.write
+    
+    

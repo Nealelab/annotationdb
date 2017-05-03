@@ -1,0 +1,30 @@
+KinshipMatrix
+==================
+
+.. currentmodule:: hail
+
+.. autoclass:: KinshipMatrix
+
+    
+    
+    
+
+    
+    
+
+    .. rubric:: Methods
+
+    .. autosummary::
+        :nosignatures:
+
+    
+        ~KinshipMatrix.__init__
+        ~KinshipMatrix.export_gcta_grm
+        ~KinshipMatrix.export_gcta_grm_bin
+        ~KinshipMatrix.export_id_file
+        ~KinshipMatrix.export_rel
+        ~KinshipMatrix.export_tsv
+        ~KinshipMatrix.matrix
+        ~KinshipMatrix.sample_list
+    
+    

@@ -1,0 +1,65 @@
+<head>
+  <meta charset="utf-8">
+  <title>Hail</title>
+  <link rel="shortcut icon" href="hail_logo_sq.png" type="image/x-icon">
+  <meta name="description" content="Hail Overview">
+  <script src="jquery-3.1.1.min.js"></script>
+  <script src="bootstrap.min.js"></script>
+  <link rel="stylesheet" href="bootstrap.min.css" type="text/css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="navbar.css">
+<script>$(document).ready(function () {$("#hail-navbar").load("navbar.html", function () {$(".nav li").removeClass("active"); $("#home").addClass("active");});});</script></head>
+
+<body>
+  <nav class="navbar navbar-default navbar-static-top" id="hail-navbar"></nav>
+  <div id="body">
+<p> </p>
+<p>Hail is an open-source, scalable framework for exploring and analyzing genetic data. Starting from sequencing or microarray data in <a href="https://samtools.github.io/hts-specs/VCFv4.2.pdf">VCF</a> and <a href="https://hail.is/hail/hail.HailContext.html#hail.HailContext">other formats</a>, Hail can, for example:</p>
+<ul>
+<li>generate variant annotations like call rate, Hardy-Weinberg equilibrium p-value, and population-specific allele count</li>
+<li>generate sample annotations like mean depth, imputed sex, and TiTv ratio</li>
+<li>load variant and sample annotations from text tables, JSON, VCF, VEP, and locus interval files</li>
+<li>generate new annotations from existing annotations and the genotypes, and use these to filter samples, variants, and genotypes</li>
+<li>find Mendelian violations in trios, prune variants in linkage disequilibrium, analyze genetic similarity between samples via the GRM and IBD matrix, and compute sample scores and variant loadings using PCA</li>
+<li>perform association analyses using linear, logistic, and linear mixed regression, and estimate heritability</li>
+</ul>
+<p>All this functionality is exposed through <strong><a href="https://www.python.org/">Python</a></strong> and backed by distributed algorithms built on top of <strong><a href="http://spark.apache.org/">Apache Spark</a></strong> to efficiently analyze gigabyte-scale data on a laptop or terabyte-scale data on an on-prem cluster or in the cloud.</p>
+<p>Hail is used in <a href="http://biorxiv.org/content/early/2016/06/06/050195">published research</a> and as the core analysis platform of large-scale genomics efforts including <a href="http://exac.broadinstitute.org/">ExAC v2</a> and <a href="http://gnomad.broadinstitute.org/">gnomAD</a>. The project began in Fall 2015 and is under very active development as we work toward a stable release, so we do not guarantee forward compatibility of formats and interfaces. Want to get involved in development? Check out the <a href="https://github.com/hail-is/hail">Github repo</a>, chat with us in the <a href="https://gitter.im/hail-is/hail-dev">Gitter dev room</a>, and view our keynote at <a href="https://spark-summit.org/east-2017/">Spark Summit East 2017</a> below.</p>
+<p><a href="https://www.youtube.com/watch?v=6WoPZ3_nIXc"><img src="hail_spark_summit.png"></a></p>
+<h4 id="interactive-tutorial">Interactive Tutorial</h4>
+<p>We've partnered with <a href="https://databricks.com/">Databricks</a> so you can explore Hail's functionality on data from the <a href="http://www.internationalgenome.org/">1000 Genomes Project</a> in just a few clicks.</p>
+<ul>
+<li><p>Sign up for the free Community Edition of the Databricks platform at: <a href="https://accounts.cloud.databricks.com/registration.html#signup" class="uri">https://accounts.cloud.databricks.com/registration.html#signup</a></p></li>
+<li><p>Import the Hail tutorial notebook into your Workspace using this URL: https://docs.databricks.com/_static/notebooks/hail-tutorial-sse-2017.html</p></li>
+<li><p>Follow the instructions in the notebook.</p></li>
+</ul>
+<p>You can also view the notebook <a href="https://docs.databricks.com/spark/latest/training/1000-genomes.html">here</a>.</p>
+<h4 id="getting-started">Getting Started</h4>
+<p>To get started using Hail on your data:</p>
+<ul>
+<li>follow the installation instructions in <a href="https://hail.is/hail/getting_started.html">Getting Started</a></li>
+<li>check out the <a href="https://hail.is/hail/overview.html">Overview</a>, <a href="https://hail.is/hail/tutorial.html">Tutorial</a>, and <a href="https://hail.is/hail/index.html">Python API</a></li>
+<li>chat with the Hail team in the <a href="https://gitter.im/hail-is/hail">Hail Gitter</a> room</li>
+</ul>
+<p>We encourage use of the <a href="http://discuss.hail.is">Discussion Forum</a> for user and dev support, feature requests, and sharing your Hail-powered science. Follow Hail on Twitter <span class="citation">[@hailgenetics]</span>(https://twitter.com/hailgenetics). Please report any suspected bugs to <a href="https://github.com/hail-is/hail/issues">github issues</a>.</p>
+<h4 id="hail-team">Hail Team</h4>
+<p>The Hail team is based in the <a href="https://nealelab.squarespace.com/">Neale lab</a> at the <a href="http://www.broadinstitute.org/scientific-community/science/programs/psychiatric-disease/stanley-center-psychiatric-research/stanle">Stanley Center for Psychiatric Research</a> of the <a href="http://www.broadinstitute.org">Broad Institute of MIT and Harvard</a> and the <a href="https://www.atgu.mgh.harvard.edu/">Analytic and Translational Genetics Unit</a> of <a href="http://www.massgeneral.org/">Massachusetts General Hospital</a>.</p>
+<p>Contact the Hail team at <a href="mailto:hail@broadinstitute.org"><code>hail@broadinstitute.org</code></a>.</p>
+<h4 id="citing-hail">Citing Hail</h4>
+<p>If you use Hail for published work, please cite the software:</p>
+<ul>
+<li>Hail, <a href="https://github.com/hail-is/hail" class="uri">https://github.com/hail-is/hail</a></li>
+</ul>
+<p>and either the forthcoming manuscript describing Hail (if possible):</p>
+<ul>
+<li>Cotton Seed, Alex Bloemendal, Jonathan M Bloom, Jacqueline I Goldstein, Daniel King, Timothy Poterba, Benjamin M. Neale. <em>Hail: An Open-Source Framework for Scalable Genetic Data Analysis</em>. In preparation.</li>
+</ul>
+<p>or the following paper which includes a brief introduction to Hail in the online methods:</p>
+<ul>
+<li>Andrea Ganna, Giulio Genovese, et al. <em>Ultra-rare disruptive and damaging mutations influence educational attainment in the general population</em>. <a href="http://www.nature.com/neuro/journal/vaop/ncurrent/full/nn.4404.html">Nature Neuroscience</a></li>
+</ul>
+<p>And we'd love to hear about your work in the <a href="http://discuss.hail.is/c/science">Science category</a> of the discussion forum!</p>
+</div>
+
+
+</body>

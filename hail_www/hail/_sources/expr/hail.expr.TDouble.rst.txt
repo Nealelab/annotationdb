@@ -1,0 +1,23 @@
+TDouble
+=================
+
+.. currentmodule:: hail.expr
+
+.. autoclass:: TDouble
+
+    
+    
+    
+
+    
+    
+
+    .. rubric:: Methods
+
+    .. autosummary::
+        :nosignatures:
+
+    
+        ~TDouble.__init__
+    
+    
