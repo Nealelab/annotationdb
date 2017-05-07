@@ -3,7 +3,7 @@
 	"id": "vista",
 	"hail": "va.vista",
 	"type": "interval",
-	"selectable": true,
+	"selectable": false,
 	"study_link": "https://www.ncbi.nlm.nih.gov/pubmed/?term=17130149",
 	"study_title": "Visel A, Minovitsky S, Dubchak I, Pennacchio LA. VISTA Enhancer Browser-a database of tissue-specific human enhancers",
 	"study_data": "https://enhancer.lbl.gov/cgi-bin/imagedb3.pl?page_size=20000;show=1;search.result=yes;form=search;search.form=no;action=search;search.sequence=1",

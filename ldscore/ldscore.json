@@ -3,7 +3,7 @@
 	"id": "score",
 	"hail": "va.ldscore",
 	"type": "interval",
-	"selectable": true,
+	"selectable": false,
 	"study_link": "https://www.ncbi.nlm.nih.gov/pubmed/?term=26414678",
 	"study_title": "Finucane HK, Bulik-Sullivan, Partitioning heritability by functional annotation using genome-wide association summary statistics.",
 	"study_data": "https://data.broadinstitute.org/alkesgroup/LDSCORE/baseline_bedfiles.tgz",

@@ -19,7 +19,7 @@ variants = [
 intervals = [
     'chromHMM',
     'dhs',
-    #'fantom5',
+    'fantom5',
     #'gencode19',
     #'lcr',
     #'ldscore',

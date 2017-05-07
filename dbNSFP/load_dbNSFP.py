@@ -29,27 +29,16 @@ kt = (
 			)
 		)
 	)
-	.annotate(
-		'variant = Variant(`#chr`, `pos(1-coor)`, ref, alt)'
-	)
-	.key_by(
-		'variant'
-	)
-	.rename(
-		{
-			var['raw'].strip('`'): var['id'] for var in dct['nodes']
-		}
-	)
+	.annotate('variant = Variant(`#chr`, `pos(1-coor)`, ref, alt)')
+	.key_by('variant')
+	.rename({var['raw'].strip('`'): var['id'] for var in dct['nodes']})
     .annotate(
-        'dbNSFP = {{{0}}}'.format(','.join(['{0}: {0}'.format(x['id']) for x in dct['nodes']]))
+    	'dbNSFP = {{{0}}}'.format(','.join(['{0}: {0}'.format(x['id']) for x in dct['nodes']]))
     )
-    .select(
-        [
-            'variant',
-            'dbNSFP'
-        ]
-    )
-
+    .select([
+    	'variant',
+        'dbNSFP'
+    ])
 )
 
 # create sites-only VDS

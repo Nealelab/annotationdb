@@ -3,7 +3,7 @@
 	"id": "gencode19",
 	"hail": "va.gencode19",
 	"type": "interval",
-	"selectable": true,
+	"selectable": false,
 	"study_link": "",
 	"study_title": "",
 	"study_data": "",

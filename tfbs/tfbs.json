@@ -3,9 +3,9 @@
 	"id": "tfbs",
 	"hail": "va.tfbs",
 	"type": "interval",
-	"selectable": true,
-	"study_link": false,
-	"study_title": false,
+	"selectable": false,
+	"study_link": "",
+	"study_title": "",
 	"study_data": "http://hgdownload.cse.ucsc.edu/goldenPath/hg19/encodeDCC/wgEncodeRegTfbsClustered/wgEncodeeRegTfbsClusteredV3.bed.gz",
 	"description": "Transcription factor binding sites obtained from V3 of ENCODE and downloaded from UCSC browser. The track is described here: http://genome.ucsc.edu/cgi-bin/hgTrackUi?db=hg19&g=wgEncodeRegTfbsClusteredV3",
 	"nodes": [

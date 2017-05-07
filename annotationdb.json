@@ -1737,7 +1737,7 @@
          }
       ], 
       "study_data": "ftp://dbnsfp:dbnsfp@dbnsfp.softgenetics.com/dbNSFPv2.9.3.zip", 
-      "selectable": true, 
+      "selectable": false, 
       "study_title": "Liu, Xiaoming et al. \"dbNSFP v3.0: A One-Stop Database of Functional Predictions and Annotations for Human Non-Synonymous and Splice Site SNVs.\" Human mutation 37.3 (2016): 235\u2013241.", 
       "type": "variant", 
       "id": "dbNSFP"
@@ -1757,7 +1757,7 @@
          }
       ], 
       "study_data": "http://www.discovehrshare.com/downloads", 
-      "selectable": true, 
+      "selectable": false, 
       "study_title": "Distribution and clinical impact of functional variants in 50,726 whole-exome sequences from the DiscovEHR study. Science", 
       "type": "variant", 
       "id": "discovEHR"
@@ -3649,7 +3649,7 @@
             "text": "TSS Status", 
             "hail": "va.dhs.TSS_Status", 
             "raw": "TSS.Status", 
-            "type": "Int", 
+            "type": "Boolean", 
             "id": "TSS_Status"
          }, 
          {
@@ -3665,7 +3665,7 @@
             "text": "breast_vhmec", 
             "hail": "va.dhs.breast_vhmec", 
             "raw": "Breast_vHMEC", 
-            "type": "Int", 
+            "type": "Boolean", 
             "id": "breast_vhmec"
          }, 
          {
@@ -3673,7 +3673,7 @@
             "text": "cd14_primary_cells", 
             "hail": "va.dhs.cd14_primary_cells", 
             "raw": "CD14_Primary_Cells", 
-            "type": "Int", 
+            "type": "Boolean", 
             "id": "cd14_primary_cells"
          }, 
          {
@@ -3681,7 +3681,7 @@
             "text": "cd19_primary_cells", 
             "hail": "va.dhs.cd19_primary_cells", 
             "raw": "CD19_Primary_Cells", 
-            "type": "Int", 
+            "type": "Boolean", 
             "id": "cd19_primary_cells"
          }, 
          {
@@ -3689,7 +3689,7 @@
             "text": "cd3_primary_cells", 
             "hail": "va.dhs.cd3_primary_cells", 
             "raw": "CD3_Primary_Cells", 
-            "type": "Int", 
+            "type": "Boolean", 
             "id": "cd3_primary_cells"
          }, 
          {
@@ -3697,7 +3697,7 @@
             "text": "cd4_primary_cells", 
             "hail": "va.dhs.cd4_primary_cells", 
             "raw": "CD4_Primary_Cells", 
-            "type": "Int", 
+            "type": "Boolean", 
             "id": "cd4_primary_cells"
          }, 
          {
@@ -3705,7 +3705,7 @@
             "text": "cd56_primary_cells", 
             "hail": "va.dhs.cd56_primary_cells", 
             "raw": "CD56_Primary_Cells", 
-            "type": "Int", 
+            "type": "Boolean", 
             "id": "cd56_primary_cells"
          }, 
          {
@@ -3713,7 +3713,7 @@
             "text": "cd8_primary_cells", 
             "hail": "va.dhs.cd8_primary_cells", 
             "raw": "CD8_Primary_Cells", 
-            "type": "Int", 
+            "type": "Boolean", 
             "id": "cd8_primary_cells"
          }, 
          {
@@ -3721,7 +3721,7 @@
             "text": "fetal_adrenal_gland", 
             "hail": "va.dhs.fetal_adrenal_gland", 
             "raw": "Fetal_Adrenal_Gland", 
-            "type": "Int", 
+            "type": "Boolean", 
             "id": "fetal_adrenal_gland"
          }, 
          {
@@ -3729,7 +3729,7 @@
             "text": "fetal_brain", 
             "hail": "va.dhs.fetal_brain", 
             "raw": "Fetal_Brain", 
-            "type": "Int", 
+            "type": "Boolean", 
             "id": "fetal_brain"
          }, 
          {
@@ -3737,7 +3737,7 @@
             "text": "fetal_heart", 
             "hail": "va.dhs.fetal_heart", 
             "raw": "Fetal_Heart", 
-            "type": "Int", 
+            "type": "Boolean", 
             "id": "fetal_heart"
          }, 
          {
@@ -3745,7 +3745,7 @@
             "text": "fetal_intestine_large", 
             "hail": "va.dhs.fetal_intestine_large", 
             "raw": "Fetal_Intestine_Large", 
-            "type": "Int", 
+            "type": "Boolean", 
             "id": "fetal_intestine_large"
          }, 
          {
@@ -3753,7 +3753,7 @@
             "text": "fetal_intestine_small", 
             "hail": "va.dhs.fetal_intestine_small", 
             "raw": "Fetal_Intestine_Small", 
-            "type": "Int", 
+            "type": "Boolean", 
             "id": "fetal_intestine_small"
          }, 
          {
@@ -3761,7 +3761,7 @@
             "text": "fetal_kidney", 
             "hail": "va.dhs.fetal_kidney", 
             "raw": "Fetal_Kidney", 
-            "type": "Int", 
+            "type": "Boolean", 
             "id": "fetal_kidney"
          }, 
          {
@@ -3769,7 +3769,7 @@
             "text": "fetal_kidney_left", 
             "hail": "va.dhs.fetal_kidney_left", 
             "raw": "Fetal_Kidney_Left", 
-            "type": "Int", 
+            "type": "Boolean", 
             "id": "fetal_kidney_left"
          }, 
          {
@@ -3777,7 +3777,7 @@
             "text": "fetal_kidney_right", 
             "hail": "va.dhs.fetal_kidney_right", 
             "raw": "Fetal_Kidney_Right", 
-            "type": "Int", 
+            "type": "Boolean", 
             "id": "fetal_kidney_right"
          }, 
          {
@@ -3785,7 +3785,7 @@
             "text": "fetal_lung", 
             "hail": "va.dhs.fetal_lung", 
             "raw": "Fetal_Lung", 
-            "type": "Int", 
+            "type": "Boolean", 
             "id": "fetal_lung"
          }, 
          {
@@ -3793,7 +3793,7 @@
             "text": "fetal_lung_left", 
             "hail": "va.dhs.fetal_lung_left", 
             "raw": "Fetal_Lung_Left", 
-            "type": "Int", 
+            "type": "Boolean", 
             "id": "fetal_lung_left"
          }, 
          {
@@ -3801,7 +3801,7 @@
             "text": "fetal_lung_right", 
             "hail": "va.dhs.fetal_lung_right", 
             "raw": "Fetal_Lung_Right", 
-            "type": "Int", 
+            "type": "Boolean", 
             "id": "fetal_lung_right"
          }, 
          {
@@ -3809,7 +3809,7 @@
             "text": "fetal_muscle_arm", 
             "hail": "va.dhs.fetal_muscle_arm", 
             "raw": "Fetal_Muscle_Arm", 
-            "type": "Int", 
+            "type": "Boolean", 
             "id": "fetal_muscle_arm"
          }, 
          {
@@ -3817,7 +3817,7 @@
             "text": "fetal_muscle_back", 
             "hail": "va.dhs.fetal_muscle_back", 
             "raw": "Fetal_Muscle_Back", 
-            "type": "Int", 
+            "type": "Boolean", 
             "id": "fetal_muscle_back"
          }, 
          {
@@ -3825,7 +3825,7 @@
             "text": "fetal_muscle_leg", 
             "hail": "va.dhs.fetal_muscle_leg", 
             "raw": "Fetal_Muscle_Leg", 
-            "type": "Int", 
+            "type": "Boolean", 
             "id": "fetal_muscle_leg"
          }, 
          {
@@ -3833,7 +3833,7 @@
             "text": "fetal_muscle_trunk", 
             "hail": "va.dhs.fetal_muscle_trunk", 
             "raw": "Fetal_Muscle_Trunk", 
-            "type": "Int", 
+            "type": "Boolean", 
             "id": "fetal_muscle_trunk"
          }, 
          {
@@ -3841,7 +3841,7 @@
             "text": "fetal_placenta", 
             "hail": "va.dhs.fetal_placenta", 
             "raw": "Fetal_Placenta", 
-            "type": "Int", 
+            "type": "Boolean", 
             "id": "fetal_placenta"
          }, 
          {
@@ -3849,7 +3849,7 @@
             "text": "fetal_renal_cortex", 
             "hail": "va.dhs.fetal_renal_cortex", 
             "raw": "Fetal_Renal_Cortex", 
-            "type": "Int", 
+            "type": "Boolean", 
             "id": "fetal_renal_cortex"
          }, 
          {
@@ -3857,7 +3857,7 @@
             "text": "fetal_renal_cortex_left", 
             "hail": "va.dhs.fetal_renal_cortex_left", 
             "raw": "Fetal_Renal_Cortex_Left", 
-            "type": "Int", 
+            "type": "Boolean", 
             "id": "fetal_renal_cortex_left"
          }, 
          {
@@ -3865,7 +3865,7 @@
             "text": "fetal_renal_cortex_right", 
             "hail": "va.dhs.fetal_renal_cortex_right", 
             "raw": "Fetal_Renal_Cortex_Right", 
-            "type": "Int", 
+            "type": "Boolean", 
             "id": "fetal_renal_cortex_right"
          }, 
          {
@@ -3873,7 +3873,7 @@
             "text": "fetal_renal_pelvis", 
             "hail": "va.dhs.fetal_renal_pelvis", 
             "raw": "Fetal_Renal_Pelvis", 
-            "type": "Int", 
+            "type": "Boolean", 
             "id": "fetal_renal_pelvis"
          }, 
          {
@@ -3881,7 +3881,7 @@
             "text": "fetal_renal_pelvis_left", 
             "hail": "va.dhs.fetal_renal_pelvis_left", 
             "raw": "Fetal_Renal_Pelvis_Left", 
-            "type": "Int", 
+            "type": "Boolean", 
             "id": "fetal_renal_pelvis_left"
          }, 
          {
@@ -3889,7 +3889,7 @@
             "text": "fetal_renal_pelvis_right", 
             "hail": "va.dhs.fetal_renal_pelvis_right", 
             "raw": "Fetal_Renal_Pelvis_Right", 
-            "type": "Int", 
+            "type": "Boolean", 
             "id": "fetal_renal_pelvis_right"
          }, 
          {
@@ -3897,7 +3897,7 @@
             "text": "fetal_spinal_cord", 
             "hail": "va.dhs.fetal_spinal_cord", 
             "raw": "Fetal_Spinal_Cord", 
-            "type": "Int", 
+            "type": "Boolean", 
             "id": "fetal_spinal_cord"
          }, 
          {
@@ -3905,7 +3905,7 @@
             "text": "fetal_stomach", 
             "hail": "va.dhs.fetal_stomach", 
             "raw": "Fetal_Stomach", 
-            "type": "Int", 
+            "type": "Boolean", 
             "id": "fetal_stomach"
          }, 
          {
@@ -3913,7 +3913,7 @@
             "text": "fetal_testes", 
             "hail": "va.dhs.fetal_testes", 
             "raw": "Fetal_Testes", 
-            "type": "Int", 
+            "type": "Boolean", 
             "id": "fetal_testes"
          }, 
          {
@@ -3921,7 +3921,7 @@
             "text": "fetal_thymus", 
             "hail": "va.dhs.fetal_thymus", 
             "raw": "Fetal_Thymus", 
-            "type": "Int", 
+            "type": "Boolean", 
             "id": "fetal_thymus"
          }, 
          {
@@ -3929,7 +3929,7 @@
             "text": "fibroblasts_fetal_skin_abdomen", 
             "hail": "va.dhs.fibroblasts_fetal_skin_abdomen", 
             "raw": "Fibroblasts_Fetal_Skin_Abdomen", 
-            "type": "Int", 
+            "type": "Boolean", 
             "id": "fibroblasts_fetal_skin_abdomen"
          }, 
          {
@@ -3937,7 +3937,7 @@
             "text": "fibroblasts_fetal_skin_back", 
             "hail": "va.dhs.fibroblasts_fetal_skin_back", 
             "raw": "Fibroblasts_Fetal_Skin_Back", 
-            "type": "Int", 
+            "type": "Boolean", 
             "id": "fibroblasts_fetal_skin_back"
          }, 
          {
@@ -3945,7 +3945,7 @@
             "text": "fibroblasts_fetal_skin_biceps_left", 
             "hail": "va.dhs.fibroblasts_fetal_skin_biceps_left", 
             "raw": "Fibroblasts_Fetal_Skin_Biceps_Left", 
-            "type": "Int", 
+            "type": "Boolean", 
             "id": "fibroblasts_fetal_skin_biceps_left"
          }, 
          {
@@ -3953,7 +3953,7 @@
             "text": "fibroblasts_fetal_skin_biceps_right", 
             "hail": "va.dhs.fibroblasts_fetal_skin_biceps_right", 
             "raw": "Fibroblasts_Fetal_Skin_Biceps_Right", 
-            "type": "Int", 
+            "type": "Boolean", 
             "id": "fibroblasts_fetal_skin_biceps_right"
          }, 
          {
@@ -3961,7 +3961,7 @@
             "text": "fibroblasts_fetal_skin_quadriceps_left", 
             "hail": "va.dhs.fibroblasts_fetal_skin_quadriceps_left", 
             "raw": "Fibroblasts_Fetal_Skin_Quadriceps_Left", 
-            "type": "Int", 
+            "type": "Boolean", 
             "id": "fibroblasts_fetal_skin_quadriceps_left"
          }, 
          {
@@ -3969,7 +3969,7 @@
             "text": "fibroblasts_fetal_skin_quadriceps_right", 
             "hail": "va.dhs.fibroblasts_fetal_skin_quadriceps_right", 
             "raw": "Fibroblasts_Fetal_Skin_Quadriceps_Right", 
-            "type": "Int", 
+            "type": "Boolean", 
             "id": "fibroblasts_fetal_skin_quadriceps_right"
          }, 
          {
@@ -3977,7 +3977,7 @@
             "text": "fibroblasts_fetal_skin_scalp", 
             "hail": "va.dhs.fibroblasts_fetal_skin_scalp", 
             "raw": "Fibroblasts_Fetal_Skin_Scalp", 
-            "type": "Int", 
+            "type": "Boolean", 
             "id": "fibroblasts_fetal_skin_scalp"
          }, 
          {
@@ -3985,7 +3985,7 @@
             "text": "fibroblasts_fetal_skin_upper_back", 
             "hail": "va.dhs.fibroblasts_fetal_skin_upper_back", 
             "raw": "Fibroblasts_Fetal_Skin_Upper_Back", 
-            "type": "Int", 
+            "type": "Boolean", 
             "id": "fibroblasts_fetal_skin_upper_back"
          }, 
          {
@@ -3993,7 +3993,7 @@
             "text": "gastric", 
             "hail": "va.dhs.gastric", 
             "raw": "Gastric", 
-            "type": "Int", 
+            "type": "Boolean", 
             "id": "gastric"
          }, 
          {
@@ -4001,7 +4001,7 @@
             "text": "h1", 
             "hail": "va.dhs.h1", 
             "raw": "H1", 
-            "type": "Int", 
+            "type": "Boolean", 
             "id": "h1"
          }, 
          {
@@ -4009,7 +4009,7 @@
             "text": "h1_bmp4_derived_mesendoderm_cultured_cells", 
             "hail": "va.dhs.h1_bmp4_derived_mesendoderm_cultured_cells", 
             "raw": "H1_BMP4_Derived_Mesendoderm_Cultured_Cells", 
-            "type": "Int", 
+            "type": "Boolean", 
             "id": "h1_bmp4_derived_mesendoderm_cultured_cells"
          }, 
          {
@@ -4017,7 +4017,7 @@
             "text": "h1_bmp4_derived_trophoblast_cultured_cells", 
             "hail": "va.dhs.h1_bmp4_derived_trophoblast_cultured_cells", 
             "raw": "H1_BMP4_Derived_Trophoblast_Cultured_Cells", 
-            "type": "Int", 
+            "type": "Boolean", 
             "id": "h1_bmp4_derived_trophoblast_cultured_cells"
          }, 
          {
@@ -4025,7 +4025,7 @@
             "text": "h1_derived_mesenchymal_stem_cells", 
             "hail": "va.dhs.h1_derived_mesenchymal_stem_cells", 
             "raw": "H1_Derived_Mesenchymal_Stem_Cells", 
-            "type": "Int", 
+            "type": "Boolean", 
             "id": "h1_derived_mesenchymal_stem_cells"
          }, 
          {
@@ -4033,7 +4033,7 @@
             "text": "h1_derived_neuronal_progenitor_cultured_cells", 
             "hail": "va.dhs.h1_derived_neuronal_progenitor_cultured_cells", 
             "raw": "H1_Derived_Neuronal_Progenitor_Cultured_Cells", 
-            "type": "Int", 
+            "type": "Boolean", 
             "id": "h1_derived_neuronal_progenitor_cultured_cells"
          }, 
          {
@@ -4041,7 +4041,7 @@
             "text": "h9", 
             "hail": "va.dhs.h9", 
             "raw": "H9", 
-            "type": "Int", 
+            "type": "Boolean", 
             "id": "h9"
          }, 
          {
@@ -4049,7 +4049,7 @@
             "text": "imr90", 
             "hail": "va.dhs.imr90", 
             "raw": "IMR90", 
-            "type": "Int", 
+            "type": "Boolean", 
             "id": "imr90"
          }, 
          {
@@ -4057,7 +4057,7 @@
             "text": "mobilized_cd3_primary_cells", 
             "hail": "va.dhs.mobilized_cd3_primary_cells", 
             "raw": "Mobilized_CD3_Primary_Cells", 
-            "type": "Int", 
+            "type": "Boolean", 
             "id": "mobilized_cd3_primary_cells"
          }, 
          {
@@ -4065,7 +4065,7 @@
             "text": "mobilized_cd34_primary_cells", 
             "hail": "va.dhs.mobilized_cd34_primary_cells", 
             "raw": "Mobilized_CD34_Primary_Cells", 
-            "type": "Int", 
+            "type": "Boolean", 
             "id": "mobilized_cd34_primary_cells"
          }, 
          {
@@ -4073,7 +4073,7 @@
             "text": "mobilized_cd4_primary_cells", 
             "hail": "va.dhs.mobilized_cd4_primary_cells", 
             "raw": "Mobilized_CD4_Primary_Cells", 
-            "type": "Int", 
+            "type": "Boolean", 
             "id": "mobilized_cd4_primary_cells"
          }, 
          {
@@ -4081,7 +4081,7 @@
             "text": "pancreas", 
             "hail": "va.dhs.pancreas", 
             "raw": "Pancreas", 
-            "type": "Int", 
+            "type": "Boolean", 
             "id": "pancreas"
          }, 
          {
@@ -4089,7 +4089,7 @@
             "text": "penis_foreskin_fibroblast_primary_cells", 
             "hail": "va.dhs.penis_foreskin_fibroblast_primary_cells", 
             "raw": "Penis_Foreskin_Fibroblast_Primary_Cells", 
-            "type": "Int", 
+            "type": "Boolean", 
             "id": "penis_foreskin_fibroblast_primary_cells"
          }, 
          {
@@ -4097,7 +4097,7 @@
             "text": "penis_foreskin_keratinocyte_primary_cells", 
             "hail": "va.dhs.penis_foreskin_keratinocyte_primary_cells", 
             "raw": "Penis_Foreskin_Keratinocyte_Primary_Cells", 
-            "type": "Int", 
+            "type": "Boolean", 
             "id": "penis_foreskin_keratinocyte_primary_cells"
          }, 
          {
@@ -4105,14 +4105,41 @@
             "text": "penis_foreskin_melanocyte_primary_cells", 
             "hail": "va.dhs.penis_foreskin_melanocyte_primary_cells", 
             "raw": "Penis_Foreskin_Melanocyte_Primary_Cells", 
-            "type": "Int", 
+            "type": "Boolean", 
             "id": "penis_foreskin_melanocyte_primary_cells"
          }
       ], 
       "study_data": "Shared by pshoosh@broadinstitute.org", 
-      "selectable": true, 
+      "selectable": false, 
       "study_title": "Shooshtari et Al. Integrative genetic and epigenetic analysis uncovers regulatory mechanisms of autoimmune disease", 
       "type": "interval", 
       "id": "dhs"
+   }, 
+   {
+      "description": "FANTOM5 enhancers obtained with CAGE technique", 
+      "text": "FANTOM 5", 
+      "hail": "va.fantom5", 
+      "study_link": "https://www.ncbi.nlm.nih.gov/pubmed/?term=24670763", 
+      "nodes": [
+         {
+            "text": "FANTOM5 enhancers - robust", 
+            "type": "Boolean", 
+            "id": "robust_enhancers", 
+            "hail": "va.fantom5.robust", 
+            "description": "FANTOM5 enhancers - robust"
+         }, 
+         {
+            "text": "FANTOM5 enhancers - permissive", 
+            "type": "Boolean", 
+            "id": "permissive_enhancers", 
+            "hail": "va.fantom5.permissive", 
+            "description": "FANTOM5 enhancers - permissive"
+         }
+      ], 
+      "study_data": "http://enhancer.binf.ku.dk/presets/robust_enhancers.bed and http://enhancer.binf.ku.dk/presets/permissive_enhancers.bed", 
+      "selectable": false, 
+      "study_title": "An atlas of active enhancers across human cell types and tissues.", 
+      "type": "interval", 
+      "id": "fantom5"
    }
 ]

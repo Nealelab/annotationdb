@@ -3,7 +3,7 @@
 	"id": "linsight",
 	"hail": "va.linsight",
 	"type": "interval",
-	"selectable": true,
+	"selectable": false,
 	"study_link": "http://www.nature.com/ng/journal/v49/n4/full/ng.3810.html",
 	"study_title": "Fast, scalable prediction of deleterious noncoding variants from functional and population genomic data” Nature Genetics. Online",
 	"study_data": "http://compgen.cshl.edu/~yihuang/tracks/LINSIGHT.bw",
@@ -11,8 +11,8 @@
 	"nodes": [
 		{
 		    "text": "LINSIGHT score",
-			"id": "linsight_score",
-			"hail": "va.linsight.linsight_score",
+			"id": "score",
+			"hail": "va.linsight.score",
 			"type": "Double",
 			"description": "The probability of fitness consequences for mutations at each site i"
 		}

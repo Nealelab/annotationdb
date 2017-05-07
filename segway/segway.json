@@ -3,7 +3,7 @@
 	"id": "segway",
 	"hail": "va.segway",
 	"type": "interval",
-	"selectable": true,
+	"selectable": false,
 	"study_link": "http://dx.doi.org/10.1101/086025",
 	"study_title": "A unified encyclopedia of human functional elements through fully automated annotation of 164 human cell types. Biorxiv",
 	"study_data": "http://noble.gs.washington.edu/proj/encyclopedia/segway_encyclopedia.bed.gz",

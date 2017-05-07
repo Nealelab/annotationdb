@@ -3,7 +3,7 @@
 	"id": "dbNSFP",
 	"hail": "va.dbNSFP",
 	"type": "variant",
-	"selectable": true,
+	"selectable": false,
 	"study_link": "https://www.ncbi.nlm.nih.gov/pubmed/?term=26555599",
 	"study_title": "Liu, Xiaoming et al. \"dbNSFP v3.0: A One-Stop Database of Functional Predictions and Annotations for Human Non-Synonymous and Splice Site SNVs.\" Human mutation 37.3 (2016): 235–241.",
 	"study_data": "ftp://dbnsfp:dbnsfp@dbnsfp.softgenetics.com/dbNSFPv2.9.3.zip",

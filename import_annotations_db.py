@@ -14,11 +14,11 @@ def import_annotations_db(self, *args):
     annotations = set([arg for arg in args])
     
     # mapping from top-level annotations to list of paths to include from that struct
-    tops = {}
+    top_levels = {}
     for x in annotations:
         top = x.split('.')[1]
         try:
-            tops[top].append(x)
+            top_levels[top].append(x)
         except KeyError:
             tops[top] = [x]
 
@@ -27,26 +27,39 @@ def import_annotations_db(self, *args):
     meta = json.load(response)
     
     # separate variant and interval annotations
-    variants = [x['id'] for x in meta if x['id'] in tops.keys() and x['type'] == 'variant']
-    intervals = [x['id'] for x in meta if x['id'] in tops.keys() and x['type'] == 'interval']
+    variants = [x['id'] for x in meta if x['id'] in top_levels.keys() and x['type'] == 'variant']
+    intervals = [x['id'] for x in meta if x['id'] in top_levels.keys() and x['type'] == 'interval']
 
-    # add variant annotations to VDS
-    for annotation in variants:
+    # add variant annotations
+    for v in variants:
 
         print()
-        if len(tops[annotation]) == 1:
-            print('Adding {} annotation...'.format(annotation))
+        if len(top_levels[v]) == 1:
+            print('Adding {} annotation...'.format(v))
         else:
-            print('Adding {} annotations...'.format(annotation))
+            print('Adding {} annotations...'.format(v))
 
-        vds = hc.read('gs://annotationdb/{0}/{0}.vds'.format(annotation))
         self = self.annotate_variants_vds(
-            vds,
-            code = ','.join(['va.{0} = vds.{0}'.format(x.replace('va.', '')) for x in tops[annotation]])
+            hc.read('gs://annotationdb/{0}/{0}.vds'.format(v)),
+            code = ','.join(['va.{0} = vds.{0}'.format(x.replace('va.', '')) for x in top_levels[v]])
+        )
+
+    # add interval annotations
+    for i in intervals:
+
+        print()
+        if len(top_levels[i]) == 1:
+            print('Adding {} annotation...'.format(i))
+        else:
+            print('Adding {} annotations...'.format(i))
+
+        self = self.annotate_variants_table(
+            hc.read_keytable('gs://annotationdb/{0}/{0}.kt'.format(i)),
+            expr = ','.join(['va.{0} = table.{0}'.format(x.replace('va.', '')) for x in top_levels[i]])
         )
 
     ######### TO DO ############
-    # add interval annotations #
+    # add gene annotations    ##
     # add Nirvana annotations ##
     ############################
 

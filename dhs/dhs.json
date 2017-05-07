@@ -3,7 +3,7 @@
 	"id": "dhs",
 	"hail": "va.dhs",
 	"type": "interval",
-	"selectable": true,
+	"selectable": false,
 	"study_link": "http://biorxiv.org/content/early/2016/05/19/054361",
 	"study_title": "Shooshtari et Al. Integrative genetic and epigenetic analysis uncovers regulatory mechanisms of autoimmune disease",
 	"study_data": "Shared by pshoosh@broadinstitute.org",
