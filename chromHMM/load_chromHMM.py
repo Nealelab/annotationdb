@@ -16,7 +16,7 @@ kt_enhancer = (
 
 	hc
 	.import_keytable(
-		'gs://annotationdb/chromHMM/enhancers.tsv.bgz',
+		'gs://annotationdb/chromHMM/enhancers/enhancers.tsv.bgz',
 		config = hail.TextTableConfig(
 			types = ','.join([
 				x['id'] + ': ' + x['type'] for x in dct_enh['nodes']
@@ -36,12 +36,13 @@ kt_enhancer = (
     .annotate('enhancers = {{{}}}'.format(','.join([x['id'] + ': ' + x['id'] for x in dct_enh['nodes']])))
     .select(['interval', 'enhancers'])
 )
+print kt_enhancer.schema
 
 kt_promoter = (
 
 	hc
 	.import_keytable(
-		'gs://annotationdb/chromHMM/promoters.tsv.bgz',
+		'gs://annotationdb/chromHMM/promoters/promoters.tsv.bgz',
 		config = hail.TextTableConfig(
 			types = ','.join([
 				x['id'] + ': ' + x['type'] for x in dct_enh['nodes']
@@ -62,6 +63,5 @@ kt_promoter = (
     .select(['interval', 'promoters'])
 )
 
-kt_join = kt_enhancer.join(kt_promoter, how='outer')
-
-kt_join.write('gs://annotationdb/chromHMM/chromHMM.kt', overwrite=True)
+kt_enhancer.write('gs://annotationdb/chromHMM/enhancers/enhancers.kt', overwrite=True)
+kt_promoter.write('gs://annotationdb/chromHMM/promoters/promoters.kt', overwrite=True)

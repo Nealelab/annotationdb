@@ -4,6 +4,7 @@
 	"hail": "va.gencode19",
 	"type": "interval",
 	"selectable": false,
+	"db_file": "gs://annotationdb/gencode/gencode.kt",
 	"study_link": "",
 	"study_title": "",
 	"study_data": "",

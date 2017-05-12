@@ -902,10 +902,11 @@
             "id": "PHRED"
          }
       ], 
-      "study_data": "http://krishna.gs.washington.edu/download/CADD/v1.3/whole_genome_SNVs_inclAnno.tsv.gz", 
+      "type": "variant", 
+      "study_data": "http://cadd.gs.washington.edu/download", 
       "selectable": false, 
       "study_title": "Kircher, Martin et al. \u201cA General Framework for Estimating the Relative Pathogenicity of Human Genetic Variants.\u201d Nature genetics 46.3 (2014): 310\u2013315.", 
-      "type": "variant", 
+      "db_file": "gs://annotationdb/cadd/cadd.vds", 
       "id": "cadd"
    }, 
    {
@@ -923,10 +924,11 @@
             "id": "score"
          }
       ], 
+      "type": "variant", 
       "study_data": "https://cbcl.ics.uci.edu/public_data/DANN/data/DANN_whole_genome_SNVs.tsv.bgz", 
       "selectable": false, 
       "study_title": "Quang, Daniel, Yifei Chen, and Xiaohui Xie. \u201cDANN: A Deep Learning Approach for Annotating the Pathogenicity of Genetic Variants.\u201d Bioinformatics 31.5 (2015): 761\u2013763.", 
-      "type": "variant", 
+      "db_file": "gs://annotationdb/dann/dann.vds", 
       "id": "dann"
    }, 
    {
@@ -1736,10 +1738,11 @@
             "id": "cosmic_count"
          }
       ], 
+      "type": "variant", 
       "study_data": "ftp://dbnsfp:dbnsfp@dbnsfp.softgenetics.com/dbNSFPv2.9.3.zip", 
       "selectable": false, 
       "study_title": "Liu, Xiaoming et al. \"dbNSFP v3.0: A One-Stop Database of Functional Predictions and Annotations for Human Non-Synonymous and Splice Site SNVs.\" Human mutation 37.3 (2016): 235\u2013241.", 
-      "type": "variant", 
+      "db_file": "gs://annotationdb/dbNSFP/dbNSFP.vds", 
       "id": "dbNSFP"
    }, 
    {
@@ -1756,10 +1759,11 @@
             "description": "Allele Frequency in discovEHR. AF=0.001 is equal to AF<=0.001"
          }
       ], 
+      "type": "variant", 
       "study_data": "http://www.discovehrshare.com/downloads", 
       "selectable": false, 
       "study_title": "Distribution and clinical impact of functional variants in 50,726 whole-exome sequences from the DiscovEHR study. Science", 
-      "type": "variant", 
+      "db_file": "gs://annotationdb/discovEHR/discovEHR.vds", 
       "id": "discovEHR"
    }, 
    {
@@ -1801,10 +1805,11 @@
             "id": "PC_phred"
          }
       ], 
+      "type": "variant", 
       "study_data": "https://xioniti01.u.hpc.mssm.edu/v1.1/", 
       "selectable": false, 
       "study_title": "IONITA-LAZA, IULIANA et al. \u201cA SPECTRAL APPROACH INTEGRATING FUNCTIONAL GENOMIC ANNOTATIONS FOR CODING AND NONCODING VARIANTS.\u201d Nature genetics 48.2 (2016): 214\u2013220.", 
-      "type": "variant", 
+      "db_file": "gs://annotationdb/eigen/eigen.vds", 
       "id": "eigen"
    }, 
    {
@@ -1821,11 +1826,2440 @@
             "description": "FUNSEQ2 Score"
          }
       ], 
+      "type": "variant", 
       "study_data": "http://archive.gersteinlab.org/funseq2.1.2/hg19_NCscore_funseq216.tsv.bgz", 
       "selectable": false, 
       "study_title": "Fu Y, Liu Z, Lou S. \u201cFunSeq2: a framework for prioritizing noncoding regulatory variants in cancer", 
-      "type": "variant", 
+      "db_file": "gs://annotationdb/funseq2/funseq2.kt", 
       "id": "funseq2"
+   }, 
+   {
+      "description": "gnomAD release 2.0.1", 
+      "text": "gnomAD", 
+      "hail": "va.gnomad", 
+      "study_link": "https://www.ncbi.nlm.nih.gov/pubmed/27535533", 
+      "nodes": [
+         {
+            "description": "Whole exomes from gnomAD", 
+            "text": "Exomes", 
+            "hail": "va.gnomad.exomes", 
+            "nodes": [
+               {
+                  "text": "rsid", 
+                  "type": "String", 
+                  "id": "rsid", 
+                  "hail": "va.gnomad.exomes.rsid", 
+                  "description": ""
+               }, 
+               {
+                  "text": "qual", 
+                  "type": "Double", 
+                  "id": "qual", 
+                  "hail": "va.gnomad.exomes.qual", 
+                  "description": ""
+               }, 
+               {
+                  "text": "filters", 
+                  "type": "Set[String]", 
+                  "id": "filters", 
+                  "hail": "va.gnomad.exomes.filters", 
+                  "description": ""
+               }, 
+               {
+                  "text": "pass", 
+                  "type": "Boolean", 
+                  "id": "pass", 
+                  "hail": "va.gnomad.exomes.pass", 
+                  "description": ""
+               }, 
+               {
+                  "description": "", 
+                  "text": "info", 
+                  "hail": "va.gnomad.exomes.info", 
+                  "flatten": true, 
+                  "nodes": [
+                     {
+                        "text": "AC", 
+                        "type": "Int", 
+                        "id": "AC", 
+                        "hail": "va.gnomad.exomes.info.AC", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "AF", 
+                        "type": "Double", 
+                        "id": "AF", 
+                        "hail": "va.gnomad.exomes.info.AF", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "AN", 
+                        "type": "Int", 
+                        "id": "AN", 
+                        "hail": "va.gnomad.exomes.info.AN", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "BaseQRankSum", 
+                        "type": "Double", 
+                        "id": "BaseQRankSum", 
+                        "hail": "va.gnomad.exomes.info.BaseQRankSum", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "ClippingRankSum", 
+                        "type": "Double", 
+                        "id": "ClippingRankSum", 
+                        "hail": "va.gnomad.exomes.info.ClippingRankSum", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "DB", 
+                        "type": "Boolean", 
+                        "id": "DB", 
+                        "hail": "va.gnomad.exomes.info.DB", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "DP", 
+                        "type": "Int", 
+                        "id": "DP", 
+                        "hail": "va.gnomad.exomes.info.DP", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "FS", 
+                        "type": "Double", 
+                        "id": "FS", 
+                        "hail": "va.gnomad.exomes.info.FS", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "InbreedingCoeff", 
+                        "type": "Double", 
+                        "id": "InbreedingCoeff", 
+                        "hail": "va.gnomad.exomes.info.InbreedingCoeff", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "MQ", 
+                        "type": "Double", 
+                        "id": "MQ", 
+                        "hail": "va.gnomad.exomes.info.MQ", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "MQRankSum", 
+                        "type": "Double", 
+                        "id": "MQRankSum", 
+                        "hail": "va.gnomad.exomes.info.MQRankSum", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "QD", 
+                        "type": "Double", 
+                        "id": "QD", 
+                        "hail": "va.gnomad.exomes.info.QD", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "ReadPosRankSum", 
+                        "type": "Double", 
+                        "id": "ReadPosRankSum", 
+                        "hail": "va.gnomad.exomes.info.ReadPosRankSum", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "SOR", 
+                        "type": "Double", 
+                        "id": "SOR", 
+                        "hail": "va.gnomad.exomes.info.SOR", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "VQSLOD", 
+                        "type": "Double", 
+                        "id": "VQSLOD", 
+                        "hail": "va.gnomad.exomes.info.VQSLOD", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "VQSR_culprit", 
+                        "type": "String", 
+                        "id": "VQSR_culprit", 
+                        "hail": "va.gnomad.exomes.info.VQSR_culprit", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "VQSR_NEGATIVE_TRAIN_SITE", 
+                        "type": "Boolean", 
+                        "id": "VQSR_NEGATIVE_TRAIN_SITE", 
+                        "hail": "va.gnomad.exomes.info.VQSR_NEGATIVE_TRAIN_SITE", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "VQSR_POSITIVE_TRAIN_SITE", 
+                        "type": "Boolean", 
+                        "id": "VQSR_POSITIVE_TRAIN_SITE", 
+                        "hail": "va.gnomad.exomes.info.VQSR_POSITIVE_TRAIN_SITE", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "GQ_HIST_ALT", 
+                        "type": "String", 
+                        "id": "GQ_HIST_ALT", 
+                        "hail": "va.gnomad.exomes.info.GQ_HIST_ALT", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "DP_HIST_ALT", 
+                        "type": "String", 
+                        "id": "DP_HIST_ALT", 
+                        "hail": "va.gnomad.exomes.info.DP_HIST_ALT", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "AB_HIST_ALT", 
+                        "type": "String", 
+                        "id": "AB_HIST_ALT", 
+                        "hail": "va.gnomad.exomes.info.AB_HIST_ALT", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "GQ_HIST_ALL", 
+                        "type": "String", 
+                        "id": "GQ_HIST_ALL", 
+                        "hail": "va.gnomad.exomes.info.GQ_HIST_ALL", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "DP_HIST_ALL", 
+                        "type": "String", 
+                        "id": "DP_HIST_ALL", 
+                        "hail": "va.gnomad.exomes.info.DP_HIST_ALL", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "AB_HIST_ALL", 
+                        "type": "String", 
+                        "id": "AB_HIST_ALL", 
+                        "hail": "va.gnomad.exomes.info.AB_HIST_ALL", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "AC_AFR", 
+                        "type": "Int", 
+                        "id": "AC_AFR", 
+                        "hail": "va.gnomad.exomes.info.AC_AFR", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "AC_AMR", 
+                        "type": "Int", 
+                        "id": "AC_AMR", 
+                        "hail": "va.gnomad.exomes.info.AC_AMR", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "AC_ASJ", 
+                        "type": "Int", 
+                        "id": "AC_ASJ", 
+                        "hail": "va.gnomad.exomes.info.AC_ASJ", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "AC_EAS", 
+                        "type": "Int", 
+                        "id": "AC_EAS", 
+                        "hail": "va.gnomad.exomes.info.AC_EAS", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "AC_FIN", 
+                        "type": "Int", 
+                        "id": "AC_FIN", 
+                        "hail": "va.gnomad.exomes.info.AC_FIN", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "AC_NFE", 
+                        "type": "Int", 
+                        "id": "AC_NFE", 
+                        "hail": "va.gnomad.exomes.info.AC_NFE", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "AC_OTH", 
+                        "type": "Int", 
+                        "id": "AC_OTH", 
+                        "hail": "va.gnomad.exomes.info.AC_OTH", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "AC_SAS", 
+                        "type": "Int", 
+                        "id": "AC_SAS", 
+                        "hail": "va.gnomad.exomes.info.AC_SAS", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "AC_Male", 
+                        "type": "Int", 
+                        "id": "AC_Male", 
+                        "hail": "va.gnomad.exomes.info.AC_Male", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "AC_Female", 
+                        "type": "Int", 
+                        "id": "AC_Female", 
+                        "hail": "va.gnomad.exomes.info.AC_Female", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "AN_AFR", 
+                        "type": "Int", 
+                        "id": "AN_AFR", 
+                        "hail": "va.gnomad.exomes.info.AN_AFR", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "AN_AMR", 
+                        "type": "Int", 
+                        "id": "AN_AMR", 
+                        "hail": "va.gnomad.exomes.info.AN_AMR", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "AN_ASJ", 
+                        "type": "Int", 
+                        "id": "AN_ASJ", 
+                        "hail": "va.gnomad.exomes.info.AN_ASJ", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "AN_EAS", 
+                        "type": "Int", 
+                        "id": "AN_EAS", 
+                        "hail": "va.gnomad.exomes.info.AN_EAS", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "AN_FIN", 
+                        "type": "Int", 
+                        "id": "AN_FIN", 
+                        "hail": "va.gnomad.exomes.info.AN_FIN", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "AN_NFE", 
+                        "type": "Int", 
+                        "id": "AN_NFE", 
+                        "hail": "va.gnomad.exomes.info.AN_NFE", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "AN_OTH", 
+                        "type": "Int", 
+                        "id": "AN_OTH", 
+                        "hail": "va.gnomad.exomes.info.AN_OTH", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "AN_SAS", 
+                        "type": "Int", 
+                        "id": "AN_SAS", 
+                        "hail": "va.gnomad.exomes.info.AN_SAS", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "AN_Male", 
+                        "type": "Int", 
+                        "id": "AN_Male", 
+                        "hail": "va.gnomad.exomes.info.AN_Male", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "AN_Female", 
+                        "type": "Int", 
+                        "id": "AN_Female", 
+                        "hail": "va.gnomad.exomes.info.AN_Female", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "AF_AFR", 
+                        "type": "Double", 
+                        "id": "AF_AFR", 
+                        "hail": "va.gnomad.exomes.info.AF_AFR", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "AF_AMR", 
+                        "type": "Double", 
+                        "id": "AF_AMR", 
+                        "hail": "va.gnomad.exomes.info.AF_AMR", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "AF_ASJ", 
+                        "type": "Double", 
+                        "id": "AF_ASJ", 
+                        "hail": "va.gnomad.exomes.info.AF_ASJ", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "AF_EAS", 
+                        "type": "Double", 
+                        "id": "AF_EAS", 
+                        "hail": "va.gnomad.exomes.info.AF_EAS", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "AF_FIN", 
+                        "type": "Double", 
+                        "id": "AF_FIN", 
+                        "hail": "va.gnomad.exomes.info.AF_FIN", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "AF_NFE", 
+                        "type": "Double", 
+                        "id": "AF_NFE", 
+                        "hail": "va.gnomad.exomes.info.AF_NFE", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "AF_OTH", 
+                        "type": "Double", 
+                        "id": "AF_OTH", 
+                        "hail": "va.gnomad.exomes.info.AF_OTH", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "AF_SAS", 
+                        "type": "Double", 
+                        "id": "AF_SAS", 
+                        "hail": "va.gnomad.exomes.info.AF_SAS", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "AF_Male", 
+                        "type": "Double", 
+                        "id": "AF_Male", 
+                        "hail": "va.gnomad.exomes.info.AF_Male", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "AF_Female", 
+                        "type": "Double", 
+                        "id": "AF_Female", 
+                        "hail": "va.gnomad.exomes.info.AF_Female", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "GC_AFR", 
+                        "type": "Int", 
+                        "id": "GC_AFR", 
+                        "hail": "va.gnomad.exomes.info.GC_AFR", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "GC_AMR", 
+                        "type": "Int", 
+                        "id": "GC_AMR", 
+                        "hail": "va.gnomad.exomes.info.GC_AMR", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "GC_ASJ", 
+                        "type": "Int", 
+                        "id": "GC_ASJ", 
+                        "hail": "va.gnomad.exomes.info.GC_ASJ", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "GC_EAS", 
+                        "type": "Int", 
+                        "id": "GC_EAS", 
+                        "hail": "va.gnomad.exomes.info.GC_EAS", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "GC_FIN", 
+                        "type": "Int", 
+                        "id": "GC_FIN", 
+                        "hail": "va.gnomad.exomes.info.GC_FIN", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "GC_NFE", 
+                        "type": "Int", 
+                        "id": "GC_NFE", 
+                        "hail": "va.gnomad.exomes.info.GC_NFE", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "GC_OTH", 
+                        "type": "Int", 
+                        "id": "GC_OTH", 
+                        "hail": "va.gnomad.exomes.info.GC_OTH", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "GC_SAS", 
+                        "type": "Int", 
+                        "id": "GC_SAS", 
+                        "hail": "va.gnomad.exomes.info.GC_SAS", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "GC_Male", 
+                        "type": "Int", 
+                        "id": "GC_Male", 
+                        "hail": "va.gnomad.exomes.info.GC_Male", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "GC_Female", 
+                        "type": "Int", 
+                        "id": "GC_Female", 
+                        "hail": "va.gnomad.exomes.info.GC_Female", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "AC_raw", 
+                        "type": "Int", 
+                        "id": "AC_raw", 
+                        "hail": "va.gnomad.exomes.info.AC_raw", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "AN_raw", 
+                        "type": "Int", 
+                        "id": "AN_raw", 
+                        "hail": "va.gnomad.exomes.info.AN_raw", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "AF_raw", 
+                        "type": "Double", 
+                        "id": "AF_raw", 
+                        "hail": "va.gnomad.exomes.info.AF_raw", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "GC_raw", 
+                        "type": "Int", 
+                        "id": "GC_raw", 
+                        "hail": "va.gnomad.exomes.info.GC_raw", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "GC", 
+                        "type": "Int", 
+                        "id": "GC", 
+                        "hail": "va.gnomad.exomes.info.GC", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "Hom_AFR", 
+                        "type": "Int", 
+                        "id": "Hom_AFR", 
+                        "hail": "va.gnomad.exomes.info.Hom_AFR", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "Hom_AMR", 
+                        "type": "Int", 
+                        "id": "Hom_AMR", 
+                        "hail": "va.gnomad.exomes.info.Hom_AMR", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "Hom_ASJ", 
+                        "type": "Int", 
+                        "id": "Hom_ASJ", 
+                        "hail": "va.gnomad.exomes.info.Hom_ASJ", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "Hom_EAS", 
+                        "type": "Int", 
+                        "id": "Hom_EAS", 
+                        "hail": "va.gnomad.exomes.info.Hom_EAS", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "Hom_FIN", 
+                        "type": "Int", 
+                        "id": "Hom_FIN", 
+                        "hail": "va.gnomad.exomes.info.Hom_FIN", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "Hom_NFE", 
+                        "type": "Int", 
+                        "id": "Hom_NFE", 
+                        "hail": "va.gnomad.exomes.info.Hom_NFE", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "Hom_OTH", 
+                        "type": "Int", 
+                        "id": "Hom_OTH", 
+                        "hail": "va.gnomad.exomes.info.Hom_OTH", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "Hom_SAS", 
+                        "type": "Int", 
+                        "id": "Hom_SAS", 
+                        "hail": "va.gnomad.exomes.info.Hom_SAS", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "Hom_Male", 
+                        "type": "Int", 
+                        "id": "Hom_Male", 
+                        "hail": "va.gnomad.exomes.info.Hom_Male", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "Hom_Female", 
+                        "type": "Int", 
+                        "id": "Hom_Female", 
+                        "hail": "va.gnomad.exomes.info.Hom_Female", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "Hom_raw", 
+                        "type": "Int", 
+                        "id": "Hom_raw", 
+                        "hail": "va.gnomad.exomes.info.Hom_raw", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "Hom", 
+                        "type": "Int", 
+                        "id": "Hom", 
+                        "hail": "va.gnomad.exomes.info.Hom", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "STAR_AC", 
+                        "type": "Int", 
+                        "id": "STAR_AC", 
+                        "hail": "va.gnomad.exomes.info.STAR_AC", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "STAR_AC_raw", 
+                        "type": "Int", 
+                        "id": "STAR_AC_raw", 
+                        "hail": "va.gnomad.exomes.info.STAR_AC_raw", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "STAR_Hom", 
+                        "type": "Int", 
+                        "id": "STAR_Hom", 
+                        "hail": "va.gnomad.exomes.info.STAR_Hom", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "POPMAX", 
+                        "type": "String", 
+                        "id": "POPMAX", 
+                        "hail": "va.gnomad.exomes.info.POPMAX", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "AC_POPMAX", 
+                        "type": "Int", 
+                        "id": "AC_POPMAX", 
+                        "hail": "va.gnomad.exomes.info.AC_POPMAX", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "AN_POPMAX", 
+                        "type": "Int", 
+                        "id": "AN_POPMAX", 
+                        "hail": "va.gnomad.exomes.info.AN_POPMAX", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "AF_POPMAX", 
+                        "type": "Double", 
+                        "id": "AF_POPMAX", 
+                        "hail": "va.gnomad.exomes.info.AF_POPMAX", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "DP_MEDIAN", 
+                        "type": "Int", 
+                        "id": "DP_MEDIAN", 
+                        "hail": "va.gnomad.exomes.info.DP_MEDIAN", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "DREF_MEDIAN", 
+                        "type": "Double", 
+                        "id": "DREF_MEDIAN", 
+                        "hail": "va.gnomad.exomes.info.DREF_MEDIAN", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "GQ_MEDIAN", 
+                        "type": "Int", 
+                        "id": "GQ_MEDIAN", 
+                        "hail": "va.gnomad.exomes.info.GQ_MEDIAN", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "AB_MEDIAN", 
+                        "type": "Double", 
+                        "id": "AB_MEDIAN", 
+                        "hail": "va.gnomad.exomes.info.AB_MEDIAN", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "AS_RF", 
+                        "type": "Double", 
+                        "id": "AS_RF", 
+                        "hail": "va.gnomad.exomes.info.AS_RF", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "AS_FilterStatus", 
+                        "type": "Set[String]", 
+                        "id": "AS_FilterStatus", 
+                        "hail": "va.gnomad.exomes.info.AS_FilterStatus", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "AS_RF_POSITIVE_TRAIN", 
+                        "type": "Array[Int]", 
+                        "id": "AS_RF_POSITIVE_TRAIN", 
+                        "hail": "va.gnomad.exomes.info.AS_RF_POSITIVE_TRAIN", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "AS_RF_NEGATIVE_TRAIN", 
+                        "type": "Array[Int]", 
+                        "id": "AS_RF_NEGATIVE_TRAIN", 
+                        "hail": "va.gnomad.exomes.info.AS_RF_NEGATIVE_TRAIN", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "CSQ", 
+                        "type": "Array[String]", 
+                        "id": "CSQ", 
+                        "hail": "va.gnomad.exomes.info.CSQ", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "AN_FIN_Male", 
+                        "type": "Int", 
+                        "id": "AN_FIN_Male", 
+                        "hail": "va.gnomad.exomes.info.AN_FIN_Male", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "AN_EAS_Female", 
+                        "type": "Int", 
+                        "id": "AN_EAS_Female", 
+                        "hail": "va.gnomad.exomes.info.AN_EAS_Female", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "AN_NFE_Female", 
+                        "type": "Int", 
+                        "id": "AN_NFE_Female", 
+                        "hail": "va.gnomad.exomes.info.AN_NFE_Female", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "AC_AFR_Male", 
+                        "type": "Int", 
+                        "id": "AC_AFR_Male", 
+                        "hail": "va.gnomad.exomes.info.AC_AFR_Male", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "AN_AMR_Female", 
+                        "type": "Int", 
+                        "id": "AN_AMR_Female", 
+                        "hail": "va.gnomad.exomes.info.AN_AMR_Female", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "AF_AMR_Male", 
+                        "type": "Double", 
+                        "id": "AF_AMR_Male", 
+                        "hail": "va.gnomad.exomes.info.AF_AMR_Male", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "Hemi_NFE", 
+                        "type": "Int", 
+                        "id": "Hemi_NFE", 
+                        "hail": "va.gnomad.exomes.info.Hemi_NFE", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "Hemi_AFR", 
+                        "type": "Int", 
+                        "id": "Hemi_AFR", 
+                        "hail": "va.gnomad.exomes.info.Hemi_AFR", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "AC_ASJ_Female", 
+                        "type": "Int", 
+                        "id": "AC_ASJ_Female", 
+                        "hail": "va.gnomad.exomes.info.AC_ASJ_Female", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "AF_FIN_Female", 
+                        "type": "Double", 
+                        "id": "AF_FIN_Female", 
+                        "hail": "va.gnomad.exomes.info.AF_FIN_Female", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "AN_ASJ_Male", 
+                        "type": "Int", 
+                        "id": "AN_ASJ_Male", 
+                        "hail": "va.gnomad.exomes.info.AN_ASJ_Male", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "AC_OTH_Female", 
+                        "type": "Int", 
+                        "id": "AC_OTH_Female", 
+                        "hail": "va.gnomad.exomes.info.AC_OTH_Female", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "GC_OTH_Male", 
+                        "type": "Int", 
+                        "id": "GC_OTH_Male", 
+                        "hail": "va.gnomad.exomes.info.GC_OTH_Male", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "GC_FIN_Male", 
+                        "type": "Int", 
+                        "id": "GC_FIN_Male", 
+                        "hail": "va.gnomad.exomes.info.GC_FIN_Male", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "AC_NFE_Female", 
+                        "type": "Int", 
+                        "id": "AC_NFE_Female", 
+                        "hail": "va.gnomad.exomes.info.AC_NFE_Female", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "AC_EAS_Male", 
+                        "type": "Int", 
+                        "id": "AC_EAS_Male", 
+                        "hail": "va.gnomad.exomes.info.AC_EAS_Male", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "AC_OTH_Male", 
+                        "type": "Int", 
+                        "id": "AC_OTH_Male", 
+                        "hail": "va.gnomad.exomes.info.AC_OTH_Male", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "GC_SAS_Male", 
+                        "type": "Int", 
+                        "id": "GC_SAS_Male", 
+                        "hail": "va.gnomad.exomes.info.GC_SAS_Male", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "Hemi_AMR", 
+                        "type": "Int", 
+                        "id": "Hemi_AMR", 
+                        "hail": "va.gnomad.exomes.info.Hemi_AMR", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "AC_NFE_Male", 
+                        "type": "Int", 
+                        "id": "AC_NFE_Male", 
+                        "hail": "va.gnomad.exomes.info.AC_NFE_Male", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "Hemi", 
+                        "type": "Int", 
+                        "id": "Hemi", 
+                        "hail": "va.gnomad.exomes.info.Hemi", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "AN_FIN_Female", 
+                        "type": "Int", 
+                        "id": "AN_FIN_Female", 
+                        "hail": "va.gnomad.exomes.info.AN_FIN_Female", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "GC_EAS_Male", 
+                        "type": "Int", 
+                        "id": "GC_EAS_Male", 
+                        "hail": "va.gnomad.exomes.info.GC_EAS_Male", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "GC_ASJ_Female", 
+                        "type": "Int", 
+                        "id": "GC_ASJ_Female", 
+                        "hail": "va.gnomad.exomes.info.GC_ASJ_Female", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "GC_SAS_Female", 
+                        "type": "Int", 
+                        "id": "GC_SAS_Female", 
+                        "hail": "va.gnomad.exomes.info.GC_SAS_Female", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "GC_ASJ_Male", 
+                        "type": "Int", 
+                        "id": "GC_ASJ_Male", 
+                        "hail": "va.gnomad.exomes.info.GC_ASJ_Male", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "Hemi_SAS", 
+                        "type": "Int", 
+                        "id": "Hemi_SAS", 
+                        "hail": "va.gnomad.exomes.info.Hemi_SAS", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "AN_ASJ_Female", 
+                        "type": "Int", 
+                        "id": "AN_ASJ_Female", 
+                        "hail": "va.gnomad.exomes.info.AN_ASJ_Female", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "AF_FIN_Male", 
+                        "type": "Double", 
+                        "id": "AF_FIN_Male", 
+                        "hail": "va.gnomad.exomes.info.AF_FIN_Male", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "AN_OTH_Male", 
+                        "type": "Int", 
+                        "id": "AN_OTH_Male", 
+                        "hail": "va.gnomad.exomes.info.AN_OTH_Male", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "AF_AFR_Male", 
+                        "type": "Double", 
+                        "id": "AF_AFR_Male", 
+                        "hail": "va.gnomad.exomes.info.AF_AFR_Male", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "STAR_Hemi", 
+                        "type": "Int", 
+                        "id": "STAR_Hemi", 
+                        "hail": "va.gnomad.exomes.info.STAR_Hemi", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "AF_SAS_Male", 
+                        "type": "Double", 
+                        "id": "AF_SAS_Male", 
+                        "hail": "va.gnomad.exomes.info.AF_SAS_Male", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "Hemi_ASJ", 
+                        "type": "Int", 
+                        "id": "Hemi_ASJ", 
+                        "hail": "va.gnomad.exomes.info.Hemi_ASJ", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "AN_SAS_Female", 
+                        "type": "Int", 
+                        "id": "AN_SAS_Female", 
+                        "hail": "va.gnomad.exomes.info.AN_SAS_Female", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "AN_AFR_Female", 
+                        "type": "Int", 
+                        "id": "AN_AFR_Female", 
+                        "hail": "va.gnomad.exomes.info.AN_AFR_Female", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "Hemi_raw", 
+                        "type": "Int", 
+                        "id": "Hemi_raw", 
+                        "hail": "va.gnomad.exomes.info.Hemi_raw", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "AF_OTH_Male", 
+                        "type": "Double", 
+                        "id": "AF_OTH_Male", 
+                        "hail": "va.gnomad.exomes.info.AF_OTH_Male", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "AC_SAS_Female", 
+                        "type": "Int", 
+                        "id": "AC_SAS_Female", 
+                        "hail": "va.gnomad.exomes.info.AC_SAS_Female", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "AF_NFE_Female", 
+                        "type": "Double", 
+                        "id": "AF_NFE_Female", 
+                        "hail": "va.gnomad.exomes.info.AF_NFE_Female", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "AF_EAS_Female", 
+                        "type": "Double", 
+                        "id": "AF_EAS_Female", 
+                        "hail": "va.gnomad.exomes.info.AF_EAS_Female", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "AN_OTH_Female", 
+                        "type": "Int", 
+                        "id": "AN_OTH_Female", 
+                        "hail": "va.gnomad.exomes.info.AN_OTH_Female", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "AF_EAS_Male", 
+                        "type": "Double", 
+                        "id": "AF_EAS_Male", 
+                        "hail": "va.gnomad.exomes.info.AF_EAS_Male", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "AF_SAS_Female", 
+                        "type": "Double", 
+                        "id": "AF_SAS_Female", 
+                        "hail": "va.gnomad.exomes.info.AF_SAS_Female", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "GC_AFR_Female", 
+                        "type": "Int", 
+                        "id": "GC_AFR_Female", 
+                        "hail": "va.gnomad.exomes.info.GC_AFR_Female", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "AF_AFR_Female", 
+                        "type": "Double", 
+                        "id": "AF_AFR_Female", 
+                        "hail": "va.gnomad.exomes.info.AF_AFR_Female", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "AC_FIN_Female", 
+                        "type": "Int", 
+                        "id": "AC_FIN_Female", 
+                        "hail": "va.gnomad.exomes.info.AC_FIN_Female", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "Hemi_OTH", 
+                        "type": "Int", 
+                        "id": "Hemi_OTH", 
+                        "hail": "va.gnomad.exomes.info.Hemi_OTH", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "GC_AMR_Male", 
+                        "type": "Int", 
+                        "id": "GC_AMR_Male", 
+                        "hail": "va.gnomad.exomes.info.GC_AMR_Male", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "AC_AFR_Female", 
+                        "type": "Int", 
+                        "id": "AC_AFR_Female", 
+                        "hail": "va.gnomad.exomes.info.AC_AFR_Female", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "GC_NFE_Male", 
+                        "type": "Int", 
+                        "id": "GC_NFE_Male", 
+                        "hail": "va.gnomad.exomes.info.GC_NFE_Male", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "AF_AMR_Female", 
+                        "type": "Double", 
+                        "id": "AF_AMR_Female", 
+                        "hail": "va.gnomad.exomes.info.AF_AMR_Female", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "GC_NFE_Female", 
+                        "type": "Int", 
+                        "id": "GC_NFE_Female", 
+                        "hail": "va.gnomad.exomes.info.GC_NFE_Female", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "AN_AFR_Male", 
+                        "type": "Int", 
+                        "id": "AN_AFR_Male", 
+                        "hail": "va.gnomad.exomes.info.AN_AFR_Male", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "AN_NFE_Male", 
+                        "type": "Int", 
+                        "id": "AN_NFE_Male", 
+                        "hail": "va.gnomad.exomes.info.AN_NFE_Male", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "AC_AMR_Male", 
+                        "type": "Int", 
+                        "id": "AC_AMR_Male", 
+                        "hail": "va.gnomad.exomes.info.AC_AMR_Male", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "GC_AMR_Female", 
+                        "type": "Int", 
+                        "id": "GC_AMR_Female", 
+                        "hail": "va.gnomad.exomes.info.GC_AMR_Female", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "AC_SAS_Male", 
+                        "type": "Int", 
+                        "id": "AC_SAS_Male", 
+                        "hail": "va.gnomad.exomes.info.AC_SAS_Male", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "AF_ASJ_Male", 
+                        "type": "Double", 
+                        "id": "AF_ASJ_Male", 
+                        "hail": "va.gnomad.exomes.info.AF_ASJ_Male", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "GC_FIN_Female", 
+                        "type": "Int", 
+                        "id": "GC_FIN_Female", 
+                        "hail": "va.gnomad.exomes.info.GC_FIN_Female", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "AC_EAS_Female", 
+                        "type": "Int", 
+                        "id": "AC_EAS_Female", 
+                        "hail": "va.gnomad.exomes.info.AC_EAS_Female", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "AC_AMR_Female", 
+                        "type": "Int", 
+                        "id": "AC_AMR_Female", 
+                        "hail": "va.gnomad.exomes.info.AC_AMR_Female", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "Hemi_FIN", 
+                        "type": "Int", 
+                        "id": "Hemi_FIN", 
+                        "hail": "va.gnomad.exomes.info.Hemi_FIN", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "AC_FIN_Male", 
+                        "type": "Int", 
+                        "id": "AC_FIN_Male", 
+                        "hail": "va.gnomad.exomes.info.AC_FIN_Male", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "GC_EAS_Female", 
+                        "type": "Int", 
+                        "id": "GC_EAS_Female", 
+                        "hail": "va.gnomad.exomes.info.GC_EAS_Female", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "AF_ASJ_Female", 
+                        "type": "Double", 
+                        "id": "AF_ASJ_Female", 
+                        "hail": "va.gnomad.exomes.info.AF_ASJ_Female", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "AF_OTH_Female", 
+                        "type": "Double", 
+                        "id": "AF_OTH_Female", 
+                        "hail": "va.gnomad.exomes.info.AF_OTH_Female", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "GC_AFR_Male", 
+                        "type": "Int", 
+                        "id": "GC_AFR_Male", 
+                        "hail": "va.gnomad.exomes.info.GC_AFR_Male", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "AN_SAS_Male", 
+                        "type": "Int", 
+                        "id": "AN_SAS_Male", 
+                        "hail": "va.gnomad.exomes.info.AN_SAS_Male", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "AN_NFE_Male", 
+                        "type": "Int", 
+                        "id": "AN_NFE_Male", 
+                        "hail": "va.gnomad.exomes.info.AN_NFE_Male", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "AN_EAS_Male", 
+                        "type": "Int", 
+                        "id": "AN_EAS_Male", 
+                        "hail": "va.gnomad.exomes.info.AN_EAS_Male", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "AC_ASJ_Male", 
+                        "type": "Int", 
+                        "id": "AC_ASJ_Male", 
+                        "hail": "va.gnomad.exomes.info.AC_ASJ_Male", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "Hemi_EAS", 
+                        "type": "Int", 
+                        "id": "Hemi_EAS", 
+                        "hail": "va.gnomad.exomes.info.Hemi_EAS", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "AN_AMR_Male", 
+                        "type": "Int", 
+                        "id": "AN_AMR_Male", 
+                        "hail": "va.gnomad.exomes.info.AN_AMR_Male", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "GC_OTH_Female", 
+                        "type": "Int", 
+                        "id": "GC_OTH_Female", 
+                        "hail": "va.gnomad.exomes.info.GC_OTH_Female", 
+                        "description": ""
+                     }
+                  ], 
+                  "type": "variant", 
+                  "id": "info"
+               }
+            ], 
+            "type": "variant", 
+            "selectable": false, 
+            "db_file": "gs://annotationdb/gnomad/exomes.vds", 
+            "id": "exomes"
+         }, 
+         {
+            "description": "Whole genomes from gnomAD", 
+            "text": "Genomes", 
+            "hail": "va.gnomad.genomes", 
+            "nodes": [
+               {
+                  "text": "rsid", 
+                  "type": "String", 
+                  "id": "rsid", 
+                  "hail": "va.gnomad.genomes.rsid", 
+                  "description": ""
+               }, 
+               {
+                  "text": "qual", 
+                  "type": "Double", 
+                  "id": "qual", 
+                  "hail": "va.gnomad.genomes.qual", 
+                  "description": ""
+               }, 
+               {
+                  "text": "filters", 
+                  "type": "Set[String]", 
+                  "id": "filters", 
+                  "hail": "va.gnomad.genomes.filters", 
+                  "description": ""
+               }, 
+               {
+                  "text": "pass", 
+                  "type": "Boolean", 
+                  "id": "pass", 
+                  "hail": "va.gnomad.genomes.pass", 
+                  "description": ""
+               }, 
+               {
+                  "description": "", 
+                  "text": "info", 
+                  "hail": "va.gnomad.genomes.info", 
+                  "flatten": true, 
+                  "nodes": [
+                     {
+                        "text": "AC", 
+                        "type": "Int", 
+                        "id": "AC", 
+                        "hail": "va.gnomad.genomes.info.AC", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "AF", 
+                        "type": "Double", 
+                        "id": "AF", 
+                        "hail": "va.gnomad.genomes.info.AF", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "AN", 
+                        "type": "Int", 
+                        "id": "AN", 
+                        "hail": "va.gnomad.genomes.info.AN", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "BaseQRankSum", 
+                        "type": "Double", 
+                        "id": "BaseQRankSum", 
+                        "hail": "va.gnomad.genomes.info.BaseQRankSum", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "ClippingRankSum", 
+                        "type": "Double", 
+                        "id": "ClippingRankSum", 
+                        "hail": "va.gnomad.genomes.info.ClippingRankSum", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "DB", 
+                        "type": "Boolean", 
+                        "id": "DB", 
+                        "hail": "va.gnomad.genomes.info.DB", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "DP", 
+                        "type": "Int", 
+                        "id": "DP", 
+                        "hail": "va.gnomad.genomes.info.DP", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "FS", 
+                        "type": "Double", 
+                        "id": "FS", 
+                        "hail": "va.gnomad.genomes.info.FS", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "InbreedingCoeff", 
+                        "type": "Double", 
+                        "id": "InbreedingCoeff", 
+                        "hail": "va.gnomad.genomes.info.InbreedingCoeff", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "MQ", 
+                        "type": "Double", 
+                        "id": "MQ", 
+                        "hail": "va.gnomad.genomes.info.MQ", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "MQRankSum", 
+                        "type": "Double", 
+                        "id": "MQRankSum", 
+                        "hail": "va.gnomad.genomes.info.MQRankSum", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "QD", 
+                        "type": "Double", 
+                        "id": "QD", 
+                        "hail": "va.gnomad.genomes.info.QD", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "ReadPosRankSum", 
+                        "type": "Double", 
+                        "id": "ReadPosRankSum", 
+                        "hail": "va.gnomad.genomes.info.ReadPosRankSum", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "SOR", 
+                        "type": "Double", 
+                        "id": "SOR", 
+                        "hail": "va.gnomad.genomes.info.SOR", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "VQSLOD", 
+                        "type": "Double", 
+                        "id": "VQSLOD", 
+                        "hail": "va.gnomad.genomes.info.VQSLOD", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "VQSR_culprit", 
+                        "type": "String", 
+                        "id": "VQSR_culprit", 
+                        "hail": "va.gnomad.genomes.info.VQSR_culprit", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "VQSR_NEGATIVE_TRAIN_SITE", 
+                        "type": "Boolean", 
+                        "id": "VQSR_NEGATIVE_TRAIN_SITE", 
+                        "hail": "va.gnomad.genomes.info.VQSR_NEGATIVE_TRAIN_SITE", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "VQSR_POSITIVE_TRAIN_SITE", 
+                        "type": "Boolean", 
+                        "id": "VQSR_POSITIVE_TRAIN_SITE", 
+                        "hail": "va.gnomad.genomes.info.VQSR_POSITIVE_TRAIN_SITE", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "GQ_HIST_ALT", 
+                        "type": "String", 
+                        "id": "GQ_HIST_ALT", 
+                        "hail": "va.gnomad.genomes.info.GQ_HIST_ALT", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "DP_HIST_ALT", 
+                        "type": "String", 
+                        "id": "DP_HIST_ALT", 
+                        "hail": "va.gnomad.genomes.info.DP_HIST_ALT", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "AB_HIST_ALT", 
+                        "type": "String", 
+                        "id": "AB_HIST_ALT", 
+                        "hail": "va.gnomad.genomes.info.AB_HIST_ALT", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "GQ_HIST_ALL", 
+                        "type": "String", 
+                        "id": "GQ_HIST_ALL", 
+                        "hail": "va.gnomad.genomes.info.GQ_HIST_ALL", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "DP_HIST_ALL", 
+                        "type": "String", 
+                        "id": "DP_HIST_ALL", 
+                        "hail": "va.gnomad.genomes.info.DP_HIST_ALL", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "AB_HIST_ALL", 
+                        "type": "String", 
+                        "id": "AB_HIST_ALL", 
+                        "hail": "va.gnomad.genomes.info.AB_HIST_ALL", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "AC_AFR", 
+                        "type": "Int", 
+                        "id": "AC_AFR", 
+                        "hail": "va.gnomad.genomes.info.AC_AFR", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "AC_AMR", 
+                        "type": "Int", 
+                        "id": "AC_AMR", 
+                        "hail": "va.gnomad.genomes.info.AC_AMR", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "AC_ASJ", 
+                        "type": "Int", 
+                        "id": "AC_ASJ", 
+                        "hail": "va.gnomad.genomes.info.AC_ASJ", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "AC_EAS", 
+                        "type": "Int", 
+                        "id": "AC_EAS", 
+                        "hail": "va.gnomad.genomes.info.AC_EAS", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "AC_FIN", 
+                        "type": "Int", 
+                        "id": "AC_FIN", 
+                        "hail": "va.gnomad.genomes.info.AC_FIN", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "AC_NFE", 
+                        "type": "Int", 
+                        "id": "AC_NFE", 
+                        "hail": "va.gnomad.genomes.info.AC_NFE", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "AC_OTH", 
+                        "type": "Int", 
+                        "id": "AC_OTH", 
+                        "hail": "va.gnomad.genomes.info.AC_OTH", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "AC_Male", 
+                        "type": "Int", 
+                        "id": "AC_Male", 
+                        "hail": "va.gnomad.genomes.info.AC_Male", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "AC_Female", 
+                        "type": "Int", 
+                        "id": "AC_Female", 
+                        "hail": "va.gnomad.genomes.info.AC_Female", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "AN_AFR", 
+                        "type": "Int", 
+                        "id": "AN_AFR", 
+                        "hail": "va.gnomad.genomes.info.AN_AFR", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "AN_AMR", 
+                        "type": "Int", 
+                        "id": "AN_AMR", 
+                        "hail": "va.gnomad.genomes.info.AN_AMR", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "AN_ASJ", 
+                        "type": "Int", 
+                        "id": "AN_ASJ", 
+                        "hail": "va.gnomad.genomes.info.AN_ASJ", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "AN_EAS", 
+                        "type": "Int", 
+                        "id": "AN_EAS", 
+                        "hail": "va.gnomad.genomes.info.AN_EAS", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "AN_FIN", 
+                        "type": "Int", 
+                        "id": "AN_FIN", 
+                        "hail": "va.gnomad.genomes.info.AN_FIN", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "AN_NFE", 
+                        "type": "Int", 
+                        "id": "AN_NFE", 
+                        "hail": "va.gnomad.genomes.info.AN_NFE", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "AN_OTH", 
+                        "type": "Int", 
+                        "id": "AN_OTH", 
+                        "hail": "va.gnomad.genomes.info.AN_OTH", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "AN_Male", 
+                        "type": "Int", 
+                        "id": "AN_Male", 
+                        "hail": "va.gnomad.genomes.info.AN_Male", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "AN_Female", 
+                        "type": "Int", 
+                        "id": "AN_Female", 
+                        "hail": "va.gnomad.genomes.info.AN_Female", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "AF_AFR", 
+                        "type": "Double", 
+                        "id": "AF_AFR", 
+                        "hail": "va.gnomad.genomes.info.AF_AFR", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "AF_AMR", 
+                        "type": "Double", 
+                        "id": "AF_AMR", 
+                        "hail": "va.gnomad.genomes.info.AF_AMR", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "AF_ASJ", 
+                        "type": "Double", 
+                        "id": "AF_ASJ", 
+                        "hail": "va.gnomad.genomes.info.AF_ASJ", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "AF_EAS", 
+                        "type": "Double", 
+                        "id": "AF_EAS", 
+                        "hail": "va.gnomad.genomes.info.AF_EAS", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "AF_FIN", 
+                        "type": "Double", 
+                        "id": "AF_FIN", 
+                        "hail": "va.gnomad.genomes.info.AF_FIN", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "AF_NFE", 
+                        "type": "Double", 
+                        "id": "AF_NFE", 
+                        "hail": "va.gnomad.genomes.info.AF_NFE", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "AF_OTH", 
+                        "type": "Double", 
+                        "id": "AF_OTH", 
+                        "hail": "va.gnomad.genomes.info.AF_OTH", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "AF_Male", 
+                        "type": "Double", 
+                        "id": "AF_Male", 
+                        "hail": "va.gnomad.genomes.info.AF_Male", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "AF_Female", 
+                        "type": "Double", 
+                        "id": "AF_Female", 
+                        "hail": "va.gnomad.genomes.info.AF_Female", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "GC_AFR", 
+                        "type": "Int", 
+                        "id": "GC_AFR", 
+                        "hail": "va.gnomad.genomes.info.GC_AFR", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "GC_AMR", 
+                        "type": "Int", 
+                        "id": "GC_AMR", 
+                        "hail": "va.gnomad.genomes.info.GC_AMR", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "GC_ASJ", 
+                        "type": "Int", 
+                        "id": "GC_ASJ", 
+                        "hail": "va.gnomad.genomes.info.GC_ASJ", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "GC_EAS", 
+                        "type": "Int", 
+                        "id": "GC_EAS", 
+                        "hail": "va.gnomad.genomes.info.GC_EAS", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "GC_FIN", 
+                        "type": "Int", 
+                        "id": "GC_FIN", 
+                        "hail": "va.gnomad.genomes.info.GC_FIN", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "GC_NFE", 
+                        "type": "Int", 
+                        "id": "GC_NFE", 
+                        "hail": "va.gnomad.genomes.info.GC_NFE", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "GC_OTH", 
+                        "type": "Int", 
+                        "id": "GC_OTH", 
+                        "hail": "va.gnomad.genomes.info.GC_OTH", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "GC_Male", 
+                        "type": "Int", 
+                        "id": "GC_Male", 
+                        "hail": "va.gnomad.genomes.info.GC_Male", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "GC_Female", 
+                        "type": "Int", 
+                        "id": "GC_Female", 
+                        "hail": "va.gnomad.genomes.info.GC_Female", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "AC_raw", 
+                        "type": "Int", 
+                        "id": "AC_raw", 
+                        "hail": "va.gnomad.genomes.info.AC_raw", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "AN_raw", 
+                        "type": "Int", 
+                        "id": "AN_raw", 
+                        "hail": "va.gnomad.genomes.info.AN_raw", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "AF_raw", 
+                        "type": "Double", 
+                        "id": "AF_raw", 
+                        "hail": "va.gnomad.genomes.info.AF_raw", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "GC_raw", 
+                        "type": "Int", 
+                        "id": "GC_raw", 
+                        "hail": "va.gnomad.genomes.info.GC_raw", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "GC", 
+                        "type": "Int", 
+                        "id": "GC", 
+                        "hail": "va.gnomad.genomes.info.GC", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "Hom_AFR", 
+                        "type": "Int", 
+                        "id": "Hom_AFR", 
+                        "hail": "va.gnomad.genomes.info.Hom_AFR", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "Hom_AMR", 
+                        "type": "Int", 
+                        "id": "Hom_AMR", 
+                        "hail": "va.gnomad.genomes.info.Hom_AMR", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "Hom_ASJ", 
+                        "type": "Int", 
+                        "id": "Hom_ASJ", 
+                        "hail": "va.gnomad.genomes.info.Hom_ASJ", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "Hom_EAS", 
+                        "type": "Int", 
+                        "id": "Hom_EAS", 
+                        "hail": "va.gnomad.genomes.info.Hom_EAS", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "Hom_FIN", 
+                        "type": "Int", 
+                        "id": "Hom_FIN", 
+                        "hail": "va.gnomad.genomes.info.Hom_FIN", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "Hom_NFE", 
+                        "type": "Int", 
+                        "id": "Hom_NFE", 
+                        "hail": "va.gnomad.genomes.info.Hom_NFE", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "Hom_OTH", 
+                        "type": "Int", 
+                        "id": "Hom_OTH", 
+                        "hail": "va.gnomad.genomes.info.Hom_OTH", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "Hom_Male", 
+                        "type": "Int", 
+                        "id": "Hom_Male", 
+                        "hail": "va.gnomad.genomes.info.Hom_Male", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "Hom_Female", 
+                        "type": "Int", 
+                        "id": "Hom_Female", 
+                        "hail": "va.gnomad.genomes.info.Hom_Female", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "Hom_raw", 
+                        "type": "Int", 
+                        "id": "Hom_raw", 
+                        "hail": "va.gnomad.genomes.info.Hom_raw", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "Hom", 
+                        "type": "Int", 
+                        "id": "Hom", 
+                        "hail": "va.gnomad.genomes.info.Hom", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "STAR_AC", 
+                        "type": "Int", 
+                        "id": "STAR_AC", 
+                        "hail": "va.gnomad.genomes.info.STAR_AC", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "STAR_AC_raw", 
+                        "type": "Int", 
+                        "id": "STAR_AC_raw", 
+                        "hail": "va.gnomad.genomes.info.STAR_AC_raw", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "STAR_Hom", 
+                        "type": "Int", 
+                        "id": "STAR_Hom", 
+                        "hail": "va.gnomad.genomes.info.STAR_Hom", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "POPMAX", 
+                        "type": "String", 
+                        "id": "POPMAX", 
+                        "hail": "va.gnomad.genomes.info.POPMAX", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "AC_POPMAX", 
+                        "type": "Int", 
+                        "id": "AC_POPMAX", 
+                        "hail": "va.gnomad.genomes.info.AC_POPMAX", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "AN_POPMAX", 
+                        "type": "Int", 
+                        "id": "AN_POPMAX", 
+                        "hail": "va.gnomad.genomes.info.AN_POPMAX", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "AF_POPMAX", 
+                        "type": "Double", 
+                        "id": "AF_POPMAX", 
+                        "hail": "va.gnomad.genomes.info.AF_POPMAX", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "DP_MEDIAN", 
+                        "type": "Int", 
+                        "id": "DP_MEDIAN", 
+                        "hail": "va.gnomad.genomes.info.DP_MEDIAN", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "DREF_MEDIAN", 
+                        "type": "Double", 
+                        "id": "DREF_MEDIAN", 
+                        "hail": "va.gnomad.genomes.info.DREF_MEDIAN", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "GQ_MEDIAN", 
+                        "type": "Int", 
+                        "id": "GQ_MEDIAN", 
+                        "hail": "va.gnomad.genomes.info.GQ_MEDIAN", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "AB_MEDIAN", 
+                        "type": "Double", 
+                        "id": "AB_MEDIAN", 
+                        "hail": "va.gnomad.genomes.info.AB_MEDIAN", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "AS_RF", 
+                        "type": "Double", 
+                        "id": "AS_RF", 
+                        "hail": "va.gnomad.genomes.info.AS_RF", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "AS_FilterStatus", 
+                        "type": "Set[String]", 
+                        "id": "AS_FilterStatus", 
+                        "hail": "va.gnomad.genomes.info.AS_FilterStatus", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "AS_RF_POSITIVE_TRAIN", 
+                        "type": "Array[Int]", 
+                        "id": "AS_RF_POSITIVE_TRAIN", 
+                        "hail": "va.gnomad.genomes.info.AS_RF_POSITIVE_TRAIN", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "AS_RF_NEGATIVE_TRAIN", 
+                        "type": "Array[Int]", 
+                        "id": "AS_RF_NEGATIVE_TRAIN", 
+                        "hail": "va.gnomad.genomes.info.AS_RF_NEGATIVE_TRAIN", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "CSQ", 
+                        "type": "Array[String]", 
+                        "id": "CSQ", 
+                        "hail": "va.gnomad.genomes.info.CSQ", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "AN_FIN_Male", 
+                        "type": "Int", 
+                        "id": "AN_FIN_Male", 
+                        "hail": "va.gnomad.genomes.info.AN_FIN_Male", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "AN_EAS_Female", 
+                        "type": "Int", 
+                        "id": "AN_EAS_Female", 
+                        "hail": "va.gnomad.genomes.info.AN_EAS_Female", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "AN_NFE_Female", 
+                        "type": "Int", 
+                        "id": "AN_NFE_Female", 
+                        "hail": "va.gnomad.genomes.info.AN_NFE_Female", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "AC_AFR_Male", 
+                        "type": "Int", 
+                        "id": "AC_AFR_Male", 
+                        "hail": "va.gnomad.genomes.info.AC_AFR_Male", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "AN_AMR_Female", 
+                        "type": "Int", 
+                        "id": "AN_AMR_Female", 
+                        "hail": "va.gnomad.genomes.info.AN_AMR_Female", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "AF_AMR_Male", 
+                        "type": "Double", 
+                        "id": "AF_AMR_Male", 
+                        "hail": "va.gnomad.genomes.info.AF_AMR_Male", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "Hemi_NFE", 
+                        "type": "Int", 
+                        "id": "Hemi_NFE", 
+                        "hail": "va.gnomad.genomes.info.Hemi_NFE", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "Hemi_AFR", 
+                        "type": "Int", 
+                        "id": "Hemi_AFR", 
+                        "hail": "va.gnomad.genomes.info.Hemi_AFR", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "AC_ASJ_Female", 
+                        "type": "Int", 
+                        "id": "AC_ASJ_Female", 
+                        "hail": "va.gnomad.genomes.info.AC_ASJ_Female", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "AF_FIN_Female", 
+                        "type": "Double", 
+                        "id": "AF_FIN_Female", 
+                        "hail": "va.gnomad.genomes.info.AF_FIN_Female", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "AN_ASJ_Male", 
+                        "type": "Int", 
+                        "id": "AN_ASJ_Male", 
+                        "hail": "va.gnomad.genomes.info.AN_ASJ_Male", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "AC_OTH_Female", 
+                        "type": "Int", 
+                        "id": "AC_OTH_Female", 
+                        "hail": "va.gnomad.genomes.info.AC_OTH_Female", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "GC_OTH_Male", 
+                        "type": "Int", 
+                        "id": "GC_OTH_Male", 
+                        "hail": "va.gnomad.genomes.info.GC_OTH_Male", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "GC_FIN_Male", 
+                        "type": "Int", 
+                        "id": "GC_FIN_Male", 
+                        "hail": "va.gnomad.genomes.info.GC_FIN_Male", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "AC_NFE_Female", 
+                        "type": "Int", 
+                        "id": "AC_NFE_Female", 
+                        "hail": "va.gnomad.genomes.info.AC_NFE_Female", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "AC_EAS_Male", 
+                        "type": "Int", 
+                        "id": "AC_EAS_Male", 
+                        "hail": "va.gnomad.genomes.info.AC_EAS_Male", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "AC_OTH_Male", 
+                        "type": "Int", 
+                        "id": "AC_OTH_Male", 
+                        "hail": "va.gnomad.genomes.info.AC_OTH_Male", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "Hemi_AMR", 
+                        "type": "Int", 
+                        "id": "Hemi_AMR", 
+                        "hail": "va.gnomad.genomes.info.Hemi_AMR", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "AC_NFE_Male", 
+                        "type": "Int", 
+                        "id": "AC_NFE_Male", 
+                        "hail": "va.gnomad.genomes.info.AC_NFE_Male", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "Hemi", 
+                        "type": "Int", 
+                        "id": "Hemi", 
+                        "hail": "va.gnomad.genomes.info.Hemi", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "AN_FIN_Female", 
+                        "type": "Int", 
+                        "id": "AN_FIN_Female", 
+                        "hail": "va.gnomad.genomes.info.AN_FIN_Female", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "GC_EAS_Male", 
+                        "type": "Int", 
+                        "id": "GC_EAS_Male", 
+                        "hail": "va.gnomad.genomes.info.GC_EAS_Male", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "GC_ASJ_Female", 
+                        "type": "Int", 
+                        "id": "GC_ASJ_Female", 
+                        "hail": "va.gnomad.genomes.info.GC_ASJ_Female", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "GC_ASJ_Male", 
+                        "type": "Int", 
+                        "id": "GC_ASJ_Male", 
+                        "hail": "va.gnomad.genomes.info.GC_ASJ_Male", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "Hemi_SAS", 
+                        "type": "Int", 
+                        "id": "Hemi_SAS", 
+                        "hail": "va.gnomad.genomes.info.Hemi_SAS", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "AN_ASJ_Female", 
+                        "type": "Int", 
+                        "id": "AN_ASJ_Female", 
+                        "hail": "va.gnomad.genomes.info.AN_ASJ_Female", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "AF_FIN_Male", 
+                        "type": "Double", 
+                        "id": "AF_FIN_Male", 
+                        "hail": "va.gnomad.genomes.info.AF_FIN_Male", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "AN_OTH_Male", 
+                        "type": "Int", 
+                        "id": "AN_OTH_Male", 
+                        "hail": "va.gnomad.genomes.info.AN_OTH_Male", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "AF_AFR_Male", 
+                        "type": "Double", 
+                        "id": "AF_AFR_Male", 
+                        "hail": "va.gnomad.genomes.info.AF_AFR_Male", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "STAR_Hemi", 
+                        "type": "Int", 
+                        "id": "STAR_Hemi", 
+                        "hail": "va.gnomad.genomes.info.STAR_Hemi", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "Hemi_ASJ", 
+                        "type": "Int", 
+                        "id": "Hemi_ASJ", 
+                        "hail": "va.gnomad.genomes.info.Hemi_ASJ", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "AN_AFR_Female", 
+                        "type": "Int", 
+                        "id": "AN_AFR_Female", 
+                        "hail": "va.gnomad.genomes.info.AN_AFR_Female", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "Hemi_raw", 
+                        "type": "Int", 
+                        "id": "Hemi_raw", 
+                        "hail": "va.gnomad.genomes.info.Hemi_raw", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "AF_OTH_Male", 
+                        "type": "Double", 
+                        "id": "AF_OTH_Male", 
+                        "hail": "va.gnomad.genomes.info.AF_OTH_Male", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "AF_NFE_Female", 
+                        "type": "Double", 
+                        "id": "AF_NFE_Female", 
+                        "hail": "va.gnomad.genomes.info.AF_NFE_Female", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "AF_EAS_Female", 
+                        "type": "Double", 
+                        "id": "AF_EAS_Female", 
+                        "hail": "va.gnomad.genomes.info.AF_EAS_Female", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "AN_OTH_Female", 
+                        "type": "Int", 
+                        "id": "AN_OTH_Female", 
+                        "hail": "va.gnomad.genomes.info.AN_OTH_Female", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "AF_EAS_Male", 
+                        "type": "Double", 
+                        "id": "AF_EAS_Male", 
+                        "hail": "va.gnomad.genomes.info.AF_EAS_Male", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "GC_AFR_Female", 
+                        "type": "Int", 
+                        "id": "GC_AFR_Female", 
+                        "hail": "va.gnomad.genomes.info.GC_AFR_Female", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "AF_AFR_Female", 
+                        "type": "Double", 
+                        "id": "AF_AFR_Female", 
+                        "hail": "va.gnomad.genomes.info.AF_AFR_Female", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "AC_FIN_Female", 
+                        "type": "Int", 
+                        "id": "AC_FIN_Female", 
+                        "hail": "va.gnomad.genomes.info.AC_FIN_Female", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "Hemi_OTH", 
+                        "type": "Int", 
+                        "id": "Hemi_OTH", 
+                        "hail": "va.gnomad.genomes.info.Hemi_OTH", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "GC_AMR_Male", 
+                        "type": "Int", 
+                        "id": "GC_AMR_Male", 
+                        "hail": "va.gnomad.genomes.info.GC_AMR_Male", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "AC_AFR_Female", 
+                        "type": "Int", 
+                        "id": "AC_AFR_Female", 
+                        "hail": "va.gnomad.genomes.info.AC_AFR_Female", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "GC_NFE_Male", 
+                        "type": "Int", 
+                        "id": "GC_NFE_Male", 
+                        "hail": "va.gnomad.genomes.info.GC_NFE_Male", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "AF_AMR_Female", 
+                        "type": "Double", 
+                        "id": "AF_AMR_Female", 
+                        "hail": "va.gnomad.genomes.info.AF_AMR_Female", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "GC_NFE_Female", 
+                        "type": "Int", 
+                        "id": "GC_NFE_Female", 
+                        "hail": "va.gnomad.genomes.info.GC_NFE_Female", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "AN_AFR_Male", 
+                        "type": "Int", 
+                        "id": "AN_AFR_Male", 
+                        "hail": "va.gnomad.genomes.info.AN_AFR_Male", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "AN_NFE_Male", 
+                        "type": "Int", 
+                        "id": "AN_NFE_Male", 
+                        "hail": "va.gnomad.genomes.info.AN_NFE_Male", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "AC_AMR_Male", 
+                        "type": "Int", 
+                        "id": "AC_AMR_Male", 
+                        "hail": "va.gnomad.genomes.info.AC_AMR_Male", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "GC_AMR_Female", 
+                        "type": "Int", 
+                        "id": "GC_AMR_Female", 
+                        "hail": "va.gnomad.genomes.info.GC_AMR_Female", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "AF_ASJ_Male", 
+                        "type": "Double", 
+                        "id": "AF_ASJ_Male", 
+                        "hail": "va.gnomad.genomes.info.AF_ASJ_Male", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "GC_FIN_Female", 
+                        "type": "Int", 
+                        "id": "GC_FIN_Female", 
+                        "hail": "va.gnomad.genomes.info.GC_FIN_Female", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "AC_EAS_Female", 
+                        "type": "Int", 
+                        "id": "AC_EAS_Female", 
+                        "hail": "va.gnomad.genomes.info.AC_EAS_Female", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "AC_AMR_Female", 
+                        "type": "Int", 
+                        "id": "AC_AMR_Female", 
+                        "hail": "va.gnomad.genomes.info.AC_AMR_Female", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "Hemi_FIN", 
+                        "type": "Int", 
+                        "id": "Hemi_FIN", 
+                        "hail": "va.gnomad.genomes.info.Hemi_FIN", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "AC_FIN_Male", 
+                        "type": "Int", 
+                        "id": "AC_FIN_Male", 
+                        "hail": "va.gnomad.genomes.info.AC_FIN_Male", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "GC_EAS_Female", 
+                        "type": "Int", 
+                        "id": "GC_EAS_Female", 
+                        "hail": "va.gnomad.genomes.info.GC_EAS_Female", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "AF_ASJ_Female", 
+                        "type": "Double", 
+                        "id": "AF_ASJ_Female", 
+                        "hail": "va.gnomad.genomes.info.AF_ASJ_Female", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "AF_OTH_Female", 
+                        "type": "Double", 
+                        "id": "AF_OTH_Female", 
+                        "hail": "va.gnomad.genomes.info.AF_OTH_Female", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "GC_AFR_Male", 
+                        "type": "Int", 
+                        "id": "GC_AFR_Male", 
+                        "hail": "va.gnomad.genomes.info.GC_AFR_Male", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "AN_NFE_Male", 
+                        "type": "Int", 
+                        "id": "AN_NFE_Male", 
+                        "hail": "va.gnomad.genomes.info.AN_NFE_Male", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "AN_EAS_Male", 
+                        "type": "Int", 
+                        "id": "AN_EAS_Male", 
+                        "hail": "va.gnomad.genomes.info.AN_EAS_Male", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "AC_ASJ_Male", 
+                        "type": "Int", 
+                        "id": "AC_ASJ_Male", 
+                        "hail": "va.gnomad.genomes.info.AC_ASJ_Male", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "Hemi_EAS", 
+                        "type": "Int", 
+                        "id": "Hemi_EAS", 
+                        "hail": "va.gnomad.genomes.info.Hemi_EAS", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "AN_AMR_Male", 
+                        "type": "Int", 
+                        "id": "AN_AMR_Male", 
+                        "hail": "va.gnomad.genomes.info.AN_AMR_Male", 
+                        "description": ""
+                     }, 
+                     {
+                        "text": "GC_OTH_Female", 
+                        "type": "Int", 
+                        "id": "GC_OTH_Female", 
+                        "hail": "va.gnomad.genomes.info.GC_OTH_Female", 
+                        "description": ""
+                     }
+                  ], 
+                  "type": "variant", 
+                  "id": "info"
+               }
+            ], 
+            "type": "variant", 
+            "selectable": false, 
+            "db_file": "gs://annotationdb/gnomad/genomes.vds", 
+            "id": "genomes"
+         }
+      ], 
+      "study_data": "http://gnomad.broadinstitute.org/downloads", 
+      "selectable": false, 
+      "study_title": "Exome Aggregation Consortium et al. \u201cAnalysis of Protein-Coding Genetic Variation in 60,706 Humans.\u201d Nature 536.7616 (2016): 285\u2013291.", 
+      "type": "variant", 
+      "id": "gnomad"
    }, 
    {
       "description": "Data were downloaded in R format. We included only intervals overlapping with DNaseI regions selected with -log10(p) >= 10. Information about the interpretation of each of the 25 states can be found here: http://egg2.wustl.edu/roadmap/web_portal/imputed.html#chr_imp. Name for each cell type can be found here: https://docs.google.com/spreadsheets/u/1/d/1yikGx4MsO9Ei36b64yOy9Vb6oPC5IBGlFbYEt-N6gOM/edit?usp=sharing#gid=15.", 
@@ -2728,8 +5162,9 @@
                   "description": "Enhancers - Cell type: E129"
                }
             ], 
-            "selectable": true, 
             "type": "interval", 
+            "selectable": true, 
+            "db_file": "gs://annotationdb/chromHMM/enhancers/enhancers.kt", 
             "id": "chromHMM_enhancers"
          }, 
          {
@@ -3627,8 +6062,9 @@
                   "description": "Promoters - Cell type: E129"
                }
             ], 
-            "selectable": true, 
             "type": "interval", 
+            "selectable": true, 
+            "db_file": "gs://annotationdb/chromHMM/promoters/promoters.kt", 
             "id": "chromHMM_promoters"
          }
       ], 
@@ -4109,10 +6545,11 @@
             "id": "penis_foreskin_melanocyte_primary_cells"
          }
       ], 
+      "type": "interval", 
       "study_data": "Shared by pshoosh@broadinstitute.org", 
       "selectable": false, 
       "study_title": "Shooshtari et Al. Integrative genetic and epigenetic analysis uncovers regulatory mechanisms of autoimmune disease", 
-      "type": "interval", 
+      "db_file": "gs://annotationdb/dhs/dhs.kt", 
       "id": "dhs"
    }, 
    {
@@ -4136,10 +6573,11 @@
             "description": "FANTOM5 enhancers - permissive"
          }
       ], 
+      "type": "interval", 
       "study_data": "http://enhancer.binf.ku.dk/presets/robust_enhancers.bed and http://enhancer.binf.ku.dk/presets/permissive_enhancers.bed", 
       "selectable": false, 
       "study_title": "An atlas of active enhancers across human cell types and tissues.", 
-      "type": "interval", 
+      "db_file": "gs://annotationdb/fantom5/fantom5.kt", 
       "id": "fantom5"
    }
 ]

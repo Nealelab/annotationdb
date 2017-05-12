@@ -4,9 +4,10 @@
 	"hail": "va.dann",
 	"type": "variant",
 	"selectable": false,
+	"db_file": "gs://annotationdb/dann/dann.vds",
 	"study_link": "https://www.ncbi.nlm.nih.gov/pubmed/25338716",
 	"study_title": "Quang, Daniel, Yifei Chen, and Xiaohui Xie. “DANN: A Deep Learning Approach for Annotating the Pathogenicity of Genetic Variants.” Bioinformatics 31.5 (2015): 761–763.",
-	"study_data": "https://cbcl.ics.uci.edu/public_data/DANN/data/DANN_whole_genome_SNVs.tsv.bgz",
+	"study_data": "https://cbcl.ics.uci.edu/public_data/DANN/data/",
 	"description": "Same as CADD, but using different machine-learning approaches",
 	"nodes": [
 		{

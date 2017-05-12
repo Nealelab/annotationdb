@@ -4,6 +4,7 @@
 	"hail": "va.fantom5",
 	"type": "interval",
 	"selectable": false,
+	"db_file": "gs://annotationdb/fantom5/fantom5.kt",
 	"study_link": "https://www.ncbi.nlm.nih.gov/pubmed/?term=24670763",
 	"study_title": "An atlas of active enhancers across human cell types and tissues.",
 	"study_data": "http://enhancer.binf.ku.dk/presets/robust_enhancers.bed and http://enhancer.binf.ku.dk/presets/permissive_enhancers.bed",

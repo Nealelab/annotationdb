@@ -28,33 +28,23 @@ kt = (
             )
         )
     )
-    .annotate(
-        'variant = Variant(`#Chrom`, Pos, Ref, Alt)'
-    )
-    .key_by(
-        'variant'
-    )
-    .rename(
-        {
-            var['raw'].strip('`'): var['id'] for var in dct['nodes']
-        }
-    )
-    .annotate(
-        'cadd = {{{0}}}'.format(','.join(['{0}: {0}'.format(x['id']) for x in dct['nodes']]))
-    )
+    .annotate('variant = Variant(`#Chrom`, Pos, Ref, Alt)')
+    .key_by('variant')
+    .rename({var['raw'].strip('`'): var['id'] for var in dct['nodes']})
+    .annotate(','.join(['{0} = {0}'.format(x['id']) for x in dct['nodes']]))
     .select(
-        [
-            'variant',
-            'cadd'
-        ]
+        ['variant'] +
+        [x['id'] for x in dct['nodes']]
     )
-
 )
+
+print kt.schema
 
 # create sites-only VDS
 (
     hail
     .VariantDataset.from_keytable(kt)
+    .repartition(10000)
     .write(
         'gs://annotationdb/cadd/cadd.vds',
         overwrite = True

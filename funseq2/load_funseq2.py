@@ -37,16 +37,18 @@ kt = (
 	.explode('alt')
 	.annotate('variant = Variant(chr, pos, ref, alt)')
 	.key_by('variant')
-    .annotate(
-		'funseq2 = {{{0}}}'.format(','.join(['{0}: {0}'.format(x['id']) for x in dct['nodes']]))
+    .annotate(','.join(['{0} = {0}'.format(x['id']) for x in dct['nodes']]))
+    .select(
+    	['variant'] +
+    	[x['id'] for x in dct['nodes']]
     )
-    .select(['variant', 'funseq2'])
 )
 
 # create sites-only VDS
 (
     hail
     .VariantDataset.from_keytable(kt)
+    .repartition(1024)
     .write(
         'gs://annotationdb/funseq2/funseq2.vds',
         overwrite = True

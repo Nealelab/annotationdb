@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 
+import sys
 import hail
 import json
 from subprocess import call
@@ -32,19 +33,18 @@ kt = (
 	.annotate('variant = Variant(`#chr`, `pos(1-coor)`, ref, alt)')
 	.key_by('variant')
 	.rename({var['raw'].strip('`'): var['id'] for var in dct['nodes']})
-    .annotate(
-    	'dbNSFP = {{{0}}}'.format(','.join(['{0}: {0}'.format(x['id']) for x in dct['nodes']]))
+    .annotate(','.join(['{0} = {0}'.format(x['id']) for x in dct['nodes']]))
+    .select(
+    	['variant'] +
+    	[x['id'] for x in dct['nodes']]
     )
-    .select([
-    	'variant',
-        'dbNSFP'
-    ])
 )
 
 # create sites-only VDS
-(
+vds = (
     hail
     .VariantDataset.from_keytable(kt)
+    .repartition(1024)
     .write(
         'gs://annotationdb/dbNSFP/dbNSFP.vds',
         overwrite = True

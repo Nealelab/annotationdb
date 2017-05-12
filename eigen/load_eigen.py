@@ -31,28 +31,18 @@ kt = (
             )
         )
     )
-    .annotate(
-        'variant = Variant(chr, pos, ref, alt)'
-    )
-    .key_by(
-        'variant'
-    )
-    .rename(
-        {
-            var['raw'].strip('`'): var['id'] for var in dct['nodes']
-        }
-    )
-    .annotate(
-        'eigen = {{{0}}}'.format(','.join(['{0}: {0}'.format(x['id']) for x in dct['nodes']]))
-    )
+    .annotate('variant = Variant(chr, pos, ref, alt)')
+    .key_by('variant')
+    .rename({var['raw'].strip('`'): var['id'] for var in dct['nodes']})
+    .annotate(','.join(['{0} = {0}'.format(x['id']) for x in dct['nodes']]))
     .select(
-        [
-            'variant',
-            'eigen'
-        ]
+        ['variant'] +
+        [x['id'] for x in dct['nodes']]
     )
 
 )
+
+print kt.schema
 
 # create sites-only VDS
 (

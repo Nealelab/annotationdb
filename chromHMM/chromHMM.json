@@ -15,6 +15,7 @@
 			"hail": "va.chromHMM.enhancers",
 			"type": "interval",
 			"selectable": true,
+			"db_file": "gs://annotationdb/chromHMM/enhancers/enhancers.kt",
 			"description": "Enhancers states included: 10,11,12,13,14,15,16,17,18. Strong enhancers usually defined: 10,12,13,14,15. 0=no enhancer.",
 			"nodes": [
 				{
@@ -914,6 +915,7 @@
 			"hail": "va.chromHMM.promoters",
 			"type": "interval",
 			"selectable": true,
+			"db_file": "gs://annotationdb/chromHMM/promoters/promoters.kt",
 			"description": "Promoters + TSS states included: 1,2,3,4,22,23. Strong promoters + TSS usually defined: 1,2,3,4. 1=TSS, 0=no promoters, TSS.",
 			"nodes": [
 				{

@@ -36,22 +36,12 @@ kt = (
     .annotate(
         'variant = Variant(_0, _1, _2, _3)'
     )
-    .key_by(
-        'variant'
-    )
-    .rename(
-        {
-            var['raw'].strip('`'): var['id'] for var in dct['nodes']
-        }
-    )
-    .annotate(
-        'dann = {{{0}}}'.format(','.join(['{0}: {0}'.format(x['id']) for x in dct['nodes']]))
-    )
+    .key_by('variant')
+    .rename({var['raw'].strip('`'): var['id'] for var in dct['nodes']})
+    .annotate(','.join(['{0} = {0}'.format(x['id']) for x in dct['nodes']]))
     .select(
-        [
-            'variant',
-            'dann'
-        ]
+        ['variant'] +
+        [x['id'] for x in dct['nodes']]
     )
 )
 

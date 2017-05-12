@@ -12,7 +12,8 @@ variants = [
     'dbNSFP',
     'discovEHR',
     'eigen',
-    'funseq2'
+    'funseq2',
+    'gnomad'
 ]
 
 # interval annotations
@@ -34,7 +35,7 @@ print 'Building master JSON data dictionary...'
 master_json = []
 for annotation in variants + intervals:
     print '-> fetching {} metadata...'.format(annotation)
-    response = urllib2.urlopen('http://storage.googleapis.com/annotationdb/{0}/{0}.json'.format(annotation))
+    response = urllib2.urlopen('https://storage.googleapis.com/annotationdb/{0}/{0}.json'.format(annotation))
     master_json.append(json.loads(response.read()))
 
 # write master JSON to local
@@ -42,6 +43,10 @@ print 'Master dictionary built!'
 with open('annotationdb.json', 'wb') as f:
     json.dump(master_json, f, indent=3)
 
+# remove existing master JSON from Google bucket
+with open(os.devnull, 'wb') as f:
+    call(['gsutil', 'rm', 'gs://annotationdb/annotationdb.json'], stdout=f, stderr=f)
+    
 # copy master JSON to Google bucket
 print "Writing master dictionary to Google Cloud Storage..."
 with open(os.devnull, 'wb') as f:

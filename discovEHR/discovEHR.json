@@ -4,6 +4,7 @@
 	"hail": "va.discovEHR",
 	"type": "variant",
 	"selectable": false,
+	"db_file": "gs://annotationdb/discovEHR/discovEHR.vds",
 	"study_link": "https://www.ncbi.nlm.nih.gov/pubmed/28008009",
 	"study_title": "Distribution and clinical impact of functional variants in 50,726 whole-exome sequences from the DiscovEHR study. Science",
 	"study_data": "http://www.discovehrshare.com/downloads",
