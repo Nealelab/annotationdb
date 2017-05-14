@@ -4,6 +4,7 @@
 	"hail": "va.tfbs",
 	"type": "interval",
 	"selectable": false,
+	"db_file": "gs://annotationdb/tfbs/tfbs.tsv.bgz",
 	"study_link": "",
 	"study_title": "",
 	"study_data": "http://hgdownload.cse.ucsc.edu/goldenPath/hg19/encodeDCC/wgEncodeRegTfbsClustered/wgEncodeeRegTfbsClusteredV3.bed.gz",
@@ -13,7 +14,7 @@
 			"text": "Transcription factor binding sites",
 			"id": "tfbs",
 			"hail": "va.tfbs.tfbs",
-			"type": "Boolean",
+			"type": "String",
 			"description": "Transcription factor binding sites from ENCODE V3"
 		}
 	]

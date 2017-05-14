@@ -925,14 +925,14 @@
          }
       ], 
       "type": "variant", 
-      "study_data": "https://cbcl.ics.uci.edu/public_data/DANN/data/DANN_whole_genome_SNVs.tsv.bgz", 
+      "study_data": "https://cbcl.ics.uci.edu/public_data/DANN/data/", 
       "selectable": false, 
       "study_title": "Quang, Daniel, Yifei Chen, and Xiaohui Xie. \u201cDANN: A Deep Learning Approach for Annotating the Pathogenicity of Genetic Variants.\u201d Bioinformatics 31.5 (2015): 761\u2013763.", 
       "db_file": "gs://annotationdb/dann/dann.vds", 
       "id": "dann"
    }, 
    {
-      "description": "Database for Nonsynonymous SNPs' functional predictions, v2.9.3.\n\nThe dbNSFP is an integrated database of functional annotations from multiple sources for the comprehensive collection of human non-synonymous SNPs (NSs).\n\nIts current version includes a total of 87,361,054 NSs. It compiles prediction scores from 14 prediction algorithms (SIFT, Polyphen2, LRT, MutationTaster, MutationAssessor,FATHMM, MetaSVM, MetaLR, CADD, VEST, PROVEAN, M-CAP, Eigen\uff0c Eigen PC), eight conservation scores (phyloP46way_primate, phyloP46way_placental, phyloP100way_vertebrate, phastCons46way_primate, phastCons46way_placental, phastCons100way_veterbrate, GERP++and SiPhy) and other function annotations.\n\nWe included all the original annotations except for allele frequencies in 1000 genome and ExAC since these are covered in other annotations.\n\nNote 1: Missing data is designated as \".\".\nNote 2: The three Uniprot entries are based on Polyphen-2 v2.2.2 annotations", 
+      "description": "Database for Nonsynonymous SNPs' functional predictions, v2.9.3.\n\nThe dbNSFP is an integrated database of functional annotations from multiple sources for the comprehensive collection of human non-synonymous SNPs (NSs).\n\nIts current version includes a total of 87,361,054 NSs. It compiles prediction scores from 14 prediction algorithms (SIFT, Polyphen2, LRT, MutationTaster, MutationAssessor, FATHMM, MetaSVM, MetaLR, CADD, VEST, PROVEAN, M-CAP, Eigen\uff0cEigen PC), eight conservation scores (phyloP46way_primate, phyloP46way_placental, phyloP100way_vertebrate, phastCons46way_primate, phastCons46way_placental, phastCons100way_veterbrate, GERP++, and SiPhy) and other function annotations.\n\nWe included all the original annotations except for allele frequencies in 1000 genome and ExAC since these are covered in other annotations.\n\nNote 1: Missing data is designated as \".\".\nNote 2: The three Uniprot entries are based on Polyphen-2 v2.2.2 annotations", 
       "text": "dbNSFP v2.9.3", 
       "hail": "va.dbNSFP", 
       "study_link": "https://www.ncbi.nlm.nih.gov/pubmed/?term=26555599", 
@@ -6579,5 +6579,317 @@
       "study_title": "An atlas of active enhancers across human cell types and tissues.", 
       "db_file": "gs://annotationdb/fantom5/fantom5.kt", 
       "id": "fantom5"
+   }, 
+   {
+      "description": "These files were obtained from UCSC table browser with these settings: Assembly: Feb. 2009 (GRCh37/hg19), Group: Genes and Gene Predictions, Track: GENCODE Genes V19, Region:  genome, Output: format: BED.", 
+      "text": "GENCODE v19", 
+      "hail": "va.gencode19", 
+      "study_link": "", 
+      "nodes": [
+         {
+            "description": "3' UTR Exons", 
+            "text": "3UTR", 
+            "hail": "va.gencode19.3utr", 
+            "raw": "3utr", 
+            "type": "Boolean", 
+            "id": "3utr"
+         }, 
+         {
+            "description": "5' UTR Exons", 
+            "text": "5UTR", 
+            "hail": "va.gencode19.5utr", 
+            "raw": "5utr", 
+            "type": "Boolean", 
+            "id": "5utr"
+         }, 
+         {
+            "description": "Coding exons", 
+            "text": "Coding exons", 
+            "hail": "va.gencode19.exonsc", 
+            "raw": "exonsc", 
+            "type": "Boolean", 
+            "id": "exonsc"
+         }, 
+         {
+            "description": "All exons (including untranslated sequences) plus 15bp at each end", 
+            "text": "Exons + 15bp", 
+            "hail": "va.gencode19.coding15", 
+            "raw": "coding15", 
+            "type": "Boolean", 
+            "id": "coding15"
+         }, 
+         {
+            "description": "Introns", 
+            "text": "Introns", 
+            "hail": "va.gencode19.introns", 
+            "raw": "introns", 
+            "type": "Boolean", 
+            "id": "introns"
+         }, 
+         {
+            "description": "All exons (including untranslated sequences)", 
+            "text": "Exons", 
+            "hail": "va.gencode19.exonsa", 
+            "raw": "exonsa", 
+            "type": "Boolean", 
+            "id": "exonsa"
+         }, 
+         {
+            "description": "200 bp upstream of the TSS, promoters-flanking regions", 
+            "text": "200bp Upstream", 
+            "hail": "va.gencode19.promotersreg", 
+            "raw": "promotersreg", 
+            "type": "Boolean", 
+            "id": "promotersreg"
+         }
+      ], 
+      "type": "interval", 
+      "study_data": "", 
+      "selectable": false, 
+      "study_title": "", 
+      "db_file": "gs://annotationdb/gencode/gencode.kt", 
+      "id": "gencode19"
+   }, 
+   {
+      "description": "Regions with repeated sequences normally excluded from WGS studies", 
+      "text": "Low complexity regions", 
+      "hail": "va.lcr", 
+      "study_link": "https://www.ncbi.nlm.nih.gov/pubmed/?term=24974202", 
+      "nodes": [
+         {
+            "text": "Low-complexity regions", 
+            "type": "Boolean", 
+            "id": "isLCR", 
+            "hail": "va.lcr.isLCR", 
+            "description": "Variant is in a low-complexity region"
+         }
+      ], 
+      "study_data": "https://github.com/lh3/varcmp/blob/master/scripts/LCR-hs37d5.bed.gz", 
+      "selectable": false, 
+      "study_title": "Heng Li, Toward better understanding of artifacts in variant calling from high-coverage samples", 
+      "type": "interval", 
+      "id": "lcr"
+   }, 
+   {
+      "description": "Set of annotations used for LDSCORE partitioning heritability. Info for each annotation are available in the original publication", 
+      "text": "LD SCORE Annotations", 
+      "hail": "va.ldscore", 
+      "study_link": "https://www.ncbi.nlm.nih.gov/pubmed/?term=26414678", 
+      "nodes": [
+         {
+            "text": "Coding UCSC", 
+            "type": "Boolean", 
+            "id": "coding_ucsc", 
+            "hail": "va.ldscore.coding_ucsc", 
+            "description": "Annotations from RefSeq gene models were obtained from the UCSC Genome Browser and post-processed by Gusev et al."
+         }, 
+         {
+            "text": "Conserved", 
+            "type": "Boolean", 
+            "id": "conserved", 
+            "hail": "va.ldscore.conserved", 
+            "description": "Regions conserved in mammals were obtained from Lindblad-Toh et al  and post-processed by Ward and Kelli."
+         }, 
+         {
+            "text": "CTCF", 
+            "type": "Boolean", 
+            "id": "ctcf", 
+            "hail": "va.ldscore.ctcf", 
+            "description": "The combined chromHMM and Segway annotations for six cell lines were obtained from Hoffman et al. This annotation is the union over the six cell lines."
+         }, 
+         {
+            "text": "DGF", 
+            "type": "Boolean", 
+            "id": "dgf", 
+            "hail": "va.ldscore.dgf", 
+            "description": "DNaseI Digital Genomic Footprinting from ENCODE3 and post-processed by Gusev et al."
+         }, 
+         {
+            "text": "DHS Peaks", 
+            "type": "Boolean", 
+            "id": "dhsp", 
+            "hail": "va.ldscore.dhsp", 
+            "description": "DHSs are a combination of ENCODE and Roadmap Epigenomics data, post-processed by Trynka et al. Union of cell type\u2013specific annotations."
+         }, 
+         {
+            "text": "DHS", 
+            "type": "Boolean", 
+            "id": "dhs", 
+            "hail": "va.ldscore.dhs", 
+            "description": "DHSs are a combination of ENCODE and Roadmap Epigenomics data, post-processed by Trynka et al. Union of cell type\u2013specific annotations."
+         }, 
+         {
+            "text": "Enhancers", 
+            "type": "Boolean", 
+            "id": "enhancers", 
+            "hail": "va.ldscore.enhancers", 
+            "description": "The combined chromHMM and Segway annotations for six cell lines were obtained from Hoffman et al. This annotation is the union over the six cell lines."
+         }, 
+         {
+            "text": "FANTOM5 Enhancers", 
+            "type": "Boolean", 
+            "id": "fantom5", 
+            "hail": "va.ldscore.fantom5", 
+            "description": "FANTOM5 enhancers were obtained from Andersson et al."
+         }, 
+         {
+            "text": "Fetal DHS", 
+            "type": "Boolean", 
+            "id": "dhsf", 
+            "hail": "va.ldscore.dhsf", 
+            "description": "DHSs are a combination of ENCODE and Roadmap Epigenomics data, post-processed by Trynka et al. Union of cell type\u2013specific annotations."
+         }, 
+         {
+            "text": "H3K4me1 Peaks", 
+            "type": "Boolean", 
+            "id": "h3k4me1p", 
+            "hail": "va.ldscore.h3k4me1p", 
+            "description": "Cell type\u2013specific H3K4me1, H3K4me3 and H3K9ac data were all obtained from Roadmap Epigenomics and post-processed by Trynka et al. For each mark, we took a union over cell types"
+         }, 
+         {
+            "text": "H3K4me1", 
+            "type": "Boolean", 
+            "id": "h3k4me1", 
+            "hail": "va.ldscore.h3k4me1", 
+            "description": "Cell type\u2013specific H3K4me1, H3K4me3 and H3K9ac data were all obtained from Roadmap Epigenomics and post-processed by Trynka et al. For each mark, we took a union over cell types"
+         }, 
+         {
+            "text": "H3K4me3 Peaks", 
+            "type": "Boolean", 
+            "id": "h3k4me3p", 
+            "hail": "va.ldscore.h3k4me3p", 
+            "description": "Cell type\u2013specific H3K4me1, H3K4me3 and H3K9ac data were all obtained from Roadmap Epigenomics and post-processed by Trynka et al. For each mark, we took a union over cell types"
+         }, 
+         {
+            "text": "H3K4me3", 
+            "type": "Boolean", 
+            "id": "h3k4me3", 
+            "hail": "va.ldscore.h3k4me3", 
+            "description": "Cell type\u2013specific H3K4me1, H3K4me3 and H3K9ac data were all obtained from Roadmap Epigenomics and post-processed by Trynka et al. For each mark, we took a union over cell types"
+         }, 
+         {
+            "text": "H3K9ac Peaks", 
+            "type": "Boolean", 
+            "id": "h3k9acp", 
+            "hail": "va.ldscore.h3k9acp", 
+            "description": "Cell type\u2013specific H3K4me1, H3K4me3 and H3K9ac data were all obtained from Roadmap Epigenomics and post-processed by Trynka et al. For each mark, we took a union over cell types"
+         }, 
+         {
+            "text": "H3K9ac", 
+            "type": "Boolean", 
+            "id": "h3k9ac", 
+            "hail": "va.ldscore.h3k9ac", 
+            "description": "Cell type\u2013specific H3K4me1, H3K4me3 and H3K9ac data were all obtained from Roadmap Epigenomics and post-processed by Trynka et al. For each mark, we took a union over cell types"
+         }, 
+         {
+            "text": "h3k27ac", 
+            "type": "Boolean", 
+            "id": "h3k27ac", 
+            "hail": "va.ldscore.h3k27ac", 
+            "description": "H3K27ac data was obtained from Hnisz et al."
+         }, 
+         {
+            "text": "Intron UCSC", 
+            "type": "Boolean", 
+            "id": "intron_ucsc", 
+            "hail": "va.ldscore.intron_ucsc", 
+            "description": "Annotations from RefSeq gene models were obtained from the UCSC Genome Browser and post-processed by Gusev et al."
+         }, 
+         {
+            "text": "Promoter UCSC", 
+            "type": "Boolean", 
+            "id": "promoter_ucsc", 
+            "hail": "va.ldscore.promoter_ucsc", 
+            "description": "Annotations from RefSeq gene models were obtained from the UCSC Genome Browser and post-processed by Gusev et al."
+         }, 
+         {
+            "text": "Promoters Flanking", 
+            "type": "Boolean", 
+            "id": "promoter_flanking", 
+            "hail": "va.ldscore.promoter_flanking", 
+            "description": "The combined chromHMM and Segway annotations for six cell lines were obtained from Hoffman et al. This annotation is the union over the six cell lines."
+         }, 
+         {
+            "text": "Repressed Regions", 
+            "type": "Boolean", 
+            "id": "repressed", 
+            "hail": "va.ldscore.repressed", 
+            "description": "The combined chromHMM and Segway annotations for six cell lines were obtained from Hoffman et al. This annotation is the intersection over the six cell lines."
+         }, 
+         {
+            "text": "Super Enhancers", 
+            "type": "Boolean", 
+            "id": "superenh", 
+            "hail": "va.ldscore.superenh", 
+            "description": "Super Enhancers data was obtained from Hnisz et al."
+         }, 
+         {
+            "text": "TFBS", 
+            "type": "Boolean", 
+            "id": "tfbs", 
+            "hail": "va.ldscore.tfbs", 
+            "description": "Transcription factor binding sites were obtained from ENCODE3 and post-processed by Gusev et al."
+         }, 
+         {
+            "text": "Transcribed Regions", 
+            "type": "Boolean", 
+            "id": "transcribed", 
+            "hail": "va.ldscore.transcribed", 
+            "description": "The combined chromHMM and Segway annotations for six cell lines were obtained from Hoffman et al. This annotation is the union over the six cell lines."
+         }, 
+         {
+            "text": "TSS", 
+            "type": "Boolean", 
+            "id": "tss", 
+            "hail": "va.ldscore.tss", 
+            "description": "The combined chromHMM and Segway annotations for six cell lines were obtained from Hoffman et al. This annotation is the union over the six cell lines."
+         }, 
+         {
+            "text": "3' UTR UCSC", 
+            "type": "Boolean", 
+            "id": "3utr", 
+            "hail": "va.ldscore.3utr", 
+            "description": "Annotations from RefSeq gene models were obtained from the UCSC Genome Browser and post-processed by Gusev et al."
+         }, 
+         {
+            "text": "5' UTR UCSC", 
+            "type": "Boolean", 
+            "id": "5utr", 
+            "hail": "va.ldscore.5utr", 
+            "description": "Annotations from RefSeq gene models were obtained from the UCSC Genome Browser and post-processed by Gusev et al."
+         }, 
+         {
+            "text": "Weak Enhancers", 
+            "type": "Boolean", 
+            "id": "weakenh", 
+            "hail": "va.ldscore.weakenh", 
+            "description": "The combined chromHMM and Segway annotations for six cell lines were obtained from Hoffman et al. This annotation is the union over the six cell lines."
+         }
+      ], 
+      "study_data": "https://data.broadinstitute.org/alkesgroup/LDSCORE/baseline_bedfiles.tgz", 
+      "selectable": false, 
+      "study_title": "Finucane HK, Bulik-Sullivan, Partitioning heritability by functional annotation using genome-wide association summary statistics.", 
+      "type": "interval", 
+      "id": "score"
+   }, 
+   {
+      "description": "We tranformed the .bw data into .bed format using this program: http://hgdownload.soe.ucsc.edu/admin/exe/linux.x86_64/bigWigToBedGraph", 
+      "text": "LINSIGHT", 
+      "hail": "va.linsight", 
+      "study_link": "http://www.nature.com/ng/journal/v49/n4/full/ng.3810.html", 
+      "nodes": [
+         {
+            "text": "LINSIGHT score", 
+            "type": "Double", 
+            "id": "score", 
+            "hail": "va.linsight.score", 
+            "description": "The probability of fitness consequences for mutations at each site i"
+         }
+      ], 
+      "study_data": "http://compgen.cshl.edu/~yihuang/tracks/LINSIGHT.bw", 
+      "selectable": false, 
+      "study_title": "Fast, scalable prediction of deleterious noncoding variants from functional and population genomic data\u201d Nature Genetics. Online", 
+      "type": "interval", 
+      "id": "linsight"
    }
 ]

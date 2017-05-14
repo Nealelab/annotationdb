@@ -8,7 +8,7 @@ hc = hail.HailContext(log = '/home/hail/hail.log', parquet_compression = 'snappy
 
 with hail.hadoop_read('gs://annotationdb/cadd/cadd.json') as f:
     dct = json.load(f)
-
+    
 kt = (
 
     hc
@@ -50,3 +50,4 @@ print kt.schema
         overwrite = True
     )
 )
+
