@@ -2,13 +2,12 @@
 	"text": "dbNSFP v2.9.3",
 	"id": "dbNSFP",
 	"hail": "va.dbNSFP",
-	"type": "variant",
 	"selectable": false,
 	"db_file": "gs://annotationdb/dbNSFP/dbNSFP.vds",
 	"study_link": "https://www.ncbi.nlm.nih.gov/pubmed/?term=26555599",
 	"study_title": "Liu, Xiaoming et al. \"dbNSFP v3.0: A One-Stop Database of Functional Predictions and Annotations for Human Non-Synonymous and Splice Site SNVs.\" Human mutation 37.3 (2016): 235–241.",
 	"study_data": "ftp://dbnsfp:dbnsfp@dbnsfp.softgenetics.com/dbNSFPv2.9.3.zip",
-	"description": "Database for Nonsynonymous SNPs' functional predictions, v2.9.3.\n\nThe dbNSFP is an integrated database of functional annotations from multiple sources for the comprehensive collection of human non-synonymous SNPs (NSs).\n\nIts current version includes a total of 87,361,054 NSs. It compiles prediction scores from 14 prediction algorithms (SIFT, Polyphen2, LRT, MutationTaster, MutationAssessor, FATHMM, MetaSVM, MetaLR, CADD, VEST, PROVEAN, M-CAP, Eigen，Eigen PC), eight conservation scores (phyloP46way_primate, phyloP46way_placental, phyloP100way_vertebrate, phastCons46way_primate, phastCons46way_placental, phastCons100way_veterbrate, GERP++, and SiPhy) and other function annotations.\n\nWe included all the original annotations except for allele frequencies in 1000 genome and ExAC since these are covered in other annotations.\n\nNote 1: Missing data is designated as \".\".\nNote 2: The three Uniprot entries are based on Polyphen-2 v2.2.2 annotations",
+	"free_text": "Database for Nonsynonymous SNPs' functional predictions, v2.9.3.\n\nThe dbNSFP is an integrated database of functional annotations from multiple sources for the comprehensive collection of human non-synonymous SNPs (NSs).\n\nIts current version includes a total of 87,361,054 NSs. It compiles prediction scores from 14 prediction algorithms (SIFT, Polyphen2, LRT, MutationTaster, MutationAssessor, FATHMM, MetaSVM, MetaLR, CADD, VEST, PROVEAN, M-CAP, Eigen，Eigen PC), eight conservation scores (phyloP46way_primate, phyloP46way_placental, phyloP100way_vertebrate, phastCons46way_primate, phastCons46way_placental, phastCons100way_veterbrate, GERP++, and SiPhy) and other function annotations.\n\nWe included all the original annotations except for allele frequencies in 1000 genome and ExAC since these are covered in other annotations.\n\nNote 1: Missing data is designated as \".\".\nNote 2: The three Uniprot entries are based on Polyphen-2 v2.2.2 annotations",
 	"nodes": [
 		 {
 			"text": "aaref",

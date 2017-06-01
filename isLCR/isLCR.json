@@ -1,0 +1,13 @@
+{
+	"text": "Low-complexity regions",
+	"id": "isLCR",
+	"hail": "va.isLCR",
+	"selectable": true,
+	"db_file": "gs://annotationdb/isLCR/isLCR.kt",
+	"study_link": "https://www.ncbi.nlm.nih.gov/pubmed/?term=24974202",
+	"study_title": "Heng Li, Toward better understanding of artifacts in variant calling from high-coverage samples",
+	"study_data": "https://github.com/lh3/varcmp/blob/master/scripts/LCR-hs37d5.bed.gz",
+	"free_text": "Regions with repeated sequences normally excluded from WGS studies",
+	"type": "Boolean",
+	"description": "Variant is in a low-complexity region"
+}

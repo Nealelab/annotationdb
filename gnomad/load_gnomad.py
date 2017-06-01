@@ -133,21 +133,38 @@ kt_exomes = (
         va.info.AC_SAS_Male = va.info.AC_SAS_Male[va.aIndex - 1]
 		"""
 	)
-	.variants_keytable()
+	.variants_table()
 	.annotate(
 		"""
-		exomes = {
-			aIndex: va.aIndex,
-			wasSplit: va.wasSplit,
-			rsid: va.rsid,
-			qual: va.qual,
-			filters: va.filters,
-			pass: va.pass,
-			info: va.info
-		}
+		aIndex = va.aIndex,
+		wasSplit = va.wasSplit,
+		rsid = va.rsid,
+		qual = va.qual,
+		filters = va.filters,
+		pass = va.pass,
+		info = va.info
 		"""
 	)
-	.select(['v', 'exomes'])
+	.select([
+        'v', 
+        'aIndex',
+        'wasSplit',
+        'rsid',
+        'qual',
+        'filters',
+        'pass',
+        'info'
+    ])
+)
+
+(
+    hail
+    .VariantDataset
+    .from_table(kt_exomes)
+    .write(
+        'gs://annotationdb/gnomAD/exomes/exomes.vds',
+        overwrite = True
+    )
 )
 
 kt_genomes = (
@@ -266,38 +283,36 @@ kt_genomes = (
         va.info.GC_OTH_Female = va.info.GC_OTH_Female[va.aIndex - 1]
 		"""
 	)
-	.variants_keytable()
+	.variants_table()
 	.annotate(
 		"""
-		genomes = {
-			aIndex: va.aIndex,
-			wasSplit: va.wasSplit,
-			rsid: va.rsid,
-			qual: va.qual,
-			filters: va.filters,
-			pass: va.pass,
-			info: va.info
-		}
+		aIndex = va.aIndex,
+		wasSplit = va.wasSplit,
+		rsid = va.rsid,
+		qual = va.qual,
+		filters = va.filters,
+		pass = va.pass,
+		info = va.info
 		"""
 	)
-	.select(['v', 'genomes'])
+	.select([
+        'v', 
+        'aIndex',
+        'wasSplit',
+        'rsid',
+        'qual',
+        'filters',
+        'pass',
+        'info'
+    ])
 )
 
-kt_join = (
-	kt_genomes
-	.select(['v'])
-	.join(kt_exomes.select(['v']), how='outer')
-	.cache()
+(
+    hail
+    .VariantDataset
+    .from_table(kt_genomes)
+    .write(
+        'gs://annotationdb/gnomAD/genomes/genomes.vds',
+        overwrite = True
+    )
 )
-
-vds_join = (
-	hail
-	.VariantDataset
-	.from_keytable(kt_join)
-	.repartition(7000)
-	.cache()
-)
-
-print vds_join.count_variants()
-
-#vds_join.write('gs://annotationdb/gnomad/gnomad.vds', overwrite=True)

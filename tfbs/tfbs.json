@@ -2,18 +2,17 @@
 	"text": "Transcription factor binding sites",
 	"id": "tfbs",
 	"hail": "va.tfbs",
-	"type": "interval",
-	"selectable": false,
-	"db_file": "gs://annotationdb/tfbs/tfbs.tsv.bgz",
+	"selectable": true,
+	"db_file": "gs://annotationdb/tfbs/tfbs.kt",
 	"study_link": "",
 	"study_title": "",
 	"study_data": "http://hgdownload.cse.ucsc.edu/goldenPath/hg19/encodeDCC/wgEncodeRegTfbsClustered/wgEncodeeRegTfbsClusteredV3.bed.gz",
-	"description": "Transcription factor binding sites obtained from V3 of ENCODE and downloaded from UCSC browser. The track is described here: http://genome.ucsc.edu/cgi-bin/hgTrackUi?db=hg19&g=wgEncodeRegTfbsClusteredV3",
+	"free_text": "Transcription factor binding sites obtained from V3 of ENCODE and downloaded from UCSC browser. The track is described here: http://genome.ucsc.edu/cgi-bin/hgTrackUi?db=hg19&g=wgEncodeRegTfbsClusteredV3",
 	"nodes": [
 		{
 			"text": "Transcription factor binding sites",
 			"id": "tfbs",
-			"hail": "va.tfbs.tfbs",
+			"hail": "va.tfbs.gene",
 			"type": "String",
 			"description": "Transcription factor binding sites from ENCODE V3"
 		}

@@ -2,13 +2,12 @@
 	"text": "SEGWAY",
 	"id": "segway",
 	"hail": "va.segway",
-	"type": "interval",
 	"selectable": false,
 	"db_file": "gs://annotationdb/segway/segway.kt",
 	"study_link": "http://dx.doi.org/10.1101/086025",
 	"study_title": "A unified encyclopedia of human functional elements through fully automated annotation of 164 human cell types. Biorxiv",
 	"study_data": "http://noble.gs.washington.edu/proj/encyclopedia/segway_encyclopedia.bed.gz",
-	"description": "Data were imported as it is from the website. The sum of functionality score, the average base-wise functionality score and the majority label of each cell type in the segment are reported. Information about the interpretation of each label can be found here: http://noble.gs.washington.edu/proj/encyclopedia/",
+	"free_text": "Data were imported as it is from the website. The sum of functionality score, the average base-wise functionality score and the majority label of each cell type in the segment are reported. Information about the interpretation of each label can be found here: http://noble.gs.washington.edu/proj/encyclopedia/",
 	"nodes": [
 		{
 		    "text": "sum_score",
