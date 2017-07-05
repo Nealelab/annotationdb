@@ -1,0 +1,212 @@
+{
+	"text": "Gene-level annotations",
+	"hail": "va.gene",
+	"selectable": false,
+	"free_text": "This is a collection of gene-level annotations.",
+	"nodes": [
+		{
+			"text": "Gene names",
+			"hail": "va.gene.names",
+			"selectable": true,
+			"db_file": "gs://annotationdb/gene/names/names.kt",
+			"study_link": "https://www.ncbi.nlm.nih.gov/pubmed/?term=26555599",
+			"study_title": "Liu, Xiaoming et al. \"dbNSFP v3.0: A One-Stop Database of Functional Predictions and Annotations for Human Non-Synonymous and Splice Site SNVs.\"",
+			"study_data": "ftp://dbnsfp:dbnsfp@dbnsfp.softgenetics.com/dbNSFPv2.9.3.zip",
+			"free_text": "Part of the dbnsfp database contains gene-level annotations. The original file is called dbNSFP2.9_gene. We include here few annotations that allow to exchange gene names across databases.",
+			"nodes": [
+				{
+					"text": "Gene symbol",
+					"hail": "va.gene.names.gene_symbol",
+					"type": "String",
+					"description": "Gene symbol from HGNC" 
+				},
+				{
+					"text": "Ensembl gene",
+					"hail": "va.gene.names.ensembl_gene",
+					"type": "String",
+					"description": "Ensembl gene id (from HGNC)" 
+				},
+				{
+					"text": "Chromosome",
+					"hail": "va.gene.names.chromosome",
+					"type": "String",
+					"description": "Chromosome number (from HGNC)" 
+				},
+				{
+					"text": "Gene old names",
+					"hail": "va.gene.names.gene_old_names",
+					"type": "String",
+					"description": "Old gene sybmol (from HGNC)" 
+				},
+				{
+					"text": "Gene other names",
+					"hail": "va.gene.names.gene_other_names",
+					"type": "String",
+					"description": "Other gene names (from HGNC)" 
+				},
+				{
+					"text": "Uniprot acc number",
+					"hail": "va.gene.names.uniprot_acc",
+					"type": "String",
+					"description": "Uniprot acc number (from HGNC and Uniprot)" 
+				},
+				{
+					"text": "Uniprot id",
+					"hail": "va.gene.names.uniprot_ID",
+					"type": "String",
+					"description": "Uniprot id (from HGNC and Uniprot)" 
+				},
+				{
+					"text": "Entrez gene id",
+					"hail": "va.gene.names.entrez_gene_ID",
+					"type": "String",
+					"description": "Entrez gene id (from HGNC)" 
+				},
+				{
+					"text": "CCDS id",
+					"hail": "va.gene.names.ccds_ID",
+					"type": "String",
+					"description": "CCDS id (from HGNC)" 
+				},
+				{
+					"text": "Refseq id",
+					"hail": "va.gene.names.refseq_ID",
+					"type": "String",
+					"description": "Refseq gene id (from HGNC)" 
+				},
+				{
+					"text": "UCSC id",
+					"hail": "va.gene.names.ucsc_ID",
+					"type": "String",
+					"description": "UCSC gene id (from HGNC)" 
+				},
+				{
+					"text": "MIM id",
+					"hail": "va.gene.names.mim_ID",
+					"type": "String",
+					"description": "MIM gene id (from HGNC)" 
+				},
+				{
+					"text": "Gene full name",
+					"hail": "va.gene.names.gene_full_name",
+					"type": "String",
+					"description": "Gene full name (from HGNC)" 
+				}
+			]
+		},
+		{
+			"text": "Constraint scores",
+			"hail": "va.gene.constraint",
+			"selectable": true,
+			"db_file": "gs://annotationdb/gene/constraint/constraint.kt",
+			"study_link": "https://www.ncbi.nlm.nih.gov/pubmed/27535533",
+			"study_title": "Lek, Analysis of protein-coding genetic variation in 60,706 humans, Nature, 2016",
+			"study_data": "ftp://ftp.broadinstitute.org/pub/ExAC_release/release0.3.1/functional_gene_constraint",
+			"free_text": "Detailed description of the content of these scores is provided at: ftp://ftp.broadinstitute.org/pub/ExAC_release/release0.3.1/functional_gene_constraint. No TGCA: exclude TGCA samples, No psych: exclude samples with psychiatric disorders",
+			"nodes": [
+				{
+					"text": "Gene symbol",
+					"hail": "va.gene.constraint.gene_symbol",
+					"type": "String",
+					"description": "Ensembl gene symbol" 
+				},
+				{
+					"text": "Ensembl transcript",
+					"hail": "va.gene.constraint.transcript_ID",
+					"type": "String",
+					"description": "Ensembl transcript ID" 
+				},
+				{
+					"text": "Chromosome",
+					"hail": "va.gene.constraint.chromosome",
+					"type": "String",
+					"description": "Chromosome" 
+				},
+				{
+					"text": "N. exons",
+					"hail": "va.gene.constraint.n_exons",
+					"type": "Int",
+					"description": "Number of exons in the transcript" 
+				},
+				{
+					"text": "N. base pairs",
+					"hail": "va.gene.constraint.n_bp",
+					"type": "Int",
+					"description": "Number of coding base pairs" 
+				},
+				{
+					"text": "Synonymous Z score",
+					"hail": "va.gene.constraint.syn_z",
+					"type": "Double",
+					"description": "Corrected synonymous Z score" 
+				},
+				{
+					"text": "Missense Z score",
+					"hail": "va.gene.constraint.mis_z",
+					"type": "Double",
+					"description": "Corrected missense Z score" 
+				},
+				{
+					"text": "Lof Z score",
+					"hail": "va.gene.constraint.lof_z",
+					"type": "Double",
+					"description": "Corrected loss-of-function Z score"
+				},
+				{
+					"text": "pLI score",
+					"hail": "va.gene.constraint.pli",
+					"type": "Double",
+					"description": "The probability of being loss-of-function intolerant (intolerant of both heterozygous and homozygous lof variants)" 
+				},
+				{
+					"text": "Synonymous Z score: no TCGA",
+					"hail": "va.gene.constraint.syn_z_notcga",
+					"type": "Double",
+					"description": "Corrected synonymous Z score: no TCGA" 
+				},
+				{
+					"text": "Missense Z score: no TCGA",
+					"hail": "va.gene.constraint.mis_z_notcga",
+					"type": "Double",
+					"description": "Corrected missense Z score: no TCGA" 
+				},
+				{
+					"text": "Lof Z score: no TCGA",
+					"hail": "va.gene.constraint.lof_z_notcga",
+					"type": "Double",
+					"description": "Corrected loss-of-function Z score: no TCGA"
+				},
+				{
+					"text": "pLI score: no TCGA",
+					"hail": "va.gene.constraint.pli_notcga",
+					"type": "Double",
+					"description": "The probability of being loss-of-function intolerant (intolerant of both heterozygous and homozygous lof variants): no TCGA" 
+				},
+				{
+					"text": "Synonymous Z score: no psych",
+					"hail": "va.gene.constraint.syn_z_nopsych",
+					"type": "Double",
+					"description": "Corrected synonymous Z score: no psych" 
+				},
+				{
+					"text": "Missense Z score: no psych",
+					"hail": "va.gene.constraint.mis_z_nopsych",
+					"type": "Double",
+					"description": "Corrected missense Z score: no psych" 
+				},
+				{
+					"text": "Lof Z score: no psych",
+					"hail": "va.gene.constraint.lof_z_nopsych",
+					"type": "Double",
+					"description": "Corrected loss-of-function Z score: no psych"
+				},
+				{
+					"text": "pLI score: no psych",
+					"hail": "va.gene.constraint.pli_nopsych",
+					"type": "Double",
+					"description": "The probability of being loss-of-function intolerant (intolerant of both heterozygous and homozygous lof variants): no psych" 
+				}
+			]
+		}
+	]
+}

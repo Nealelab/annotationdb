@@ -1,8 +1,6 @@
 {
 	"text": "discovEHR",
-	"id": "discovEHR",
 	"hail": "va.discovEHR",
-	"type": "variant",
 	"selectable": false,
 	"db_file": "gs://annotationdb/discovEHR/discovEHR.vds",
 	"study_link": "https://www.ncbi.nlm.nih.gov/pubmed/28008009",
@@ -12,7 +10,6 @@
 	"nodes": [
 		{
 			"text": "discovEHR AF",
-			"id": "AF",
 			"hail": "va.discovEHR.AF",
 			"type": "Double",
 			"description": "Allele Frequency in discovEHR. AF=0.001 is equal to AF<=0.001"

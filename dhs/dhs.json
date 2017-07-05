@@ -1,6 +1,5 @@
 {
 	"text": "Replicated DHS",
-	"id": "dhs",
 	"hail": "va.dhs",
 	"selectable": false,
 	"db_file": "gs://annotationdb/dhs/dhs.kt",

@@ -301,7 +301,7 @@
 			"text": "cd4+_cd25-_il17+_pma_ionomcyin_stimulated_th17_primary_cells",
 			"id": "cd4_cd25_il17_pma_ionomcyin_stimulated_th17_primary_cells",
 			"raw": "CD4+_CD25-_IL17+_PMA-IONOMCYIN_STIMULATED_TH17_PRIMARY_CELLS",
-			"hail": "va.segway.cd4_cd25_il17__pma_ionomcyin_stimulated_th17_primary_cells",
+			"hail": "va.segway.cd4_cd25_il17_pma_ionomcyin_stimulated_th17_primary_cells",
 			"type": "String",
 			"description": "Cell type: cd4+_cd25-_il17+_pma_ionomcyin_stimulated_th17_primary_cells" 
 		},

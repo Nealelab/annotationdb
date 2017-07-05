@@ -1,23 +1,24 @@
 #!/usr/bin/env python
 
-import hail
+from hail import *
 
 hc = hail.HailContext(parquet_compression = 'snappy')
 
 (
 	hc
-	.import_keytable(
+	.import_table(
 		'gs://annotationdb/linsight/linsight.tsv.bgz',
-		config = hail.utils.TextTableConfig(
-			noheader = True
-		)
+		no_header = True,
+		types = {
+			'f0': TString(),
+			'f1': TInt(),
+			'f2': TInt(),
+			'f3': TDouble()
+		}
 	)
-	.annotate('interval = Interval(Locus(_0, _1.toInt()), Locus(_0, _2.toInt() + 1))')
+	.annotate('interval = Interval(Locus(f0, f1), Locus(f0, f1 + 1))')
 	.key_by('interval')
-	.annotate('score = _3.toDouble()')
+	.annotate('score = f3')
 	.select(['interval', 'score'])
-	.write(
-		'gs://annotationdb/linsight/linsight.kt',
-		overwrite = True
-	)
+	.write('gs://annotationdb/linsight/linsight.kt', overwrite = True)
 )

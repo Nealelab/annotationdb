@@ -1,8 +1,7 @@
 {
 	"text": "LINSIGHT",
-	"id": "linsight",
 	"hail": "va.linsight",
-	"selectable": true,
+	"selectable": false,
 	"db_file": "gs://annotationdb/linsight/linsight.kt",
 	"study_link": "http://www.nature.com/ng/journal/v49/n4/full/ng.3810.html",
 	"study_title": "Fast, scalable prediction of deleterious noncoding variants from functional and population genomic data” Nature Genetics. Online",
@@ -11,7 +10,6 @@
 	"nodes": [
 		{
 			"text": "Score",
-			"id": "score",
 			"hail": "va.linsight.score",
 			"type": "Double",
 			"description": "The probability of fitness consequences for mutations at each site i"

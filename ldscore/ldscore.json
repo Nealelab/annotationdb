@@ -1,6 +1,5 @@
 {
 	"text": "LD SCORE Annotations",
-	"id": "score",
 	"hail": "va.ldscore",
 	"selectable": false,
 	"db_file": "gs://annotationdb/ldscore/ldscore.kt",
@@ -179,15 +178,15 @@
 		},
 		{
 			"text": "3' UTR UCSC",
-			"id": "3utr",
-			"hail": "va.ldscore.3utr",
+			"id": "three_prime_utr",
+			"hail": "va.ldscore.three_prime_utr",
 			"type": "Boolean",
 			"description": "Annotations from RefSeq gene models were obtained from the UCSC Genome Browser and post-processed by Gusev et al."
 		},
 		{
 			"text": "5' UTR UCSC",
 			"id": "5utr",
-			"hail": "va.ldscore.5utr",
+			"hail": "va.ldscore.five_prime_utr",
 			"type": "Boolean",
 			"description": "Annotations from RefSeq gene models were obtained from the UCSC Genome Browser and post-processed by Gusev et al."
 		},

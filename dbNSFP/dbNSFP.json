@@ -1,6 +1,5 @@
 {
 	"text": "dbNSFP v2.9.3",
-	"id": "dbNSFP",
 	"hail": "va.dbNSFP",
 	"selectable": false,
 	"db_file": "gs://annotationdb/dbNSFP/dbNSFP.vds",
@@ -237,7 +236,7 @@
 			"text": "Polyphen2_HVAR_score",
 			"id": "Polyphen2_HVAR_score",
 			"raw": "Polyphen2_HVAR_score",
-			"hail": "va.dbNSFP.Polyphen2_hvar_score",
+			"hail": "va.dbNSFP.Polyphen2_HVAR_score",
 			"type": "String",
 			"description": "Polyphen2_HVAR_score: Polyphen2 score based on HumVar, i.e. hvar_prob. The score ranges from 0 to 1. Multiple entries separated by \";\"." 
 		},
@@ -279,7 +278,7 @@
 			"hail": "va.dbNSFP.LRT_pred",
 			"raw": "LRT_pred",
 			"type": "String",
-			"description": "LRT_pred: LRT prediction, D(eleterious), N(eutral) or U(nknown), which is not solely determined by the score. " 
+			"description": "LRT_pred: LRT prediction, D(eleterious), N(eutral) or U(nknown), which is not solely determined by the score." 
 		},
 		{
 			"text": "MutationTaster_score",
@@ -407,7 +406,7 @@
 			"raw": "Reliability_index",
 			"hail": "va.dbNSFP.reliability_index",
 			"type": "String",
-			"description": "Reliability_index: Number of observed component scores (except the maximum frequency in the 1000 genomes populations) for MetaSVM and MetaLR. Ranges from 1 to 10. As MetaSVM and MetaLR scores are calculated based on imputed data, the less missing component scores, the higher the reliability of the scores and predictions. " 
+			"description": "Reliability_index: Number of observed component scores (except the maximum frequency in the 1000 genomes populations) for MetaSVM and MetaLR. Ranges from 1 to 10. As MetaSVM and MetaLR scores are calculated based on imputed data, the less missing component scores, the higher the reliability of the scores and predictions." 
 		},
 		{
 			"text": "VEST3_score",
@@ -455,7 +454,7 @@
 			"raw": "`M-CAP_score`",
 			"hail": "va.dbNSFP.MCAP_score",
 			"type": "String",
-			"description": "M-CAP_score: M-CAP score (details in DOI: 10.1038/ng.3703). Scores range from 0 to 1. The larger the score the more likely the SNP has damaging effect. " 
+			"description": "M-CAP_score: M-CAP score (details in DOI: 10.1038/ng.3703). Scores range from 0 to 1. The larger the score the more likely the SNP has damaging effect." 
 		},
 		{
 			"text": "MCAP_rankscore",
@@ -528,78 +527,6 @@
 			"hail": "va.dbNSFP.MutPred_top5features",
 			"type": "String",
 			"description": "MutPred_Top5features: Top 5 features (molecular mechanisms of disease) as predicted by MutPred with p values. MutPred_score > 0.5 and p < 0.05 are referred to as actionable hypotheses. MutPred_score > 0.75 and p < 0.05 are referred to as confident hypotheses. MutPred_score > 0.75 and p < 0.01 are referred to as very confident hypotheses." 
-		},
-		{
-			"text": "eigen_coding_or_noncoding",
-			"id": "eigen_coding_or_noncoding",
-			"raw": "Eigen_coding_or_noncoding",
-			"hail": "va.dbNSFP.eigen_coding_or_noncoding",
-			"type": "String",
-			"description": "Eigen_coding_or_noncoding: Whether Eigen-raw and Eigen-phred scores are based on coding model or noncoding model." 
-		},
-		{
-			"text": "eigen_raw",
-			"id": "eigen_raw",
-			"raw": "`Eigen-raw`",
-			"hail": "va.dbNSFP.eigen_raw",
-			"type": "String",
-			"description": "Eigen-raw: Eigen score for coding SNVs. A functional prediction score based on conservation, allele frequencies, and deleteriousness prediction using an unsupervised learning method (doi: 10.1038/ng.3477). " 
-		},
-		{
-			"text": "eigen_phred",
-			"id": "eigen_phred",
-			"raw": "`Eigen-phred`",
-			"hail": "va.dbNSFP.eigen_phred",
-			"type": "String",
-			"description": "Eigen-phred: Eigen score in phred scale." 
-		},
-		{
-			"text": "eigen_pc_raw",
-			"id": "eigen_pc_raw",
-			"raw": "`Eigen-PC-raw`",
-			"hail": "va.dbNSFP.eigen_pc_raw",
-			"type": "String",
-			"description": "Eigen-PC-raw: Eigen PC score for genome-wide SNVs. A functional prediction score based on conservation, allele frequencies, deleteriousness prediction (for missense SNVs) and epigenomic signals (for synonymous and non-coding SNVs) using an unsupervised learning method (doi: 10.1038/ng.3477). " 
-		},
-		{
-			"text": "eigen_pc_phred",
-			"id": "eigen_pc_phred",
-			"raw": "`Eigen-PC-phred`",
-			"hail": "va.dbNSFP.eigen_pc_phred",
-			"type": "String",
-			"description": "Eigen-PC-phred: Eigen PC score in phred scale." 
-		},
-		{
-			"text": "eigen_pc_raw_rankscore",
-			"id": "eigen_pc_raw_rankscore",
-			"raw": "`Eigen-PC-raw_rankscore`",
-			"hail": "va.dbNSFP.eigen_pc_raw_rankscore",
-			"type": "String",
-			"description": "Eigen-PC-raw_rankscore: Eigen-PC-raw scores were ranked among all Eigen-PC-raw scores in dbNSFP. The rankscore is the ratio of the rank of the score over the total number of Eigen-PC-raw scores in dbNSFP." 
-		},
-		{
-			"text": "CADD_raw",
-			"id": "CADD_raw",
-			"raw": "CADD_raw",
-			"hail": "va.dbNSFP.CADD_raw",
-			"type": "String",
-			"description": "CADD_raw: CADD raw score for funtional prediction of a SNP. Please refer to Kircher et al. (2014) Nature Genetics 46(3):310-5 for details. The larger the score the more likely the SNP has damaging effect. Please note the following copyright statement for CADD: \"CADD scores (http://CADD.gs.washington.edu/) are Copyright 2013 University of Washington and Hudson-Alpha Institute for Biotechnology (all rights reserved) but are freely available for all academic, non-commercial applications. For commercial licensing information contact Jennifer McCullar (mccullaj@uw.edu).\"" 
-		},
-		{
-			"text": "CADD_raw_rankscore",
-			"id": "CADD_raw_rankscore",
-			"raw": "CADD_raw_rankscore",
-			"hail": "va.dbNSFP.CADD_raw_rankscore",
-			"type": "String",
-			"description": "CADD_raw_rankscore: CADD raw scores were ranked among all CADD raw scores in dbNSFP. The rankscore is the ratio of the rank of the score over the total number of CADD raw scores in dbNSFP. Please note the following copyright statement for CADD: \"CADD scores (http://CADD.gs.washington.edu/) are Copyright 2013 University of Washington and Hudson-Alpha Institute for Biotechnology (all rights reserved) but are freely available for all academic, non-commercial applications. For commercial licensing information contact Jennifer McCullar (mccullaj@uw.edu).\"" 
-		},
-		{
-			"text": "CADD_phred",
-			"id": "CADD_phred",
-			"raw": "CADD_phred",
-			"hail": "va.dbNSFP.CADD_phred",
-			"type": "String",
-			"description": "CADD_phred: CADD phred-like score. This is phred-like rank score based on whole genome CADD raw scores. Please refer to Kircher et al. (2014) Nature Genetics 46(3):310-5 for details. The larger the score the more likely the SNP has damaging effect. Please note the following copyright statement for CADD: \"CADD scores (http://CADD.gs.washington.edu/) are Copyright 2013 University of Washington and Hudson-Alpha Institute for Biotechnology (all rights reserved) but are freely available for all academic, non-commercial applications. For commercial licensing information contact Jennifer McCullar (mccullaj@uw.edu).\"" 
 		},
 		{
 			"text": "GERP_NR",
@@ -727,7 +654,7 @@
 			"raw": "SiPhy_29way_pi",
 			"hail": "va.dbNSFP.SiPhy_29way_pi",
 			"type": "String",
-			"description": "SiPhy_29way_pi: The estimated stationary distribution of A, C, G and T at the site, using SiPhy algorithm based on 29 mammals genomes. " 
+			"description": "SiPhy_29way_pi: The estimated stationary distribution of A, C, G and T at the site, using SiPhy algorithm based on 29 mammals genomes." 
 		},
 		{
 			"text": "SiPhy_29way_logOdds",
@@ -752,14 +679,6 @@
 			"hail": "va.dbNSFP.LRT_omega",
 			"type": "String",
 			"description": "LRT_Omega: estimated nonsynonymous-to-synonymous-rate ratio (Omega, reported by LRT)" 
-		},
-		{
-			"text": "UniSNP_ids",
-			"id": "UniSNP_ids",
-			"raw": "UniSNP_ids",
-			"hail": "va.dbNSFP.uniSNP_ids",
-			"type": "String",
-			"description": "UniSNP_ids: rs numbers from UniSNP, which is a cleaned version of dbSNP build 129, in format: rs number1;rs number2;..." 
 		},
 		{
 			"text": "clinvar_rs",

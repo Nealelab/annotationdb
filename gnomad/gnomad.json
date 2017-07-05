@@ -1,6 +1,5 @@
 {
 	"text": "gnomAD",
-	"id": "gnomAD",
 	"hail": "va.gnomAD",
 	"selectable": false,
 	"study_title": "Exome Aggregation Consortium et al. “Analysis of Protein-Coding Genetic Variation in 60,706 Humans.” Nature 536.7616 (2016): 285–291.",
@@ -10,10 +9,9 @@
 	"nodes": [
 		{
 			"text": "Exomes",
-			"id": "exomes",
 			"hail": "va.gnomAD.exomes",
-			"selectable": false,
-			"db_file": "gs://annotationdb/gnomad/exomes/exomes.vds",
+			"selectable": true,
+			"db_file": "gs://annotationdb/gnomAD/exomes/exomes.vds",
 			"free_text": "Annotations generated from 123,136 whole exome sequences in gnomAD.",
 			"nodes": [
 				{
@@ -1262,10 +1260,9 @@
 		},
 		{
 			"text": "Genomes",
-			"id": "genomes",
 			"hail": "va.gnomAD.genomes",
-			"selectable": false,
-			"db_file": "gs://annotationdb/gnomad/genomes/genomes.vds",
+			"selectable": true,
+			"db_file": "gs://annotationdb/gnomAD/genomes/genomes.vds",
 			"free_text": "Annotations generated from 15,496 whole genome sequences in gnomAD.",
 			"nodes": [
 				{
@@ -2113,13 +2110,6 @@
 							"text": "GC_ASJ_Male",
 							"id": "GC_ASJ_Male",
 							"hail": "va.gnomAD.genomes.info.GC_ASJ_Male",
-							"type": "Int",
-							"description": ""
-						},
-						{
-							"text": "Hemi_SAS",
-							"id": "Hemi_SAS",
-							"hail": "va.gnomAD.genomes.info.Hemi_SAS",
 							"type": "Int",
 							"description": ""
 						},

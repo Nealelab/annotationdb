@@ -11,6 +11,7 @@ kt = (
     .import_table(
         'gs://annotationdb/cadd/cadd_annotated.tsv.bgz',
         comment = '##',
+        missing = '',
         types = {
             '`#Chrom`': TString(),
             'Pos': TInt(),

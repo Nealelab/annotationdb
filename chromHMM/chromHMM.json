@@ -1,6 +1,5 @@
 {
 	"text": "Epigenome Roadmap - ChromHMM",
-	"id": "chromHMM",
 	"hail": "va.chromHMM",
 	"selectable": false,
 	"study_link": "https://www.ncbi.nlm.nih.gov/pubmed/?term=25693563",
@@ -9,12 +8,11 @@
 	"free_text": "Data were downloaded in R format. We included only intervals overlapping with DNaseI regions selected with -log10(p) >= 10. Information about the interpretation of each of the 25 states can be found here: http://egg2.wustl.edu/roadmap/web_portal/imputed.html#chr_imp. Name for each cell type can be found here: https://docs.google.com/spreadsheets/u/1/d/1yikGx4MsO9Ei36b64yOy9Vb6oPC5IBGlFbYEt-N6gOM/edit?usp=sharing#gid=15.",
 	"nodes": [
 		{
-			"text": "chromHMM - Enhancers",
-			"id": "chromHMM_enhancers",
+			"text": "Enhancers",
 			"hail": "va.chromHMM.enhancers",
 			"selectable": true,
 			"db_file": "gs://annotationdb/chromHMM/enhancers/enhancers.kt",
-			"free_text": "Enhancers states included: 10,11,12,13,14,15,16,17,18. Strong enhancers usually defined: 10,12,13,14,15. 0=no enhancer.",
+			"free_text": "Enhancers states included: 10, 11, 12, 13, 14, 15, 16, 17, 18. Strong enhancers usually defined: 10, 12, 13, 14, 15. 0=no enhancer.",
 			"nodes": [
 				{
 					"text": "E001",
@@ -908,12 +906,11 @@
 			]
 		},
 		{
-			"text": "chromHMM - Promoters",
-			"id": "chromHMM_promoters",
+			"text": "Promoters",
 			"hail": "va.chromHMM.promoters",
 			"selectable": true,
 			"db_file": "gs://annotationdb/chromHMM/promoters/promoters.kt",
-			"free_text": "Promoters + TSS states included: 1,2,3,4,22,23. Strong promoters + TSS usually defined: 1,2,3,4. 1=TSS, 0=no promoters, TSS.",
+			"free_text": "Promoters + TSS states included: 1, 2, 3, 4, 22, 23. Strong promoters + TSS usually defined: 1, 2, 3, 4. 1=TSS, 0=no promoters, TSS.",
 			"nodes": [
 				{
 					"text": "E001",

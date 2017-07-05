@@ -1,6 +1,5 @@
 {
 	"text": "FANTOM 5",
-	"id": "fantom5",
 	"hail": "va.fantom5",
 	"selectable": false,
 	"db_file": "gs://annotationdb/fantom5/fantom5.kt",
@@ -10,15 +9,13 @@
 	"free_text": "FANTOM5 enhancers obtained with CAGE technique",
 	"nodes": [
 		{
-			"text": "FANTOM5 enhancers - robust",
-			"id": "robust_enhancers",
+			"text": "Robust enhancers",
 			"hail": "va.fantom5.robust",
 			"type": "Boolean",
 			"description": "FANTOM5 enhancers - robust"
 		},
 		{
-			"text": "FANTOM5 enhancers - permissive",
-			"id": "permissive_enhancers",
+			"text": "Permissive enhancers",
 			"hail": "va.fantom5.permissive",
 			"type": "Boolean",
 			"description": "FANTOM5 enhancers - permissive"

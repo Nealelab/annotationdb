@@ -1,9 +1,8 @@
 {
 	"text": "FUNSEQ2",
-	"id": "funseq2",
 	"hail": "va.funseq2",
-	"selectable": true,
-	"db_file": "gs://annotationdb/funseq2/funseq2.kt",
+	"selectable": false,
+	"db_file": "gs://annotationdb/funseq2/funseq2.vds",
 	"study_link": "https://www.ncbi.nlm.nih.gov/pubmed/25273974",
 	"study_title": "Fu Y, Liu Z, Lou S. “FunSeq2: a framework for prioritizing noncoding regulatory variants in cancer",
 	"study_data": "http://archive.gersteinlab.org/funseq2.1.2/hg19_NCscore_funseq216.tsv.bgz",
@@ -11,7 +10,6 @@
 	"nodes": [
 		{
 			"text": "FUNSEQ2 Score",
-			"id": "score",
 			"hail": "va.funseq2.score",
 			"type": "Double",
 			"description": "FUNSEQ2 Score"

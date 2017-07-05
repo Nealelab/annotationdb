@@ -1,6 +1,5 @@
 {
 	"text": "EIGEN",
-	"id": "eigen",
 	"hail": "va.eigen",
 	"selectable": false,
 	"db_file": "gs://annotationdb/eigen/eigen.vds",
@@ -11,7 +10,6 @@
 	"nodes": [
 		{
 			"text": "Raw",
-			"id": "raw",
 			"raw": "raw",
 			"hail": "va.eigen.raw",
 			"type": "Double",
@@ -19,7 +17,6 @@
 		},
 		{
 			"text": "Phred",
-			"id": "phred",
 			"raw": "phred",
 			"hail": "va.eigen.phred",
 			"type": "Double",
@@ -27,7 +24,6 @@
 		},
 		{
 			"text": "PC Raw",
-			"id": "PC_raw",
 			"raw": "PC_raw",
 			"hail": "va.eigen.PC_raw",
 			"type": "Double",
@@ -35,7 +31,6 @@
 		},
 		{
 			"text": "PC Phred",
-			"id": "PC_phred",
 			"raw": "PC_phred",
 			"hail": "va.eigen.PC_phred",
 			"type": "Double",

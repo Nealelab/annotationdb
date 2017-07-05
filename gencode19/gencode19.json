@@ -1,6 +1,5 @@
 {
 	"text": "GENCODE v19",
-	"id": "gencode19",
 	"hail": "va.gencode19",
 	"selectable": false,
 	"db_file": "gs://annotationdb/gencode19/gencode19.kt",
@@ -10,18 +9,18 @@
 	"free_text": "These files were obtained from UCSC table browser with these settings: Assembly: Feb. 2009 (GRCh37/hg19), Group: Genes and Gene Predictions, Track: GENCODE Genes V19, Region:  genome, Output: format: BED.",
 	"nodes": [
 		{
-			"text": "3UTR",
-			"id": "3utr",
+			"text": "3' UTR",
+			"id": "three_prime_utr",
 			"raw": "3utr",
-			"hail": "va.gencode19.3utr",
+			"hail": "va.gencode19.three_prime_utr",
 			"type": "Boolean",
 			"description": "3' UTR Exons"
 		},
 		{
-			"text": "5UTR",
-			"id": "5utr",
+			"text": "5' UTR",
+			"id": "five_prime_utr",
 			"raw": "5utr",
-			"hail": "va.gencode19.5utr",
+			"hail": "va.gencode19.five_prime_utr",
 			"type": "Boolean",
 			"description": "5' UTR Exons"
 		},

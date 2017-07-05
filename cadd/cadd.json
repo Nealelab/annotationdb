@@ -1,6 +1,5 @@
 {
 	"text": "CADD",
-	"id": "cadd",
 	"hail": "va.cadd",
 	"selectable": false,
 	"db_file": "gs://annotationdb/cadd/cadd.vds",
@@ -10,17 +9,13 @@
 	"free_text": "V 1.3, for more info we suggest to check http://cadd.gs.washington.edu/static/ReleaseNotes_CADD_v1.3.pdf",
 	"nodes": [
 		{
-			"text": "RawScore",
-			"id": "RawScore",
-			"raw": "RawScore",
+			"text": "Raw score",
 			"hail": "va.cadd.RawScore",
 			"type": "Double",
 			"description": "CADD Raw score"
 		},
 		{
-			"text": "PHRED",
-			"id": "PHRED",
-			"raw": "PHRED",
+			"text": "PHRED score",
 			"hail": "va.cadd.PHRED",
 			"type": "Double",
 			"description": "CADD PHRED score"

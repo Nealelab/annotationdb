@@ -1,18 +1,17 @@
 #!/usr/bin/env python
 
-import sys
 import hail
 
 hc = hail.HailContext(parquet_compression = 'snappy')
 
-kt_exomes = (
+(
 	hc
 	.read('gs://gnomad-public/release-170228/gnomad.exomes.r2.0.1.sites.vds')
 	.split_multi()
 	.annotate_variants_expr(
 		"""
- 		va.info.AC = va.info.AC[va.aIndex - 1],
- 		va.info.AF = va.info.AF[va.aIndex - 1],
+        va.info.AC = va.info.AC[va.aIndex - 1],
+        va.info.AF = va.info.AF[va.aIndex - 1],
         va.info.GQ_HIST_ALT = va.info.GQ_HIST_ALT[va.aIndex - 1],
         va.info.DP_HIST_ALT = va.info.DP_HIST_ALT[va.aIndex - 1],
         va.info.AB_HIST_ALT = va.info.AB_HIST_ALT[va.aIndex - 1],
@@ -133,48 +132,19 @@ kt_exomes = (
         va.info.AC_SAS_Male = va.info.AC_SAS_Male[va.aIndex - 1]
 		"""
 	)
-	.variants_table()
-	.annotate(
-		"""
-		aIndex = va.aIndex,
-		wasSplit = va.wasSplit,
-		rsid = va.rsid,
-		qual = va.qual,
-		filters = va.filters,
-		pass = va.pass,
-		info = va.info
-		"""
-	)
-	.select([
-        'v', 
-        'aIndex',
-        'wasSplit',
-        'rsid',
-        'qual',
-        'filters',
-        'pass',
-        'info'
-    ])
+    .annotate_variants_expr('va = merge(va, va.info)')
+	.annotate_variants_expr('va = drop(va, info, vep)')
+    .write('gs://annotationdb/gnomAD/exomes/exomes.vds', overwrite = True)
 )
 
 (
-    hail
-    .VariantDataset
-    .from_table(kt_exomes)
-    .write(
-        'gs://annotationdb/gnomAD/exomes/exomes.vds',
-        overwrite = True
-    )
-)
-
-kt_genomes = (
 	hc
 	.read('gs://gnomad-public/release-170228/gnomad.genomes.r2.0.1.sites.vds')
 	.split_multi()
 	.annotate_variants_expr(
 		"""
- 		va.info.AC = va.info.AC[va.aIndex - 1],
- 		va.info.AF = va.info.AF[va.aIndex - 1],
+        va.info.AC = va.info.AC[va.aIndex - 1],
+        va.info.AF = va.info.AF[va.aIndex - 1],
         va.info.GQ_HIST_ALT = va.info.GQ_HIST_ALT[va.aIndex - 1],
         va.info.DP_HIST_ALT = va.info.DP_HIST_ALT[va.aIndex - 1],
         va.info.AB_HIST_ALT = va.info.AB_HIST_ALT[va.aIndex - 1],
@@ -283,36 +253,7 @@ kt_genomes = (
         va.info.GC_OTH_Female = va.info.GC_OTH_Female[va.aIndex - 1]
 		"""
 	)
-	.variants_table()
-	.annotate(
-		"""
-		aIndex = va.aIndex,
-		wasSplit = va.wasSplit,
-		rsid = va.rsid,
-		qual = va.qual,
-		filters = va.filters,
-		pass = va.pass,
-		info = va.info
-		"""
-	)
-	.select([
-        'v', 
-        'aIndex',
-        'wasSplit',
-        'rsid',
-        'qual',
-        'filters',
-        'pass',
-        'info'
-    ])
-)
-
-(
-    hail
-    .VariantDataset
-    .from_table(kt_genomes)
-    .write(
-        'gs://annotationdb/gnomAD/genomes/genomes.vds',
-        overwrite = True
-    )
+    .annotate_variants_expr('va = merge(va, va.info)')
+    .annotate_variants_expr('va = drop(va, info, vep)')
+    .write('gs://annotationdb/gnomAD/genomes/genomes.vds', overwrite = True)
 )
