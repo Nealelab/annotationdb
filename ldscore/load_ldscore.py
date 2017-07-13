@@ -1,9 +1,8 @@
 #!/usr/bin/env python
 
-import hail
-import json
+from hail import *
 
-hc = hail.HailContext(parquet_compression = 'snappy')
+hc = HailContext(parquet_compression='snappy')
 
 (
 	hc
@@ -74,6 +73,7 @@ hc = hail.HailContext(parquet_compression = 'snappy')
 		'three_prime_utr',
 		'five_prime_utr',
 		'weakenh'
-	]),
-	.write('gs://annotationdb/ldscore/ldscore.kt', overwrite = True)
+	])
+	.repartition(16)
+	.write('gs://annotationdb/ldscore/ldscore.kt', overwrite=True)
 )

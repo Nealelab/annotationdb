@@ -1,12 +1,10 @@
 #!/usr/bin/env python
 
-import hail
-from hail.expr import *
+from hail import *
 
-hc = hail.HailContext(parquet_compression = 'snappy')
+hc = HailContext(parquet_compression='snappy')
 
 kt = (
-
     hc
     .import_table(
         'gs://annotationdb/cadd/cadd_annotated.tsv.bgz',
@@ -27,14 +25,9 @@ kt = (
     .repartition(2001)
 )
 
-# create sites-only VDS
 (
-    hail
-    .VariantDataset
+    VariantDataset
     .from_table(kt)
-    .write(
-        'gs://annotationdb/cadd/cadd.vds',
-        overwrite = True
-    )
+    .write('gs://annotationdb/cadd/cadd.vds', overwrite = True)
 )
 

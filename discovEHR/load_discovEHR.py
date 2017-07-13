@@ -1,15 +1,12 @@
 #!/usr/bin/env python
 
-import hail
-import json
-from subprocess import call
+from hail import *
 
-hc = hail.HailContext(log = '/home/labbott/hail.log', parquet_compression = 'snappy')
+hc = HailContext(parquet_compression='snappy')
 
 (
-
 	hc
-	.import_vcf('gs://annotationdb/discovEHR/GHS_Freeze_50.L3DP10.pVCF.frq.vcf.bgz',)
+	.import_vcf('gs://annotationdb/discovEHR/GHS_Freeze_50.L3DP10.pVCF.frq.vcf.bgz')
 	.annotate_variants_expr(
 		"""
 		va.AF = if (isDefined(va.info.AF))
@@ -20,5 +17,5 @@ hc = hail.HailContext(log = '/home/labbott/hail.log', parquet_compression = 'sna
 	)
 	.split_multi()
 	.annotate_variants_expr('va = {AF: va.AF}')
-	.write('gs://annotationdb/discovEHR/discovEHR.vds',overwrite = True)
+	.write('gs://annotationdb/discovEHR/discovEHR.vds', overwrite=True)
 )

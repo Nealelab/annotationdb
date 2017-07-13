@@ -1,55 +1,24 @@
 #!/usr/bin/env python
 
-import hail
 import json
-from subprocess import call
+from hail import *
 
-call(['gsutil', 'cp', 'gs://annotationdb/eigen/eigen.json', './'])
+hc = HailContext(parquet_compression='snappy')
 
-with open('eigen.json', 'rb') as f:
+with hadoop_read('gs://annotationdb/eigen/eigen.json') as f:
     dct = json.load(f)
 
-hc = hail.HailContext(parquet_compression = 'snappy')
-
-# load into keytable
 kt = (
-
     hc
-    .import_keytable(
-        'gs://annotationdb/eigen/eigen.tsv.bgz',
-        config = hail.TextTableConfig(
-            types = ','.join(
-                [
-                    'chr: String',
-                    'pos: Int',
-                    'ref: String',
-                    'alt: String'
-                ] +
-                [
-                    var['raw'] + ': ' + var['type'] for var in dct['nodes']
-                ]
-            )
-        )
-    )
+    .import_table('gs://annotationdb/eigen/eigen.tsv.bgz', impute=True, types={'chr': TString()})
     .annotate('variant = Variant(chr, pos, ref, alt)')
     .key_by('variant')
-    .rename({var['raw'].strip('`'): var['id'] for var in dct['nodes']})
-    .annotate(','.join(['{0} = {0}'.format(x['id']) for x in dct['nodes']]))
-    .select(
-        ['variant'] +
-        [x['id'] for x in dct['nodes']]
-    )
-
+    .select(['variant', 'raw', 'phred', 'PC_raw', 'PC_phred'])
+    .repartition(1024)
 )
 
-print kt.schema
-
-# create sites-only VDS
 (
-    hail
-    .VariantDataset.from_keytable(kt)
-    .write(
-        'gs://annotationdb/eigen/eigen.vds',
-        overwrite = True
-    )
+    VariantDataset
+    .from_table(kt)
+    .write('gs://annotationdb/eigen/eigen.vds', overwrite=True)
 )

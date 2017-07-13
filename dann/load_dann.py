@@ -1,19 +1,17 @@
 #!/usr/bin/env python
 
-import hail
-from hail.expr import *
+from hail import *
 
 # start Hail context
-hc = hail.HailContext(parquet_compression = 'snappy')                                  
+hc = HailContext(parquet_compression='snappy')                                  
 
 # load into keytable
 kt = (
-    
     hc
     .import_table(
         'gs://annotationdb/dann/dann.tsv.bgz',
-        no_header = True,
-        types = {
+        no_header=True,
+        types={
             'f0': TString(),
             'f1': TInt(),
             'f2': TString(),
@@ -30,11 +28,7 @@ kt = (
 
 # create sites-only VDS
 (
-    hail
-    .VariantDataset
+    VariantDataset
     .from_table(kt)
-    .write(
-        'gs://annotationdb/dann/dann.vds',
-        overwrite = True
-    )
+    .write('gs://annotationdb/dann/dann.vds', overwrite = True)
 )

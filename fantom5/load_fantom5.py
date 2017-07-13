@@ -1,68 +1,23 @@
 #!/usr/bin/env python
 
-import hail
-import json
-from subprocess import call
+from hail import *
 
-call(['gsutil', 'cp', 'gs://annotationdb/fantom5/fantom5.json', './'])
+hc = HailContext(parquet_compression='snappy')
 
-with open('fantom5.json', 'rb') as f:
-    dct = json.load(f)
-
-hc = hail.HailContext(parquet_compression = 'snappy')
-
-kt_robust = (
-
+(
 	hc
-	.import_keytable(
-		'gs://annotationdb/fantom5/robust_enhancers.tsv.bgz',
-		config = hail.TextTableConfig(noheader = True)
-	)
-	.annotate(
-		"""
-		interval = let chr = _0.replace("chr", "") in
-		    Interval(Locus(chr, _1.toInt()), Locus(chr, _2.toInt()))
-		"""
-	)
+	.import_table('gs://annotationdb/fantom5/robust_enhancers.tsv.bgz', no_header=True, types={'f3': TString()})
+	.annotate('interval = Interval(f3[3:])')
 	.key_by('interval')
 	.select(['interval'])
-	.annotate('robust = true')
+	.write('gs://annotationdb/fantom5/robust_enhancers.kt', overwrite=True)
 )
 
-kt_permissive = (
-
+(
 	hc
-	.import_keytable(
-		'gs://annotationdb/fantom5/permissive_enhancers.tsv.bgz',
-		config = hail.TextTableConfig(noheader = True)
-	)
-	.annotate(
-		"""
-		interval = let chr = _0.replace("chr", "") in
-		    Interval(Locus(chr, _1.toInt()), Locus(chr, _2.toInt()))
-		"""
-	)
+	.import_table('gs://annotationdb/fantom5/permissive_enhancers.tsv.bgz', no_header=True, types={'f3': TString()})
+	.annotate('interval = Interval(f3[3:])')
 	.key_by('interval')
 	.select(['interval'])
-	.annotate('permissive = true')
+	.write('gs://annotationdb/fantom5/permissive_enhancers.kt', overwrite=True)
 )
-
-kt_join = (
-
-	kt_robust
-	.join(kt_permissive, how = 'outer')
-	.annotate(
-		"""
-		fantom5 = {
-			robust: isDefined(robust),
-			permissive: isDefined(permissive)
-		}
-		"""
-	)
-	.select([
-		'interval',
-		'fantom5'
-	])
-)
-
-kt_join.write('gs://annotationdb/fantom5/fantom5.kt', overwrite=True)

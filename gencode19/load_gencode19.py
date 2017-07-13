@@ -3,9 +3,9 @@
 from hail import *
 import json
 
-hc = hail.HailContext(parquet_compression = 'snappy')
+hc = HailContext(parquet_compression='snappy')
 
-with hail.hadoop_read('gs://annotationdb/gencode19/gencode19.json') as f:
+with hadoop_read('gs://annotationdb/gencode19/gencode19.json') as f:
     dct = json.load(f)
 
 (
@@ -29,5 +29,5 @@ with hail.hadoop_read('gs://annotationdb/gencode19/gencode19.json') as f:
 	.key_by('interval')
 	.rename({'3utr': 'three_prime_utr', '5utr': 'five_prime_utr'})
 	.select(['interval'] + [x['id'] for x in dct['nodes']])
-	.write('gs://annotationdb/gencode19/gencode19.kt',overwrite = True)
+	.write('gs://annotationdb/gencode19/gencode19.kt',overwrite=True)
 )

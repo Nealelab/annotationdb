@@ -1,24 +1,17 @@
 #!/usr/bin/env python
 
-import hail
 import json
-import pandas as pd
+from hail import *
 
-hc = hail.HailContext(parquet_compression = 'snappy')
+hc = HailContext(parquet_compression='snappy')
 
-with hail.hadoop_read('gs://annotationdb/dhs/dhs.json') as f:
+with hadoop_read('gs://annotationdb/dhs/dhs.json') as f:
     dct = json.load(f)
 
 kt = (
-
 	hc
-	.import_keytable('gs://annotationdb/dhs/dhs.tsv.bgz')
-	.annotate(
-		"""
-		interval = let chr = Chr.replace("chr", "") in
-		    Interval(Locus(chr, Start.toInt()), Locus(chr, End.toInt()))
-		"""
-	)
+	.import_table('gs://annotationdb/dhs/dhs.tsv.bgz', types={'Chr': TString(), 'Start': TInt(), 'End': TInt()})
+	.annotate('interval = Interval(Locus(Chr[3:], Start), Locus(Chr[3:], End))')
 	.key_by('interval')
 	.rename({x['raw']: x['id'] for x in dct['nodes']})
 )
@@ -42,10 +35,6 @@ for x in dct['nodes']:
 
 (
 	kt
-	.annotate('dhs = {{{}}}'.format(','.join([x['id'] + ': ' + x['id'] for x in dct['nodes']])))
-	.select(['interval', 'dhs'])
-	.write(
-		'gs://annotationdb/dhs/dhs.kt',
-		overwrite = True
-	)
+	.select(['interval'] + [x['id'] for x in dct['nodes']])
+	.write('gs://annotationdb/dhs/dhs.kt', overwrite=True)
 )

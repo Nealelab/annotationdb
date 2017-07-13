@@ -1,8 +1,8 @@
 #!/usr/bin/env python
 
-import hail
+from hail import *
 
-hc = hail.HailContext(parquet_compression = 'snappy')
+hc = HailContext(parquet_compression='snappy')
 
 (
 	hc
@@ -134,7 +134,7 @@ hc = hail.HailContext(parquet_compression = 'snappy')
 	)
     .annotate_variants_expr('va = merge(va, va.info)')
 	.annotate_variants_expr('va = drop(va, info, vep)')
-    .write('gs://annotationdb/gnomAD/exomes/exomes.vds', overwrite = True)
+    .write('gs://annotationdb/exomes.vds', overwrite=True)
 )
 
 (
@@ -255,5 +255,5 @@ hc = hail.HailContext(parquet_compression = 'snappy')
 	)
     .annotate_variants_expr('va = merge(va, va.info)')
     .annotate_variants_expr('va = drop(va, info, vep)')
-    .write('gs://annotationdb/gnomAD/genomes/genomes.vds', overwrite = True)
+    .write('gs://annotationdb/genomes.vds', overwrite=True)
 )
