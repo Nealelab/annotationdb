@@ -17,7 +17,7 @@ function create_db($sql) {
     return $db;
 }
 
-$url = 'http://storage.googleapis.com/annotationdb/annotationdb.sql?ignoreCache=1';
+$url = 'http://storage.googleapis.com/annotationdb/ADMIN/annotationdb.sql?ignoreCache=1';
 $sql = get_data($url);
 $db = create_db($sql);
 
