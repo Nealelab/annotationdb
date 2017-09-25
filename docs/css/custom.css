@@ -1,0 +1,46 @@
+#master-container {
+	margin: 1%;
+	height: 100%;
+}
+
+#left-nav {
+	height: 100%;
+	overflow-y: scroll;
+}
+
+.tab-pane {
+	margin-top: 2%;
+}
+
+.form-control {
+	color: black;
+	margin-left: -0.75rem;
+}
+
+.form-control.locked {
+	background: none;
+	border-color: #fff;
+}
+
+.form-control-plaintext {
+	width: 100%;
+	resize: none;
+	overflow-y: scroll;
+}
+
+.edit-text {
+	padding-top: 0;
+}
+
+.text-button {
+	height: 40px;
+	width: 12.5%;
+}
+
+.form-control-plaintext:focus {
+	outline: none;
+	border: none;
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	box-shadow: none;
+}

@@ -1,13 +1,87 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" style="height: 100vh">
 <head>
 	<meta charset="utf-8">
-	<title>Annotation Database</title>
+	<title>Hail Annotation Database</title>
 	<meta name="description" content="Suggest changes or edits to the Hail annotation database">
 	<meta name="author" content="Liam Abbott">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href='../css/custom.css'>
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/font-awesome.min.css">
+	<link rel="stylesheet" href="css/custom.css">
 </head>
-<body>
-	<script src="../js/custom.js" type="text/javascript"></script>
+<body style="height: 100%">
+	<div id="master-container" class="container-fluid">
+
+		<h1>Hail Annotation Database</h1>
+		<p>Use this page to suggest edits or additions to Hail's annotation database.</p>
+
+		<div class="row" style="height: 85%">
+			<div class="col-3" style="height: 100%">
+				<div class="list-group" id="left-nav" role="tablist">
+					<script id="script-left-nav" type="text/x-handlebars-template">
+						{{#each this}}
+							<a class="list-group-item list-group-item-action" id="left-nav-{{makeID annotation}}" data-toggle="list" href="#content-{{makeID annotation}}" role="tab">
+								{{text}}
+							</a>
+						{{/each}}
+					</script>
+				</div>
+			</div>
+			<div class="col-9">
+				<div class="tab-content" id="left-nav-content">
+					<script id="script-left-nav-content" type="text/x-handlebars-template">
+						{{#each this}}
+							<div class="tab-pane fade" id="content-{{makeID annotation}}" role="tabpanel">
+								<form>
+									<div class="form-group row">
+										<label for="input-{{makeID annotation}}" class="col-3 col-form-label edit-text"><strong>Annotation</strong></label>
+										<div class="col-7">
+											<span class="annotation">{{annotation}}</span>
+										</div>
+									</div>
+									<div class="form-group row">
+										<label for="input-{{makeID annotation}}-study-title" class="col-3 col-form-label edit-text"><strong>Publication</strong></label>
+										<div class="col-7">
+											<textarea class="form-control edit-text locked" readonly id="input-{{makeID annotation}}-study-title" rows="4">{{study_title}}</textarea>
+										</div>
+										<a href="#input-{{makeID annotation}}-study-title" class="btn btn-warning text-button edit"><i class="fa fa-pencil" aria-hidden="true"></i><span>&nbsp; Edit</span></a>
+									</div>
+									<div class="form-group row">
+										<label for="input-{{makeID annotation}}-study-link" class="col-3 col-form-label edit-text"><strong>Link to publication</strong></label>
+										<div class="col-7">
+											<textarea class="form-control edit-text locked" readonly id="input-{{makeID annotation}}-study-link" rows="2">{{study_link}}</textarea>
+										</div>
+										<a href="#input-{{makeID annotation}}-study-link" class="btn btn-warning text-button edit"><i class="fa fa-pencil" aria-hidden="true"></i><span>&nbsp; Edit</span></a>
+									</div>
+									<div class="form-group row">
+										<label for="input-{{makeID annotation}}-study-data" class="col-3 col-form-label edit-text"><strong>Link to data source</strong></label>
+										<div class="col-7">
+											<textarea class="form-control edit-text locked" readonly id="input-{{makeID annotation}}-study-data" rows="2">{{study_data}}</textarea>
+										</div>
+										<a href="#input-{{makeID annotation}}-study-data" class="btn btn-warning text-button edit"><i class="fa fa-pencil" aria-hidden="true"></i><span>&nbsp; Edit</span></a>
+									</div>
+									<div class="form-group row">
+										<label for="input-{{makeID annotation}}-free-text" class="col-3 col-form-label edit-text"><strong>Description</strong></label>
+										<div class="col-7">
+											<textarea class="form-control edit-text locked" readonly id="input-{{makeID annotation}}-free-text" rows="13">{{free_text}}</textarea>
+										</div>
+										<a href="#input-{{makeID annotation}}-free-text" class="btn btn-warning text-button edit"><i class="fa fa-pencil" aria-hidden="true"></i><span>&nbsp; Edit</span></a>
+									</div>
+								</form>
+							</div>
+						{{/each}}
+					</script>
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+	<script src="js/jquery-3.2.1.min.js" type="text/javascript"></script>
+	<script src="js/popper.min.js" type="text/javascript"></script>
+	<script src="js/bootstrap.min.js" type="text/javascript"></script>
+	<script src="js/handlebars-v4.0.10.js" type="text/javascript"></script>
+	<script src="js/custom.js" type="text/javascript"></script>
+
 </body>
