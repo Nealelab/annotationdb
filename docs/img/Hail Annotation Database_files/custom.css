@@ -1,0 +1,168 @@
+
+#left-nav-div {
+	height: 100%;
+}
+
+#left-nav {
+	height: 100%;
+	display: inline-block;
+	overflow-y: scroll;
+}
+
+#add-annotation-btn {
+	cursor: pointer;
+}
+
+#add-annotation-icon {
+	color: #28a745;
+	margin-right: 5%;
+}
+
+.nav-link {
+	cursor: pointer;
+	border-bottom: 1px solid lightgray;
+	border-left: 1px solid lightgray;
+	border-right: 1px solid lightgray;
+}
+
+.nav-link:first-child {
+	border-top: 1px solid lightgray;
+}
+
+.nav-link:hover {
+	background: lightgray;
+}
+
+#content-div {
+	height: 100%;
+}
+
+#left-nav-content {
+	height: 100%;
+}
+
+.tab-pane {
+	height: 100%;
+	margin-top: 2%;
+}
+
+.tab-form {
+	height: 100%;
+	overflow-y: scroll;
+	overflow-x: hidden;
+}
+
+label.edit-text {
+	padding-top: 0%;
+}
+
+div.edit-text {
+	padding-top: 0%;
+}
+
+code.annotation {
+	padding: 1%;
+	margin-left: -1%;
+	color: black;
+	background-color: #e5e5e5;
+}
+
+code.code-table {
+	color: black;
+	background-color: #e5e5e5;
+}
+
+.struct-title {
+	margin-bottom: 2%;
+}
+
+tr.row {
+	padding-left: 15px;
+	margin-left: 0;
+}
+
+th:first-child {
+	overflow-x: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+
+th:first-child:hover {
+	overflow-x: visible;
+	z-index: 1;
+}
+
+tbody th {
+	font-weight: normal;
+}
+
+#table-title {
+}
+
+.form-group.row {
+	width: 100%;
+	margin-bottom: 0.5%;
+}
+
+.form-group.row:last-of-type {
+	margin-bottom: 2%;
+}
+
+.form-control {
+	color: black;
+	margin-left: -0.75rem;
+}
+
+.form-control:focus {
+	color: black;
+}
+
+.form-control.locked {
+	background: none;
+	border-color: #fff;
+}
+
+.form-control-plaintext {
+	resize: none;
+	overflow-y: scroll;
+}
+
+.form-control.edit-text {
+	margin-top: -1%;
+	margin-left: -1%;
+	padding: 1%;
+}
+
+.form-control.locked.edit-text.hover {
+	background-color: #e5e5e5;
+	opacity: 1;
+}
+
+.tooltip-wrapper {
+	margin-right: 1%;
+}
+
+.text-button {
+	height: 30px;
+}
+
+.text-button>i {
+	line-height: 12.5px;
+	vertical-align: top;
+}
+
+.text-button.disabled {
+	color: white;
+	background-color: #e5e5e5;
+	border-color: #e5e5e5;
+	opacity: 1;
+
+}
+
+.form-control-plaintext:focus {
+	outline: none;
+	border: none;
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	box-shadow: none;
+}
