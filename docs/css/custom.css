@@ -1,8 +1,7 @@
 #title-container {
 	display: flex;
-	align-items: center;
-	margin-top: 0.5em;
-	margin-bottom: 0.5em;
+	align-items: baseline;
+	margin-top: 1em;
 }
 
 #left-nav-content {

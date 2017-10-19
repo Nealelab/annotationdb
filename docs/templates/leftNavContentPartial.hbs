@@ -7,6 +7,18 @@
 	</nav>
 	<div class="field">
 		<div class="label-container">
+			<label class="label">Title</label>
+			<div class="button-group">
+				<a class="button is-warning edit" annotation="{{annotation}}" field="title">Edit</a>
+				<a class="button is-danger discard" disabled annotation="{{annotation}}" field="title">Discard changes</a>
+			</div>
+		</div>
+		<div class="control">
+			<textarea class="textarea locked oneline" readonly placeholder="Title" rows="0" annotation="{{annotation}}" field="title" original="{{title}}">{{title}}</textarea>
+		</div>
+	</div>
+	<div class="field">
+		<div class="label-container">
 			<label class="label">Annotation</label>
 			<div class="button-group">
 				<a class="button is-warning edit" annotation="{{annotation}}" field="annotation">Edit</a>
@@ -37,18 +49,6 @@
 			</tbody>
 		</table>
 		{{/if}}
-	</div>
-	<div class="field">
-		<div class="label-container">
-			<label class="label">Title</label>
-			<div class="button-group">
-				<a class="button is-warning edit" annotation="{{annotation}}" field="title">Edit</a>
-				<a class="button is-danger discard" disabled annotation="{{annotation}}" field="title">Discard changes</a>
-			</div>
-		</div>
-		<div class="control">
-			<textarea class="textarea locked oneline" readonly placeholder="Title" rows="0" annotation="{{annotation}}" field="title" original="{{title}}">{{title}}</textarea>
-		</div>
 	</div>
 	<div class="field">
 		<div class="label-container">

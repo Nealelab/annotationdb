@@ -237,11 +237,17 @@ $.when(committed_promise).done(function(data) {
 		}
 	});
 
+	$(document).on('change input paste keyup', 'textarea[field="title"]', function() {
+		var tab = $('.nav-tab[annotation="' + $(this).attr('annotation') + '"]');
+		if (tab.text() != $(this).val()) {
+			tab.text($(this).val());
+		}
+	});
+
 	$(document).on('click', '.button.discard:not([field="table"])', function() {
 		var select = '[annotation="' + $(this).attr('annotation') + '"][field="' + $(this).attr('field') + '"]';
-		$('textarea' + select).val($('textarea' + select).attr('original'));
-		$(this).attr('disabled', true);
-		$('.button.save' + select).click();
+		$('textarea' + select).val($('textarea' + select).attr('original')).trigger('change');
+		$('.button.save' + select).trigger('click');
 	});
 
 	$(document).on('click', '.button.edit[field="table"]', function() {
@@ -292,6 +298,57 @@ $.when(committed_promise).done(function(data) {
 		$('.nav-tab[annotation="' + $(this).attr('annotation') + '"]').click();
 	});
 
+	$(document).on('click', '#add-annotation', function() {
+		
+		var new_annotation = [{
+			'level': 0,
+			'title': '<New annotation>',
+			'annotation': 'va.',
+			'db_file': '',
+			'db_key': '',
+			'db_element': '',
+			'publication': '',
+			'publication_link': '',
+			'data_source': '',
+			'description': '',
+			'nodes': ['']
+		}];
+
+		$.ajax({
+			url: 'templates/leftNav.hbs',
+			cache: false,
+			async: false,
+			success: function(template) {
+				compiled = Handlebars.compile(template);
+				rendered = compiled(new_annotation);
+				$('#left-nav').prepend(rendered);
+			}
+		});
+
+		$.ajax({
+			url: 'templates/leftNavContent.hbs',
+			cache: false,
+			async: false,
+			success: function(template) {
+				compiled = Handlebars.compile(template);
+				rendered = compiled(new_annotation);
+				$('#left-nav-content').prepend(rendered);
+			}
+		});
+
+		$('.nav-tab:first-child').click();
+
+	});
+
+	$(document).on('click', '#delete-annotation', function() {
+		$('#delete-modal').addClass('is-active');
+
+	});
+
+	$(document).on('click', '#cancel-delete', function() {
+		$('#delete-modal').removeClass('is-active');
+	});
+
 	// trigger the first annotation tab
 	$('.nav-tab:first-child').click();
 
@@ -305,20 +362,22 @@ $.when(committed_promise).done(function(data) {
 		}).replace(/\s/g, '');
 
 		var context = [{
-			'text': name,
-			'annotation': annotation,
-			'study_title': '',
-			'study_link': '',
-			'study_data': '',
-			'free_text': '',
-			'nodes': [{'annotation': ' ', 'type': ' ', 'description': ''}]
+			'title': name,
+			'annotation': 'va.',
+			'db_file': '',
+			'db_key': '',
+			'db_element': '',
+			'publication': '',
+			'publication_link',
+			'data_source': '',
+			'description': '',
+			'nodes': []
 		}];
 
 		$.ajax({
 			url: 'templates/leftNav.hbs',
 			cache: false,
 			async: false,
-			headers: {'acl': 'public-read-write'},
 			success: function(template) {
 				compiled = Handlebars.compile(template);
 				rendered = compiled(context);
