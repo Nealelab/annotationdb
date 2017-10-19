@@ -1,18 +1,8 @@
-// promises to load data from local directory
+// promise to load annotation data from Google storage
 var committed_promise = $.ajax({
 	dataType: 'json',
 	method: 'GET',
-	url: 'https://storage.googleapis.com/annotationdb/tree.json',
-	cache: false,
-	beforeSend: function(request) {
- 		request.setRequestHeader('access-control-expose-headers', 'access-control-allow-origin');
- 		request.setRequestHeader('access-control-allow-origin', '*');
- 	}
-})
-var pending_promise = $.ajax({
-	dataType: 'json',
-	method: 'GET',
-	url: 'https://storage.googleapis.com/annotationdb-submit/tree.pending.json',
+	url: 'https://storage.googleapis.com/annotationdb-submit/tree.json',
 	cache: false,
 	beforeSend: function(request) {
  		request.setRequestHeader('access-control-expose-headers', 'access-control-allow-origin');
@@ -30,10 +20,82 @@ Handlebars.registerHelper('makeID', function(annotation) {
 Handlebars.registerHelper('stripRoot', function(annotation) {
 	return annotation.split('.').pop();
 });
+Handlebars.registerHelper('splitPath', function(annotation) {
+	var split = annotation.split('.');
+	return split.map(function(element, index) {
+		if (element == 'va') {
+			return '<li style="padding-right: 0.75em">' + element + '</li>';
+		} else {
+			return '<li><a class="breadcrumb-link" annotation="' + split.slice(0, index+1).join('.') + '">' + element + '</a></li>';
+		}
+	}).join('');
+});
+Handlebars.registerHelper('dbList', function(node) {
+	var files = [].concat(node.db_file);
+	var keys = (node.hasOwnProperty('db_key') ? [].concat(node.db_key) : false);
+	var elements = (node.hasOwnProperty('db_element') ? [].concat(node.db_element) : false);
+	var out = [];
+	for (i=0; i<files.length; i++) {
+		var key = (keys ? keys[i] : '');
+		var element = (elements ? elements[i] : '');
+		out.push(
+			'<tr>',
+			'<td>', files[i], '</td>',
+			'<td>', key, '</td>',
+			'<td>', element, '</td>',
+			'</tr>'
+		); 
+	}
+	return out.join('');
+});
+Handlebars.registerHelper('annotationList', function(node) {
+	var out = [];
+	$.each(node.nodes, function(index, value) {
+		if (value.type == 'Struct') {
+			var description = '<a class="doc-jump" annotation="' + value.annotation + '">Description</a>';
+			var original = 'Description';
+		} else {
+			var description = value.description;
+			var original = value.description;
+		}
+		out.push(
+			'<tr>',
+			'<td annotation="' + value.annotation + '" field="annotation" original="' + value.annotation + '">', value.annotation, '</td>',
+			'<td annotation="' + value.annotation + '" field="type" original="' + value.type + '">', value.type, '</td>',
+			'<td annotation="' + value.annotation + '" field="description" original="' + original + '">', description, '</td>',
+			'</tr>'
+		);
+	});
+	return out.join('');
+});
 
-// register Handlebars partial templates
-Handlebars.registerPartial('leftNavPartial', $('#script-left-nav-partial').html());
-Handlebars.registerPartial('leftNavContentPartial', $('#script-left-nav-content-partial').html());
+function load_partial(path, name) {
+	$.ajax({
+		url: path,
+		cache: false,
+		async: false,
+		success: function(template) {
+			Handlebars.registerPartial(name, template);
+		}
+	});
+}
+
+function load_template(path, data, target) {
+	$.ajax({
+		url: path,
+		cache: false,
+		async: false,
+		success: function(template) {
+			compiled = Handlebars.compile(template);
+			rendered = compiled(data);
+			$(target).html(rendered);
+		}
+	});
+}
+
+load_partial('templates/leftNavPartial.hbs', 'leftNavPartial');
+load_partial('templates/leftNavContentPartial.hbs', 'leftNavContentPartial');
+load_partial('templates/leftNavPartialAdd.hbs', 'leftNavPartialAdd');
 
 // custom string formatting function
 String.prototype.format = function() {
@@ -44,34 +106,6 @@ String.prototype.format = function() {
   return a;
 }
 
-// function to populate an array of "status" elements, where each element describes if an 
-// editable field in the data tree object is different in the "new" version compared to the "old"
-// version. element is uniquely identified by annotation and field
-function get_editables(old_data, new_data, editables) {
-	$.each(old_data, function(index, value) {
-		$.each(['text', 'study_title', 'study_link', 'study_data', 'free_text', 'description'], function(_, field) {
-			if (value.hasOwnProperty(field)) {
-				if (value[field] == new_data[index][field]) {
-					edited = false;
-				} else {
-					edited = true;
-				}
-				editables.push({'annotation': value['annotation'],
-								'field': field,
-								'original_value': value[field],
-								'pending_value': new_data[index][field],
-								'current_value': value[field],
-								'pending_edited': edited,
-								'current_edited': false});
-			}
-		});
-		if (value.hasOwnProperty('nodes')) {
-			get_editables(value['nodes'], new_data[index]['nodes'], editables);
-		}
-	});
-}
-
-// autosize textareas
 function autosize_textarea(element) {
 	$(element).css('height', 'auto');
 	var diff = $(element).prop('scrollHeight') - $(element).prop('clientHeight');
@@ -89,110 +123,193 @@ function add_levels(data, current_level) {
 	});
 }
 
+function change_value(data, annotation, field, new_value) {
+	$.each(data, function(_, value) {
+		if (value.annotation == annotation) {
+			value[field] = new_value;
+		} else {
+			if (value.hasOwnProperty('nodes')) {
+				change_value(value.nodes, annotation, field, new_value);
+			}
+		}
+	});
+}
+
+function get_value(data, annotation, field, out) {
+	$.each(data, function(_, value) {
+		if (value.annotation == annotation) {
+			out = value[field];
+			return false;
+		} else {
+			if (value.hasOwnProperty('nodes')) {
+				get_value(value.nodes, annotation, field, out);
+			}
+		}
+	});
+	return out;
+}
+
+function post_data(data) {
+	$.ajax({
+		type: 'POST',
+		async: true,
+		url: 'https://www.googleapis.com/upload/storage/v1/b/annotationdb-submit/o?name=tree.json',
+		data: JSON.stringify(data),
+		contentType: 'application/json',
+		dataType: 'json'
+	});
+	$.ajax({
+		type: 'POST',
+		async: true,
+		url: 'https://www.googleapis.com/upload/storage/v1/b/annotationdb-submit/o?name=tree.json.bak',
+		data: JSON.stringify(data),
+		contentType: 'application/json',
+		dataType: 'json'
+	});
+}
+
 // when getJSON promise is fulfilled, use the data to fill in Handlebars templates
-$.when(committed_promise, pending_promise).done(function(committed_data, pending_data) {
-
-	// copy of the committed data, used to populate the page initially
-	var data_committed = $.extend(true, [], committed_data[0]);
-
-	// copy of the pending data, where changes have been suggested but not yet reviewed
-	var data_pending = $.extend(true, [], pending_data[0]);
-
-	// copy of pending data to work with in the browser
-	var data_current = $.extend(true, [], pending_data[0]);
+//$.when(committed_promise, pending_promise).done(function(committed_data, pending_data) {
+$.when(committed_promise).done(function(data) {
 
 	// add level to each annotation, beginning with level 0; e.g. va.cadd => level 0, va.cadd.PHRED => level 1;
 	// used to format the padding on the left nav
-	add_levels(data_committed, 0);
+	add_levels(data, 0);
 
-	// compile left-nav Handlebars template, insert data, add to DOM
-	var left_nav_compiled = Handlebars.compile($('#script-left-nav').html());
-	var left_nav_rendered = left_nav_compiled(data_committed);
-	$('#left-nav').html(left_nav_rendered);
+	// compile Handlebars templates, insert data, add to DOM
+	load_template(path='templates/leftNav.hbs', data=data, target='#left-nav');
+	load_template(path='templates/leftNavContent.hbs', data=data, target='#left-nav-content');
 
-	// compile left-nav-content Handlebars template, insert data, add to DOM
-	var left_nav_content_compiled = Handlebars.compile($('#script-left-nav-content').html());
-	var left_nav_content_rendered = left_nav_content_compiled(data_committed);
-	$('#left-nav-content').html(left_nav_content_rendered);
+	$(document).on('click', '.nav-tab', function() {
 
-	// populate status array object with any differences between committed data and pending data
-	var editables = [];
-	get_editables(data_committed, data_pending, editables);
+		$('.nav-tab').removeClass('show');
+		$(this).addClass('show');
+		$('.tab').removeClass('show');
 
-	// for each element with changes pending, disable editing for that textarea
-	$.each(editables, function(index, value) {
-		if (value.pending_edited) {
-			$('.custom-btn.edit[annotation="{0}"][field="{1}"]'.format(value.annotation, value.field)).addClass('disabled');
-			$('.tooltip-wrapper.edit[annotation="{0}"][field="{1}"]'.format(value.annotation, value.field)).attr('data-original-title', 'Update pending');
-			$('.tooltip-wrapper.discard[annotation="{0}"][field="{1}"]'.format(value.annotation, value.field)).attr('data-original-title', 'Update pending');
-		}
-	});
-
-	// add background to textarea when its corresponding edit button is hovered over
-	$('.custom-btn').hover(function() {
-			$($(this).attr('href')).addClass('hover');
-		}, function() {
-			$($(this).attr('href')).removeClass('hover');
-	});
-
-	// autosize textareas
-	$(document).on('shown.bs.tab', function(e) {
-		$($(e.target).attr('href')).find('textarea').each(function() {
-			autosize_textarea(this);
+		var target = $('.tab[annotation="' + $(this).attr('annotation') + '"]');
+		target.addClass('show');
+		target.find('textarea').each(function(_, value) {
+			autosize_textarea(value);
 		});
 	});
 
-	// trigger the first annotation tab
-	$('#left-nav>div:first-child').tab('show');
+	$(document).on('click', '.breadcrumb-link', function() {
+		$('.nav-tab[annotation="' + $(this).attr('annotation') + '"]').trigger('click');
+	});
 
-	// activate tooltips
-	$('.doc-row>b[data-toggle="tooltip"]').tooltip();
+		$(document).on('click', '.button.edit:not([field="table"])', function() {
+		($(this).removeClass('is-warning')
+				.removeClass('edit')
+				.addClass('is-success')
+				.addClass('save')
+				.text('Save'));
+		($('textarea[annotation="' + $(this).attr('annotation') + '"][field="' + $(this).attr('field') + '"]').removeAttr('readonly')
+																											  .removeClass('locked')
+																											  .trigger('focus'));
+	});
 
-	// activate popovers
-	$('#btn-upload-changes[data-toggle="tooltip"]').popover({
-		placement: 'bottom',
-		delay: {
-			show: 0,
-			hide: 100
+	$(document).on('click', '.button.save:not([field="table"])', function() {
+		($(this).removeClass('is-success')
+				.removeClass('save')
+				.addClass('is-warning')
+				.addClass('edit')
+				.text('Edit'));
+		$('.button.discard[annotation="' + $(this).attr('annotation') + '"][field="' + $(this).attr('field') + '"]').attr('disabled', true);
+
+		var txt = $('textarea[annotation="' + $(this).attr('annotation') + '"][field="' + $(this).attr('field') + '"]');
+		
+		(txt.attr('readonly', true)
+			.addClass('locked'));
+
+		if (get_value(data, $(this).attr('annotation'), $(this).attr('field'), '') != txt.val()) {
+			change_value(data, $(this).attr('annotation'), $(this).attr('field'), txt.val());
+			post_data(data);
+			txt.attr('original', txt.val());
+		}
+
+	});
+
+	$(document).on('change input paste keyup', 'textarea', function() {
+		var btn = $('.button.discard[annotation="' + $(this).attr('annotation') + '"][field="' + $(this).attr('field') + '"]');
+		if ($(this).val() != $(this).attr('original')) {
+			btn.removeAttr('disabled');
+		} else {
+			btn.attr('disabled', true);
 		}
 	});
-	$(document).on('click', '#btn-upload-changes[data-toggle="tooltip"]', function() {
-		setTimeout(function() { $('.popover').fadeOut(); }, 1000);
+
+	$(document).on('click', '.button.discard:not([field="table"])', function() {
+		var select = '[annotation="' + $(this).attr('annotation') + '"][field="' + $(this).attr('field') + '"]';
+		$('textarea' + select).val($('textarea' + select).attr('original'));
+		$(this).attr('disabled', true);
+		$('.button.save' + select).click();
 	});
 
-	// behavior when an edit button is clicked
-	$(document).on('click', '.custom-btn.edit', function() {
+	$(document).on('click', '.button.edit[field="table"]', function() {
+		($(this).removeClass('is-warning')
+				.removeClass('edit')
+				.addClass('is-success')
+				.addClass('save')
+				.text('Save'));
 
-		var annotation = $(this).attr('annotation');
-		var field = $(this).attr('field');
-
-		($(this).removeClass('edit')
-			    .addClass('save')
-				.removeClass('btn-warning')
-				.addClass('btn-success'));
-
-		($($(this).attr('href')).removeClass('locked')
-		  					    .removeAttr('readonly'));
-
-		($(this).find('i')
-			    .removeClass('fa-pencil')
-				.addClass('fa-floppy-o'));
-
-		($('.tooltip-wrapper.edit[annotation="{0}"][field="{1}"]'.format(annotation, field)).attr('data-original-title', 'Save changes')
-																						    .removeClass('edit')
-																						    .addClass('save'));
-
-		$('.custom-btn.discard[annotation="{0}"][field="{1}"]'.format(annotation, field)).removeClass('disabled');
-		
+		var target = $('table[annotation="' + $(this).attr('annotation') + '"][field="table"]');
+		target.find('td').attr('contenteditable', 'true');
+		target.find('tbody tr:first-child td:first-child').trigger('focus');
 	});
+
+	$(document).on('click', '.button.save[field="table"]', function() {
+		($(this).removeClass('is-success')
+				.removeClass('save')
+				.addClass('is-warning')
+				.addClass('edit')
+				.text('Edit'));
+		$('.button.discard[annotation="' + $(this).attr('annotation') + '"][field="table"]').attr('disabled', true);
+		$('table[annotation="' + $(this).attr('annotation') + '"][field="table"]').find('td').each(function(_, value) {
+			change_value(data, $(this).attr('annotation'), $(this).attr('field'), $(this).text());
+			$(this).attr('original', $(this).text());
+		});
+		//post_data(data);
+	});
+
+	$(document).on('change input paste keyup', 'table[field="table"] td', function() {
+		var btn = $('.button.discard[annotation="' + $(this).attr('annotation').split('.').slice(0,-1).join('.') + '"][field="table"]');
+		if ($(this).text() != $(this).attr('original')) {
+			btn.removeAttr('disabled');
+		} else {
+			btn.attr('disabled', true);
+		}
+	});
+
+	$(document).on('click', '.button.discard[field="table"]', function() {
+		var select = '[annotation="' + $(this).attr('annotation') + '"][field="table"]';
+		$('table' + select).find('td').each(function(_, value) {
+			$(this).text($(this).attr('original'));
+		});
+		$(this).attr('disabled', true);
+		$('.button.save' + select).click();
+	});
+
+	$(document).on('click', '.doc-jump', function() {
+		$('.nav-tab[annotation="' + $(this).attr('annotation') + '"]').click();
+	});
+
+	// trigger the first annotation tab
+	$('.nav-tab:first-child').click();
 
 	// behavior when a save button is clicked
-	$(document).on('click', '.custom-btn.save', function() {
+	/*$(document).on('click', '.custom-btn.save', function() {
 
+		var target = $(this).attr('href');
 		var annotation = $(this).attr('annotation');
 		var field = $(this).attr('field');
 
-		autosize_textarea($(this).attr('href'));
+		($(this).find('i')
+			    .removeClass('fa-floppy-o')
+				.addClass('fa-pencil'));
+
+		($('.tooltip-wrapper.save[annotation="{0}"][field="{1}"]'.format(annotation, field)).attr('data-original-title', 'Edit')
+																							.removeClass('save')
+																							.addClass('edit'));
 
 		($(this).removeClass('save')
 		        .addClass('edit')
@@ -203,21 +320,13 @@ $.when(committed_promise, pending_promise).done(function(committed_data, pending
 		($($(this).attr('href')).addClass('locked')
 		 					    .attr('readonly', true));
 
-		($(this).find('i')
-			    .removeClass('fa-floppy-o')
-				.addClass('fa-pencil'));
-
-		($('.tooltip-wrapper.save[annotation="{0}"][field="{1}"]'.format(annotation, field)).attr('data-original-title', 'Edit')
-																							.removeClass('save')
-																							.addClass('edit'));
-
-		var original_value = editables.filter(function(element) {
+		var committed_value = editables.filter(function(element) {
 			return (element.annotation == annotation & element.field == field);
-		})[0].original_value;
+		})[0].committed_value;
 
 		var current_value = $('textarea[annotation="{0}"][field="{1}"]'.format(annotation, field)).val();
 
-		if (original_value != current_value) {
+		if (committed_value != current_value) {
 
 			editables.filter(function(element) {
 				return (element.annotation == annotation & element.field == field);
@@ -225,7 +334,8 @@ $.when(committed_promise, pending_promise).done(function(committed_data, pending
 
 			editables.filter(function(element) {
 				return (element.annotation == annotation & element.field == field);
-			})[0].current_edited = true;
+			})[0].edited = true;
+			console.log(editables);
 
 			$('.custom-btn.discard[annotation="{0}"][field="{1}"]'.format(annotation, field)).removeClass('disabled');
 
@@ -237,14 +347,14 @@ $.when(committed_promise, pending_promise).done(function(committed_data, pending
 
 			editables.filter(function(element) {
 				return (element.annotation == annotation & element.field == field);
-			})[0].current_edited = false;
+			})[0].edited = false;
 
 			$('.custom-btn.discard[annotation="{0}"][field="{1}"]'.format(annotation, field)).addClass('disabled');
 
 		}
 
 		var any_edited = editables.filter(function(element) {
-			return (element.current_edited);
+			return (element.edited);
 		}).length > 0;
 
 		if (any_edited) {
@@ -261,23 +371,23 @@ $.when(committed_promise, pending_promise).done(function(committed_data, pending
 		var annotation = $(this).attr('annotation');
 		var field = $(this).attr('field');
 
-		var original_value = editables.filter(function(element) {
+		var committed_value = editables.filter(function(element) {
 			return (element.annotation == annotation & element.field == field);
-		})[0].original_value;
+		})[0].committed_value;
 
 		editables.filter(function(element) {
 			return (element.annotation == annotation & element.field == field);
-		})[0].current_value = original_value;
+		})[0].current_value = committed_value;
 
 		editables.filter(function(element) {
 			return (element.annotation == annotation & element.field == field);
-		})[0].current_edited = false;
+		})[0].edited = false;
 
-		$('textarea[annotation="{0}"][field="{1}"]'.format(annotation, field)).val(original_value);
+		$('textarea[annotation="{0}"][field="{1}"]'.format(annotation, field)).val(committed_value);
 		$(this).addClass('disabled');
 
 		var any_edited = editables.filter(function(element) {
-			return (element.current_edited);
+			return (element.edited);
 		}).length > 0;
 
 		if (any_edited) {
@@ -293,44 +403,85 @@ $.when(committed_promise, pending_promise).done(function(committed_data, pending
 		$($(this).attr('href')).trigger('click');
 	});
 
-	function change_value(data_object, annotation, field, new_value) {
-		$.each(data_object, function(index, value) {
-			if (value.annotation == annotation) {
-				value[field] = new_value;
-			} else {
-				if (value.hasOwnProperty('nodes')) {
-					change_value(value.nodes, annotation, field, new_value);
-				}
-			}
-		});
-	}
-
 	// behavior when upload button is clicked
 	$(document).on('click', '#btn-upload-changes', function() {
 
 		$.each(editables, function(_, value) {
-			if (value.current_edited) {
-				change_value(data_pending, value.annotation, value.field, value.current_value);
-				value.pending_value = value.current_value;
-				value.pending_edited = true;
-				value.current_edited = false;
-				$('.tooltip-wrapper.edit[annotation="{0}"][field="{1}"]'.format(value.annotation, value.field)).attr('data-original-title', 'Update submitted');
+			if (value.edited) {
+				change_value(data_current, value.annotation, value.field, value.current_value);
+				//value.pending_value = value.current_value;
+				//value.pending_edited = true;
+				value.edited = false;
+				//$('.tooltip-wrapper.edit[annotation="{0}"][field="{1}"]'.format(value.annotation, value.field)).attr('data-original-title', 'Update submitted');
 				$('.tooltip-wrapper.discard[annotation="{0}"][field="{1}"]'.format(value.annotation, value.field)).attr('data-original-title', 'Update submitted');
-				$('.custom-btn.edit[annotation="{0}"][field="{1}"]'.format(value.annotation, value.field)).addClass('disabled');
+				//$('.custom-btn.edit[annotation="{0}"][field="{1}"]'.format(value.annotation, value.field)).addClass('disabled');
 				$('.custom-btn.discard[annotation="{0}"][field="{1}"]'.format(value.annotation, value.field)).addClass('disabled');
 			}
 		});
 
-		$(this).addClass('disabled');
+		console.log(data_current);
 
 		$.ajax({
 			type: 'POST',
 			url: 'https://www.googleapis.com/upload/storage/v1/b/annotationdb-submit/o?name=tree.test.json',
-			data: JSON.stringify(data_pending),
+			data: JSON.stringify(data_current),
+			contentType: 'application/json',
+			dataType: 'json'
+		});
+
+		$.ajax({
+			type: 'POST',
+			url: 'https://www.googleapis.com/upload/storage/v1/b/annotationdb-submit/o?name=tree.test.json.bak',
+			data: JSON.stringify(data_current),
 			contentType: 'application/json',
 			dataType: 'json'
 		});
 	
 	});
+
+	// add a new annotation
+	$(document).on('click', '#btn-trigger-add', function() {
+
+		var name = $($(this).attr('href')).val();*/
+	//	var annotation = 'va.' + name.replace(/\b\S*/g, function(word) {
+	/*		return word.charAt(0).toUpperCase() + word.substr(1);
+		}).replace(/\s/g, '');
+
+		var context = [{
+			'text': name,
+			'annotation': annotation,
+			'study_title': '',
+			'study_link': '',
+			'study_data': '',
+			'free_text': '',
+			'nodes': [{'annotation': ' ', 'type': ' ', 'description': ''}]
+		}];
+
+		$.ajax({
+			url: 'templates/leftNav.hbs',
+			cache: false,
+			async: false,
+			headers: {'acl': 'public-read-write'},
+			success: function(template) {
+				compiled = Handlebars.compile(template);
+				rendered = compiled(context);
+				$('#left-nav').prepend(rendered);
+			}
+		});
+
+		$.ajax({
+			url: 'templates/leftNavContent.hbs',
+			cache: true,
+			async: false,
+			success: function(template) {
+				compiled = Handlebars.compile(template);
+				rendered = compiled(context);
+				$('#left-nav-content').prepend(rendered);
+			}
+		});
+
+		$('#left-nav>div:first-child').tab('show');	
+
+	});*/
 
 });

@@ -1,0 +1,6 @@
+{{#if nodes}}
+	<div class="nav-link" id="left-nav-{{makeID annotation}}" data-toggle="pill" href="#pane-{{makeID annotation}}" role="tab" aria-controls="content-{{makeID annotation}}" aria-expanded="true" style="padding-left: {{paddingLevel level}}">{{text}}</div>
+	{{#each nodes}}
+		{{> leftNavPartialAdd}}
+	{{/each}}
+{{/if}}

@@ -1,0 +1,126 @@
+{{#if nodes}}
+<div class="tab container" annotation="{{annotation}}">
+	<nav class="breadcrumb">
+		<ul>
+			{{{splitPath annotation}}}
+		</ul>
+	</nav>
+	<div class="field">
+		<div class="label-container">
+			<label class="label">Annotation</label>
+			<div class="button-group">
+				<a class="button is-warning edit" annotation="{{annotation}}" field="annotation">Edit</a>
+				<a class="button is-danger discard" disabled annotation="{{annotation}}" field="annotation">Discard changes</a>
+			</div>
+		</div>
+		<div class="control">
+			<textarea class="textarea locked oneline" readonly placeholder="Annotation" rows="0" annotation="{{annotation}}" field="annotation" original="{{annotation}}">{{annotation}}</textarea>
+		</div>
+	</div>
+	<div class="field">
+		<div class="label-container">
+			<label class="label">Database files</label>
+			<div class="button-group">
+				<a class="button is-warning edit" annotation="{{annotation}}" field="db_info">Edit</a>
+				<a class="button is-danger discard" disabled annotation="{{annotation}}" field="db_info">Discard changes</a>
+			</div>
+		</div>
+		{{#if db_file}}
+		<table class="table is-fullwidth" annotation="{{annotation}}" field="db_info">
+			<thead>
+				<th>Path</th>
+				<th>Key</th>
+				<th>Type</th>
+			</thead>
+			<tbody>
+				{{{dbList this}}}
+			</tbody>
+		</table>
+		{{/if}}
+	</div>
+	<div class="field">
+		<div class="label-container">
+			<label class="label">Title</label>
+			<div class="button-group">
+				<a class="button is-warning edit" annotation="{{annotation}}" field="title">Edit</a>
+				<a class="button is-danger discard" disabled annotation="{{annotation}}" field="title">Discard changes</a>
+			</div>
+		</div>
+		<div class="control">
+			<textarea class="textarea locked oneline" readonly placeholder="Title" rows="0" annotation="{{annotation}}" field="title" original="{{title}}">{{title}}</textarea>
+		</div>
+	</div>
+	<div class="field">
+		<div class="label-container">
+			<label class="label">Publication</label>
+			<div class="button-group">
+				<a class="button is-warning edit" annotation="{{annotation}}" field="publication">Edit</a>
+				<a class="button is-danger discard" disabled annotation="{{annotation}}" field="publication">Discard changes</a>
+			</div>
+		</div>
+		<div class="control">
+			<textarea class="textarea locked" readonly placeholder="Publication" rows="0" annotation="{{annotation}}" field="publication" original="{{publication}}">{{publication}}</textarea>
+		</div>
+	</div>
+	<div class="field">
+		<div class="label-container">
+			<label class="label">Data source</label>
+			<div class="button-group">
+				<a class="button is-warning edit" annotation="{{annotation}}" field="data_source">Edit</a>
+				<a class="button is-danger discard" disabled annotation="{{annotation}}" field="data_source">Discard changes</a>
+			</div>
+		</div>
+		<div class="control">
+			<textarea class="textarea locked" readonly placeholder="Data source" rows="0" annotation="{{annotation}}" field="data_source" original="{{data_source}}">{{data_source}}</textarea>
+		</div>
+	</div>
+	<div class="field">
+		<div class="label-container">
+			<label class="label">Link to publication</label>
+			<div class="button-group">
+				<a class="button is-warning edit" annotation="{{annotation}}" field="publication_link">Edit</a>
+				<a class="button is-danger discard" disabled annotation="{{annotation}}"" field="publication_link">Discard changes</a>
+			</div>
+		</div>
+		<div class="control">
+			<textarea class="textarea locked" readonly placeholder="Link to publication" rows="0" annotation="{{annotation}}" field="publication_link" original-"{{publication_link}}">{{publication_link}}</textarea>
+		</div>
+	</div>
+	<div class="field">
+		<div class="label-container">
+			<label class="label">Description</label>
+			<div class="button-group">
+				<a class="button is-warning edit" annotation="{{annotation}}"" field="description">Edit</a>
+				<a class="button is-danger discard" disabled annotation="{{annotation}}"" field="description">Discard changes</a>
+			</div>
+		</div>
+		<div class="control">
+			<textarea class="textarea locked" readonly placeholder="Description" rows="0" annotation="{{annotation}}" field="description" original="{{description}}">{{description}}</textarea>
+		</div>
+	</div>
+	{{#if nodes}}
+	<div class="field">
+		<div class="label-container">
+			<label class="label">Elements</label>
+			<div class="button-group">
+				<a class="button is-warning edit" annotation="{{annotation}}" field="table">Edit</a>
+				<a class="button is-danger discard" disabled annotation="{{annotation}}" field="table">Discard changes</a>
+			</div>
+		</div>
+		<table class="table is-fullwidth is-hoverable" annotation="{{annotation}}" field="table">
+			<thead>
+				<th>Annotation</th>
+				<th>Type</th>
+				<th>Description</th>
+			</thead>
+			<tbody>
+				{{{annotationList this}}}
+			</tbody>
+		</table>
+	</div>
+	{{/if}}
+</div>
+{{#each nodes}}
+	{{> leftNavContentPartial}}
+{{/each}}
+{{/if}}

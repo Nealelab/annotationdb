@@ -6,197 +6,37 @@
 	<meta name="description" content="Suggest changes or edits to the Hail annotation database">
 	<meta name="author" content="Liam Abbott">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="css/bootstrap.min.css">
 	<link rel="stylesheet" href="css/font-awesome.min.css">
+	<link rel="stylesheet" href="css/bulma.css">
 	<link rel="stylesheet" href="css/custom.css">
 
 </head>
-<body style="width: 100%; height: 100%; position: fixed">
-	<div class="container-fluid" style="width: 100%; height: 100%; margin: 1%">
+<body>
 
-		<div id="title" class="row" style="display: inline; height: 40px">
-			<img src="img/hail_logo.png" alt="Hail" style="height: 40px; vertical-align: top">
-			<h1 style="height: 40px%; padding-left: 1%; display: inline">Annotation Database</h1>
-			<div class="float-right" style="padding-right: calc(2% + 2.5px)">
-				<a id="btn-upload-changes" class="btn btn-primary custom-btn disabled" data-toggle="tooltip" data-content="Suggested changes uploaded!" style="color: white; cursor: pointer"><i class="fa fa-cloud-upload"></i>&nbsp;Upload changes</a>
-				<a id="btn-add-annotation" class="btn btn-success custom-btn disabled" style="color: white; cursor: pointer"><i class="fa fa-plus-circle"></i>&nbsp;Add new annotation</a>
-			</div>
+	<nav class="navbar is-white topNav">
+		<div id="title-container" class="container">
+			<a class="navbar-item" href="https://hail.is">
+				<img src="img/hail_logo.png">
+			</a>
+			<h1 class="title">Annotation Database</h1>
 		</div>
+	</nav>
 
-		<div class="row" style="width: 100%; height: calc(100% - 40px); padding-bottom: 1%; padding-top: 1%">
-
-			<div style="width: 25%; height: 100%; overflow: scroll">
-
-				<div class="nav nav-pills" id="left-nav" role="tablist" style="width: 100%; height: 100%%">
-
-					<script id="script-left-nav-partial" type="text/x-handlebars-template">
-						{{#if nodes}}
-							<div class="nav-link" id="left-nav-{{makeID annotation}}" data-toggle="pill" href="#pane-{{makeID annotation}}" role="tab" aria-controls="content-{{makeID annotation}}" aria-expanded="true" style="padding-left: {{paddingLevel level}}">{{text}}</div>
-							{{#each nodes}}
-								{{> leftNavPartial}}
-							{{/each}}
-						{{/if}}
-					</script>
-
-					<script id="script-left-nav" type="text/x-handlebars-template">
-						{{#each this}}
-							{{> leftNavPartial}}
-						{{/each}}
-					</script>-->
-
+	<div class="container">
+		<div class="columns">
+			<div class="column is-3">
+				<nav id="left-nav" class="panel">
+				</nav>
+			</div>
+			<div class="column is-9">
+				<div id="left-nav-content" class="container">
 				</div>
 			</div>
-
-			<div id="left-nav-content" class="tab-content" style="width: 75%; height: 100%; padding-bottom: 1%">
-
-				<script id="script-left-nav-content-partial" type="text/x-handlebars-template">
-					{{#if nodes}}
-						<div class="tab-pane fade" style="width: 100%; height: 100%; overflow-y: auto; padding-right: 0.5%" id="pane-{{makeID annotation}}" role="tabpanel">
-							<div class="row" style="margin-bottom: 0.5%">
-								<h3 style="width: 100%">Struct Documentation</h3>
-							</div>
-							<div class="row doc-row">
-								<label for="input-{{makeID annotation}}"><strong>Annotation</strong></label>
-								<textarea class="form-control locked" readonly annotation="{{annotation}}" field="annotation" id="input-{{makeID annotation}}" rows="0">{{annotation}}</textarea>
-							</div>
-							<div class="row doc-row">
-								<label for="input-{{makeID annotation}}-text"><strong>Title</strong></label>
-								<textarea class="form-control locked" readonly annotation="{{annotation}}" field="text" id="input-{{makeID annotation}}-text" rows="0">{{text}}</textarea>
-								<div annotation="{{annotation}}" field="text" class="tooltip-wrapper edit" data-toggle="tooltip" data-placement="top" data-original-title="Edit">
-									<a href="#input-{{makeID annotation}}-text" annotation="{{annotation}}" field="text" class="btn btn-warning custom-btn edit">
-										<i class="fa fa-pencil custom-btn-icon" aria-hidden="true"></i>
-									</a>
-								</div>
-								<div annotation="{{annotation}}" field="text" class="tooltip-wrapper discard" data-toggle="tooltip" data-placement="top" data-original-title="Discard changes">
-									<a href="#input-{{makeID annotation}}-text" annotation="{{annotation}}" field="text" class="btn btn-danger custom-btn discard disabled">
-										<i class="fa fa-refresh custom-btn-icon" aria-hidden="true"></i>
-									</a>
-								</div>
-							</div>
-							<div class="row doc-row">
-								<label for="input-{{makeID annotation}}-study-title">
-									<strong>Publication</strong>
-								</label>
-								<textarea class="form-control locked" readonly annotation="{{annotation}}" field="study_title" id="input-{{makeID annotation}}-study-title" rows="0">{{study_title}}</textarea>
-								<div annotation="{{annotation}}" field="study_title" class="tooltip-wrapper edit" data-toggle="tooltip" data-placement="top" data-original-title="Edit">
-									<a href="#input-{{makeID annotation}}-study-title" annotation="{{annotation}}" field="study_title" class="btn btn-warning custom-btn edit">
-										<i class="fa fa-pencil custom-btn-icon" aria-hidden="true"></i>
-									</a>
-								</div>
-								<div annotation="{{annotation}}" field="study_title" class="tooltip-wrapper discard" data-toggle="tooltip" data-placement="top" data-original-title="Discard changes">
-									<a href="#input-{{makeID annotation}}-study-title" annotation="{{annotation}}" field="study_title" class="btn btn-danger custom-btn discard disabled">
-										<i class="fa fa-refresh custom-btn-icon" aria-hidden="true"></i>
-									</a>
-								</div>
-							</div>
-							<div class="row doc-row">
-								<label for="input-{{makeID annotation}}-study-link">
-									<strong>Link to publication</strong>
-								</label>
-								<textarea class="form-control locked" readonly annotation="{{annotation}}" field="study_link" id="input-{{makeID annotation}}-study-link" rows="0">{{study_link}}</textarea>
-								<div annotation="{{annotation}}" field="study_link" class="tooltip-wrapper edit" data-toggle="tooltip" data-placement="top" data-original-title="Edit">
-									<a href="#input-{{makeID annotation}}-study-link" annotation="{{annotation}}" field="study_link" class="btn btn-warning custom-btn edit">
-										<i class="fa fa-pencil custom-btn-icon" aria-hidden="true"></i>
-									</a>
-								</div>
-								<div annotation="{{annotation}}" field="study_link" class="tooltip-wrapper discard" data-toggle="tooltip" data-placement="top" data-original-title="Discard changes">
-									<a href="#input-{{makeID annotation}}-study-link" annotation="{{annotation}}" field="study_link" class="btn btn-danger custom-btn discard disabled">
-										<i class="fa fa-refresh custom-btn-icon" aria-hidden="true"></i>
-									</a>
-								</div>
-							</div>
-							<div class="row doc-row">
-								<label for="input-{{makeID annotation}}-study-data">
-									<strong>Link to data source</strong>
-								</label>
-								<textarea class="form-control locked" readonly annotation="{{annotation}}" field="study_data" id="input-{{makeID annotation}}-study-data" rows="0">{{study_data}}</textarea>
-								<div annotation="{{annotation}}" field="study_data" class="tooltip-wrapper edit" data-toggle="tooltip" data-placement="top" data-original-title="Edit">
-									<a href="#input-{{makeID annotation}}-study-data" annotation="{{annotation}}" field="study_data" class="btn btn-warning custom-btn edit">
-										<i class="fa fa-pencil custom-btn-icon" aria-hidden="true"></i>
-									</a>
-								</div>
-								<div annotation="{{annotation}}" field="study_data" class="tooltip-wrapper discard" data-toggle="tooltip" data-placement="top" data-original-title="Discard changes">
-									<a href="#input-{{makeID annotation}}-study-data" annotation="{{annotation}}" field="study_data" class="btn btn-danger custom-btn discard disabled">
-										<i class="fa fa-refresh custom-btn-icon" aria-hidden="true"></i>
-									</a>
-								</div>
-							</div>
-							<div class="row doc-row">
-								<label for="input-{{makeID annotation}}-free-text"><strong>Description</strong></label>
-								<textarea class="form-control locked" readonly annotation="{{annotation}}" field="free_text" id="input-{{makeID annotation}}-free-text" rows="0">{{free_text}}</textarea>
-								<div annotation="{{annotation}}" field="free_text" class="tooltip-wrapper edit" data-toggle="tooltip" data-placement="top" data-original-title="Edit">
-									<a href="#input-{{makeID annotation}}-free-text" annotation="{{annotation}}" field="free_text" class="btn btn-warning custom-btn edit">
-										<i class="fa fa-pencil custom-btn-icon" aria-hidden="true"></i>
-									</a>
-								</div>
-								<div annotation="{{annotation}}" field="free_text" class="tooltip-wrapper discard" data-toggle="tooltip" data-placement="top" data-original-title="Discard changes">
-									<a href="#input-{{makeID annotation}}-free-text" annotation="{{annotation}}" field="free_text" class="btn btn-danger custom-btn discard disabled">
-										<i class="fa fa-refresh custom-btn-icon" aria-hidden="true"></i>
-									</a>
-								</div>
-							</div>
-							<div class="row" style="margin-top: 1%; margin-bottom: 1%">
-								<h3 style="width: 100%">Struct Annotations</h3>
-							</div>
-								<table id="table-{{makeID annotation}}" class="table table-sm" style="table-layout: fixed; width: 100%; margin-left: 2%">
-									<thead>
-										<tr>
-											<th style="width: 20%">Annotation</th>
-											<th style="width: 15%">Type</th>
-											<th style="width: 52%">Description</th>
-											<th style="width: 13%"></th>
-										</tr>
-									</thead>
-									<tbody style="width: 100%">
-										{{#each nodes}}
-										<tr>
-											<td style="word-break: break-word"><code>{{stripRoot annotation}}</code></td>
-											<td><code>{{#if type}} {{type}} {{else}} Struct {{/if}}</code></td>
-											<td>
-												{{#if description}} 
-													<textarea class="form-control locked" readonly annotation="{{annotation}}" field="description" id="table-{{makeID annotation}}-description">{{description}}</textarea>	
-												{{else}} 
-													<a href="#left-nav-{{makeID annotation}}" class="docs-jump-btn">See documentation</a>
-												{{/if}}
-											</td>
-											<td>
-												<div annotation="{{annotation}}" field="description" class="tooltip-wrapper edit" data-toggle="tooltip" data-placement="top" data-original-title="Edit">
-													<a href="#table-{{makeID annotation}}-description" annotation="{{annotation}}" field="description" class="btn btn-warning custom-btn edit">
-														<i class="fa fa-pencil custom-btn-icon" aria-hidden="true"></i>
-													</a>
-												</div>
-												<div annotation="{{annotation}}" field="description" class="tooltip-wrapper discard" data-toggle="tooltip" data-placement="top" data-original-title="Discard changes">
-													<a href="#table-{{makeID annotation}}-description" annotation="{{annotation}}" field="description" class="btn btn-danger custom-btn discard disabled">
-														<i class="fa fa-refresh custom-btn-icon" aria-hidden="true"></i>
-													</a>
-												</div>
-											</td>
-										</tr>
-										{{/each}}
-									</tbody>
-								</table>
-
-						</div>
-						{{#each nodes}}
-							{{> leftNavContentPartial}}
-						{{/each}}
-					{{/if}}
-				</script>
-
-				<script id="script-left-nav-content" type="text/x-handlebars-template">
-					{{#each this}}
-						{{> leftNavContentPartial}}
-					{{/each}}
-				</script>
-
-			</div>
 		</div>
-
 	</div>
-
+	
 	<script src="js/jquery-3.2.1.min.js" type="text/javascript"></script>
 	<script src="js/popper.min.js" type="text/javascript"></script>
-	<script src="js/bootstrap.min.js" type="text/javascript"></script>
 	<script src="js/handlebars-v4.0.10.js" type="text/javascript"></script>
 	<script src="js/custom.js" type="text/javascript"></script>
 
