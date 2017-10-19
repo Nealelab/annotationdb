@@ -268,7 +268,7 @@ $.when(committed_promise).done(function(data) {
 			change_value(data, $(this).attr('annotation'), $(this).attr('field'), $(this).text());
 			$(this).attr('original', $(this).text());
 		});
-		//post_data(data);
+		post_data(data);
 	});
 
 	$(document).on('change input paste keyup', 'table[field="table"] td', function() {
