@@ -2,13 +2,8 @@
 var committed_promise = $.ajax({
 	dataType: 'json',
 	method: 'GET',
-	//url: 'https://storage.googleapis.com/annotationdb-submit/tree.json',
-	url: 'https://gist.githubusercontent.com/liameabbott/278703af12761f41def8f2a892eb2733/raw/e158eb3d07cba2a57d3f11ca2ed731f6808aa0a2/tree.json',
+	url: 'https://api.github.com/repos/Nealelab/annotationdb/git/blobs/e6d5b1025d986ca0cde6959fb8d8a4dbdce088a4',
 	cache: false
-	//beforeSend: function(request) {
- 	//	request.setRequestHeader('access-control-expose-headers', 'access-control-allow-origin');
- 	//	request.setRequestHeader('access-control-allow-origin', '*');
- 	//}
 })
 
 // register Handlebars helpers
@@ -174,6 +169,8 @@ function post_data(data) {
 //$.when(committed_promise, pending_promise).done(function(committed_data, pending_data) {
 $.when(committed_promise).done(function(data) {
 
+	data = JSON.parse(atob(data.content));
+	console.log(data);
 	// add levels; e.g. va.cadd => level 0, va.cadd.PHRED => level 1; used to format the padding on the left nav
 	add_levels(data, 0);
 
