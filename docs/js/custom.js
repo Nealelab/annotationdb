@@ -2,12 +2,13 @@
 var committed_promise = $.ajax({
 	dataType: 'json',
 	method: 'GET',
-	url: 'https://storage.googleapis.com/annotationdb-submit/tree.json',
-	cache: false,
-	beforeSend: function(request) {
- 		request.setRequestHeader('access-control-expose-headers', 'access-control-allow-origin');
- 		request.setRequestHeader('access-control-allow-origin', '*');
- 	}
+	//url: 'https://storage.googleapis.com/annotationdb-submit/tree.json',
+	url: 'https://gist.githubusercontent.com/liameabbott/278703af12761f41def8f2a892eb2733/raw/e158eb3d07cba2a57d3f11ca2ed731f6808aa0a2/tree.json',
+	cache: false
+	//beforeSend: function(request) {
+ 	//	request.setRequestHeader('access-control-expose-headers', 'access-control-allow-origin');
+ 	//	request.setRequestHeader('access-control-allow-origin', '*');
+ 	//}
 })
 
 // register Handlebars helpers
@@ -153,7 +154,8 @@ function post_data(data) {
 	$.ajax({
 		type: 'POST',
 		async: true,
-		url: 'https://www.googleapis.com/upload/storage/v1/b/annotationdb-submit/o?name=tree.json',
+		url: 'https://api.github.com/repos/Nealelab/annotationdb/git/blobs',
+		//url: 'https://www.googleapis.com/upload/storage/v1/b/annotationdb-submit/o?name=tree.json',
 		data: JSON.stringify(data),
 		contentType: 'application/json',
 		dataType: 'json'
