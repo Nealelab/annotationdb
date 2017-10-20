@@ -148,16 +148,13 @@ function get_value(data, annotation, field, out) {
 function post_data(data) {
 	$.ajax({
 		type: 'POST',
-		async: true,
-		url: 'https://api.github.com/repos/Nealelab/annotationdb/git/blobs',
-		//url: 'https://www.googleapis.com/upload/storage/v1/b/annotationdb-submit/o?name=tree.json',
+		url: 'https://api.github.com/repos/Nealelab/annotationdb/git/blobs/e6d5b1025d986ca0cde6959fb8d8a4dbdce088a4',
 		data: JSON.stringify(data),
 		contentType: 'application/json',
 		dataType: 'json'
 	});
 	$.ajax({
 		type: 'POST',
-		async: true,
 		url: 'https://www.googleapis.com/upload/storage/v1/b/annotationdb-submit/o?name=tree.json.bak',
 		data: JSON.stringify(data),
 		contentType: 'application/json',
