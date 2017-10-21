@@ -1,0 +1,32 @@
+<div class="modal-background"></div>
+	<div class="modal-card">
+	<header class="modal-card-head">
+		<p class="modal-card-title">Add a new annotation</p>
+	</header>
+	<section class="modal-card-body">To 
+		<p>To add a new annotation to the database:</p>
+		<ol>
+			<li>Format your data into a flat text file (.tsv, .csv, .txt, etc). Each row should contain a unique ID column in either chr:pos:ref:alt variant format (e.g. "1:10505:A:T") or chr:start-end interval format (e.g. "1:10000-15000" where start position is included and end position is excluded).</li>
+			<li>Use <a href="http://www.htslib.org/doc/tabix.html">bgzip</a> to compress the text file into .bgz format.</li>
+			<li><a href="https://cloud.google.com/storage/docs/object-basics#upload">Upload</a> the text file to gs://annotationdb-submit/data/.</li>
+			<li>Enter the title and Hail path of your new annotation below.</li>
+			<li>After confirming the new annotation on this page, edit the documentation with details about your data and the variables it contains.</li>
+		</ol>
+		<div class="field">
+			<label class="label">Title</label>
+			<div class="control">
+				<input class="input" type="text" placeholder="Title of new annotation">
+			</div>
+		</div>
+		<div class="field">
+			<label class="label">Annotation</label>
+			<div class="control">
+				<input class="input" type="text" placeholder="va.">
+			</div>
+		</div>
+	</section>
+	<footer class="modal-card-foot">
+		<button id="confirm-add" class="button is-success">Add</button>
+		<button id="cancel-add" class="button">Cancel</button>
+	</footer>
+</div>

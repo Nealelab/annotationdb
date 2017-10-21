@@ -57,12 +57,41 @@ table {
 
 table th {
 	border-width: 0 0 1px;
+	align-items: center;
 }
 
 table th:first-child {
 	width: 25%;
 }
 
+table th:first-child+th {
+	width: 10%;
+}
+
+table th:first-child+th+th {
+	width: 60%;
+}
+
 table th:last-child {
-	width: 65%;
+	padding-top: 0em;
+	padding-bottom: 0em;
+	vertical-align: middle;
+}
+
+table td:last-child {
+	padding-top: 0em;
+	padding-bottom: 0em;
+	vertical-align: middle;
+}
+
+.add-element, .add-element:hover {
+	color: #23d160;
+	border: none;
+	background-color: inherit;
+}
+
+.delete-element, .delete-element:hover {
+	color: #ff3860;
+	border: none;
+	background-color: inherit;
 }
