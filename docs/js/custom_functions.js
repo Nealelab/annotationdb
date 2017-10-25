@@ -15,7 +15,7 @@ function load_template(path, data_object, target, method) {
 		cache: false,
 		async: false,
 		success: function(template) {
-			compiled = Handlebars.compile(template);
+			compiled = Handlebars.compile(template, {preventIndent: true});
 			rendered = compiled(data_object);
 			if (method == 'html') {
 				$(target).html(rendered);
