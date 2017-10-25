@@ -2,14 +2,6 @@ Handlebars.registerHelper('paddingLevel', function(x) {
 	return (5 + (5 * x)).toString() + '%';
 });
 
-Handlebars.registerHelper('makeID', function(annotation) {
-	return annotation.replace('va.', '').replace('.', '-');
-});
-
-Handlebars.registerHelper('stripRoot', function(annotation) {
-	return annotation.split('.').pop();
-});
-
 Handlebars.registerHelper('splitPath', function(annotation) {
 	var split = annotation.split('.');
 	return split.map(function(element, index) {
@@ -21,43 +13,67 @@ Handlebars.registerHelper('splitPath', function(annotation) {
 	}).join('');
 });
 
-Handlebars.registerHelper('dbList', function(node) {
-	var files = [].concat(node.db_file);
-	var keys = (node.hasOwnProperty('db_key') ? [].concat(node.db_key) : false);
-	var elements = (node.hasOwnProperty('db_element') ? [].concat(node.db_element) : false);
-	var out = [];
-	for (i=0; i<files.length; i++) {
-		var key = (keys ? keys[i] : '');
-		var element = (elements ? elements[i] : '');
-		out.push(
-			'<tr>',
-			'<td>', files[i], '</td>',
-			'<td>', key, '</td>',
-			'<td>', element, '</td>',
-			'</tr>'
-		); 
+Handlebars.registerHelper('makeDescription', function() {
+	if (this.type == 'Struct') {
+		return '<a class="doc-jump" annotation="{0}">Documentation</a>'.format(this.annotation);
+	} else if (this.hasOwnProperty('description')) {
+		return this.description;
+	} else {
+		return '';
 	}
-	return out.join('');
 });
 
-Handlebars.registerHelper('annotationList', function(node) {
-	var out = [];
-	$.each(node.nodes, function(index, value) {
-		if (value.type == 'Struct') {
-			var description = '<a class="doc-jump" annotation="' + value.annotation + '">Description</a>';
-			var original = 'Description';
-		} else {
-			var description = value.description;
-			var original = value.description;
+/*Handlebars.registerHelper('listFields', function(fields) {
+
+	$(document).ready(function() {
+
+		var tab = '.tab[annotation="{0}"]'.format(fields.annotation);
+		var field_obj = {
+			'annotation': fields.annotation,
+			'other': []
+		};
+
+		if (fields.hasOwnProperty('title')) {
+			field_obj['title'] = {
+				'field': 'title',
+				'value': fields.title
+			}
 		}
-		out.push(
-			'<tr>',
-			'<td annotation="' + value.annotation + '" field="annotation" original="' + value.annotation + '">', value.annotation, '</td>',
-			'<td annotation="' + value.annotation + '" field="type" original="' + value.type + '">', value.type, '</td>',
-			'<td annotation="' + value.annotation + '" field="description" original="' + original + '">', description, '</td>',
-			'<td>', '<a class="button delete-element" disabled annotation="' + value.annotation + '"><i class="fa fa-minus"></i></a>', '</td>',
-			'</tr>'
-		);
+
+		if (fields.hasOwnProperty('nodes')) {
+			field_obj['nodes'] = [];
+			$.each(fields.nodes, function(index, value) {
+				var annotation = value.annotation;
+				if (value.hasOwnProperty('type')) {
+					var type = value.type;
+				} else {
+					var type = '';
+				}
+				var element = {
+					'annotation': annotation,
+					'type': type
+				}
+				if (type != 'Struct') {
+					if (value.hasOwnProperty('description')) {
+						element['description'] = value.description;
+					} else {
+						element['description'] = '';
+					}
+				}
+				field_obj['nodes'].push(element);
+			});
+		}
+
+		$.each(fields, function(key, value) {
+			if (key == 'annotation' || key == 'title' || key == 'nodes') {
+				return true;
+			} else {
+				field_obj['other'].push({'field': key, 'value': value});
+			}
+		});
+
+		load_template(path='templates/fields.hbs', data_object=field_obj, target=tab, method='append');
+
 	});
-	return out.join('');
-});
+
+});*/

@@ -19,71 +19,15 @@
 				<img src="img/hail_logo.png">
 			</a>
 			<h1 class="title">Annotation Database</h1>
-			<div class="button-group">
-				<a id="add-annotation" class="button is-success">Add annotation</a>
-				<a id="delete-annotation" class="button is-danger">Delete annotation</a>
-				<div id="add-modal" class="modal">
-					<div class="modal-background"></div>
-						<div class="modal-card">
-						<header class="modal-card-head">
-							<p class="modal-card-title">Add a new annotation</p>
-						</header>
-						<section class="modal-card-body"> 
-							<div class="content">
-								<p>To add a new annotation to the database:</p>
-								<ol>
-									<li>
-										<p>Format your data into a flat text file (.tsv, .csv, .txt, etc).</p>
-										<p>Each row should contain a column with a unique ID in one of the following formats:</p>
-										<p>
-											<ul>
-												<li>Variant - "CHR:BP:REF:ALT" (e.g. "1:10505:A:T")</li>
-												<li>Interval - "CHR:START-END", where START is inclusive and END is exclusive (e.g. "1:10000-15000")</li>
-											</ul>
-										</p>
-									</li>
-									<li>Use <a href="http://www.htslib.org/doc/tabix.html">bgzip</a> to compress the text file into .bgz format.</li>
-									<li><a href="https://cloud.google.com/storage/docs/object-basics#upload">Upload</a> the text file to gs://annotationdb-submit/data/.</li>
-									<li>
-										<p>Enter the title and Hail path of your new annotation in this form.</p>
-										<p>
-											<ul>
-												<li>The title can be any text.</li>
-												<li>The annotation path must begin with "va.".</li>
-											</ul>
-										</p>
-									</li>
-									<li>After submitting this form, edit the documentation with details about your data and the variables it contains.</li>
-								</ol>
-								<div class="field">
-									<label class="label">Title</label>
-									<div class="control">
-										<input id="add-title-input" class="input add-field" type="text" placeholder="Title of new annotation">
-									</div>
-								</div>
-								<div class="field">
-									<label class="label">Annotation</label>
-									<div class="control">
-										<input id="add-annotation-input" class="input add-field" type="text" placeholder="va.">
-									</div>
-								</div>
-							</div>
-						</section>
-						<footer class="modal-card-foot">
-							<button id="confirm-add" class="button is-success" disabled>Add</button>
-							<button id="cancel-add" class="button">Cancel</button>
-						</footer>
-					</div>
-				</div>
-				<div id="delete-modal" class="modal">
-				</div>
-			</div>
 		</div>
 	</nav>
 
 	<div class="container">
 		<div class="columns">
 			<div class="column is-3">
+				<div class="button-group">
+					<a id="add-annotation" class="button is-success"><i class="fa fa-plus-circle"></i>Add a new annotation</a>
+				</div>
 				<nav id="left-nav" class="panel">
 				</nav>
 			</div>
@@ -93,11 +37,71 @@
 			</div>
 		</div>
 	</div>
+
+	<div id="add-modal" class="modal">
+		<div class="modal-background"></div>
+			<div class="modal-card">
+			<header class="modal-card-head">
+				<p class="modal-card-title">Add a new annotation</p>
+			</header>
+			<section class="modal-card-body"> 
+				<div class="content">
+					<p>To add a new annotation to the database:</p>
+					<ol>
+						<p><li>
+							Convert your data into a Hail keytable or sites-only VDS.
+							<ul>
+								<li>If your annotation is keyed by variants <code>CHR:BP:REF:ALT</code>, store it as a sites-only VDS.</li>
+								<li>If your annotation is keyed by intervals <code>CHR:START-END</code> or by gene symbols, store it as a keytable.</li>
+							</ul>
+						</li></p>
+						<p><li>Upload the keytable or VDS to the Google bucket <code>gs://annotationdb/</code>.</li></p>
+						<p><li>
+							Enter the title, Hail annotation root, and location of the uploaded keytable/VDS in this form, e.g:
+								<ul>
+									<li>Sites-only VDS <code>cadd.vds</code> with annotations <code>RawScore</code> and <code>PHRED</code>.</li>
+									<li>Title: "CADD"</li>
+									<li>Annotation root: "va.cadd"</li>
+									<li>Database file path: "gs://annotationdb/cadd.vds"</li>
+								</ul>
+							<p>Nested structs can be added through this form as well. For example, after adding <code>va.cadd</code> above, you could add <code>va.cadd.substruct</code> as a new annotation.</p>
+						</li></p>
+						<p><li>After submitting this form, edit the documentation with details about your data and the variables it contains.</li></p>
+					</ol>
+					<div class="field">
+						<label class="label">Title</label>
+						<div class="control">
+							<input id="add-title-input" class="input add-field" type="text" placeholder="Title of new annotation">
+						</div>
+					</div>
+					<div class="field">
+						<label class="label">Annotation root</label>
+						<div class="control">
+							<input id="add-annotation-input" class="input add-field" type="text" placeholder="va.">
+						</div>
+					</div>
+					<div class="field">
+						<label class="label">Database file path</label>
+						<div class="control">
+							<input id="add-dbfile-input" class="input add-field" type="text" placeholder="gs://annotationdb/">
+						</div>
+					</div>
+				</div>
+			</section>
+			<footer class="modal-card-foot">
+				<button id="confirm-add" class="button is-success" disabled>Add</button>
+				<button id="cancel-add" class="button">Cancel</button>
+			</footer>
+		</div>
+	</div>
+
+	<div id="delete-modal" class="modal">
+	</div>
 	
 	<script src="js/jquery-3.2.1.min.js" type="text/javascript"></script>
 	<script src="js/handlebars-v4.0.10.js" type="text/javascript"></script>
-	<script src="js/hbs_helpers.js" type="text/javascript"></script>
 	<script src="js/custom_functions.js" type="text/javascript"></script>
+	<script src="js/hbs_helpers.js" type="text/javascript"></script>
 	<script src="js/custom_load.js" type="text/javascript"></script>
 
 </body>

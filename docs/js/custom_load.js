@@ -1,107 +1,57 @@
-// when getJSON promise is fulfilled, use the data to fill in Handlebars templates
-$.when(
-	$.ajax({
-		dataType: 'json',
-		method: 'GET',
-		url: 'https://storage.googleapis.com/annotationdb-submit/tree.json',
-		cache: false
-	})
-).done(function(data) {
+var committed_promise = $.ajax({
+	dataType: 'json',
+	method: 'GET',
+	url: 'https://storage.googleapis.com/annotationdb-submit/tree.json',
+	cache: false
+});
 
-	// add levels; e.g. va.cadd => level 0, va.cadd.PHRED => level 1; used to format the padding on the left nav
+$.when(committed_promise).done(function(data) {
+
 	add_levels(data, 0);
 
 	load_partial('templates/leftNavPartial.hbs', 'leftNavPartial');
 	load_partial('templates/leftNavContentPartial.hbs', 'leftNavContentPartial');
-	load_partial('templates/leftNavPartialAdd.hbs', 'leftNavPartialAdd');
+	load_partial('templates/fields.hbs', 'listFields');
+	load_partial('templates/tableRow.hbs', 'tableRow');
+	load_partial('templates/discardButton.hbs', 'discardButton');
 
-	// compile Handlebars templates, insert data, add to DOM
-	load_template(path='templates/leftNav.hbs', data=data, target='#left-nav', method='html');
-	load_template(path='templates/leftNavContent.hbs', data=data, target='#left-nav-content', method='html');
+	load_template(path='templates/leftNav.hbs', data_object=data, target='#left-nav', method='html');
+	load_template(path='templates/leftNavContent.hbs', data_object=data, target='#left-nav-content', method='html');
 
 	($(document)
 
 	.on('click', '.nav-tab', function() {
 
-		var target = $('.tab[annotation="{0}"]'.format($(this).attr('annotation')));
-		
-		$('.nav-tab').removeClass('show');
-		$('.tab').removeClass('show');
-		$(this).addClass('show');
-		target.addClass('show');
+		var annotation = $(this).attr('annotation');
+		var tab = get_el('.tab', annotation);
 
-		target.find('textarea').each(function(_, value) {
+		$('.nav-tab').removeClass('show');
+		$(this).addClass('show');
+		
+		$('.tab').removeClass('show');
+		tab.addClass('show').find('textarea').each(function(_, value) {
 			autosize_textarea(value);
 		});
 
 	})
 
 	.on('click', '.breadcrumb-link', function() {
-		$('.nav-tab[annotation="{0}"]'.format($(this).attr('annotation'))).trigger('click');
+		get_el('.nav-tab', $(this).attr('annotation')).trigger('click');
 	})
 
-	.on('click', '.button.edit:not([field="table"])', function() {
-		($(this).removeClass('is-warning')
-				.removeClass('edit')
-				.addClass('is-success')
-				.addClass('save')
-				.text('Save'));
-		($('textarea[annotation="{0}"][field="{1}"]'.format($(this).attr('annotation'), $(this).attr('field'))).removeAttr('readonly')
-																											   .removeClass('locked')
-																											   .trigger('focus'));
-	})
-
-	.on('click', '.button.save:not([field="table"])', function() {
+	.on('click', '.button.edit:not([field="table"]):not([disabled])', function() {
 
 		var annotation = $(this).attr('annotation');
 		var field = $(this).attr('field');
-		var id = '[annotation="{0}"][field="{1}"]'.format(annotation, field);
-		var textarea = $('textarea{0}'.format(id));
+		var textarea = get_el('textarea', annotation, field);
+		var edit = '.button.edit[annotation="{0}"][field="{1}"]'.format(annotation, field);
+		var data_obj = {
+			'annotation': annotation,
+			'field': field
+		};
 
-		($(this).removeClass('is-success')
-				.removeClass('save')
-				.addClass('is-warning')
-				.addClass('edit')
-				.text('Edit'));
-
-
-		$('.button.discard{0}'.format(id)).attr('disabled', true);
-		
-		(textarea.attr('readonly', true)
-		 		 .addClass('locked'));
-
-		if (get_value(data, annotation, field, '') != textarea.val()) {
-			change_value(data, annotation, field, textarea.val());
-			textarea.attr('original', textarea.val());
-			post_data(data);
-		}
-
-	})
-
-	.on('change input paste keyup', 'textarea', function() {
-		var btn = $('.button.discard[annotation="{0}"][field="{1}"]'.format($(this).attr('annotation'), $(this).attr('field')));
-		if ($(this).val() != $(this).attr('original')) {
-			btn.removeAttr('disabled');
-		} else {
-			btn.attr('disabled', true);
-		}
-	})
-
-	.on('change input paste keyup', 'textarea[field="title"]', function() {
-		var tab = $('.nav-tab[annotation="{0}"]'.format($(this).attr('annotation')));
-		if (tab.text() != $(this).val()) {
-			tab.text($(this).val());
-		}
-	})
-
-	.on('click', '.button.discard:not([field="table"])', function() {
-		var id = '[annotation="{0}"][field="{1}"]'.format($(this).attr('annotation'), $(this).attr('field'));
-		($('textarea{0}'.format(id)).val($('textarea{0}'.format(id)).attr('original'))
-								    .trigger('change'));
-		$('.button.save{0}'.format(id)).trigger('click');
-	})
-
-	.on('click', '.button.edit[field="table"]', function() {
+		load_template(path='templates/discardButton.hbs', data_object=data_obj, target=edit, method='before');
+		textarea.removeAttr('readonly').removeClass('locked').trigger('focus');
 
 		($(this).removeClass('is-warning')
 				.removeClass('edit')
@@ -109,81 +59,264 @@ $.when(
 				.addClass('save')
 				.text('Save'));
 
-		var target = $('table[annotation="{0}"][field="table"]'.format($(this).attr('annotation')));
-		target.find('td:not(:last-child)').attr('contenteditable', 'true');
-		target.find('tbody tr:first-child td:first-child').trigger('focus');
-		target.find('.add-element').removeAttr('disabled');
-		target.find('.delete-element').removeAttr('disabled');
 	})
 
-	.on('click', '.button.save[field="table"]', function() {
+	.on('click', '.button.save:not([field="table"]):not([disabled])', function() {
+
+		var annotation = $(this).attr('annotation');
+		var field = $(this).attr('field');
+		var button = get_el('.button.discard', annotation, field);
+		var textarea = get_el('textarea', annotation, field);
+		var val = textarea.val();
+
+		get_el('.button.discard', annotation, field).remove();
 
 		($(this).removeClass('is-success')
 				.removeClass('save')
 				.addClass('is-warning')
 				.addClass('edit')
 				.text('Edit'));
+		
+		if (field == 'annotation') {
 
-		var annotation = $(this).attr('annotation');
-		var id = '[annotation="{0}"][field="table"]'.format(annotation);
+			get_el('.nav-tab', annotation).attr('annotation', val);
+			get_el('.tab', annotation).attr('annotation', val);
+			get_el('textarea', annotation).attr('annotation', val);
+			get_el('.button:not([field="table"])').attr('annotation', val);
+			get_el('table', annotation).attr('annotation', val).find('td').each(function(_, value) {
+				var new_annotation = val + '.' + $(value).attr('annotation').split('.').slice(-1).pop();
+				$(value).attr('parent', val).attr('annotation', new_annotation);
+				if ($(value).attr('field') == 'annotation') {
+				    $(value).attr('original', new_annotation).text(new_annotation);
+				}
+			});
 
-		$('.button.discard{0}'.format(id)).attr('disabled', true);
-		$('table{0} td'.format(id)).each(function(_, value) {
-			change_value(data, $(this).attr('annotation'), $(this).attr('field'), $(this).text());
-			$(this).attr('original', $(this).text());
-		});
-		$('table{0} .add-element'.format(id)).attr('disabled', true);
-		$('table{0} .delete-element'.format(id)).attr('disabled', true);
+		}
+
+		button.attr('disabled', true);
+		textarea.attr('readonly', true).addClass('locked').attr('original', val);
+
+		change_value(data_object=data, annotation=annotation, field=field, new_value=val);
 		post_data(data);
 
 	})
 
-	.on('click', '.add-element', function() {
-		$('table[annotation="' + $(this).attr('annotation') + '"][field="table"] tbody').append([
-			'<tr>',
-			'<td contenteditable="true" annotation="" field="annotation" original=""></td>',
-			'<td contenteditable="true" annotation="" field="type" original=""></td>',
-			'<td contenteditable="true" annotation="" field="description" original=""></td>',
-			'<td>', '<a class="button delete-element" annotation=""><i class="fa fa-minus"></i></a>', '</td>',
-			'</tr>'
-		].join(''));
-		$('table[annotation="' + $(this).attr('annotation') + '"][field="table"] tbody tr:last-child td:first-child').trigger('focus');
+	.on('click', '.button.discard:not([field="table"]):not([disabled])', function() {
+
+		var annotation = $(this).attr('annotation');
+		var field = $(this).attr('field');
+		var button = get_el('.button.save', annotation, field);
+		var textarea = get_el('textarea', annotation, field);
+		var original = textarea.attr('original');
+
+		textarea.val(original).trigger('change');
+		button.trigger('click');
+
 	})
 
-	.on('click', '.delete-element', function() {
-		$(this).parent().parent().remove();
-	})
+	.on('change input paste keyup', 'textarea[annotation][field]', function() {
 
-	.on('change input paste keyup', 'table[field="table"] td', function() {
-		var btn = $('.button.discard[annotation="' + $(this).attr('annotation').split('.').slice(0,-1).join('.') + '"][field="table"]');
-		if ($(this).text() != $(this).attr('original')) {
-			btn.removeAttr('disabled');
+		var annotation = $(this).attr('annotation');
+		var field = $(this).attr('field');
+		var val = $(this).val();
+		var original = $(this).attr('original');
+		var button = get_el('.button.discard', annotation, field);
+
+		autosize_textarea($(this));
+
+		if (val != original) {
+			button.removeAttr('disabled');
 		} else {
-			btn.attr('disabled', true);
+			button.attr('disabled');
 		}
+
 	})
 
-	.on('click', '.button.discard[field="table"]', function() {
-		var id = '[annotation="{0}"][field="table"]'.format($(this).attr('annotation'));
-		$('table{0} td:not(:has(a))'.format(id)).each(function(_, value) {
-			$(this).text($(this).attr('original'));
-			$(this).trigger('change');
+	.on('change input paste keyup', 'textarea[field="title"]', function() {
+
+		var annotation = $(this).attr('annotation');
+		var val = $(this).val();
+		var tab = get_el('.nav-tab', annotation);
+
+		tab.text(val);
+
+	})
+
+	.on('click', '.button.edit[field="table"]:not([disabled])', function() {
+
+		var annotation = $(this).attr('annotation');
+		var table = get_el('table', annotation);
+		var edit = '.button.edit[annotation="{0}"][field="table"]'.format(annotation);
+		var data_obj = {
+			'annotation': annotation,
+			'field': 'table'
+		};
+
+		load_template(path='templates/discardButton.hbs', data_object=data_obj, target=edit, method='before');
+
+		table.find('td:not(:last-child)').attr('contenteditable', 'true');
+		table.find('tbody tr:first-child td:first-child').trigger('focus');
+		table.find('.add-element').removeAttr('disabled');
+		table.find('.delete-element').removeAttr('disabled');
+
+		($(this).removeClass('is-warning')
+				.removeClass('edit')
+				.addClass('is-success')
+				.addClass('save')
+				.text('Save'));
+
+	})
+
+	.on('click', '.button.save[field="table"]:not([disabled])', function() {
+
+		var parent = $(this).attr('annotation');
+		var table = get_el('table', parent, 'table');
+		var discard = get_el('.button.discard', parent, 'table');	
+		var level = get_value(data, parent, '_level');
+
+		get_el('.button.discard', parent, 'table').remove();		
+
+		($(this).removeClass('is-success')
+				.removeClass('save')
+				.addClass('is-warning')
+				.addClass('edit')
+				.text('Edit'));
+
+		table.find('tbody').find('tr').each(function(_, row) {
+
+			var row_annotation = $(row).find('td[field="annotation"]').attr('annotation');
+			var row_type = $(row).find('td[field="type"]').text();
+			var row_description = $(row).find('td[field="description"]').text();
+
+			var row_annotation_original = $(row).find('td[field="annotation"]').attr('original');
+			var row_type_original = $(row).find('td[field="type"]').attr('original');
+			var row_description_original = $(row).find('td[field="description"]').attr('original');
+
+			if (row_annotation != row_annotation_original) {
+				change_value(data, row_annotation_original, 'annotation', row_annotation);
+			}
+
+			if (row_type != row_type_original) {
+
+				change_value(data, row_annotation, 'type', row_type);
+
+				if (row_type == 'Struct') {
+
+					var nav = '.nav-tab[annotation="{0}"]'.format(annotation);
+					var tab = '.tab[annotation="{0}"]'.format(annotation);
+					var new_struct = [{
+						'_level': level + 1,
+						'title': row_annotation,
+						'annotation': row_annotation,
+						'type': 'Struct',
+						'description': row_description,
+						'nodes': ['']
+					}];
+
+					load_template('templates/leftNav.hbs', new_struct, nav, 'after');
+					load_template('templates/leftNavContent.hbs', new_struct, tab, 'after');
+
+					delete_annotation(data, row_annotation);
+					add_annotation(data, parent, new_struct);
+
+				}
+			}
+
+			if (row_description != row_description_original) {
+				change_value(data, row_annotation, 'description', row_description);
+			}
+
 		});
+
+		table.find('td:not(:last-child)').removeAttr('contenteditable');
+		table.find('.add-element').attr('disabled', true);
+		table.find('.delete-element').attr('disabled', true);
+
+		post_data(data);
+
+	})
+
+	.on('click', '.button.discard[field="table"]:not([disabled])', function() {
+
+		var annotation = $(this).attr('annotation');
+		var table = get_el('table', annotation, 'table');
+		var save = get_el('.button.save', annotation, 'table');
+
+		table.find('td').each(function(_, value) {
+			$(value).text($(value).attr('original'));
+		});
+
 		$(this).attr('disabled', true);
-		$('.button.save{0}'.format(id)).trigger('click');
+		save.trigger('click');
+
+	})
+
+	.on('change input paste keyup', 'td[annotation][field]', function() {
+
+		var parent = $(this).attr('annotation').split('.').slice(0, -1).join('.');
+		var field = $(this).attr('field');
+		var val = $(this).val();
+		var original = $(this).attr('original');
+		var save = get_el('.button.save', parent, 'table');
+		var discard = get_el('.button.discard', parent, 'table');
+
+		if (val != original) {
+			discard.removeAttr('disabled');
+		} else {
+			discard.attr('disabled');
+		}
+
+		if (field == 'annotation' && !val.startsWith(parent + '.')) {
+			save.attr('disabled', true);
+		} else {
+			save.removeAttr('disabled');
+		}
+
+	})
+
+	.on('click', '.add-element:not([disabled])', function() {
+
+		var parent = $(this).attr('annotation');
+		var table = get_el('table', parent, 'table');
+		var body = 'table[annotation="{0}"] tbody'.format(parent);
+		var last = table.find('tr').last().find('td').first().attr('annotation');
+		var level = get_value(data_object=data, annotation=parent, field='_level');
+
+		if (last === undefined) {
+			var new_id = parent + '.added_0';
+		} else {
+			if (last.split('.').slice(-1)[0].startsWith('added_')) {
+				var new_id = parent + '.added_' + (parseInt(last.split('.').slice(-1)[0].split('_')[1]) + 1).toString();
+			} else {
+				var new_id = parent + '.added_0';
+			}
+		}
+
+		var data_obj = {
+			'_level': level + 1,
+			'title': new_id,
+			'annotation': new_id,
+			'type': '',
+			'description': ''
+		};
+		add_annotation(data, parent, data_obj);
+
+		load_template(path='templates/tableRow.hbs', data_object=data_obj, target=body, method='append');
+		get_el('td', new_id).attr('contenteditable', 'true').first().trigger('focus');
+		get_el('td', new_id).last().find('a').removeAttr('disabled');
+
+	})
+
+	.on('click', '.delete-element:not([disabled])', function() {
+
+		var annotation = $(this).attr('annotation');
+		load_template('templates/deleteModal.hbs', {'annotation': annotation}, '#delete-modal', 'append'); 
+		$('#delete-modal').addClass('is-active');
+
 	})
 
 	.on('click', '.doc-jump', function() {
-		$('.nav-tab[annotation="' + $(this).attr('annotation') + '"]').click();
-	})
-
-	.on('change input paste keyup', 'textarea[field="annotation"]', function() {
-		$('[annotation="{0}"]'.format($(this).attr('annotation'))).attr('annotation', $(this).val());
-	})
-
-	.on('change input paste keyup', 'td[field="annotation"]', function() {
-		$('.nav-tab[annotation="{0}"]'.format($(this).attr('annotation'))).attr('annotation', $(this).text());
-		$(this).parent().find('td:not(:last-child)').attr('annotation', $(this).text());
+		get_el('.nav-tab', $(this).attr('annotation')).trigger('click');
 	})
 
 	.on('click', '#add-annotation', function() {
@@ -192,48 +325,63 @@ $.when(
 
 	.on('change input paste keyup', 'input.add-field', function() {
 		var fields = $('input.add-field');
-		if ($(fields[0]).val() != '' && $(fields[1]).val().startsWith('va.')) {
+		if ($(fields[0]).val() != '' && 
+			$(fields[1]).val().startsWith('va.') && 
+			$(fields[2]).val().startsWith('gs://annotationdb/') &&
+			($(fields[2]).val().endsWith('.vds') ||
+			 $(fields[2]).val().endsWith('.kt'))) {
 			$('#confirm-add').removeAttr('disabled');
 		} else {
 			$('#confirm-add').attr('disabled', true);
 		}
 	})
 
-	.on('click', '#confirm-add', function() {
-		
+	.on('click', '#confirm-add:not([disabled])', function() {
+
 		var title = $('#add-title-input').val();
 		var path = $('#add-annotation-input').val();
-		
+		var db_file = $('#add-dbfile-input').val();
+		var parent = path.split('.').slice(0, -1).join('.');
+
+		var match = $('.nav-tab').map(function() {
+			return $(this).attr('annotation');
+		}).filter(function() {
+			return path.startsWith(this + '.');
+		}).sort(function(a, b) {
+			return b.length - a.length;
+		})[0];
+
+		var nav = get_el('.nav-tab', match);
+		var tab = get_el('.tab', match);
+
 		var new_annotation = [{
-			'level': 0,
+			'_level': parseInt(nav.attr('level')) + 1,
 			'title': title,
 			'annotation': path,
-			'db_file': '',
-			'db_key': '',
-			'db_element': '',
+			'db_file': db_file,
 			'publication': '',
-			'publication_link': '',
-			'data_source': '',
 			'description': '',
 			'nodes': ['']
 		}];
 
-		load_template(path='templates/leftNav.hbs', data=new_annotation, target='#left-nav', method='prepend');
-		load_template(path='templates/leftNavContent.hbs', data=new_annotation, target='#left-nav-content', method='prepend');
+		load_template('templates/leftNav.hbs', new_annotation, nav, 'after');
+		load_template('templates/leftNavContent.hbs', new_annotation, tab, 'after');
 
-		data.push(new_annotation[0]);
+		add_annotation(data, parent, new_annotation[0]);
 		post_data(data);
 
-		$('.nav-tab:first-child').click();
 		$('#add-modal').removeClass('is-active');
+		get_el('.nav-tab', path).trigger('click');
+
 	})
 
 	.on('click', '#cancel-add', function() {
 		$('#add-modal').removeClass('is-active');
 	})
 
-	.on('click', '#delete-annotation', function() {
-		load_template(path='templates/deleteModal.hbs', data={'selected': $('.nav-tab.show').attr('annotation')}, target='#delete-modal', method='append');
+	.on('click', '.delete-annotation', function() {
+		var annotation = $(this).attr('annotation');
+		load_template(path='templates/deleteModal.hbs', data_object={'annotation': annotation}, target='#delete-modal', method='append');
 		$('#delete-modal').addClass('is-active');
 	})
 
@@ -242,20 +390,25 @@ $.when(
 						   .empty());
 	})
 
-	.on('click', '#confirm-delete', function() {
+	.on('click', '#confirm-delete:not([disabled])', function() {
+
 		var annotation = $(this).attr('annotation');
-		$('.nav-tab[annotation="' + annotation + '"]').remove();
-		$('.tab[annotation="' + annotation + '"]').remove();
-		$('.nav-tab:first-child').trigger('click');
+		var nav = get_el('.nav-tab', annotation);
+		var tab = get_el('.tab', annotation);
+
+		if (nav.length) {
+			nav.remove();
+			tab.remove();
+			$('.nav-tab:first-child').trigger('click');
+		} else {
+			get_el('.delete-element', annotation).parent().parent().remove();
+		}
+		delete_annotation(data, annotation);
 		($('#delete-modal').removeClass('is-active')
 						   .empty());
-		data = data.filter(function(x) {
-			return x.annotation != annotation;
-		});
 		post_data(data);
-	}))
+	}));
 
-	// trigger the first annotation tab
 	$('.nav-tab:first-child').trigger('click');
 
 });

@@ -17,6 +17,10 @@
 	max-width: -webkit-fill-available;
 }
 
+.nav-tab {
+	overflow-x: auto;
+}
+
 .nav-tab.show, .nav-tab.show:hover {
 	background-color: #3273DC;
 	color: #ffffff;
@@ -32,6 +36,24 @@
 	margin-left: auto;
 	margin-top: 0.25em;
 	margin-bottom: 0.25em;
+}
+
+.button.discard {
+	margin-right: 0.25em;
+}
+
+#add-annotation {
+	width: 100%;
+	justify-content: left;
+}
+
+#add-annotation>i {
+	margin-right: 2.5%;
+}
+
+.breadcrumb-container {
+	display: flex;
+	align-items: center;
 }
 
 .breadcrumb {
@@ -94,4 +116,8 @@ table td:last-child {
 	color: #ff3860;
 	border: none;
 	background-color: inherit;
+}
+
+code {
+	color: #363636;
 }
