@@ -11,7 +11,6 @@ $.when(committed_promise).done(function(data) {
 
 	load_partial('templates/leftNavPartial.hbs', 'leftNavPartial');
 	load_partial('templates/leftNavContentPartial.hbs', 'leftNavContentPartial');
-	load_partial('templates/fields.hbs', 'listFields');
 	load_partial('templates/tableRow.hbs', 'tableRow');
 	load_partial('templates/discardButton.hbs', 'discardButton');
 
