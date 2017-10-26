@@ -91,7 +91,7 @@ function delete_annotation(data_object, annotation) {
 function post_data(data) {
 	$.ajax({
 		type: 'POST',
-		url: 'https://www.googleapis.com/upload/storage/v1/b/annotationdb-submit/o?name=tree.long.json',
+		url: 'https://www.googleapis.com/upload/storage/v1/b/annotationdb/o?name=tree.json',
 		data: JSON.stringify(data),
 		contentType: 'application/json',
 		dataType: 'json'
