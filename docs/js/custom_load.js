@@ -1,7 +1,7 @@
 var committed_promise = $.ajax({
 	dataType: 'json',
 	method: 'GET',
-	url: 'https://storage.googleapis.com/annotationdb/tree.json',
+	url: 'https://storage.googleapis.com/annotationdb/annotationdb.json',
 	cache: false
 });
 
