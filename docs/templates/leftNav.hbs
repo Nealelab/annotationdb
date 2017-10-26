@@ -1,3 +1,5 @@
 {{#each this}}
-	{{> leftNavPartial}}
+	{{#ifstruct this}}
+	<a class="panel-block nav-tab" annotation="{{annotation}}" style="padding-left: {{paddingLevel annotation}}">{{title}}</a>
+	{{/ifstruct}}
 {{/each}}

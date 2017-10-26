@@ -1,5 +1,7 @@
-Handlebars.registerHelper('paddingLevel', function(x) {
-	return (5 + (5 * x)).toString() + '%';
+load_partial('tableRow', 'templates/tableRow.hbs', 'tableRow');
+
+Handlebars.registerHelper('paddingLevel', function(annotation) {
+	return 5 *(annotation.split('.').length - 1) + '%';
 });
 
 Handlebars.registerHelper('splitPath', function(annotation) {
@@ -21,4 +23,22 @@ Handlebars.registerHelper('makeDescription', function() {
 	} else {
 		return '';
 	}
+});
+
+Handlebars.registerHelper('ifstruct', function(_, options) {
+	if (this.type == 'Struct') {
+		return options.fn(this);
+	} else {
+		return options.inverse(this);
+	}
+});
+
+Handlebars.registerHelper('listRows', function(parent, data) {
+	var context = data.filter(function(x) {
+		return (x.annotation.startsWith(parent + '.') && 
+				x.annotation.split('.').length == parent.split('.').length + 1);
+	});
+	var template = Handlebars.partials['tableRow'];
+	var compiled = Handlebars.compile(template);
+	return compiled(context);
 });

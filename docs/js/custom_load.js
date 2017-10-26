@@ -1,18 +1,19 @@
 var committed_promise = $.ajax({
 	dataType: 'json',
 	method: 'GET',
-	url: 'https://storage.googleapis.com/annotationdb-submit/tree.json',
+	url: 'https://storage.googleapis.com/annotationdb-submit/tree.long.json',
 	cache: false
 });
 
 $.when(committed_promise).done(function(data) {
 
-	add_levels(data, 0);
-
-	load_partial('templates/leftNavPartial.hbs', 'leftNavPartial');
-	load_partial('templates/leftNavContentPartial.hbs', 'leftNavContentPartial');
-	load_partial('templates/tableRow.hbs', 'tableRow');
-	load_partial('templates/discardButton.hbs', 'discardButton');
+	var sorted = data.sort(function(a, b) {
+		if (a.annotation < b.annotation) {
+			return -1;
+		} else {
+			return 1;
+		}
+	});
 
 	load_template(path='templates/leftNav.hbs', data_object=data, target='#left-nav', method='html');
 	load_template(path='templates/leftNavContent.hbs', data_object=data, target='#left-nav-content', method='html');
@@ -64,7 +65,6 @@ $.when(committed_promise).done(function(data) {
 
 		var annotation = $(this).attr('annotation');
 		var field = $(this).attr('field');
-		var button = get_el('.button.discard', annotation, field);
 		var textarea = get_el('textarea', annotation, field);
 		var val = textarea.val();
 
@@ -78,13 +78,11 @@ $.when(committed_promise).done(function(data) {
 		
 		if (field == 'annotation') {
 
-			get_el('.nav-tab', annotation).attr('annotation', val);
-			get_el('.tab', annotation).attr('annotation', val);
-			get_el('textarea', annotation).attr('annotation', val);
-			get_el('.button:not([field="table"])').attr('annotation', val);
-			get_el('table', annotation).attr('annotation', val).find('td').each(function(_, value) {
+			get_el('', annotation).attr('annotation', val);
+			get_el('table', val).find('td').each(function(_, value) {
 				var new_annotation = val + '.' + $(value).attr('annotation').split('.').slice(-1).pop();
-				$(value).attr('parent', val).attr('annotation', new_annotation);
+				change_value(data, $(value).attr('annotation'), 'annotation', new_annotation);
+				$(value).attr('annotation', new_annotation);
 				if ($(value).attr('field') == 'annotation') {
 				    $(value).attr('original', new_annotation).text(new_annotation);
 				}
@@ -92,10 +90,9 @@ $.when(committed_promise).done(function(data) {
 
 		}
 
-		button.attr('disabled', true);
 		textarea.attr('readonly', true).addClass('locked').attr('original', val);
 
-		change_value(data_object=data, annotation=annotation, field=field, new_value=val);
+		change_value(data, annotation, field, val);
 		post_data(data);
 
 	})
@@ -151,7 +148,7 @@ $.when(committed_promise).done(function(data) {
 			'field': 'table'
 		};
 
-		load_template(path='templates/discardButton.hbs', data_object=data_obj, target=edit, method='before');
+		load_template('templates/discardButton.hbs', data_obj, edit, 'before');
 
 		table.find('td:not(:last-child)').attr('contenteditable', 'true');
 		table.find('tbody tr:first-child td:first-child').trigger('focus');
@@ -183,7 +180,7 @@ $.when(committed_promise).done(function(data) {
 
 		table.find('tbody').find('tr').each(function(_, row) {
 
-			var row_annotation = $(row).find('td[field="annotation"]').attr('annotation');
+			var row_annotation = $(row).find('td[field="annotation"]').text();
 			var row_type = $(row).find('td[field="type"]').text();
 			var row_description = $(row).find('td[field="description"]').text();
 
@@ -254,7 +251,7 @@ $.when(committed_promise).done(function(data) {
 
 		var parent = $(this).attr('annotation').split('.').slice(0, -1).join('.');
 		var field = $(this).attr('field');
-		var val = $(this).val();
+		var val = $(this).text();
 		var original = $(this).attr('original');
 		var save = get_el('.button.save', parent, 'table');
 		var discard = get_el('.button.discard', parent, 'table');
@@ -262,7 +259,7 @@ $.when(committed_promise).done(function(data) {
 		if (val != original) {
 			discard.removeAttr('disabled');
 		} else {
-			discard.attr('disabled');
+			discard.attr('disabled', true);
 		}
 
 		if (field == 'annotation' && !val.startsWith(parent + '.')) {
@@ -291,16 +288,16 @@ $.when(committed_promise).done(function(data) {
 			}
 		}
 
-		var data_obj = {
-			'_level': level + 1,
+		var new_obj = [{
 			'title': new_id,
 			'annotation': new_id,
 			'type': '',
 			'description': ''
-		};
-		add_annotation(data, parent, data_obj);
+		}];
 
-		load_template(path='templates/tableRow.hbs', data_object=data_obj, target=body, method='append');
+		add_annotation(data, new_obj[0]);
+		load_template('templates/tableRow.hbs', new_obj, body, 'append');
+
 		get_el('td', new_id).attr('contenteditable', 'true').first().trigger('focus');
 		get_el('td', new_id).last().find('a').removeAttr('disabled');
 
@@ -342,6 +339,15 @@ $.when(committed_promise).done(function(data) {
 		var db_file = $('#add-dbfile-input').val();
 		var parent = path.split('.').slice(0, -1).join('.');
 
+		var new_annotation = [{
+			'title': title,
+			'annotation': path,
+			'type': 'Struct',
+			'db_file': db_file,
+			'publication': '',
+			'description': ''
+		}];
+
 		var match = $('.nav-tab').map(function() {
 			return $(this).attr('annotation');
 		}).filter(function() {
@@ -350,23 +356,15 @@ $.when(committed_promise).done(function(data) {
 			return b.length - a.length;
 		})[0];
 
-		var nav = get_el('.nav-tab', match);
-		var tab = get_el('.tab', match);
+		if (match !== undefined) {
+			load_template('templates/leftNav.hbs', new_annotation, get_el('.nav-tab', match), 'after');
+			load_template('templates/leftNavContent.hbs', new_annotation, get_el('.tab', match), 'after');
+		} else {
+			load_template('templates/leftNav.hbs', new_annotation, '#left-nav', 'prepend');
+			load_template('templates/leftNavContent.hbs', new_annotation, '#left-nav-content', 'prepend');
+		}
 
-		var new_annotation = [{
-			'_level': parseInt(nav.attr('level')) + 1,
-			'title': title,
-			'annotation': path,
-			'db_file': db_file,
-			'publication': '',
-			'description': '',
-			'nodes': ['']
-		}];
-
-		load_template('templates/leftNav.hbs', new_annotation, nav, 'after');
-		load_template('templates/leftNavContent.hbs', new_annotation, tab, 'after');
-
-		add_annotation(data, parent, new_annotation[0]);
+		add_annotation(data, new_annotation[0]);
 		post_data(data);
 
 		$('#add-modal').removeClass('is-active');
@@ -380,7 +378,7 @@ $.when(committed_promise).done(function(data) {
 
 	.on('click', '.delete-annotation', function() {
 		var annotation = $(this).attr('annotation');
-		load_template(path='templates/deleteModal.hbs', data_object={'annotation': annotation}, target='#delete-modal', method='append');
+		load_template('templates/deleteModal.hbs', {'annotation': annotation}, '#delete-modal', 'append');
 		$('#delete-modal').addClass('is-active');
 	})
 

@@ -1,6 +1,3 @@
-{{#if nodes}}
-	<a class="panel-block nav-tab" annotation="{{annotation}}" level="{{_level}}" style="padding-left: {{paddingLevel _level}}">{{title}}</a>
-	{{#each nodes}}
-		{{> leftNavPartial}}
-	{{/each}}
+{{#ifstruct}}
+<a class="panel-block nav-tab" annotation="{{annotation}}" level="{{_level}}" style="padding-left: {{paddingLevel _level}}">{{title}}</a>
 {{/if}}
